@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; background: #0a0a0b; }
+  body { margin: 0; }
+  ::selection { background: #C2A368; color: #0a0a0b; }
+  img { display: block; max-width: 100%; }
+  a { color: #C2A368; }
+  a:hover { color: #E0C68C; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: #0a0a0b; }
+  ::-webkit-scrollbar-thumb { background: #2a2823; }
+  ::-webkit-scrollbar-thumb:hover { background: #3a372f; }
+</style>
+</helmet>
+<div style="background:#0a0a0b; color:#ECE7DF; font-family:'Noto Sans TC',Archivo,sans-serif; min-height:100vh; overflow-x:hidden; -webkit-font-smoothing:antialiased;">
+
+  <nav style="position:sticky; top:0; z-index:60; display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px clamp(18px,5vw,72px); background:rgba(10,10,11,0.80); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border-bottom:1px solid rgba(236,231,223,0.10);">
+    <a href="#top" onClick="{{ goTop }}" style="display:flex; align-items:baseline; gap:12px; text-decoration:none; color:inherit; cursor:pointer;">
+      <span style="font-family:Archivo,sans-serif; font-weight:800; font-size:19px; letter-spacing:0.30em; color:#ECE7DF;">ANLI</span>
+      <span style="font-size:12.5px; letter-spacing:0.10em; color:#6f6a62; white-space:nowrap;">安理國際法律事務所</span>
+    </a>
+
+    <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex; align-items:center; gap:clamp(14px,2.2vw,34px);">
+        <a href="#about" onClick="{{ goAbout }}" style="font-size:13.5px; letter-spacing:0.10em; color:#b8b2a8; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navAbout }}</a>
+        <a href="#practice" onClick="{{ goPractice }}" style="font-size:13.5px; letter-spacing:0.10em; color:#b8b2a8; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navPractice }}</a>
+        <a href="#principal" onClick="{{ goPrincipal }}" style="font-size:13.5px; letter-spacing:0.10em; color:#b8b2a8; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navPrincipal }}</a>
+        <a href="#insights" onClick="{{ goInsights }}" style="font-size:13.5px; letter-spacing:0.10em; color:#b8b2a8; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navInsights }}</a>
+        <a href="#contact" onClick="{{ goContact }}" style="font-size:13.5px; letter-spacing:0.10em; color:#b8b2a8; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navContact }}</a>
+        <span style="width:1px; height:16px; background:rgba(236,231,223,0.18);"></span>
+        <span style="display:inline-flex; align-items:center; gap:7px; font-family:'IBM Plex Mono',monospace; font-size:12px;">
+          <span onClick="{{ setZh }}" style="{{ zhStyle }}">中</span>
+          <span style="color:#3a372f;">/</span>
+          <span onClick="{{ setEn }}" style="{{ enStyle }}">EN</span>
+        </span>
+      </div>
+    </sc-if>
+
+    <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex; align-items:center; gap:18px;">
+        <span style="display:inline-flex; align-items:center; gap:7px; font-family:'IBM Plex Mono',monospace; font-size:13px;">
+          <span onClick="{{ setZh }}" style="{{ zhStyle }}">中</span>
+          <span style="color:#3a372f;">/</span>
+          <span onClick="{{ setEn }}" style="{{ enStyle }}">EN</span>
+        </span>
+        <button onClick="{{ toggleMenu }}" aria-label="Menu" style="display:flex; flex-direction:column; justify-content:center; gap:5px; width:48px; height:48px; padding:0 11px; background:none; border:1px solid rgba(236,231,223,0.18); color:inherit; cursor:pointer;">
+          <span style="display:block; height:1px; background:#ECE7DF;"></span>
+          <span style="display:block; height:1px; background:#ECE7DF;"></span>
+          <span style="display:block; height:1px; background:#C2A368; width:60%;"></span>
+        </button>
+      </div>
+    </sc-if>
+  </nav>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed; inset:0; z-index:80; background:#0a0a0b; display:flex; flex-direction:column; padding:20px clamp(18px,6vw,40px) 40px;">
+      <div style="display:flex; align-items:center; justify-content:space-between; padding-bottom:26px; border-bottom:1px solid rgba(236,231,223,0.12);">
+        <span style="font-family:Archivo,sans-serif; font-weight:800; font-size:18px; letter-spacing:0.30em;">ANLI</span>
+        <button onClick="{{ toggleMenu }}" aria-label="Close" style="width:48px; height:48px; background:none; border:1px solid rgba(236,231,223,0.18); color:#ECE7DF; font-family:'IBM Plex Mono',monospace; font-size:16px; cursor:pointer;">✕</button>
+      </div>
+      <div style="display:flex; flex-direction:column; margin-top:12px;">
+        <a href="#about" onClick="{{ goAbout }}" style="display:flex; align-items:center; min-height:60px; font-size:20px; letter-spacing:0.06em; color:#ECE7DF; text-decoration:none; border-bottom:1px solid rgba(236,231,223,0.08);">{{ navAbout }}</a>
+        <a href="#practice" onClick="{{ goPractice }}" style="display:flex; align-items:center; min-height:60px; font-size:20px; letter-spacing:0.06em; color:#ECE7DF; text-decoration:none; border-bottom:1px solid rgba(236,231,223,0.08);">{{ navPractice }}</a>
+        <a href="#principal" onClick="{{ goPrincipal }}" style="display:flex; align-items:center; min-height:60px; font-size:20px; letter-spacing:0.06em; color:#ECE7DF; text-decoration:none; border-bottom:1px solid rgba(236,231,223,0.08);">{{ navPrincipal }}</a>
+        <a href="#insights" onClick="{{ goInsights }}" style="display:flex; align-items:center; min-height:60px; font-size:20px; letter-spacing:0.06em; color:#ECE7DF; text-decoration:none; border-bottom:1px solid rgba(236,231,223,0.08);">{{ navInsights }}</a>
+        <a href="#contact" onClick="{{ goContact }}" style="display:flex; align-items:center; min-height:60px; font-size:20px; letter-spacing:0.06em; color:#C2A368; text-decoration:none; border-bottom:1px solid rgba(236,231,223,0.08);">{{ navContact }}</a>
+      </div>
+      <div style="margin-top:auto; display:flex; flex-direction:column; gap:10px; padding-top:32px;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase;">Contact</span>
+        <a href="mailto:contact@anli-law.com" style="font-family:Archivo,sans-serif; font-size:17px; color:#C2A368; text-decoration:none;">{{ email }}</a>
+        <span style="font-size:15px; color:#8f897f;">{{ phone }}</span>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+  <main>
+    <section data-screen-label="Hero" style="display:flex; flex-wrap:wrap; gap:clamp(28px,5vw,72px); align-items:center; padding:clamp(40px,7vh,96px) clamp(18px,5vw,72px) clamp(40px,6vh,72px); max-width:1480px; margin:0 auto;">
+      <div style="flex:1.35 1 340px; min-width:0;">
+        <div data-reveal style="display:flex; align-items:center; gap:14px; margin-bottom:30px;">
+          <span style="width:36px; height:1px; background:#C2A368;"></span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.26em; text-transform:uppercase; color:#C2A368;">{{ heroKicker }}</span>
+        </div>
+        <h1 data-reveal style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:800; font-size:clamp(2.5rem,6.2vw,5.4rem); line-height:1.04; letter-spacing:-0.02em; margin:0 0 28px; color:#F4F0E8; text-wrap:pretty;">
+          <span style="display:block;">{{ heroLine1 }}</span>
+          <span style="display:block; color:#C2A368;">{{ heroLine2 }}</span>
+        </h1>
+        <p data-reveal style="max-width:48ch; font-size:clamp(15px,1.15vw,17px); line-height:1.9; color:#b8b2a8; margin:0 0 36px; font-weight:300; text-wrap:pretty;">{{ heroPara }}</p>
+        <div data-reveal style="display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-bottom:44px;">
+          <a href="#contact" onClick="{{ goContact }}" style="display:inline-flex; align-items:center; gap:10px; min-height:52px; padding:15px 30px; border:1px solid #C2A368; color:#C2A368; font-size:13.5px; letter-spacing:0.12em; text-decoration:none; white-space:nowrap; cursor:pointer;" style-hover="background:#C2A368; color:#0a0a0b;">{{ heroCta }} <span style="font-family:'IBM Plex Mono',monospace;">→</span></a>
+          <a href="#principal" onClick="{{ goPrincipal }}" style="display:inline-flex; align-items:center; min-height:52px; padding:15px 8px; color:#b8b2a8; font-size:13.5px; letter-spacing:0.12em; text-decoration:none; border-bottom:1px solid transparent; white-space:nowrap; cursor:pointer;" style-hover="color:#ECE7DF; border-bottom:1px solid rgba(236,231,223,0.4);">{{ heroCta2 }}</a>
+        </div>
+        <sc-if value="{{ showCreds }}" hint-placeholder-val="{{ true }}">
+          <div data-reveal style="display:flex; align-items:center; gap:clamp(14px,2vw,30px); flex-wrap:wrap; padding-top:28px; border-top:1px solid rgba(236,231,223,0.10);">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase;">Formation</span>
+            <sc-for list="{{ creds }}" as="c" hint-placeholder-count="3">
+              <span style="font-size:13px; letter-spacing:0.06em; color:#8f897f;">{{ c }}</span>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+
+      <div data-reveal style="flex:1 1 300px; position:relative; min-height:clamp(380px,58vh,600px);">
+        <div style="position:absolute; inset:0; border:1px solid rgba(194,163,104,0.28);"></div>
+        <img src="assets/yang-mono.jpg" alt="楊佳陵 博士" style="position:absolute; inset:14px; width:calc(100% - 28px); height:calc(100% - 28px); object-fit:cover; object-position:center 22%; filter:grayscale(0.1) contrast(1.02);">
+        <div style="position:absolute; left:-13px; bottom:34px; transform:rotate(-90deg); transform-origin:left bottom; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.30em; color:#C2A368; text-transform:uppercase; white-space:nowrap;">Principal · 主持律師</div>
+      </div>
+    </section>
+
+    <section id="about" data-screen-label="About" style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); max-width:1480px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(28px,5vw,80px);">
+        <div data-reveal>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.24em; color:#C2A368; margin-bottom:18px;">01 — {{ aboutLabel }}</div>
+          <h2 style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.2; letter-spacing:-0.01em; margin:0; color:#F4F0E8; text-wrap:pretty;">{{ aboutTitle }}</h2>
+        </div>
+        <div data-reveal style="display:flex; flex-direction:column; gap:24px; max-width:62ch; padding-top:6px;">
+          <p style="font-size:clamp(15px,1.1vw,17px); line-height:1.95; color:#cfc9bf; margin:0; font-weight:300; text-wrap:pretty;">{{ aboutPara1 }}</p>
+          <p style="font-size:clamp(15px,1.1vw,17px); line-height:1.95; color:#9a948a; margin:0; font-weight:300; text-wrap:pretty;">{{ aboutPara2 }}</p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1px; margin-top:clamp(48px,7vh,86px); background:rgba(236,231,223,0.10);">
+        <sc-for list="{{ values }}" as="v" hint-placeholder-count="3">
+          <div data-reveal style="background:#0a0a0b; padding:34px clamp(20px,2.2vw,34px) 38px;" style-hover="background:#0d0d0f;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C2A368; margin-bottom:20px;">{{ v.num }}</div>
+            <h3 style="font-size:clamp(17px,1.35vw,20px); font-weight:500; margin:0 0 14px; color:#ECE7DF; line-height:1.4;">{{ v.title }}</h3>
+            <p style="font-size:14px; line-height:1.85; color:#8f897f; margin:0; font-weight:300; text-wrap:pretty;">{{ v.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="practice" data-screen-label="Practice" style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); max-width:1480px; margin:0 auto;">
+      <div data-reveal style="margin-bottom:52px;">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.24em; color:#C2A368; margin-bottom:18px;">02 — {{ practiceLabel }}</div>
+        <h2 style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.16; letter-spacing:-0.01em; margin:0; color:#F4F0E8;">{{ practiceTitle }}</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:0;">
+        <sc-for list="{{ practice }}" as="p" hint-placeholder-count="6">
+          <div data-reveal style="padding:32px clamp(20px,2.4vw,40px) 36px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06);" style-hover="background:rgba(194,163,104,0.04);">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#C2A368; margin-bottom:16px; letter-spacing:0.06em;">{{ p.num }}</div>
+            <h3 style="font-size:clamp(18px,1.4vw,21px); font-weight:500; margin:0 0 12px; color:#ECE7DF; line-height:1.35;">{{ p.title }}</h3>
+            <p style="font-size:14px; line-height:1.75; color:#8f897f; margin:0 0 22px; font-weight:300; max-width:38ch; text-wrap:pretty;">{{ p.desc }}</p>
+            <div style="display:flex; flex-direction:column; gap:9px; padding-top:18px; border-top:1px solid rgba(236,231,223,0.07);">
+              <sc-for list="{{ p.details }}" as="d" hint-placeholder-count="4">
+                <div style="display:flex; align-items:baseline; gap:10px;">
+                  <span style="width:4px; height:1px; background:#C2A368; flex:none; transform:translateY(-4px);"></span>
+                  <span style="font-size:13px; line-height:1.6; color:#a09a90; font-weight:300;">{{ d }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <section id="principal" data-screen-label="Principal" style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); background:#0c0c0e;">
+      <div style="max-width:1480px; margin:0 auto;">
+        <div data-reveal style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.24em; color:#C2A368; margin-bottom:44px;">03 — {{ principalLabel }}</div>
+        <div style="display:flex; flex-wrap:wrap; gap:clamp(30px,5vw,80px); align-items:flex-start;">
+          <div data-reveal style="flex:0.8 1 280px; min-width:0;">
+            <div style="position:relative; aspect-ratio:3/4; border:1px solid rgba(194,163,104,0.30);">
+              <img src="assets/yang-mono.jpg" alt="楊佳陵 博士" style="position:absolute; inset:12px; width:calc(100% - 24px); height:calc(100% - 24px); object-fit:cover; object-position:center 20%;">
+            </div>
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.18em; color:#5e5a53; margin-top:16px; text-transform:uppercase;">{{ principalPlate }}</div>
+          </div>
+          <div style="flex:1.3 1 340px; min-width:0;">
+            <h2 data-reveal style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:800; font-size:clamp(1.9rem,3.4vw,3.1rem); line-height:1.06; letter-spacing:-0.01em; margin:0 0 14px; color:#F4F0E8;">{{ principalName }}</h2>
+            <div data-reveal style="font-size:14.5px; letter-spacing:0.04em; color:#C2A368; margin-bottom:28px; line-height:1.6;">{{ principalTitle }}</div>
+            <p data-reveal style="font-size:clamp(15px,1.05vw,16.5px); line-height:1.95; color:#b8b2a8; margin:0 0 44px; max-width:64ch; font-weight:300; text-wrap:pretty;">{{ principalIntro }}</p>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:clamp(28px,4vw,56px);">
+              <div data-reveal>
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px;">
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase;">{{ eduLabel }}</span>
+                  <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
+                </div>
+                <sc-for list="{{ education }}" as="e" hint-placeholder-count="3">
+                  <div style="padding:16px 0; border-bottom:1px solid rgba(236,231,223,0.09);">
+                    <div style="font-size:14.5px; color:#ECE7DF; line-height:1.5; margin-bottom:6px;">{{ e.school }}</div>
+                    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#8f897f; letter-spacing:0.02em;">{{ e.degree }}</div>
+                  </div>
+                </sc-for>
+              </div>
+              <div data-reveal>
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px;">
+                  <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase;">{{ expLabel }}</span>
+                  <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
+                </div>
+                <sc-for list="{{ experience }}" as="x" hint-placeholder-count="5">
+                  <div style="padding:14px 0; border-bottom:1px solid rgba(236,231,223,0.09);">
+                    <div style="font-size:14px; color:#ECE7DF; line-height:1.45; margin-bottom:5px;">{{ x.org }}</div>
+                    <div style="font-size:12.5px; color:#8f897f;">{{ x.role }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal style="margin-top:clamp(48px,8vh,88px);">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:26px;">
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase;">{{ teamLabel }}</span>
+            <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0;">
+            <sc-for list="{{ team }}" as="m" hint-placeholder-count="3">
+              <div style="padding:26px clamp(18px,2vw,30px) 30px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06);">
+                <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#5e5a53; margin-bottom:16px;">{{ m.num }}</div>
+                <div style="font-size:clamp(16px,1.2vw,19px); font-weight:500; color:#ECE7DF; line-height:1.5; margin-bottom:8px;">{{ m.name }}</div>
+                <div style="font-size:13px; letter-spacing:0.06em; color:#C2A368; margin-bottom:12px;">{{ m.role }}</div>
+                <div style="font-size:12.5px; line-height:1.7; color:#8f897f;">{{ m.focus }}</div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="insights" data-screen-label="Insights" style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); max-width:1480px; margin:0 auto;">
+      <div data-reveal style="display:flex; flex-wrap:wrap; gap:clamp(20px,4vw,64px); align-items:flex-end; justify-content:space-between; margin-bottom:48px;">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.24em; color:#C2A368; margin-bottom:18px;">04 — {{ insightsLabel }}</div>
+          <h2 style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.16; letter-spacing:-0.01em; margin:0; color:#F4F0E8;">{{ insightsTitle }}</h2>
+        </div>
+        <p style="font-size:13.5px; line-height:1.8; color:#6f6a62; margin:0; max-width:42ch; font-weight:300;">{{ insightsPara }}</p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:0;">
+        <sc-for list="{{ insightsTeaser }}" as="a" hint-placeholder-count="3">
+          <a data-reveal href="#article" onClick="{{ a.open }}" style="display:block; padding:28px clamp(18px,2vw,32px) 32px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06); text-decoration:none; color:inherit; cursor:pointer;" style-hover="background:rgba(194,163,104,0.04);">
+            <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:16px;">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C2A368; text-transform:uppercase;">{{ a.cat }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5e5a53;">{{ a.date }}</span>
+            </div>
+            <h3 style="font-size:clamp(17px,1.4vw,21px); font-weight:500; line-height:1.45; margin:0 0 16px; color:#ECE7DF; text-wrap:pretty;">{{ a.title }}</h3>
+            <span style="display:inline-flex; align-items:center; gap:8px; font-size:12.5px; letter-spacing:0.1em; color:#C2A368;">{{ readMore }} <span style="font-family:'IBM Plex Mono',monospace;">→</span></span>
+          </a>
+        </sc-for>
+      </div>
+      <div data-reveal style="margin-top:40px; padding-top:32px; border-top:1px solid rgba(236,231,223,0.12);">
+        <a href="#insights" onClick="{{ goInsights }}" style="display:inline-flex; align-items:center; gap:10px; min-height:52px; padding:15px 30px; border:1px solid #C2A368; color:#C2A368; font-size:13.5px; letter-spacing:0.12em; text-decoration:none; white-space:nowrap; cursor:pointer;" style-hover="background:#C2A368; color:#0a0a0b;">{{ viewAll }} <span style="font-family:'IBM Plex Mono',monospace;">→</span></a>
+      </div>
+    </section>
+
+    <section id="contact" data-screen-label="Contact" style="scroll-margin-top:88px; padding:clamp(64px,12vh,140px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); background:#0c0c0e;">
+      <div style="max-width:1480px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:clamp(32px,6vw,90px); align-items:center;">
+        <div data-reveal>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.24em; color:#C2A368; margin-bottom:22px;">05 — {{ contactLabel }}</div>
+          <h2 style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.6vw,3.2rem); line-height:1.12; letter-spacing:-0.01em; margin:0 0 22px; color:#F4F0E8; text-wrap:pretty;">{{ contactTitle }}</h2>
+          <p style="font-size:16px; line-height:1.85; color:#9a948a; margin:0; max-width:46ch; font-weight:300; text-wrap:pretty;">{{ contactPara }}</p>
+        </div>
+        <div data-reveal style="display:flex; flex-direction:column;">
+          <a href="mailto:contact@anli-law.com" style="display:block; padding:24px 0; border-top:1px solid rgba(236,231,223,0.14); text-decoration:none;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase; margin-bottom:10px;">Email</div>
+            <div style="font-family:Archivo,sans-serif; font-size:clamp(18px,1.6vw,23px); color:#C2A368; letter-spacing:0.01em;">{{ email }}</div>
+          </a>
+          <div style="display:flex; flex-wrap:wrap; gap:16px 48px; padding:24px 0; border-top:1px solid rgba(236,231,223,0.14); border-bottom:1px solid rgba(236,231,223,0.14);">
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase; margin-bottom:10px;">Tel</div>
+              <div style="font-size:16px; color:#ECE7DF;">{{ phone }}</div>
+            </div>
+            <div>
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase; margin-bottom:10px;">Office</div>
+              <div style="font-size:16px; color:#ECE7DF;">{{ address }}</div>
+            </div>
+          </div>
+          <a href="mailto:contact@anli-law.com" style="display:inline-flex; align-self:flex-start; align-items:center; gap:10px; margin-top:28px; min-height:52px; padding:15px 30px; border:1px solid #C2A368; color:#C2A368; font-size:13.5px; letter-spacing:0.12em; text-decoration:none; white-space:nowrap;" style-hover="background:#C2A368; color:#0a0a0b;">{{ contactCta }} <span style="font-family:'IBM Plex Mono',monospace;">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <sc-if value="{{ showLine }}" hint-placeholder-val="{{ true }}">
+      <section id="line" data-screen-label="LINE" style="scroll-margin-top:88px; padding:clamp(56px,9vh,110px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08);">
+        <div data-reveal style="max-width:1480px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(28px,5vw,72px); align-items:center;">
+          <div style="flex:1 1 320px; min-width:0;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.24em; color:#C2A368; margin-bottom:20px;">06 — {{ lineLabel }}</div>
+            <h2 style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.5rem,2.5vw,2.2rem); line-height:1.25; margin:0 0 18px; color:#F4F0E8; text-wrap:pretty;">{{ lineTitle }}</h2>
+            <p style="font-size:15px; line-height:1.9; color:#9a948a; margin:0 0 30px; max-width:52ch; font-weight:300; text-wrap:pretty;">{{ linePara }}</p>
+            <div style="display:inline-flex; align-items:center; gap:18px; padding:14px 22px; border:1px solid rgba(236,231,223,0.16);">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.2em; color:#5e5a53; text-transform:uppercase;">{{ lineAccountLabel }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:17px; color:#C2A368; letter-spacing:0.04em;">{{ lineAccount }}</span>
+            </div>
+          </div>
+          <div style="flex:0 0 auto; display:flex; flex-direction:column; gap:12px; align-items:center;">
+            <div style="width:clamp(180px,22vw,220px); aspect-ratio:1/1; border:1px solid rgba(236,231,223,0.16); background-image:repeating-linear-gradient(135deg, rgba(236,231,223,0.05) 0 6px, transparent 6px 12px); display:flex; align-items:center; justify-content:center; padding:20px; text-align:center;">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.18em; color:#6f6a62; line-height:1.8;">{{ lineQrNote }}</span>
+            </div>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; color:#4d4a44; text-transform:uppercase;">LINE QR</span>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+  </main>
+  </sc-if>
+
+  <sc-if value="{{ isInsights }}" hint-placeholder-val="{{ false }}">
+    <main style="max-width:1480px; margin:0 auto; padding:clamp(32px,6vh,72px) clamp(18px,5vw,72px) clamp(56px,9vh,110px);">
+      <a href="#top" onClick="{{ goTop }}" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.18em; color:#8f897f; text-decoration:none; cursor:pointer;" style-hover="color:#C2A368;"><span>←</span> {{ backHome }}</a>
+      <div style="display:flex; flex-wrap:wrap; gap:clamp(20px,4vw,64px); align-items:flex-end; justify-content:space-between; margin:clamp(24px,4vh,44px) 0 clamp(36px,6vh,56px);">
+        <div>
+          <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.24em; color:#C2A368; margin-bottom:18px;">{{ insightsLabel }}</div>
+          <h1 style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.6vw,3.2rem); line-height:1.14; letter-spacing:-0.015em; margin:0; color:#F4F0E8;">{{ insightsTitle }}</h1>
+        </div>
+        <p style="font-size:13.5px; line-height:1.8; color:#6f6a62; margin:0; max-width:42ch; font-weight:300;">{{ insightsPara }}</p>
+      </div>
+      <div style="display:flex; flex-direction:column;">
+        <sc-for list="{{ insights }}" as="a" hint-placeholder-count="6">
+          <a data-reveal href="#article" onClick="{{ a.open }}" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(14px,3vw,48px); align-items:baseline; padding:30px 4px 32px; border-top:1px solid rgba(236,231,223,0.12); text-decoration:none; color:inherit; cursor:pointer;" style-hover="background:rgba(194,163,104,0.04);">
+            <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C2A368; text-transform:uppercase;">{{ a.cat }}</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5e5a53;">{{ a.date }}</span>
+            </div>
+            <div style="grid-column:span 2; min-width:0;">
+              <h3 style="font-size:clamp(18px,1.6vw,24px); font-weight:500; line-height:1.4; margin:0 0 10px; color:#ECE7DF; text-wrap:pretty;">{{ a.title }}</h3>
+              <p style="font-size:14px; line-height:1.8; color:#8f897f; margin:0 0 14px; font-weight:300; max-width:56ch; text-wrap:pretty;">{{ a.lead }}</p>
+              <span style="display:inline-flex; align-items:center; gap:8px; font-size:12.5px; letter-spacing:0.1em; color:#C2A368;">{{ readMore }} <span style="font-family:'IBM Plex Mono',monospace;">→</span></span>
+            </div>
+          </a>
+        </sc-for>
+        <div style="height:1px; background:rgba(236,231,223,0.12);"></div>
+      </div>
+    </main>
+  </sc-if>
+
+  <sc-if value="{{ isArticle }}" hint-placeholder-val="{{ false }}">
+    <main style="max-width:1480px; margin:0 auto; padding:clamp(32px,6vh,72px) clamp(18px,5vw,72px) clamp(56px,9vh,110px);">
+      <a href="#insights" onClick="{{ goInsights }}" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.18em; color:#8f897f; text-decoration:none; cursor:pointer;" style-hover="color:#C2A368;"><span>←</span> {{ backList }}</a>
+      <article style="max-width:78ch; margin:clamp(24px,4vh,44px) 0 0;">
+        <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:22px;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C2A368; text-transform:uppercase;">{{ artCat }}</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5e5a53;">{{ artDate }}</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5e5a53;">{{ artRead }}</span>
+        </div>
+        <h1 style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.8vw,3.2rem); line-height:1.18; letter-spacing:-0.015em; margin:0 0 26px; color:#F4F0E8; text-wrap:pretty;">{{ artTitle }}</h1>
+        <p style="font-size:clamp(17px,1.5vw,21px); line-height:1.75; color:#C2A368; margin:0 0 40px; font-weight:300; text-wrap:pretty;">{{ artLead }}</p>
+        <div style="height:1px; background:rgba(236,231,223,0.14); margin-bottom:40px;"></div>
+        <div style="display:flex; flex-direction:column; gap:26px;">
+          <sc-for list="{{ artBody }}" as="b" hint-placeholder-count="3">
+            <p style="font-size:clamp(15px,1.1vw,17px); line-height:2.0; color:#cfc9bf; margin:0; font-weight:300; text-wrap:pretty;">{{ b.text }}</p>
+          </sc-for>
+        </div>
+        <p style="margin:44px 0 0; padding-top:24px; border-top:1px solid rgba(236,231,223,0.10); font-size:12.5px; line-height:1.8; color:#5e5a53;">{{ placeholderNote }}</p>
+      </article>
+
+      <div style="margin-top:clamp(56px,9vh,100px);">
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase; margin-bottom:24px;">{{ moreLabel }}</div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:0;">
+          <sc-for list="{{ artOthers }}" as="o" hint-placeholder-count="3">
+            <a href="#article" onClick="{{ o.open }}" style="display:block; padding:26px clamp(18px,2vw,32px) 30px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06); text-decoration:none; color:inherit; cursor:pointer;" style-hover="background:rgba(194,163,104,0.04);">
+              <div style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.2em; color:#C2A368; text-transform:uppercase; margin-bottom:14px;">{{ o.cat }}</div>
+              <h3 style="font-size:17px; font-weight:500; line-height:1.45; margin:0; color:#ECE7DF; text-wrap:pretty;">{{ o.title }}</h3>
+            </a>
+          </sc-for>
+        </div>
+      </div>
+    </main>
+  </sc-if>
+
+  <sc-if value="{{ isLegal }}" hint-placeholder-val="{{ false }}">
+    <main style="max-width:1480px; margin:0 auto; padding:clamp(32px,6vh,72px) clamp(18px,5vw,72px) clamp(56px,9vh,110px);">
+      <a href="#top" onClick="{{ goTop }}" style="display:inline-flex; align-items:center; gap:10px; min-height:44px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.18em; color:#8f897f; text-decoration:none; cursor:pointer;" style-hover="color:#C2A368;"><span>←</span> {{ backHome }}</a>
+      <div style="display:flex; gap:28px; flex-wrap:wrap; margin:clamp(24px,4vh,40px) 0 clamp(32px,5vh,56px); padding-bottom:20px; border-bottom:1px solid rgba(236,231,223,0.12);">
+        <span onClick="{{ goPrivacy }}" style="{{ privacyTabStyle }}">{{ navPrivacy }}</span>
+        <span onClick="{{ goDisclaimer }}" style="{{ disclaimerTabStyle }}">{{ navDisclaimer }}</span>
+      </div>
+      <div style="max-width:80ch;">
+        <h1 style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.8rem,3.2vw,2.8rem); line-height:1.2; margin:0 0 20px; color:#F4F0E8;">{{ legalTitle }}</h1>
+        <div style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.16em; color:#5e5a53; margin-bottom:32px;">{{ legalUpdated }}</div>
+        <p style="font-size:clamp(15px,1.15vw,17.5px); line-height:1.95; color:#cfc9bf; margin:0 0 clamp(36px,6vh,60px); font-weight:300; text-wrap:pretty;">{{ legalLead }}</p>
+        <div style="display:flex; flex-direction:column; gap:clamp(28px,4vh,44px);">
+          <sc-for list="{{ legalSections }}" as="s" hint-placeholder-count="4">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:clamp(14px,3vw,40px); padding-top:26px; border-top:1px solid rgba(236,231,223,0.10);">
+              <h2 style="font-size:16px; font-weight:500; letter-spacing:0.04em; line-height:1.6; margin:0; color:#ECE7DF;">{{ s.h }}</h2>
+              <p style="grid-column:span 2; font-size:14.5px; line-height:1.95; color:#9a948a; margin:0; font-weight:300; text-wrap:pretty;">{{ s.p }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </main>
+  </sc-if>
+
+  <footer style="border-top:1px solid rgba(236,231,223,0.10);">
+    <div style="max-width:1480px; margin:0 auto; padding:clamp(40px,6vh,64px) clamp(18px,5vw,72px) 30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:clamp(28px,4vw,64px);">
+      <div>
+        <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:14px;">
+          <span style="font-family:Archivo,sans-serif; font-weight:800; font-size:17px; letter-spacing:0.28em; color:#ECE7DF;">ANLI</span>
+        </div>
+        <div style="font-size:13.5px; color:#8f897f; line-height:1.8; margin-bottom:8px;">{{ firmFull }}</div>
+        <div style="font-size:12.5px; color:#5e5a53; letter-spacing:0.06em;">{{ footerNote }}</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;">{{ footerNavLabel }}</span>
+        <a href="#about" onClick="{{ goAbout }}" style="font-size:13.5px; color:#8f897f; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navAbout }}</a>
+        <a href="#practice" onClick="{{ goPractice }}" style="font-size:13.5px; color:#8f897f; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navPractice }}</a>
+        <a href="#principal" onClick="{{ goPrincipal }}" style="font-size:13.5px; color:#8f897f; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navPrincipal }}</a>
+        <a href="#insights" onClick="{{ goInsights }}" style="font-size:13.5px; color:#8f897f; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navInsights }}</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;">{{ footerLegalLabel }}</span>
+        <a href="#privacy" onClick="{{ goPrivacy }}" style="font-size:13.5px; color:#8f897f; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navPrivacy }}</a>
+        <a href="#disclaimer" onClick="{{ goDisclaimer }}" style="font-size:13.5px; color:#8f897f; text-decoration:none; cursor:pointer;" style-hover="color:#ECE7DF;">{{ navDisclaimer }}</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:12px;">
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;">{{ footerContactLabel }}</span>
+        <a href="mailto:contact@anli-law.com" style="font-size:13.5px; color:#C2A368; text-decoration:none;">{{ email }}</a>
+        <span style="font-size:13.5px; color:#8f897f;">{{ phone }}</span>
+        <span style="font-size:13.5px; color:#8f897f;">{{ address }}</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8f897f;">LINE {{ lineAccount }}</span>
+      </div>
+    </div>
+    <div style="max-width:1480px; margin:0 auto; padding:22px clamp(18px,5vw,72px) 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid rgba(236,231,223,0.08);">
+      <span style="font-size:12px; color:#4d4a44;">{{ copyright }}</span>
+      <a href="方向總覽.dc.html" style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; color:#5e5a53; text-decoration:none; border-bottom:1px solid rgba(94,90,83,0.4);">← 設計總覽</a>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultLang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;zh&quot;,&quot;en&quot;],&quot;default&quot;:&quot;zh&quot;,&quot;tsType&quot;:&quot;'zh'|'en'&quot;,&quot;section&quot;:&quot;內容&quot;},&quot;showCreds&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;內容&quot;},&quot;showLine&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;內容&quot;},&quot;insightsCount&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:6,&quot;min&quot;:2,&quot;max&quot;:6,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;內容&quot;}}">
+class Component extends DCLogic {
+  state = {
+    lang: (this.props && this.props.defaultLang === 'en') ? 'en' : 'zh',
+    view: 'home',
+    slug: null,
+    legalDoc: 'privacy',
+    menu: false,
+    isMobile: typeof window !== 'undefined' && window.innerWidth < 900,
+    L: null,
+    S: null,
+  };
+
+  componentDidMount() {
+    Promise.all([import('./content.js'), import('./site-content.js')])
+      .then(([a, b]) => this.setState({ L: a.LAW, S: b.SITE }))
+      .catch((e) => console.error('content load failed:', e));
+    this._onResize = () => {
+      const m = window.innerWidth < 900;
+      if (m !== this.state.isMobile) this.setState({ isMobile: m, menu: false });
+    };
+    window.addEventListener('resize', this._onResize);
+    this._initReveal();
+  }
+
+  componentDidUpdate() { this._initReveal(); }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    if (this._io) this._io.disconnect();
+  }
+
+  _initReveal() {
+    if (typeof window === 'undefined' || !window.IntersectionObserver) return;
+    if (!this._io) {
+      this._io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => {
+          if (en.isIntersecting) {
+            en.target.style.opacity = '1';
+            en.target.style.transform = 'none';
+            this._io.unobserve(en.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -6% 0px', threshold: 0.03 });
+    }
+    const ease = 'opacity .85s cubic-bezier(.22,.61,.36,1), transform .85s cubic-bezier(.22,.61,.36,1)';
+    const nodes = document.querySelectorAll('[data-reveal]:not([data-rv])');
+    let above = 0;
+    nodes.forEach((el) => {
+      el.setAttribute('data-rv', '1');
+      el.style.transition = ease;
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(18px)';
+      const top = el.getBoundingClientRect().top;
+      if (top < window.innerHeight * 0.94) {
+        const d = Math.min(above, 7) * 90;
+        above += 1;
+        window.setTimeout(() => { el.style.opacity = '1'; el.style.transform = 'none'; }, 60 + d);
+      } else {
+        this._io.observe(el);
+      }
+    });
+  }
+
+  _scrollTo(id) {
+    const el = document.getElementById(id);
+    if (!el) { window.scrollTo({ top: 0, behavior: 'smooth' }); return; }
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 74, behavior: 'smooth' });
+  }
+
+  _go(id) {
+    return (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      if (this.state.view === 'home') {
+        this.setState({ menu: false });
+        this._scrollTo(id);
+      } else {
+        this.setState({ view: 'home', slug: null, menu: false }, () => {
+          window.requestAnimationFrame(() => this._scrollTo(id));
+        });
+      }
+    };
+  }
+
+  _openLegal(doc) {
+    return (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      this.setState({ view: 'legal', legalDoc: doc, menu: false }, () => window.scrollTo({ top: 0 }));
+    };
+  }
+
+  _openInsights() {
+    return (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      this.setState({ view: 'insights', slug: null, menu: false }, () => window.scrollTo({ top: 0 }));
+    };
+  }
+
+  _openArticle(slug) {
+    return (e) => {
+      if (e && e.preventDefault) e.preventDefault();
+      this.setState({ view: 'article', slug, menu: false }, () => window.scrollTo({ top: 0 }));
+    };
+  }
+
+  renderVals() {
+    const lang = this.state.lang;
+    const L = this.state.L;
+    const S = this.state.S;
+    const p = (n) => (n && (n[lang] != null ? n[lang] : n.zh)) || '';
+    const showCreds = this.props.showCreds != null ? this.props.showCreds : true;
+    const showLine = this.props.showLine != null ? this.props.showLine : true;
+    const count = this.props.insightsCount != null ? this.props.insightsCount : 6;
+    const view = this.state.view;
+
+    const activeTab = { color: '#ECE7DF', cursor: 'pointer', fontWeight: 600 };
+    const idleTab = { color: '#5e5a53', cursor: 'pointer', fontWeight: 400 };
+    const tabOn = { fontSize: '14px', letterSpacing: '0.08em', color: '#C2A368', cursor: 'pointer', paddingBottom: '6px', borderBottom: '1px solid #C2A368' };
+    const tabOff = { fontSize: '14px', letterSpacing: '0.08em', color: '#6f6a62', cursor: 'pointer', paddingBottom: '6px', borderBottom: '1px solid transparent' };
+
+    const base = {
+      lang,
+      showCreds,
+      showLine,
+      isMobile: this.state.isMobile,
+      isDesktop: !this.state.isMobile,
+      menuOpen: this.state.menu,
+      isHome: view === 'home',
+      isInsights: view === 'insights',
+      isArticle: view === 'article',
+      isLegal: view === 'legal',
+      setZh: () => this.setState({ lang: 'zh' }),
+      setEn: () => this.setState({ lang: 'en' }),
+      zhStyle: lang === 'zh' ? activeTab : idleTab,
+      enStyle: lang === 'en' ? activeTab : idleTab,
+      toggleMenu: () => this.setState((s) => ({ menu: !s.menu })),
+      goTop: this._go('top'),
+      goAbout: this._go('about'),
+      goPractice: this._go('practice'),
+      goPrincipal: this._go('principal'),
+      goInsights: this._openInsights(),
+      goContact: this._go('contact'),
+      goPrivacy: this._openLegal('privacy'),
+      goDisclaimer: this._openLegal('disclaimer'),
+      privacyTabStyle: this.state.legalDoc === 'privacy' ? tabOn : tabOff,
+      disclaimerTabStyle: this.state.legalDoc === 'disclaimer' ? tabOn : tabOff,
+    };
+
+    if (!L || !S) {
+      return { ...base, practice: [], education: [], experience: [], team: [], creds: [], values: [], insights: [], insightsTeaser: [], artBody: [], artOthers: [], legalSections: [] };
+    }
+
+    const insights = S.insights.slice(0, count).map((a) => ({
+      slug: a.slug,
+      cat: p(a.cat),
+      date: p(a.date),
+      title: p(a.title),
+      lead: p(a.lead),
+      open: this._openArticle(a.slug),
+    }));
+
+    const art = S.insights.find((a) => a.slug === this.state.slug) || S.insights[0];
+    const legal = this.state.legalDoc === 'disclaimer' ? S.legal.disclaimer : S.legal.privacy;
+
+    return {
+      ...base,
+      firmFull: p(L.firm.full),
+      navAbout: p(L.nav.about),
+      navPractice: p(L.nav.practice),
+      navPrincipal: p(L.nav.principal),
+      navContact: p(L.nav.contact),
+      navInsights: p(S.ui.insightsNav),
+      readMore: p(S.ui.readMore),
+      viewAll: p(S.ui.viewAll),
+      backHome: p(S.ui.back),
+      backList: p(S.ui.backList),
+      moreLabel: p(S.ui.more),
+      placeholderNote: p(S.ui.placeholder),
+
+      heroKicker: p(L.hero.kicker),
+      heroLine1: p(L.hero.line1),
+      heroLine2: p(L.hero.line2),
+      heroPara: p(L.hero.para),
+      heroCta: p(L.hero.cta),
+      heroCta2: p(L.hero.cta2),
+      creds: L.creds.map((c) => p(c)),
+
+      aboutLabel: p(L.about.label),
+      aboutTitle: p(L.about.title),
+      aboutPara1: p(L.about.para1),
+      aboutPara2: p(L.about.para2),
+      values: S.values.map((v, i) => ({ num: String(i + 1).padStart(2, '0'), title: p(v.title), desc: p(v.desc) })),
+
+      practiceLabel: p(L.practice_h.label),
+      practiceTitle: p(L.practice_h.title),
+      practice: L.practice.map((x, i) => ({
+        num: String(i + 1).padStart(2, '0'),
+        title: p(x.title),
+        desc: p(x.desc),
+        details: (S.practiceDetail[i] ? p(S.practiceDetail[i]) : []),
+      })),
+
+      principalLabel: p(L.principal.label),
+      principalName: p(L.principal.name),
+      principalTitle: p(L.principal.title),
+      principalIntro: p(L.principal.intro),
+      principalPlate: p(L.principal.plate),
+      eduLabel: p(L.principal.eduLabel),
+      expLabel: p(L.principal.expLabel),
+      education: L.education.map((x) => ({ school: p(x.school), degree: p(x.degree) })),
+      experience: L.experience.map((x) => ({ org: p(x.org), role: p(x.role) })),
+      teamLabel: p(L.team_h.label),
+      team: L.team.map((m, i) => ({ num: String(i + 1).padStart(2, '0'), name: p(m.name), role: p(m.role), focus: p(m.focus) })),
+
+      insightsLabel: p(S.insights_h.label),
+      insightsTitle: p(S.insights_h.title),
+      insightsPara: p(S.insights_h.para),
+      insights,
+      insightsTeaser: insights.slice(0, 3),
+
+      artCat: p(art.cat),
+      artDate: p(art.date),
+      artRead: art.read + ' ' + p(S.ui.minRead),
+      artTitle: p(art.title),
+      artLead: p(art.lead),
+      artBody: art.body.map((b) => ({ text: p(b) })),
+      artOthers: S.insights.filter((a) => a.slug !== art.slug).slice(0, 3).map((a) => ({
+        cat: p(a.cat), title: p(a.title), open: this._openArticle(a.slug),
+      })),
+
+      navPrivacy: p(S.legal.navPrivacy),
+      navDisclaimer: p(S.legal.navDisclaimer),
+      legalTitle: p(legal.title),
+      legalLead: p(legal.lead),
+      legalUpdated: p(S.legal.updated),
+      legalSections: legal.sections.map((s) => ({ h: p(s.h), p: p(s.p) })),
+
+      contactLabel: p(L.contact.label),
+      contactTitle: p(L.contact.title),
+      contactPara: p(L.contact.para),
+      email: L.contact.email,
+      phone: L.contact.phone,
+      address: p(L.contact.address),
+      contactCta: p(L.contact.cta),
+
+      lineLabel: p(S.line.label),
+      lineTitle: p(S.line.title),
+      linePara: p(S.line.para),
+      lineAccount: S.line.account,
+      lineAccountLabel: p(S.line.accountLabel),
+      lineQrNote: p(S.line.qrNote),
+
+      footerNote: p(L.footer.note),
+      footerNavLabel: p(S.footer.navLabel),
+      footerLegalLabel: p(S.footer.legalLabel),
+      footerContactLabel: p(S.footer.contactLabel),
+      copyright: p(L.footer.copyright),
+    };
+  }
+}
+</script>
+</body>
+</html>
