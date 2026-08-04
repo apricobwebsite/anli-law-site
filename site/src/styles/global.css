@@ -314,6 +314,7 @@ body.menu-open { overflow: hidden; }
     font-size: clamp(2rem, 10.4vw, 3rem);
     letter-spacing: 0.045em;
     text-wrap: balance;
+    word-break: keep-all;
   }
 
   .brand-hero-wordmark p {
