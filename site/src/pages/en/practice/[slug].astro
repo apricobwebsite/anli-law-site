@@ -1,0 +1,16 @@
+---
+import PracticePage from '../../../components/PracticePage.astro';
+import { LAW } from '../../../lib/site';
+
+export function getStaticPaths() {
+  return LAW.practice.map((p, index) => ({ params: { slug: p.slug }, props: { index } }));
+}
+
+interface Props {
+  index: number;
+}
+
+const { index } = Astro.props;
+---
+
+<PracticePage lang="en" index={index} />

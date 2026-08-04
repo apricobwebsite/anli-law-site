@@ -55,10 +55,34 @@ export const LAW = {
   practice_h: {
     label: { zh: '專業領域', en: 'Practice Areas' },
     title: { zh: '我們的執業範疇', en: 'What we practise' },
+    hint: {
+      zh: '各領域皆可點選，查看常見案件類型與詳細說明',
+      en: 'Select any area for common matters and details',
+    },
+  },
+
+  // 執業領域詳細頁 UI 文字（內容本體在 src/lib/practiceContent.ts）
+  practiceUi: {
+    more: { zh: '深入了解', en: 'Learn more' },
+    breadcrumb: { zh: '返回執業範疇', en: 'Back to practice areas' },
+    casesTitle: { zh: '常見案件類型', en: 'Common Matters We Handle' },
+    scopeTitle: { zh: '服務內容', en: 'What We Do' },
+    faqTitle: { zh: '常見問題', en: 'Frequently Asked Questions' },
+    ctaTitle: { zh: '與我們談談您的情況', en: 'Talk to us about your situation' },
+    ctaPara: {
+      zh: '每個案件的事實與時點都不同，網頁內容無法取代個案評估。歡迎來信或來電簡述您的情況，我們將安排保密的初步諮詢。',
+      en: 'Every matter turns on its own facts and timing — nothing on this page substitutes for a case-specific assessment. Write or call us with a brief outline, and we will arrange a confidential initial consultation.',
+    },
+    otherTitle: { zh: '其他執業領域', en: 'Other Practice Areas' },
+    note: {
+      zh: '本頁內容僅供一般參考，不構成針對個案的法律意見。',
+      en: 'This page is general information only and does not constitute legal advice on any specific matter.',
+    },
   },
 
   practice: [
     {
+      slug: 'family-custody',
       title: { zh: '家事、跨境親權與兒童權利', en: "Family, Cross-Border Custody & Children's Rights" },
       desc: {
         zh: '親權、交付子女與跨國親權爭議的代理，並延伸至憲法訴訟層次的權利救濟。',
@@ -66,6 +90,7 @@ export const LAW = {
       },
     },
     {
+      slug: 'labor-disputes',
       title: { zh: '勞資爭議', en: 'Employment & Labor Disputes' },
       desc: {
         zh: '僱傭關係確認、復職與各項勞動給付請求的訴訟攻防。',
@@ -73,6 +98,7 @@ export const LAW = {
       },
     },
     {
+      slug: 'civil-litigation',
       title: { zh: '財產、繼承與一般民事訴訟', en: 'Property, Succession & Civil Litigation' },
       desc: {
         zh: '共有物分割、繼承與損害賠償等財產及侵權民事事件的處理。',
@@ -80,6 +106,7 @@ export const LAW = {
       },
     },
     {
+      slug: 'intellectual-property',
       title: { zh: '智慧財產權', en: 'Intellectual Property' },
       desc: {
         zh: '專利、商標與營業秘密的佈局、授權及全球維權。',
@@ -87,6 +114,7 @@ export const LAW = {
       },
     },
     {
+      slug: 'dispute-resolution',
       title: { zh: '國際爭端解決與仲裁', en: 'Dispute Resolution & Arbitration' },
       desc: {
         zh: '跨國訴訟與國際商務仲裁的策略規劃與攻防。',
@@ -94,6 +122,7 @@ export const LAW = {
       },
     },
     {
+      slug: 'corporate-governance',
       title: { zh: '公司治理與法令遵循', en: 'Corporate Governance & Compliance' },
       desc: {
         zh: '董事會治理、法令遵循與跨境監理風險之管理。',
@@ -101,6 +130,7 @@ export const LAW = {
       },
     },
     {
+      slug: 'cross-border-business',
       title: { zh: '跨國商務與投資', en: 'Cross-Border Business & Investment' },
       desc: {
         zh: '跨境交易架構、外人投資與國際商務合約的全程法律規劃。',
@@ -108,6 +138,7 @@ export const LAW = {
       },
     },
     {
+      slug: 'tax-wealth',
       title: { zh: '稅務規劃與財富傳承', en: 'Tax Planning & Wealth Succession' },
       desc: {
         zh: '以事前規劃降低稅務風險，為資產與家族傳承建立長遠布局。',

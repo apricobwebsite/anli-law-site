@@ -27,6 +27,8 @@ export const homePath = (lang: Lang): string => (lang === 'en' ? '/en/' : '/');
 export const insightsPath = (lang: Lang): string => `${prefix(lang)}/insights/`;
 export const articlePath = (lang: Lang, slug: string): string =>
   `${prefix(lang)}/insights/${slug}/`;
+export const practicePath = (lang: Lang, slug: string): string =>
+  `${prefix(lang)}/practice/${slug}/`;
 export const legalPath = (lang: Lang, doc: 'privacy' | 'disclaimer'): string =>
   `${prefix(lang)}/${doc}/`;
 

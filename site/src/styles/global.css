@@ -602,6 +602,111 @@ a:hover { color: var(--gold-bright); }
 .cell-hover { transition: background 0.25s ease; }
 .cell-hover:hover { background: #0d0d0f; }
 
+/* ---- 首頁執業範疇卡片（可點擊） ---- */
+
+.practice-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.3s ease;
+}
+.practice-card::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.practice-card:hover,
+.practice-card:focus-visible {
+  background: var(--gold-wash);
+}
+.practice-card:hover::before,
+.practice-card:focus-visible::before {
+  transform: scaleX(1);
+}
+.practice-card:focus-visible {
+  outline: 1px solid var(--gold);
+  outline-offset: -1px;
+}
+
+.practice-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: auto;
+  padding-top: 22px;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  color: var(--gold);
+}
+.practice-cta .arr {
+  font-family: var(--font-mono);
+  transition: transform 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.practice-card:hover .practice-cta .arr,
+.practice-card:focus-visible .practice-cta .arr {
+  transform: translateX(6px);
+}
+
+/* ---- 執業領域詳細頁 ---- */
+
+.chip-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid rgba(236, 231, 223, 0.16);
+  color: var(--muted-2);
+  text-decoration: none;
+  font-size: 14.5px;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+.chip-link:hover {
+  border-color: rgba(194, 163, 104, 0.55);
+  color: var(--gold-bright);
+}
+
+.practice-faq {
+  border-top: 1px solid var(--line);
+}
+.practice-faq summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px 4px;
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--font-size-reading-detail);
+  line-height: 1.7;
+  font-weight: 600;
+  color: var(--ink);
+  transition: color 0.25s ease;
+}
+.practice-faq summary::-webkit-details-marker { display: none; }
+.practice-faq summary:hover { color: var(--gold-bright); }
+.practice-faq summary .faq-mark {
+  font-family: var(--font-mono);
+  font-size: 15px;
+  color: var(--gold);
+  flex: none;
+  transform: translateY(-1px);
+  transition: transform 0.3s ease;
+}
+.practice-faq[open] summary .faq-mark { transform: rotate(45deg); }
+.practice-faq .faq-body {
+  padding: 0 4px 26px;
+  max-width: 68ch;
+}
+
 /* 閱讀型文字：維持至少 18px，讓深色背景上的長文更容易辨識。 */
 .reading-copy {
   font-size: var(--font-size-reading);
