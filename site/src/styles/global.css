@@ -33,6 +33,10 @@
   --line-height-reading: 1.9;
 }
 
+html[lang='en'] {
+  --font-body: Archivo, 'Noto Sans TC', sans-serif;
+}
+
 * { box-sizing: border-box; }
 
 html {
