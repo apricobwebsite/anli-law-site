@@ -36,7 +36,7 @@ const enHref = lang === 'en' ? currentPath : altPath;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -48,9 +48,9 @@ const enHref = lang === 'en' ? currentPath : altPath;
       </a>
 
       <div class="nav-desktop">
+        <a class="nav-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
         <a class="nav-link" href={`${home}#about`}>{t(lang, LAW.nav.about)}</a>
         <a class="nav-link" href={`${home}#practice`}>{t(lang, LAW.nav.practice)}</a>
-        <a class="nav-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
         <a class="nav-link" href={insightsPath(lang)}>{t(lang, SITE.ui.insightsNav)}</a>
         <a class="nav-link" href={`${home}#contact`}>{t(lang, LAW.nav.contact)}</a>
         <span class="nav-sep"></span>
@@ -81,16 +81,16 @@ const enHref = lang === 'en' ? currentPath : altPath;
         <button id="menu-close" aria-label="Close" class="mm-close">✕</button>
       </div>
       <div class="mm-links">
+        <a class="mm-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
         <a class="mm-link" href={`${home}#about`}>{t(lang, LAW.nav.about)}</a>
         <a class="mm-link" href={`${home}#practice`}>{t(lang, LAW.nav.practice)}</a>
-        <a class="mm-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
         <a class="mm-link" href={insightsPath(lang)}>{t(lang, SITE.ui.insightsNav)}</a>
         <a class="mm-link gold" href={`${home}#contact`}>{t(lang, LAW.nav.contact)}</a>
       </div>
       <div class="mm-contact">
         <span class="mm-contact-label">Contact</span>
         <a class="mm-email" href={`mailto:${LAW.contact.email}`}>{LAW.contact.email}</a>
-        <span class="mm-phone">{LAW.contact.phone}</span>
+        <a class="mm-phone" href={`tel:${LAW.contact.phoneHref}`}>{LAW.contact.phone}</a>
       </div>
     </div>
 
@@ -115,9 +115,9 @@ const enHref = lang === 'en' ? currentPath : altPath;
           <span
             style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;"
           >{t(lang, SITE.footer.navLabel)}</span>
+          <a class="footer-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
           <a class="footer-link" href={`${home}#about`}>{t(lang, LAW.nav.about)}</a>
           <a class="footer-link" href={`${home}#practice`}>{t(lang, LAW.nav.practice)}</a>
-          <a class="footer-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
           <a class="footer-link" href={insightsPath(lang)}>{t(lang, SITE.ui.insightsNav)}</a>
         </div>
         <div style="display:flex; flex-direction:column; gap:12px;">
@@ -132,8 +132,20 @@ const enHref = lang === 'en' ? currentPath : altPath;
             style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;"
           >{t(lang, SITE.footer.contactLabel)}</span>
           <a class="footer-link gold" href={`mailto:${LAW.contact.email}`}>{LAW.contact.email}</a>
-          <span style="font-size:13.5px; color:#8f897f;">{LAW.contact.phone}</span>
-          <span style="font-size:13.5px; color:#8f897f;">{t(lang, LAW.contact.address)}</span>
+          <a
+            class="footer-link"
+            style="font-family:'IBM Plex Mono',monospace; letter-spacing:0.04em;"
+            href={`tel:${LAW.contact.phoneHref}`}
+          >{LAW.contact.phone}</a>
+          <address style="font-style:normal; font-size:13.5px; line-height:1.75; color:#8f897f; max-width:26ch;">
+            <span style="display:flex; align-items:baseline; gap:10px; color:#a29b90; margin-bottom:2px;">
+              <span>{t(lang, LAW.contact.office)}</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5e5a53; letter-spacing:0.1em;">
+                {LAW.contact.zip}
+              </span>
+            </span>
+            {t(lang, LAW.contact.street)}
+          </address>
           <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8f897f;">
             LINE {SITE.line.account}
           </span>

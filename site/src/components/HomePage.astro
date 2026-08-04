@@ -28,138 +28,34 @@ const title =
 <Base lang={lang} title={title} description={t(lang, LAW.hero.para)} altPath={homePath(otherLang(lang))}>
   <main>
     <!-- Hero -->
-    <section
-      style="display:flex; flex-wrap:wrap; gap:clamp(28px,5vw,72px); align-items:center; padding:clamp(40px,7vh,96px) clamp(18px,5vw,72px) clamp(40px,6vh,72px); max-width:1480px; margin:0 auto;"
-    >
-      <div style="flex:1.35 1 340px; min-width:0;">
-        <div data-reveal style="display:flex; align-items:center; gap:14px; margin-bottom:30px;">
-          <span style="width:36px; height:1px; background:#C2A368;"></span>
-          <span
-            style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.26em; text-transform:uppercase; color:#C2A368;"
-          >{t(lang, LAW.hero.kicker)}</span>
-        </div>
-        <h1
-          data-reveal
-          style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:800; font-size:clamp(2.5rem,6.2vw,5.4rem); line-height:1.04; letter-spacing:-0.02em; margin:0 0 28px; color:#F4F0E8; text-wrap:pretty;"
-        >
-          <span style="display:block;">{t(lang, LAW.hero.line1)}</span>
-          <span style="display:block; color:#C2A368;">{t(lang, LAW.hero.line2)}</span>
-        </h1>
-        <p
-          data-reveal
-          style="max-width:48ch; font-size:clamp(15px,1.15vw,17px); line-height:1.9; color:#b8b2a8; margin:0 0 36px; font-weight:300; text-wrap:pretty;"
-        >{t(lang, LAW.hero.para)}</p>
-        <div data-reveal style="display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-bottom:44px;">
-          <a href="#contact" class="btn-gold">
-            {t(lang, LAW.hero.cta)}
-            <span style="font-family:'IBM Plex Mono',monospace;">→</span>
-          </a>
-          <a href="#principal" class="link-ghost">{t(lang, LAW.hero.cta2)}</a>
-        </div>
-        <div
-          data-reveal
-          style="display:flex; align-items:center; gap:clamp(14px,2vw,30px); flex-wrap:wrap; padding-top:28px; border-top:1px solid rgba(236,231,223,0.10);"
-        >
-          <span
-            style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase;"
-          >Formation</span>
-          {LAW.creds.map((c) => (
-            <span style="font-size:13px; letter-spacing:0.06em; color:#8f897f;">{t(lang, c)}</span>
-          ))}
-        </div>
+    <section class="brand-hero" aria-labelledby="brand-hero-title">
+      <div class="brand-hero-grid" aria-hidden="true"></div>
+      <div class="brand-hero-orbit" aria-hidden="true">
+        <span class="orbit orbit-outer"></span>
+        <span class="orbit orbit-middle"></span>
+        <span class="orbit orbit-inner"></span>
+        <span class="orbit-axis orbit-axis-x"></span>
+        <span class="orbit-axis orbit-axis-y"></span>
+        <span class="orbit-dot"></span>
       </div>
 
-      <div data-reveal style="flex:1 1 300px; position:relative; min-height:clamp(380px,58vh,600px);">
-        <div style="position:absolute; inset:0; border:1px solid rgba(194,163,104,0.28);"></div>
-        <img
-          src="/assets/yang-mono.jpg"
-          alt={t(lang, LAW.principal.name)}
-          style="position:absolute; inset:14px; width:calc(100% - 28px); height:calc(100% - 28px); object-fit:cover; object-position:center 22%; filter:grayscale(0.1) contrast(1.02);"
-        />
-        <div
-          style="position:absolute; left:-13px; bottom:34px; transform:rotate(-90deg); transform-origin:left bottom; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.30em; color:#C2A368; text-transform:uppercase; white-space:nowrap;"
-        >Principal · 主持律師</div>
-      </div>
-    </section>
+      <div class="brand-hero-content">
+        <div data-reveal class="brand-hero-monogram" aria-hidden="true">A</div>
 
-    <!-- About -->
-    <section
-      id="about"
-      style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); max-width:1480px; margin:0 auto;"
-    >
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(28px,5vw,80px);">
-        <div data-reveal>
-          <div class="kicker" style="margin-bottom:18px;">01 — {t(lang, LAW.about.label)}</div>
-          <h2
-            style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.2; letter-spacing:-0.01em; margin:0; color:#F4F0E8; text-wrap:pretty;"
-          >{t(lang, LAW.about.title)}</h2>
+        <div data-reveal class="brand-hero-wordmark">
+          <h1 id="brand-hero-title">{LAW.firm.full.zh}</h1>
+          <div class="brand-hero-rule"><span></span></div>
+          <p>{LAW.firm.full.en}</p>
         </div>
-        <div data-reveal style="display:flex; flex-direction:column; gap:24px; max-width:62ch; padding-top:6px;">
-          <p style="font-size:clamp(15px,1.1vw,17px); line-height:1.95; color:#cfc9bf; margin:0; font-weight:300; text-wrap:pretty;">
-            {t(lang, LAW.about.para1)}
-          </p>
-          <p style="font-size:clamp(15px,1.1vw,17px); line-height:1.95; color:#9a948a; margin:0; font-weight:300; text-wrap:pretty;">
-            {t(lang, LAW.about.para2)}
-          </p>
+
+        <div data-reveal class="brand-hero-promise">
+          <span aria-hidden="true"></span>
+          <strong>{lang === 'zh' ? '洞見跨越疆界' : 'Foresight beyond borders'}</strong>
         </div>
-      </div>
 
-      <div
-        style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1px; margin-top:clamp(48px,7vh,86px); background:rgba(236,231,223,0.10);"
-      >
-        {SITE.values.map((v, i) => (
-          <div data-reveal class="cell-hover" style="background:#0a0a0b; padding:34px clamp(20px,2.2vw,34px) 38px;">
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C2A368; margin-bottom:20px;">
-              {String(i + 1).padStart(2, '0')}
-            </div>
-            <h3 style="font-size:clamp(17px,1.35vw,20px); font-weight:500; margin:0 0 14px; color:#ECE7DF; line-height:1.4;">
-              {t(lang, v.title)}
-            </h3>
-            <p style="font-size:14px; line-height:1.85; color:#8f897f; margin:0; font-weight:300; text-wrap:pretty;">
-              {t(lang, v.desc)}
-            </p>
-          </div>
-        ))}
-      </div>
-    </section>
-
-    <!-- Practice -->
-    <section
-      id="practice"
-      style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); max-width:1480px; margin:0 auto;"
-    >
-      <div data-reveal style="margin-bottom:52px;">
-        <div class="kicker" style="margin-bottom:18px;">02 — {t(lang, LAW.practice_h.label)}</div>
-        <h2
-          style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.16; letter-spacing:-0.01em; margin:0; color:#F4F0E8;"
-        >{t(lang, LAW.practice_h.title)}</h2>
-      </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:0;">
-        {LAW.practice.map((p, i) => (
-          <div
-            data-reveal
-            class="card-hover"
-            style="padding:32px clamp(20px,2.4vw,40px) 36px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06);"
-          >
-            <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#C2A368; margin-bottom:16px; letter-spacing:0.06em;">
-              {String(i + 1).padStart(2, '0')}
-            </div>
-            <h3 style="font-size:clamp(18px,1.4vw,21px); font-weight:500; margin:0 0 12px; color:#ECE7DF; line-height:1.35;">
-              {t(lang, p.title)}
-            </h3>
-            <p style="font-size:14px; line-height:1.75; color:#8f897f; margin:0 0 22px; font-weight:300; max-width:38ch; text-wrap:pretty;">
-              {t(lang, p.desc)}
-            </p>
-            <div style="display:flex; flex-direction:column; gap:9px; padding-top:18px; border-top:1px solid rgba(236,231,223,0.07);">
-              {(SITE.practiceDetail[i] ? tl(lang, SITE.practiceDetail[i]) : []).map((d) => (
-                <div style="display:flex; align-items:baseline; gap:10px;">
-                  <span style="width:4px; height:1px; background:#C2A368; flex:none; transform:translateY(-4px);"></span>
-                  <span style="font-size:13px; line-height:1.6; color:#a09a90; font-weight:300;">{d}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
+        <div data-reveal class="brand-hero-principal">
+          {t(lang, LAW.principal.name)} <span aria-hidden="true">｜</span> {t(lang, LAW.principal.label)}
+        </div>
       </div>
     </section>
 
@@ -169,14 +65,14 @@ const title =
       style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); background:#0c0c0e;"
     >
       <div style="max-width:1480px; margin:0 auto;">
-        <div data-reveal class="kicker" style="margin-bottom:44px;">03 — {t(lang, LAW.principal.label)}</div>
+        <div data-reveal class="kicker" style="margin-bottom:44px;">01 — {t(lang, LAW.principal.label)}</div>
         <div style="display:flex; flex-wrap:wrap; gap:clamp(30px,5vw,80px); align-items:flex-start;">
           <div data-reveal style="flex:0.8 1 280px; min-width:0;">
             <div style="position:relative; aspect-ratio:3/4; border:1px solid rgba(194,163,104,0.30);">
               <img
-                src="/assets/yang-mono.jpg"
+                src="/assets/yang-color.jpg"
                 alt={t(lang, LAW.principal.name)}
-                style="position:absolute; inset:12px; width:calc(100% - 24px); height:calc(100% - 24px); object-fit:cover; object-position:center 20%;"
+                style="position:absolute; inset:12px; width:calc(100% - 24px); height:calc(100% - 24px); object-fit:cover; object-position:center 20%; filter:saturate(0.68) sepia(0.11) contrast(1.05) brightness(0.96);"
               />
             </div>
             <div
@@ -195,6 +91,37 @@ const title =
               data-reveal
               style="font-size:clamp(15px,1.05vw,16.5px); line-height:1.95; color:#b8b2a8; margin:0 0 44px; max-width:64ch; font-weight:300; text-wrap:pretty;"
             >{t(lang, LAW.principal.intro)}</p>
+
+            <div data-reveal style="margin-bottom:clamp(36px,6vh,52px);">
+              <div style="display:flex; align-items:center; gap:10px; margin-bottom:24px;">
+                <span
+                  style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase;"
+                >{t(lang, LAW.principal.specLabel)}</span>
+                <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
+              </div>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:clamp(26px,4vw,56px);">
+                {LAW.specialties.map((s) => (
+                  <div>
+                    <div style="font-size:15px; font-weight:500; letter-spacing:0.05em; color:#ECE7DF; margin-bottom:14px;">
+                      {t(lang, s.cat)}
+                    </div>
+                    {s.lead && (
+                      <p style="font-size:13px; line-height:1.85; color:#8f897f; margin:0 0 14px; font-weight:300; text-wrap:pretty;">
+                        {t(lang, s.lead)}
+                      </p>
+                    )}
+                    <div style="display:flex; flex-direction:column; gap:9px;">
+                      {tl(lang, s.items).map((d) => (
+                        <div style="display:flex; align-items:baseline; gap:10px;">
+                          <span style="width:4px; height:1px; background:#C2A368; flex:none; transform:translateY(-4px);"></span>
+                          <span style="font-size:13.5px; line-height:1.65; color:#a09a90; font-weight:300;">{d}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
 
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:clamp(28px,4vw,56px);">
               <div data-reveal>
@@ -253,6 +180,87 @@ const title =
             ))}
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section
+      id="about"
+      style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); max-width:1480px; margin:0 auto;"
+    >
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(28px,5vw,80px);">
+        <div data-reveal>
+          <div class="kicker" style="margin-bottom:18px;">02 — {t(lang, LAW.about.label)}</div>
+          <h2
+            style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.2; letter-spacing:-0.01em; margin:0; color:#F4F0E8; text-wrap:pretty;"
+          >{t(lang, LAW.about.title)}</h2>
+        </div>
+        <div data-reveal style="display:flex; flex-direction:column; gap:24px; max-width:62ch; padding-top:6px;">
+          <p style="font-size:clamp(15px,1.1vw,17px); line-height:1.95; color:#cfc9bf; margin:0; font-weight:300; text-wrap:pretty;">
+            {t(lang, LAW.about.para1)}
+          </p>
+          <p style="font-size:clamp(15px,1.1vw,17px); line-height:1.95; color:#9a948a; margin:0; font-weight:300; text-wrap:pretty;">
+            {t(lang, LAW.about.para2)}
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1px; margin-top:clamp(48px,7vh,86px); background:rgba(236,231,223,0.10);"
+      >
+        {SITE.values.map((v, i) => (
+          <div data-reveal class="cell-hover" style="background:#0a0a0b; padding:34px clamp(20px,2.2vw,34px) 38px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C2A368; margin-bottom:20px;">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <h3 style="font-size:clamp(17px,1.35vw,20px); font-weight:500; margin:0 0 14px; color:#ECE7DF; line-height:1.4;">
+              {t(lang, v.title)}
+            </h3>
+            <p style="font-size:14px; line-height:1.85; color:#8f897f; margin:0; font-weight:300; text-wrap:pretty;">
+              {t(lang, v.desc)}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Practice -->
+    <section
+      id="practice"
+      style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); max-width:1480px; margin:0 auto;"
+    >
+      <div data-reveal style="margin-bottom:52px;">
+        <div class="kicker" style="margin-bottom:18px;">03 — {t(lang, LAW.practice_h.label)}</div>
+        <h2
+          style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.16; letter-spacing:-0.01em; margin:0; color:#F4F0E8;"
+        >{t(lang, LAW.practice_h.title)}</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:0;">
+        {LAW.practice.map((p, i) => (
+          <div
+            data-reveal
+            class="card-hover"
+            style="padding:32px clamp(20px,2.4vw,40px) 36px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06);"
+          >
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#C2A368; margin-bottom:16px; letter-spacing:0.06em;">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <h3 style="font-size:clamp(18px,1.4vw,21px); font-weight:500; margin:0 0 12px; color:#ECE7DF; line-height:1.35;">
+              {t(lang, p.title)}
+            </h3>
+            <p style="font-size:14px; line-height:1.75; color:#8f897f; margin:0 0 22px; font-weight:300; max-width:38ch; text-wrap:pretty;">
+              {t(lang, p.desc)}
+            </p>
+            <div style="display:flex; flex-direction:column; gap:9px; padding-top:18px; border-top:1px solid rgba(236,231,223,0.07);">
+              {(SITE.practiceDetail[i] ? tl(lang, SITE.practiceDetail[i]) : []).map((d) => (
+                <div style="display:flex; align-items:baseline; gap:10px;">
+                  <span style="width:4px; height:1px; background:#C2A368; flex:none; transform:translateY(-4px);"></span>
+                  <span style="font-size:13px; line-height:1.6; color:#a09a90; font-weight:300;">{d}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </section>
 
@@ -338,21 +346,32 @@ const title =
               {LAW.contact.email}
             </div>
           </a>
-          <div
-            style="display:flex; flex-wrap:wrap; gap:16px 48px; padding:24px 0; border-top:1px solid rgba(236,231,223,0.14); border-bottom:1px solid rgba(236,231,223,0.14);"
+          <a
+            href={`tel:${LAW.contact.phoneHref}`}
+            style="display:block; padding:24px 0; border-top:1px solid rgba(236,231,223,0.14); text-decoration:none;"
           >
-            <div>
-              <div
-                style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase; margin-bottom:10px;"
-              >Tel</div>
-              <div style="font-size:16px; color:#ECE7DF;">{LAW.contact.phone}</div>
+            <div
+              style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase; margin-bottom:10px;"
+            >Tel</div>
+            <div
+              style="font-family:'IBM Plex Mono',monospace; font-size:clamp(16px,1.3vw,19px); color:#ECE7DF; letter-spacing:0.04em;"
+            >{LAW.contact.phone}</div>
+          </a>
+          <div
+            style="padding:24px 0; border-top:1px solid rgba(236,231,223,0.14); border-bottom:1px solid rgba(236,231,223,0.14);"
+          >
+            <div
+              style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase; margin-bottom:10px;"
+            >Office</div>
+            <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:6px;">
+              <span style="font-size:16px; color:#ECE7DF; letter-spacing:0.04em;">{t(lang, LAW.contact.office)}</span>
+              <span
+                style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#5e5a53; letter-spacing:0.12em;"
+              >{LAW.contact.zip}</span>
             </div>
-            <div>
-              <div
-                style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase; margin-bottom:10px;"
-              >Office</div>
-              <div style="font-size:16px; color:#ECE7DF;">{t(lang, LAW.contact.address)}</div>
-            </div>
+            <address
+              style="font-style:normal; font-size:16px; line-height:1.75; color:#9a948a; max-width:34ch; text-wrap:pretty;"
+            >{t(lang, LAW.contact.street)}</address>
           </div>
           <a
             href={`mailto:${LAW.contact.email}`}

@@ -8,7 +8,7 @@ export const LAW = {
   firm: {
     initials: 'ANLI',
     short: { zh: '安理國際', en: 'ANLI' },
-    full: { zh: '安理國際法律事務所', en: 'ANLI International Law Offices' },
+    full: { zh: '安理國際法律事務所', en: 'Yang & Associates Law Firm' },
   },
 
   nav: {
@@ -59,10 +59,24 @@ export const LAW = {
 
   practice: [
     {
-      title: { zh: '跨國商務與投資', en: 'Cross-Border Commerce & Investment' },
+      title: { zh: '家事、跨境親權與兒童權利', en: "Family, Cross-Border Custody & Children's Rights" },
       desc: {
-        zh: '跨境交易架構、外人投資與國際商務合約的全程法律規劃。',
-        en: 'End-to-end counsel on cross-border deal structures, inbound investment, and international commercial contracts.',
+        zh: '親權、交付子女與跨國親權爭議的代理，並延伸至憲法訴訟層次的權利救濟。',
+        en: 'Counsel on custody, child handover, and cross-border parental disputes — extending to constitutional redress.',
+      },
+    },
+    {
+      title: { zh: '勞資爭議', en: 'Employment & Labor Disputes' },
+      desc: {
+        zh: '僱傭關係確認、復職與各項勞動給付請求的訴訟攻防。',
+        en: 'Advocacy on employment-status confirmation, reinstatement, and labor-payment claims.',
+      },
+    },
+    {
+      title: { zh: '財產、繼承與一般民事訴訟', en: 'Property, Succession & Civil Litigation' },
+      desc: {
+        zh: '共有物分割、繼承與損害賠償等財產及侵權民事事件的處理。',
+        en: 'Partition of co-owned property, succession, damages, and general tort matters.',
       },
     },
     {
@@ -86,20 +100,6 @@ export const LAW = {
         en: 'Board governance, regulatory compliance, and cross-jurisdictional risk management.',
       },
     },
-    {
-      title: { zh: '併購與企業重組', en: 'M&A & Restructuring' },
-      desc: {
-        zh: '併購交易、實地查核與企業重組的法律統籌。',
-        en: 'Legal lead on M&A, due diligence, and corporate restructuring.',
-      },
-    },
-    {
-      title: { zh: '中美與兩岸法律事務', en: 'China–U.S. & Cross-Strait Affairs' },
-      desc: {
-        zh: '橫跨中、美、台法域的商務與監理事務整合。',
-        en: 'Integrated counsel spanning the Chinese, U.S., and Taiwanese jurisdictions.',
-      },
-    },
   ],
 
   principal: {
@@ -115,8 +115,51 @@ export const LAW = {
     },
     eduLabel: { zh: '學歷', en: 'Education' },
     expLabel: { zh: '主要經歷', en: 'Experience' },
+    specLabel: { zh: '專長領域', en: 'Areas of Expertise' },
     plate: { zh: '圖版 01 — 主持律師', en: 'Plate 01 — Principal' },
   },
+
+  // 主持律師專長領域（非訟／訴訟兩類；lead 為類別引言，可省略）
+  specialties: [
+    {
+      cat: { zh: '非訟類', en: 'Advisory & Non-Contentious' },
+      lead: {
+        zh: '醫療法、藥事法、神經科學法（Neuro Law）、專利法、生物科技之倫理與法律、全民健保法制、勞基法、公平交易法等領域：',
+        en: 'Across medical law, pharmaceutical affairs law, neurolaw, patent law, the ethics and law of biotechnology, National Health Insurance regulation, labor standards, and fair trade law:',
+      },
+      items: {
+        zh: [
+          '契約審閱與法律諮詢',
+          '法律意見書',
+          '英文律師函',
+          '與美國、英國律師共同辦案（Co-counsel）',
+          '法律演說即時口譯',
+        ],
+        en: [
+          'Contract review & legal consultation',
+          'Legal opinions',
+          'Attorney letters in English',
+          'Co-counsel engagements with U.S. and U.K. attorneys',
+          'Real-time interpretation for legal addresses',
+        ],
+      },
+    },
+    {
+      cat: { zh: '訴訟類', en: 'Litigation & Contentious' },
+      items: {
+        zh: [
+          '國內外各類型民事、刑事訴訟',
+          '行政爭訟',
+          '白領勞資爭議訴訟',
+        ],
+        en: [
+          'Civil and criminal litigation of all types, domestic and international',
+          'Administrative litigation & appeals',
+          'White-collar employment litigation',
+        ],
+      },
+    },
+  ] as { cat: Bi; lead?: Bi; items: BiList }[],
 
   education: [
     {
@@ -134,6 +177,10 @@ export const LAW = {
   ],
 
   experience: [
+    {
+      org: { zh: '台北律師職業工會', en: "Taipei Lawyers' Professional Union" },
+      role: { zh: '創會理事長', en: 'Founding Chairperson' },
+    },
     {
       org: { zh: '理律法律事務所', en: 'Lee and Li, Attorneys-at-Law' },
       role: { zh: '受僱律師', en: 'Associate Attorney' },
@@ -187,8 +234,21 @@ export const LAW = {
       en: 'Write to us with a brief outline of your matter, and we will arrange a considered, confidential initial consultation.',
     },
     email: 'contact@anli-law.com',
-    phone: '+886 (0)2 2700 0000',
-    address: { zh: '台灣・台北', en: 'Taipei · Taiwan' },
+    // 顯示用電話與撥號用連結（tel: 需為連續數字）
+    phone: '+886 2 2393 6003',
+    phoneHref: '+886223936003',
+    office: { zh: '台北所', en: 'Taipei Office' },
+    zip: '10049',
+    // 街道地址（不含郵遞區號，郵遞區號另行排版）
+    street: {
+      zh: '台北市中正區仁愛路二段 68 號 6 樓',
+      en: "6F, No. 68, Sec. 2, Ren'ai Rd., Zhongzheng Dist., Taipei",
+    },
+    // 單行完整地址（用於頁尾、地圖連結等窄版位）
+    address: {
+      zh: '10049 台北市中正區仁愛路二段 68 號 6 樓',
+      en: "6F, No. 68, Sec. 2, Ren'ai Rd., Zhongzheng Dist., Taipei 10049, Taiwan",
+    },
     cta: { zh: '預約諮詢', en: 'Request a consultation' },
   },
 
@@ -196,7 +256,7 @@ export const LAW = {
     note: { zh: '立足台北・連結世界', en: 'Rooted in Taipei. Connected to the world.' },
     copyright: {
       zh: '© 2026 安理國際法律事務所　版權所有',
-      en: '© 2026 ANLI International Law Offices. All rights reserved.',
+      en: '© 2026 Yang & Associates Law Firm. All rights reserved.',
     },
   },
 };
@@ -249,8 +309,16 @@ export const SITE = {
   // 專業領域的細項（對應 LAW.practice 陣列順序）
   practiceDetail: [
     {
-      zh: ['跨境交易架構設計', '外人投資申報與許可', '國際商務合約談判', '跨國供應鏈法律風險'],
-      en: ['Cross-border deal structuring', 'Inbound investment filings', 'International contract negotiation', 'Supply-chain legal risk'],
+      zh: ['親權改定與停止親權', '交付子女與跨國親權爭議', '兒童表意權與程序保障', '憲法訴訟（111 年憲判字第 8 號）'],
+      en: ['Custody modification & termination', 'Child handover & cross-border disputes', "Children's right to be heard & due process", 'Constitutional litigation (TCC Judgment No. 8 of 2022)'],
+    },
+    {
+      zh: ['確認僱傭關係與復職', '薪資與業績獎金請求', '加班費爭議', '勞工退休金提繳'],
+      en: ['Employment confirmation & reinstatement', 'Wage & performance-bonus claims', 'Overtime pay disputes', 'Pension contributions'],
+    },
+    {
+      zh: ['共有物分割', '繼承登記與遺產分配', '損害賠償請求', '一般侵權民事訴訟'],
+      en: ['Partition of co-owned property', 'Succession registration & estate division', 'Damages claims', 'General tort litigation'],
     },
     {
       zh: ['專利與商標佈局', '授權與技術移轉', '營業秘密保護', '跨境侵權維權'],
@@ -263,14 +331,6 @@ export const SITE = {
     {
       zh: ['董事會治理架構', '法令遵循制度建置', '內部調查', '跨境監理應對'],
       en: ['Board governance', 'Compliance programmes', 'Internal investigations', 'Cross-border regulatory response'],
-    },
-    {
-      zh: ['併購交易統籌', '法律實地查核', '股權重組', '交易後整合'],
-      en: ['M&A execution', 'Legal due diligence', 'Equity restructuring', 'Post-closing integration'],
-    },
-    {
-      zh: ['兩岸投資架構', '美國市場進入', '出口管制與制裁', '跨法域爭端整合'],
-      en: ['Cross-Strait structures', 'U.S. market entry', 'Export controls & sanctions', 'Multi-jurisdiction disputes'],
     },
   ] as BiList[],
 
@@ -303,7 +363,7 @@ export const SITE = {
       title: { zh: '隱私權政策', en: 'Privacy Policy' },
       lead: {
         zh: '安理國際法律事務所（以下稱「本所」）尊重並保護您的個人資料。本政策說明本所於本網站蒐集、處理及利用個人資料之方式。',
-        en: 'ANLI International Law Offices ("the Firm") respects and protects your personal data. This policy explains how the Firm collects, processes, and uses personal data through this website.',
+        en: 'Yang & Associates Law Firm ("the Firm") respects and protects your personal data. This policy explains how the Firm collects, processes, and uses personal data through this website.',
       },
       sections: [
         {
