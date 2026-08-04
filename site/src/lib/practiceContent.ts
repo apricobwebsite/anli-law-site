@@ -30,21 +30,21 @@ export interface PracticeDetailContent {
 export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
   'family-custody': {
     metaDesc: {
-      zh: '安理國際法律事務所位於台北市中正區，處理離婚、子女監護權（親權酌定）、扶養費、夫妻剩餘財產分配、家暴保護令、會面交往與跨國親權爭議，並協助收養認可與監護宣告。初次諮詢採預約制，歡迎來電或來信預約。',
-      en: 'Yang & Associates Law Firm (ANLI) in Taipei handles divorce, child custody and support, marital property division, protection orders, adoption, guardianship, and cross-border custody disputes. Consultations by appointment.',
+      zh: '安理國際法律事務所位於台北市中正區，承辦離婚、子女監護權（親權酌定）、扶養費、夫妻剩餘財產分配、家暴保護令、會面交往與跨國親權爭議，也處理收養認可與監護宣告。諮詢採預約制，可來電或來信預約。',
+      en: 'Yang & Associates Law Firm (ANLI), Taipei: divorce, child custody and support, marital property division, protection orders, visitation, adoption, guardianship and cross-border custody disputes. Consultations by appointment.',
     },
     intro: [
       {
-        zh: '婚姻走到盡頭，最難的往往不是離婚本身，而是孩子歸誰照顧、扶養費怎麼算、財產怎麼分。有人面對家暴，需要保護令；有人則是孩子被對方帶走，甚至被擅自帶出國，連見一面都難。這些是家事案件中最常見、也最急迫的問題。',
-        en: 'When a marriage ends, the hardest questions are rarely the divorce itself: who will care for the children, how child support should be set, and how marital property is divided. Some clients face domestic violence and need a protection order; others find that the other parent has taken the child away — sometimes out of the country. These are the most common and most urgent issues in family cases.',
+        zh: '家事案件難的地方，通常不在離婚本身。孩子跟誰住、扶養費怎麼算、婚後財產怎麼分，才是談不下去的部分。也有從一開始就很急的狀況，像是遭受家暴要聲請保護令，或小孩已經被對方帶走、甚至帶出國，連見一面都得先走程序。',
+        en: 'The hard part of a family case is rarely the divorce itself. It is where the children will live, how much support gets paid, and how the marital property is divided. Some situations are urgent from day one: abuse that calls for a protection order, or a child taken away by the other parent, sometimes out of the country altogether.',
       },
       {
-        zh: '先提醒兩件事。第一，離婚、親權、扶養費這類案件，依法原則上要先經法院調解，調解不成才進入審判。第二，證據要及早保存，例如對話紀錄、驗傷單、帳戶金流；涉及家暴時，可以先聲請保護令，不必等離婚程序開始。',
-        en: 'Two practical points. First, divorce, custody, and support cases in Taiwan must generally go through court mediation before trial. Second, preserve evidence early — messages, medical records, bank statements. Where domestic violence is involved, a protection order can be sought right away, without waiting for divorce proceedings.',
+        zh: '離婚、親權、扶養費這類案件依法要先經法院調解，調解不成才進入審判，所以第一次調解談到哪裡，常常決定後面的走法。證據越早整理越好，對話紀錄、驗傷單、帳戶金流都算。涉及家暴的話，保護令可以立刻聲請，不用等離婚程序開始。',
+        en: 'Divorce, custody and child support cases in Taiwan go to court mediation before they reach trial, so how far you go in that first session tends to shape everything after it. Start gathering evidence early: messages, medical records, bank statements. Where there is domestic violence, a protection order can be applied for immediately, without waiting for the divorce to be filed.',
       },
       {
-        zh: '本所處理離婚、親權酌定與改定親權、會面交往、扶養費、交付子女、收養認可及監護宣告等事件。跨國案件中，本所與美國、英國執業律師長期協作，處理一方擅帶子女出境後的兩地程序；必要時並結合數位鑑識與金流追蹤顧問，協助清查財產。初次諮詢採預約制，請先來電或來信說明狀況。',
-        en: 'Our firm handles divorce, custody determination and modification, visitation, child support, child return proceedings, adoption, and adult guardianship matters. In cross-border cases we work with practising lawyers in the United States and the United Kingdom on proceedings in both jurisdictions, and where hidden assets are suspected we can draw on digital forensics and fund-tracing consultants. Initial consultations are by appointment — please call or email to outline your situation.',
+        zh: '本所辦理離婚、親權酌定與改定親權、會面交往、扶養費、交付子女、收養認可與監護宣告。跨國案件常與美國、英國執業律師協作，處理一方擅自帶孩子出境後台灣與當地並行的程序。懷疑脫產的案子，會結合數位鑑識與金流追蹤顧問清查財產。諮詢採預約制。',
+        en: 'We handle divorce, custody determination and modification, visitation, child support, return of children, adoption approval and adult guardianship. Cross-border matters are run alongside practising lawyers in the United States and the United Kingdom when proceedings have to move in both places at once. Where assets appear to be disappearing, we bring in digital forensics and fund-tracing consultants. Consultations are by appointment.',
       },
     ],
     cases: [
@@ -54,8 +54,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Divorce by Agreement',
         },
         desc: {
-          zh: '雙方有意離婚但條件談不攏，律師協助擬定離婚協議，把親權、扶養費與財產分配一次談清楚。',
-          en: 'When both spouses want a divorce but disagree on terms, we draft the agreement and settle custody, support, and property in one document.',
+          zh: '雙方都想離，卡在條件談不攏。我們協助擬離婚協議，把親權、扶養費與財產分配一次寫清楚。',
+          en: 'Both spouses want the divorce, just not on the same terms. We draft an agreement that settles custody, support and property in one document.',
         },
       },
       {
@@ -64,8 +64,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Contested Divorce',
         },
         desc: {
-          zh: '一方不同意離婚或協議破局時，律師評估離婚事由與證據，代理進行調解與訴訟。',
-          en: 'Where one spouse refuses to divorce or negotiations break down, we assess the statutory grounds and evidence and represent you in mediation and litigation.',
+          zh: '一方不肯離，或協議破局。我們評估法定離婚事由與現有證據，代理調解，必要時提起訴訟。',
+          en: 'If your spouse refuses to divorce or negotiations collapse, we assess the statutory grounds and the evidence behind them, then act for you in mediation and at trial.',
         },
       },
       {
@@ -74,8 +74,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Child Custody',
         },
         desc: {
-          zh: '離婚時無法就孩子歸誰達成共識，律師依子女最佳利益聲請親權酌定，爭取單獨或共同親權。',
-          en: 'When parents cannot agree on custody, we petition the court to determine parental rights based on the child\'s best interests, whether sole or joint.',
+          zh: '孩子由誰照顧談不攏時，我們依子女最佳利益聲請法院酌定親權，爭取單獨或共同行使。',
+          en: 'Parents who cannot agree on care arrangements can ask the court to decide. We build the case around the child\'s best interests, for sole or joint custody.',
         },
       },
       {
@@ -84,8 +84,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Custody Modification',
         },
         desc: {
-          zh: '行使親權的一方未盡照顧義務或不利於子女時，律師代理聲請改由他方行使親權。',
-          en: 'If the custodial parent fails in their duties or acts against the child\'s interests, we petition the court to transfer parental rights to the other parent.',
+          zh: '取得親權的一方疏於照顧，或狀況明顯不利於孩子，我們代理聲請改定親權，改由他方行使。',
+          en: 'Where the custodial parent is failing the child or the arrangement has become harmful, we petition to transfer parental rights to the other parent.',
         },
       },
       {
@@ -94,8 +94,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Child Support',
         },
         desc: {
-          zh: '對方不付或短付子女扶養費，律師協助計算合理金額、請求給付並聲請強制執行。',
-          en: 'When child support goes unpaid or underpaid, we calculate a reasonable amount, claim payment, and enforce it through the courts where necessary.',
+          zh: '扶養費被拖欠或短付，我們先推算合理金額並提出請求，取得執行名義後可聲請強制執行。',
+          en: 'Support unpaid or paid short. We work out a defensible figure, claim it, and enforce through the court when payment still does not arrive.',
         },
       },
       {
@@ -104,8 +104,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Marital Property Division',
         },
         desc: {
-          zh: '離婚時就婚後財產差額請求分配，律師協助清查財產、防止脫產，並在時效內提出請求。',
-          en: 'On divorce, we help claim the statutory distribution of remaining marital property, trace and secure assets, and act within the limitation periods.',
+          zh: '婚後財產較少的一方可請求差額分配，我們協助清查財產、聲請保全防脫產，並在時效內提出。',
+          en: 'The spouse with less post-marital property may claim half the difference. We trace assets, seek attachment when they start moving, and file within the limitation periods.',
         },
       },
       {
@@ -114,8 +114,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Domestic Violence Protection Order',
         },
         desc: {
-          zh: '遭受家庭成員肢體或精神暴力時，律師協助聲請暫時或通常保護令，並規劃後續離婚與親權程序。',
-          en: 'For victims of physical or psychological abuse by a family member, we apply for temporary or ordinary protection orders and plan the divorce and custody steps that follow.',
+          zh: '遭到家庭成員肢體或精神暴力，我們協助聲請暫時或通常保護令，並接著安排離婚與親權程序。',
+          en: 'For physical or psychological abuse by a family member, we apply for a temporary or ordinary protection order and plan the divorce and custody steps that follow.',
         },
       },
       {
@@ -124,8 +124,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Visitation Rights',
         },
         desc: {
-          zh: '離婚後探視孩子被阻撓，或探視安排一直起衝突，律師協助酌定或改定會面交往方式。',
-          en: 'When access to your child is blocked or arrangements keep breaking down, we ask the court to set or modify visitation terms.',
+          zh: '離婚後探視被刻意阻擋，或每次交接都起衝突。我們聲請法院酌定或改定會面交往的方式與時間。',
+          en: 'Access blocked, or handovers that turn into an argument every time. We ask the court to set or modify the visitation schedule.',
         },
       },
       {
@@ -134,8 +134,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Cross-Border Custody Disputes',
         },
         desc: {
-          zh: '一方擅帶子女出境或滯留國外，律師協助在台聲請暫時處分，並與外國律師協作處理返還程序。',
-          en: 'When a parent wrongfully removes or retains a child abroad, we seek provisional measures in Taiwan and coordinate return proceedings with foreign counsel.',
+          zh: '一方擅自帶孩子出境或滯留國外。我們在台聲請暫時處分，同時與當地律師協作推進返還程序。',
+          en: 'A parent removes the child from Taiwan or keeps the child abroad. We seek provisional measures here and work with local counsel on return proceedings.',
         },
       },
       {
@@ -144,8 +144,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Child Return Proceedings',
         },
         desc: {
-          zh: '對方拒不交還孩子時，律師代理聲請交付子女與暫時處分，必要時聲請強制執行。',
-          en: 'When the other parent refuses to hand over the child, we petition for return of the child and provisional measures, with compulsory enforcement if needed.',
+          zh: '對方拒絕把孩子交回來，我們代理聲請交付子女與暫時處分，對方仍不履行時聲請強制執行。',
+          en: 'When the other parent will not hand the child back, we petition for return of the child and provisional measures, with compulsory enforcement if that is ignored.',
         },
       },
       {
@@ -154,8 +154,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Adoption',
         },
         desc: {
-          zh: '收養須經法院認可才生效，律師協助評估要件、準備文件，並處理繼親與跨國收養。',
-          en: 'Adoption in Taiwan requires court approval; we assess the requirements, prepare the filings, and handle stepparent and cross-border adoptions.',
+          zh: '收養要經法院認可才生效。我們評估收養要件、備齊文件送件，繼親收養與跨國收養都承辦。',
+          en: 'Adoption takes effect only on court approval. We check the requirements, prepare the filing, and handle stepparent and cross-border adoptions.',
         },
       },
       {
@@ -164,8 +164,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Adult Guardianship',
         },
         desc: {
-          zh: '家人因失智或精神障礙無法自理事務，律師協助聲請監護或輔助宣告及監護人選任。',
-          en: 'When a family member can no longer manage their affairs due to dementia or mental incapacity, we petition for a guardianship or assistance declaration and the appointment of a guardian.',
+          zh: '家人因失智或精神障礙已無法處理自己的事務，我們協助聲請監護或輔助宣告，並處理監護人選任。',
+          en: 'Where dementia or mental incapacity leaves a family member unable to manage their affairs, we petition for a guardianship or assistance declaration and the appointment of a guardian.',
         },
       },
     ],
@@ -176,8 +176,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Do I have to go through mediation before filing for divorce in Taiwan?',
         },
         a: {
-          zh: '原則上要。離婚訴訟依家事事件法屬於調解前置的事件，起訴前應先經法院調解；就算直接起訴，法院也會先將案件移付調解。若能在調解中就親權、扶養費與財產達成共識，調解成立與確定裁判有同一效力。律師可以陪同調解，協助把條件寫清楚。',
-          en: 'Generally yes. Divorce suits in Taiwan must go through court mediation before trial; even if you file directly, the court will refer the case to mediation first. If agreement is reached in mediation on custody, support, and property, the settlement has the same effect as a final judgment. We can attend mediation with you and make sure the terms are properly recorded.',
+          zh: '要。離婚訴訟依家事事件法屬於調解前置事件，起訴前應先經法院調解，就算直接起訴，法院也會先把案件移付調解。調解不是走過場，親權、扶養費與財產都可以在這個階段一次談定，調解成立與確定裁判有同一效力。我們會陪同出席，把談成的條件確實寫進筆錄，不留模糊空間。',
+          en: 'Yes, in most cases. Under the Family Act divorce goes to court mediation before trial, and a case filed directly will simply be referred to mediation anyway. Treat it as real negotiation: custody, support and property can all be settled there, and a mediated settlement has the same effect as a final judgment. We attend with you and make sure the recorded terms leave nothing to argue about later.',
         },
       },
       {
@@ -186,8 +186,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'My ex took our child abroad without my consent. What can I do?',
         },
         a: {
-          zh: '請儘快行動。若孩子還在台灣，可以聲請暫時處分，防止被帶出境；已被帶出國的話，除了在台灣進行交付子女與親權程序，通常還須在孩子所在國另行聲請返還。台灣不是海牙兒童誘拐公約的締約國，各國處理方式不同。本所與美國、英國執業律師協作，可協助評估兩地程序怎麼走。',
-          en: 'Act quickly. If the child is still in Taiwan, provisional measures can be sought to prevent removal. If the child is already abroad, you will usually need proceedings both in Taiwan and in the country where the child is located. Taiwan is not a party to the Hague Abduction Convention, so the approach varies by country; we coordinate with U.S. and U.K. counsel to map out both tracks.',
+          zh: '動作要快。孩子還在台灣，可以先聲請暫時處分，防止被帶出境。已經被帶出國的，除了在台灣進行交付子女與親權程序，通常還得在孩子所在國另行聲請返還。台灣不是海牙兒童誘拐公約的締約國，各國處理方式差很多，實務上要看當地法院的態度。本所與美國、英國執業律師協作，可以先幫您評估兩地程序怎麼銜接。',
+          en: 'Move fast. If the child is still in Taiwan, provisional measures can be sought to prevent removal. Once the child is abroad, you generally need two tracks: proceedings in Taiwan for return of the child and parental rights, and an application in the country where the child now is. Taiwan is not a party to the Hague Abduction Convention, so what works varies a great deal by jurisdiction. We coordinate with U.S. and U.K. counsel to work out how the two fit together.',
         },
       },
       {
@@ -196,8 +196,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'How much can I claim in marital property division, and is there a deadline?',
         },
         a: {
-          zh: '原則上，是就雙方婚後財產（不含繼承或其他無償取得的財產）各自扣除債務後，由較少的一方請求差額的一半；平均分配顯失公平時，法院可以調整或免除。要注意時效：自知道有剩餘財產差額時起兩年內，且自離婚等法定財產制關係消滅時起五年內要提出。若擔心對方脫產，可以及早聲請假扣押等保全程序。',
-          en: 'As a rule, each spouse\'s post-marital property (excluding inheritances and other gratuitous acquisitions) is netted against debts, and the spouse with less may claim half the difference; the court may adjust or deny the claim where equal division would be clearly unfair. Deadlines apply: two years from learning of the difference, and no later than five years after the marital property regime ends, typically on divorce. If you suspect assets are being moved, consider provisional attachment early.',
+          zh: '算法是雙方婚後財產各自扣除債務後比較，較少的一方請求差額的一半，繼承或其他無償取得的財產不列入。平均分配顯失公平時，法院可以調整或免除。時效特別要注意：自知道有剩餘財產差額時起兩年內，且自離婚等法定財產制關係消滅時起五年內要提出。擔心對方脫產，可以及早聲請假扣押等保全程序。',
+          en: 'Each spouse\'s post-marital property is netted against debts, and the spouse with less may claim half the difference. Inheritances and other gratuitous acquisitions are excluded, and the court can adjust or deny the claim where equal division would be clearly unfair. Watch the deadlines: two years from learning of the difference, and no later than five years after the statutory property regime ends, usually on divorce. If assets look like they are being moved, apply for provisional attachment early.',
         },
       },
       {
@@ -206,29 +206,29 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'What do I need to apply for a domestic violence protection order?',
         },
         a: {
-          zh: '先確保人身安全，再保存證據：驗傷單、照片、錄音、對話紀錄與報案紀錄都有幫助。您可以向法院聲請通常或暫時保護令；情況急迫時，檢察官、警察機關或主管機關可代為聲請緊急保護令。保護令內容可包括命對方遷出、遠離、禁止聯絡，也可以暫定未成年子女由誰照顧。',
-          en: 'Safety first, then evidence: medical reports, photos, recordings, messages, and police records all help. You may apply to the court for an ordinary or temporary protection order; in urgent situations, a prosecutor, the police, or the local authority can apply for an emergency order on your behalf. A protection order can require the abuser to move out, stay away, and cease contact, and can provisionally determine who cares for the children.',
+          zh: '人身安全優先，接著把證據留下來。驗傷單、照片、錄音、對話紀錄與報案紀錄都用得上。通常保護令與暫時保護令由當事人向法院聲請，情況急迫時，檢察官、警察機關或主管機關也可以代為聲請緊急保護令。保護令內容可以命對方遷出住所、遠離特定場所、禁止聯絡，也能暫時定未成年子女由誰照顧。',
+          en: 'Safety first, evidence next: medical reports, photos, recordings, messages, police records. You can apply to the court for an ordinary or temporary protection order, and in urgent situations a prosecutor, the police or the competent authority can apply for an emergency order on your behalf. An order can require the other party to move out, stay away and stop all contact, and can provisionally decide who the children live with.',
         },
       },
     ],
   },
   'labor-disputes': {
     metaDesc: {
-      zh: '遭遇非法解僱、資遣費或加班費爭議？安理國際法律事務所位於台北市中正區，處理確認僱傭關係、復職、競業禁止條款與職場性騷擾等勞資爭議，從勞動局調解到勞動事件法訴訟全程協助。初次諮詢採預約制，歡迎來電或來信預約。',
-      en: 'Yang & Associates Law Firm (ANLI) in Taipei handles wrongful termination, severance, overtime, and other employment disputes for professionals — from labor bureau mediation to litigation under Taiwan\'s Labor Incident Act. Consultations by appointment.',
+      zh: '非法解僱、資遣費短少、加班費追討，都是白領常遇到的勞資爭議。安理國際法律事務所位於台北市中正區，處理確認僱傭關係與復職、競業禁止條款、職場性騷擾等案件，從勞動局調解到勞動事件法訴訟。諮詢採預約制。',
+      en: 'Yang & Associates Law Firm (ANLI), Taipei: wrongful termination, severance, overtime, non-competes, and workplace harassment for managers and professionals, from labor bureau mediation to litigation under the Labor Incident Act. Consultations by appointment.',
     },
     intro: [
       {
-        zh: '被公司突然資遣，資遣費卻算得比預期少；或被以「不能勝任」為由解僱，要求當天走人；加班多年沒領過加班費；在公司遭遇性騷擾或職場霸凌，申訴後反而被調職、減薪。如果這些情境讓您覺得熟悉，第一步是把自己的權利算清楚。',
-        en: 'A sudden layoff with severance that seems too low. A dismissal for "poor performance" with orders to leave the same day. Years of unpaid overtime. Harassment or bullying at work, followed by a transfer or pay cut after you complained. If any of this sounds familiar, the first step is knowing exactly what you are owed.',
+        zh: '公司說要資遣，資遣費卻算得比自己估的少一截。或者以「不能勝任工作」為由，要求當天走人。加班多年，加班費從沒進過帳。申訴性騷擾或職場霸凌之後，換來的是調職、減薪。這幾類爭議的處理順序其實一樣：先把金額算出來，再決定要走哪個程序。',
+        en: 'A layoff where the severance figure lands well below what you calculated. A dismissal for "poor performance" with instructions to clear your desk the same day. Years of overtime that never reached a payslip. A transfer or a pay cut arriving shortly after you reported harassment or bullying. The sequence is the same in each case: work out what you are owed, then pick the forum.',
       },
       {
-        zh: '兩件事先記住。第一，多數爭議可以先向勞動局申請勞資爭議調解，不收費，而且調解期間雇主不得因該爭議解僱您或做其他不利處分。第二，進了法院，勞動事件法對勞工較有利：出勤紀錄上的時間原則上推定為工作時間，請求工資、資遣費或確認僱傭關係的訴訟，起訴時可暫免徵收三分之二的裁判費。',
-        en: 'Two things are worth knowing. Most disputes can first go to free mediation at the local labor bureau, and while mediation is pending your employer may not dismiss you or take other adverse action over the dispute. In court, the Labor Incident Act works in employees\' favor: hours shown in attendance records are presumed to be working time, and in claims for wages, severance pay, or confirmation of employment, two-thirds of the court filing fee is provisionally waived.',
+        zh: '多數爭議可以先向勞動局申請勞資爭議調解，不收費，調解期間雇主也不得因該爭議解僱勞工或做其他不利處分。案子真的進了法院，勞動事件法有幾處對勞工有利。出勤紀錄上的時間原則上推定為工作時間。請求工資、資遣費或確認僱傭關係的訴訟，起訴時暫免徵收三分之二的裁判費。',
+        en: 'Most disputes can start with free mediation at the local labor bureau, and while it is pending your employer may not dismiss you or take other adverse action over the dispute. In court, the Labor Incident Act tilts several rules toward employees. Hours shown in attendance records are presumed to be working time. In claims for wages, severance pay, or confirmation of employment, two-thirds of the court filing fee is provisionally waived at the outset.',
       },
       {
-        zh: '證據要趁在職時保存：出勤紀錄、薪資單、獎金辦法、勞退專戶明細、往來訊息，離職後常常拿不到。安理國際法律事務所位於台北市中正區，為主管與專業人士處理白領勞資爭議，從發函、調解陪同到訴訟，由律師替您核算金額、擬定策略。初次諮詢採預約制，歡迎來電或來信預約。',
-        en: 'Preserve evidence while you are still employed — attendance records, payslips, bonus plans, pension account statements, and work messages are hard to obtain after you leave. ANLI, based in Taipei\'s Zhongzheng District, handles white-collar employment disputes for managers and professionals, from demand letters and accompanied mediation through litigation — calculating what you are owed and planning the strategy. Initial consultations are by appointment.',
+        zh: '證據要趁在職時拿。出勤紀錄、薪資單、獎金辦法、勞退專戶明細、主管交辦工作的訊息，離職後往往就調不到了。安理國際法律事務所在台北市中正區，處理主管與專業人士的白領勞資爭議，從發函、陪同調解到訴訟，核算金額與擬定策略都由律師負責。諮詢採預約制。',
+        en: 'Collect the evidence while you are still employed. Attendance records, payslips, bonus plans, labor pension account statements, and messages assigning work are usually out of reach once you have left. Yang & Associates Law Firm (ANLI) is based in Taipei\'s Zhongzheng District and handles white-collar employment disputes for managers and professionals, from demand letters through accompanied mediation to litigation, with the calculations and the strategy handled by a lawyer. Consultations are by appointment.',
       },
     ],
     cases: [
@@ -238,8 +238,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Wrongful Termination',
         },
         desc: {
-          zh: '解僱不符勞基法法定事由即屬違法，律師協助提起確認僱傭關係之訴，請求復職與補發工資。',
-          en: 'A dismissal without statutory grounds under the Labor Standards Act is unlawful. We sue to confirm the employment relationship and seek reinstatement and back pay.',
+          zh: '解僱要有勞基法的法定事由，沒有就是違法。律師提起確認僱傭關係之訴，請求復職與補發工資。',
+          en: 'Dismissal without statutory grounds under the Labor Standards Act is unlawful. We sue to confirm the employment relationship and seek reinstatement with back pay.',
         },
       },
       {
@@ -248,8 +248,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Severance Pay Disputes',
         },
         desc: {
-          zh: '遭資遣但公司短算年資或平均工資，律師重新核算資遣費與預告工資，透過調解或訴訟請求補足。',
-          en: 'When an employer miscalculates seniority or average wages, we recompute severance and notice-period pay and recover the shortfall through mediation or litigation.',
+          zh: '年資起算日或平均工資被公司算低，資遣費就會短少。律師重新核算，連同預告工資一併請求。',
+          en: 'Employers often shorten your seniority or understate average wages. We recalculate severance and notice pay, then pursue the shortfall in mediation or court.',
         },
       },
       {
@@ -258,8 +258,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Overtime Pay Claims',
         },
         desc: {
-          zh: '長期加班未領加班費，律師依出勤紀錄與通訊紀錄舉證工時，替您追討五年內的加班費。',
-          en: 'We establish actual working hours through attendance records and messaging logs and claim up to five years of unpaid overtime.',
+          zh: '加班多年沒領過加班費，關鍵在工時怎麼證明。律師以出勤紀錄、通訊紀錄舉證，追討五年內金額。',
+          en: 'The fight is over hours. We prove them from attendance records and work messages, and claim up to five years of unpaid overtime.',
         },
       },
       {
@@ -268,8 +268,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Occupational Injury Compensation',
         },
         desc: {
-          zh: '因工作受傷或罹病，協助請求醫療費、工資補償與職災保險給付，醫療期間雇主原則上不得解僱。',
-          en: 'For work-related injury or illness, we claim medical costs, wage compensation, and occupational accident insurance benefits; dismissal during the treatment period is generally barred.',
+          zh: '因工作受傷或罹病，可請求醫療費、工資補償與職災保險給付。醫療期間雇主原則上不得解僱。',
+          en: 'For work-related injury or illness we claim medical costs, wage compensation, and occupational accident insurance benefits. Dismissal during treatment is generally barred.',
         },
       },
       {
@@ -278,8 +278,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Non-Compete Clauses',
         },
         desc: {
-          zh: '前公司以競業禁止條款求償或阻止轉職，律師檢視有無合理補償與範圍限制，主張條款無效。',
-          en: 'When a former employer sues you or tries to block your next job, we test the clause against the statutory requirements — legitimate business interest, reasonable scope, and compensation — and argue that it is void or that liability should be reduced.',
+          zh: '前公司以競業禁止條款求償或阻止轉職時，律師檢視有無合理補償與範圍限制，據以主張條款無效。',
+          en: 'Facing a non-compete claim, or a blocked move to a competitor? We test the clause for compensation and reasonable scope and argue that it is void.',
         },
       },
       {
@@ -288,8 +288,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Workplace Sexual Harassment',
         },
         desc: {
-          zh: '遭遇職場性騷擾，律師協助內部申訴、向勞動局申訴並請求賠償，雇主未盡防治義務亦須負責。',
-          en: 'We assist with internal complaints, complaints to the local labor authority, and damages claims; an employer that fails its prevention duties is also liable.',
+          zh: '律師協助提出內部申訴、向勞動局申訴並請求賠償。雇主未盡防治義務的，也要一起負責。',
+          en: 'We handle internal complaints, complaints to the labor authority, and damages claims. An employer that neglects its prevention duties is liable too.',
         },
       },
       {
@@ -298,8 +298,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Workplace Bullying',
         },
         desc: {
-          zh: '遭主管或同事長期霸凌，律師協助保全證據、提出申訴，並向雇主與行為人請求損害賠償。',
-          en: 'For sustained bullying by supervisors or colleagues, we preserve evidence, file complaints, and pursue damages against both the employer and the individual responsible.',
+          zh: '長期被主管或同事霸凌，第一步是保全證據。律師協助提出申訴，並向雇主與行為人請求損害賠償。',
+          en: 'Sustained bullying by a supervisor or colleague: we secure the evidence, file the complaint, and claim damages from both the employer and the individual.',
         },
       },
       {
@@ -308,8 +308,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Underpaid Pension Contributions',
         },
         desc: {
-          zh: '雇主未依實際薪資足額提繳6%勞退金，律師協助核對勞退專戶明細，請求補繳差額或損害賠償。',
-          en: 'When an employer underreports wages to reduce the 6% labor pension contribution, we audit your pension account records and claim the shortfall or damages.',
+          zh: '雇主用低於實際薪資的級距提繳6%勞退金，律師核對勞退專戶明細，請求補繳差額或損害賠償。',
+          en: 'Reporting wages below the real figure underpays the 6% pension contribution. We audit your pension account records and claim the shortfall or damages.',
         },
       },
       {
@@ -318,8 +318,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Performance Bonus Disputes',
         },
         desc: {
-          zh: '公司拒發已達標的業績獎金或片面修改獎金制度，律師依契約與慣例請求給付並主張工資性質。',
-          en: 'When a company withholds bonuses you have earned or changes the bonus plan unilaterally, we claim payment under the contract and established practice and argue that the bonuses count as wages.',
+          zh: '已達標的獎金公司不發，或片面改掉獎金制度。律師依契約與給付慣例請求，並主張獎金具工資性質。',
+          en: 'Bonuses earned but withheld, or a plan rewritten overnight. We claim payment under the contract and past practice, arguing the bonus counts as wages.',
         },
       },
       {
@@ -328,8 +328,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Labor Dispute Mediation',
         },
         desc: {
-          zh: '律師代理或陪同出席勞動局勞資爭議調解，事先核算請求金額與整理證據，談判並把關和解條款。',
-          en: 'We represent or accompany you in labor bureau mediation — quantifying claims and organizing evidence beforehand, negotiating, and vetting the settlement terms.',
+          zh: '勞動局的勞資爭議調解，律師可代理或陪同出席，事先算好請求金額、整理證據，並把關和解條款。',
+          en: 'We attend labor bureau mediation with you or for you, with the claim quantified and the evidence organized beforehand, and we vet any settlement before you sign.',
         },
       },
       {
@@ -338,8 +338,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Unlawful Transfers and Pay Cuts',
         },
         desc: {
-          zh: '遭片面調職、減薪或變相逼退，律師檢視是否符合調動五原則，協助異議並請求回復原職原薪。',
-          en: 'For unilateral transfers, pay cuts, or constructive-dismissal tactics, we test the measure against the statutory transfer principles and seek restoration of your original position and pay.',
+          zh: '片面調職、減薪或變相逼退，先看是否符合調動五原則。律師協助提出異議，請求回復原職原薪。',
+          en: 'Unilateral transfers, pay cuts, pressure to quit: we test the measure against the statutory transfer principles and seek your original post and pay back.',
         },
       },
       {
@@ -348,8 +348,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Involuntary Separation Certificates',
         },
         desc: {
-          zh: '被迫簽自願離職或拿不到非自願離職證明會影響失業給付，律師協助應對並爭取正確記載。',
-          en: 'Being pressured to "resign voluntarily" or denied a separation certificate can cost you unemployment benefits; we help you respond and secure an accurate record.',
+          zh: '被要求簽自願離職，或拿不到非自願離職證明，會影響失業給付。律師協助應對並爭取正確記載。',
+          en: 'Pressure to sign a voluntary resignation, or a withheld separation certificate, can cost you unemployment benefits. We push back and get the record stated correctly.',
         },
       },
     ],
@@ -360,8 +360,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'I was fired illegally — can I get my job back?',
         },
         a: {
-          zh: '可以。公司解僱勞工必須符合勞基法的法定事由，不是想解僱就能解僱。若解僱違法，您可以提起確認僱傭關係存在的訴訟，請求復職並補發解僱期間的工資；符合一定要件時，還可以依勞動事件法聲請法院裁定，命公司在訴訟期間繼續僱用並給付工資。提醒您：不要簽任何自願離職文件，並盡早保存解僱通知與相關證據。',
-          en: 'Yes, if the dismissal was unlawful. An employer may dismiss only on statutory grounds under the Labor Standards Act. If yours lacked them, you can sue to confirm the employment relationship and seek reinstatement and back pay, and under the Labor Incident Act you may — subject to certain requirements — ask the court to order continued employment and wage payments while the case is pending. Do not sign anything framed as a voluntary resignation, and preserve the dismissal notice and related evidence early.',
+          zh: '可以。解僱必須有勞基法的法定事由，公司不是想解僱就能解僱。解僱違法時，可以提起確認僱傭關係存在的訴訟，請求復職並補發解僱期間的工資。符合一定要件時，還可以依勞動事件法聲請法院裁定，命公司在訴訟期間繼續僱用並給付工資。收到解僱通知後，先別簽任何寫成自願離職的文件，通知本身和相關證據都留著。',
+          en: 'Yes, where the dismissal was unlawful. Statutory grounds under the Labor Standards Act are required; without them you can sue to confirm the employment relationship and seek reinstatement plus back pay for the period. Where the requirements are met, the Labor Incident Act also lets you ask the court to order your employer to keep employing you and paying wages while the case runs. Sign nothing that describes your exit as a voluntary resignation, and keep the dismissal notice and the evidence around it.',
         },
       },
       {
@@ -370,8 +370,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'How many years of overtime pay can I claim, and what evidence do I need?',
         },
         a: {
-          zh: '加班費屬於工資，請求權時效是五年，超過五年的部分原則上要不回來。證據以出勤紀錄最重要：雇主依法必須置備並保存出勤紀錄，勞工可以要求提供副本，訴訟中法院也可命雇主提出，紀錄上的時間原則上推定為工作時間。另外，交辦工作的訊息、電子郵件、班表都能佐證，建議在職時就先備份。',
-          en: 'You can claim up to five years of overtime pay; anything older is generally time-barred. Attendance records are the key evidence: employers must keep them by law, you are entitled to request copies, courts can order their production, and the hours recorded are presumed to be working time. Work-assignment messages, emails, and shift schedules also help. Back everything up while you are still employed.',
+          zh: '加班費是工資，請求權時效五年，超過的部分原則上要不回來。證據裡出勤紀錄最重要：雇主依法必須置備並保存出勤紀錄，勞工可以要求提供副本，訴訟中法院也能命雇主提出，紀錄上的時間原則上推定為工作時間。交辦工作的訊息、電子郵件、班表也能佐證。這些在職時就先備份。',
+          en: 'Five years. Anything older is generally time-barred. Attendance records carry the most weight: employers must keep them by law, you can request copies, the court can order their production, and the hours recorded are presumed to be working time. Work-assignment messages, emails, and shift schedules fill the gaps. Back all of it up before you leave.',
         },
       },
       {
@@ -380,8 +380,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Do I have to go through labor bureau mediation before suing my employer?',
         },
         a: {
-          zh: '不是強制，但通常建議先申請。向勞動局申請勞資爭議調解不收費，調解期間雇主不得因該爭議解僱您或做其他不利處分。調解不成再走法院；進了法院，依勞動事件法原則上也會先進行法官主持的勞動調解。許多案件在調解階段就能解決，律師可以代理出席，事先把請求項目與金額算清楚。',
-          en: 'No, mediation is not mandatory, but it is usually worth trying first. Labor bureau mediation is free, and while it is pending your employer may not dismiss you or take other adverse action over the dispute. If mediation fails you can sue — and under the Labor Incident Act, court proceedings themselves generally begin with judge-led labor mediation. Many disputes settle at this stage; a lawyer can represent you and quantify your claims beforehand.',
+          zh: '不強制，但通常建議先走一趟。向勞動局申請勞資爭議調解不收費，調解期間雇主不得因該爭議解僱勞工或做其他不利處分。調解不成再進法院，依勞動事件法原則上也會先進行法官主持的勞動調解。實務上不少案件在調解階段就解決了。律師可以代理出席，事先把請求項目與金額算清楚。',
+          en: 'It is not mandatory, though it is usually the right first step. Labor bureau mediation costs nothing, and while it is pending your employer may not dismiss you or take other adverse action over the dispute. If it fails you can sue, and under the Labor Incident Act the court itself generally begins with judge-led labor mediation. A fair number of cases end there. A lawyer can appear for you and put a figure on each item of the claim first.',
         },
       },
       {
@@ -390,29 +390,29 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'I signed a non-compete — am I really barred from joining a competitor?',
         },
         a: {
-          zh: '不一定。依勞基法，離職後競業禁止約定必須同時符合幾個要件才有效：公司有應受保護的正當營業利益、您的職務接觸得到營業秘密、限制的期間（最長兩年）、區域與職業範圍合理、公司對您離職後不從事競業的損失有給合理補償。缺少任何一項，約定無效。收到存證信函或被求償時，先別急著認賠，帶著契約讓律師評估。',
-          en: 'Not necessarily. Under the Labor Standards Act, a post-employment non-compete is valid only if every statutory requirement is met: the employer has a legitimate interest worth protecting, your role gave you access to trade secrets, the restriction is reasonable in duration (two years at most), territory, and scope, and the employer pays reasonable compensation for the restricted period after you leave. If any element is missing, the clause is void. Before conceding to a demand letter, have a lawyer review the agreement.',
+          zh: '不一定。依勞基法，離職後競業禁止約定要同時具備幾個要件才有效：公司有應受保護的正當營業利益、勞工的職務接觸得到營業秘密、限制的期間（最長兩年）與區域、職業範圍合理，以及公司對勞工離職後不從事競業的損失有給合理補償。少一項，約定就無效。收到存證信函或被求償，先別急著認賠，帶著契約讓律師評估。',
+          en: 'Often not. Under the Labor Standards Act, a post-employment non-compete binds you only if every element is present: a legitimate business interest worth protecting, a role that gave you access to trade secrets, reasonable limits on duration (two years at most), territory and scope of work, and reasonable compensation from the employer for the restricted period after you leave. Miss one and the clause is void. If a demand letter arrives, take the agreement to a lawyer before conceding anything.',
         },
       },
     ],
   },
   'civil-litigation': {
     metaDesc: {
-      zh: '安理國際法律事務所位於台北市中正區，處理遺產分割、特留分、遺囑、拋棄繼承、借名登記、共有物分割、債務糾紛、返還房屋、租賃押金與車禍損害賠償，並協助支付命令、本票裁定與強制執行。初次諮詢採預約制。',
-      en: 'Yang & Associates Law Firm (ANLI) in Taipei handles estate division, reserved portion claims, wills, co-ownership partition, nominee registration disputes, debt recovery, traffic accident damages, and enforcement proceedings. Consultations by appointment.',
+      zh: '安理國際法律事務所在台北市中正區執業，承辦遺產分割、特留分扣減、遺囑、拋棄繼承、借名登記、共有物分割、債務糾紛、返還房屋、租賃押金與車禍求償，也代理支付命令、本票裁定及強制執行程序。諮詢請先預約。',
+      en: 'Yang & Associates Law Firm (ANLI), Taipei: estate division, reserved portion claims, wills, renunciation of inheritance, co-ownership partition, nominee registration disputes, debt recovery, property recovery, traffic accident claims and enforcement. By appointment.',
     },
     intro: [
       {
-        zh: '家人過世後，遺產怎麼分談不攏；登記在親友名下的房子，對方不認帳；共有土地想處理，其他共有人不點頭；借出去的錢要不回來；出了車禍，不知道能求償哪些項目。這些都是財產與一般民事糾紛最常見的樣子。多數人不是不想解決，而是不知道第一步怎麼走。',
-        en: 'A parent passes away and the heirs cannot agree on dividing the estate. A house registered under a relative\'s name is not being returned. A co-owner blocks any dealing with shared land. A loan goes unpaid, or a traffic accident leaves you unsure what you can claim. These are the most common property and civil disputes we see — and most people are stuck not because they refuse to act, but because they do not know where to start.',
+        zh: '遺產怎麼分，繼承人各有各的算盤。房子當年登記在親戚名下，現在對方不認帳。共有土地想處理，其他共有人不簽名。借出去的錢拖著不還，車禍後對方只肯賠一部分。這些是我們日常在辦的財產與一般民事案件，卡住的地方通常不是道理講不通，是不知道下一步該做什麼。',
+        en: 'Heirs who cannot agree on how to divide an estate. A house put in a relative\'s name years ago that the nominee now refuses to return. A co-owner who will not sign off on shared land. A loan that never comes back, or an insurer offering a fraction of what the accident actually cost. This is the everyday substance of property and general civil work. In most of these matters the law is not the hard part; knowing what to do first is.',
       },
       {
-        zh: '先記住兩件事。第一，權利有時效：車禍這類侵權行為的損害賠償，原則上要在知悉損害及賠償義務人時起兩年內請求。第二，打官司不是唯一選項：在法院成立的調解，或在公所調解委員會成立並經法院核定的調解，與確定判決有同一效力，對方不履行時可以聲請強制執行。',
-        en: 'Two things are worth knowing early. First, claims expire: damages for torts such as traffic accidents must generally be claimed within two years of learning of the injury and the person liable. Second, a lawsuit is not the only route: a settlement mediated in court, or reached before a township mediation committee and ratified by the court, has the same effect as a final judgment and can be enforced if the other side fails to comply.',
+        zh: '時效要先看。車禍這類侵權行為的損害賠償，原則上從知悉損害及賠償義務人時起兩年內要請求，拖過了就算有理也難救。解決途徑也不只有起訴。在法院成立的調解，或在公所調解委員會成立並經法院核定的調解，與確定判決有同一效力，對方不履行，一樣可以聲請強制執行。',
+        en: 'Check the clock first. Damages for torts such as a traffic accident must generally be claimed within two years of learning of the injury and of who is liable, and a strong case expires along with the deadline. Litigation is also not the only route. A settlement mediated in court, or reached before a township mediation committee and ratified by the court, has the same effect as a final judgment and can be enforced if the other side does not perform.',
       },
       {
-        zh: '安理國際法律事務所位於台北市中正區，主持律師為美國柏克萊加州大學法律科學博士。從遺囑規劃、拋棄繼承、支付命令到強制執行，我們會依個案情況分析各種途徑的時間與費用，協助您選擇合適的作法。初次諮詢採預約制，請以電話或 email 與我們聯繫。',
-        en: 'Yang & Associates Law Firm (ANLI) is based in Taipei\'s Zhongzheng District, and its principal attorney holds a J.S.D. from UC Berkeley. From will planning and renunciation of inheritance to payment orders and enforcement, we lay out the available routes with their likely time and cost so you can choose a sensible path. Initial consultations are by appointment — contact us by phone or email.',
+        zh: '安理國際法律事務所在台北市中正區，主持律師取得美國加州大學柏克萊分校法律科學博士（J.S.D.）學位。從遺囑規劃、拋棄繼承、支付命令到強制執行，我們會把可行的幾條路和各自要花的時間、費用講清楚，再一起決定怎麼做。案件諮詢採預約制，電話或 email 都能約時間。',
+        en: 'Yang & Associates Law Firm (ANLI) practises in Zhongzheng District, Taipei; our principal attorney holds a J.S.D. from UC Berkeley. Whether the matter is a will, a renunciation of inheritance, a payment order or an enforcement action, we set out the workable routes with the time and cost each carries, and decide with you which to take. Consultations are by appointment, arranged by phone or email.',
       },
     ],
     cases: [
@@ -422,8 +422,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Estate Division',
         },
         desc: {
-          zh: '繼承人對怎麼分談不攏時，協助協商、調解或訴請法院分割遺產，並處理後續繼承登記。',
-          en: 'When heirs cannot agree on dividing the estate, we negotiate, mediate, or petition the court for partition, and handle inheritance registration.',
+          zh: '繼承人對分法各執一詞時，先談協議，談不成就聲請調解或訴請法院分割，之後的繼承登記一併處理。',
+          en: 'When heirs are split over how to divide, we negotiate first, then mediate or petition the court for partition, and finish the inheritance registration.',
         },
       },
       {
@@ -432,8 +432,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Reserved Portion Claims',
         },
         desc: {
-          zh: '遺囑把財產全給特定人而侵害特留分時，協助計算應得比例，行使扣減權追回不足部分。',
-          en: 'Where a will leaves nearly everything to one person, we calculate the reserved portion and claim back the shortfall through abatement.',
+          zh: '遺囑把財產幾乎都給了一個人，其他繼承人仍有特留分。我們算出應得比例，代為行使扣減權追回不足部分。',
+          en: 'A will that leaves almost everything to one person still cannot defeat the reserved portion. We calculate the shortfall and pursue abatement.',
         },
       },
       {
@@ -442,8 +442,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Will Drafting',
         },
         desc: {
-          zh: '協助訂立自書遺囑、代筆遺囑或公證遺囑，把關法定要件，降低日後無效或爭產的風險。',
-          en: 'We help you execute holographic, dictated, or notarized wills that meet statutory formalities, reducing the risk of invalidity or later disputes.',
+          zh: '自書、代筆或公證遺囑各有法定要件，一項不合就可能整份無效。由律師把關形式與內容，減少日後爭產。',
+          en: 'Holographic, dictated and notarised wills each carry strict formalities, and one defect can void the entire document. We handle drafting and execution so the form holds up.',
         },
       },
       {
@@ -452,8 +452,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Renunciation of Inheritance',
         },
         desc: {
-          zh: '被繼承人負債多於遺產時，協助在知悉得繼承時起三個月內，以書面向法院辦理拋棄繼承。',
-          en: 'When the deceased leaves more debts than assets, we file the written renunciation with the court within the three-month statutory period.',
+          zh: '被繼承人債務多過遺產時要考慮拋棄，期限是知悉得繼承時起三個月，須以書面向法院提出，由我們代辦。',
+          en: 'If the deceased leaves more debt than assets, renouncing is worth considering. The filing is written, goes to the court, and must be made within three months of learning you are an heir.',
         },
       },
       {
@@ -462,8 +462,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Nominee Registration Disputes',
         },
         desc: {
-          zh: '不動產借名登記在他人名下、對方拒不返還時，協助蒐集出資證據，終止契約並訴請移轉登記。',
-          en: 'When property registered in another\'s name is not returned, we gather evidence of who paid, terminate the arrangement, and sue to recover title.',
+          zh: '房子錢是你出的，登記卻在別人名下，對方不肯還。我們整理出資與使用管理證據，終止借名並訴請移轉登記。',
+          en: 'You paid for the property, someone else holds the title, and they will not hand it back. We assemble the evidence of payment and control, terminate the arrangement and sue for transfer.',
         },
       },
       {
@@ -472,8 +472,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Partition of Co-Owned Property',
         },
         desc: {
-          zh: '共有土地或房屋無法協議分割時，協助協商分割方案，或訴請法院判決原物分割或變價分割。',
-          en: 'When co-owners are deadlocked, we negotiate a division plan or ask the court to order partition in kind or sale by auction.',
+          zh: '共有土地或房屋，一人不同意就動不了。我們先談分割方案，談不成則訴請法院判決原物分割或變價分割。',
+          en: 'A single holdout co-owner can freeze a property indefinitely. We work out a division plan, or ask the court to order partition in kind or sale by auction.',
         },
       },
       {
@@ -482,8 +482,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Debt Recovery',
         },
         desc: {
-          zh: '欠錢不還、借款或貨款收不回時，協助催告、聲請支付命令或起訴，並視情況聲請假扣押保全。',
-          en: 'For unpaid loans and receivables, we send formal demands, seek payment orders or sue, and apply for provisional attachment where needed.',
+          zh: '借款或貨款要不回來，我們先發函催告，再依情況聲請支付命令或起訴。對方可能脫產的，同時聲請假扣押保全。',
+          en: 'For unpaid loans and invoices, we start with a formal demand, then a payment order or suit. Where the debtor may shift assets, we seek provisional attachment at the same time.',
         },
       },
       {
@@ -492,8 +492,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Recovery of Real Property',
         },
         desc: {
-          zh: '房屋被無權占用或租約到期不搬遷時，協助訴請返還房屋，並請求相當於租金的不當得利。',
-          en: 'Against unlawful occupants or holdover tenants, we sue to recover the premises and claim rent-equivalent unjust enrichment.',
+          zh: '房子被人占著不走，或租約到期還賴著，可以訴請返還房屋，另外請求相當於租金的不當得利。',
+          en: 'Squatters and holdover tenants can be removed by suit, with a parallel claim for unjust enrichment equal to the rent they should have paid.',
         },
       },
       {
@@ -502,8 +502,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Rental Deposit Disputes',
         },
         desc: {
-          zh: '房東扣住押金不還，或就屋況損害各說各話時，協助釐清責任，透過調解或訴訟取回押金。',
-          en: 'When a landlord withholds a deposit or damage is disputed, we clarify liability and recover the deposit through mediation or litigation.',
+          zh: '退租時房東扣住押金，屋況損害誰該負責又各說各話。我們釐清責任範圍，走調解或訴訟把押金要回來。',
+          en: 'The landlord keeps the deposit, the tenant disputes the damage. We pin down who is responsible and recover the deposit through mediation or, if that fails, court.',
         },
       },
       {
@@ -512,8 +512,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Traffic Accident Claims',
         },
         desc: {
-          zh: '車禍受傷或車輛受損時，協助申請鑑定釐清肇責，計算醫療費、薪資損失與慰撫金後求償。',
-          en: 'After an accident, we obtain fault assessments and pursue claims for medical costs, lost income, vehicle repairs, and pain and suffering.',
+          zh: '車禍受傷或車輛受損，肇責常有爭議。我們申請鑑定釐清責任，計算醫療費、薪資損失與慰撫金後提出求償。',
+          en: 'Where fault is contested, we obtain the official assessment, then quantify medical costs, lost income, repairs and pain and suffering before making the claim.',
         },
       },
       {
@@ -522,8 +522,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Promissory Note Rulings',
         },
         desc: {
-          zh: '持有本票對方卻不付款時，協助向法院聲請本票裁定，不必經過訴訟即可取得執行名義。',
-          en: 'When a promissory note goes unpaid, we apply for a court ruling permitting enforcement — an enforcement title obtained without full litigation.',
+          zh: '手上有本票，對方到期不付，不必先打官司。向法院聲請本票裁定即可取得執行名義，省去訴訟程序。',
+          en: 'A signed promissory note that goes unpaid does not require a full lawsuit. A court ruling on the note produces an enforcement title directly.',
         },
       },
       {
@@ -532,8 +532,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Compulsory Enforcement',
         },
         desc: {
-          zh: '取得執行名義後對方仍不給付時，協助查調財產，聲請扣押薪資、查封拍賣不動產受償。',
-          en: 'When a debtor ignores an enforcement title, we trace assets and move to garnish wages or seize and auction real property.',
+          zh: '拿到判決或支付命令，對方還是不給付，就進入強制執行。我們查調財產，聲請扣押薪資或查封拍賣不動產。',
+          en: 'With an enforcement title in hand and still no payment, we trace the debtor\'s assets and move to garnish wages or seize and auction real property.',
         },
       },
     ],
@@ -544,8 +544,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Someone owes me money and won\'t pay — do I have to sue?',
         },
         a: {
-          zh: '不一定。事實與金額明確時，可先聲請支付命令：對方收到後二十日內沒有提出異議，確定的支付命令就可以作為執行名義聲請強制執行。若對方有簽本票，也可以聲請本票裁定，程序比訴訟簡便。對方提出異議或有爭執時，才需要進入訴訟。起步前建議先了解對方名下財產，避免贏了官司卻拿不到錢。',
-          en: 'Not necessarily. If the debt is clear, a payment order is often the fastest route: if the debtor does not object within twenty days of service, the final order serves as an enforcement title. If the debtor signed a promissory note, a court enforcement ruling is available through a simpler procedure. Litigation is only needed if the debtor contests the claim — and before starting, it is worth checking whether the debtor has assets to enforce against.',
+          zh: '不一定。金額和事實都清楚的話，聲請支付命令通常最快：對方收到後二十日內沒有提出異議，確定的支付命令就是執行名義，可以直接聲請強制執行。對方簽過本票的，聲請本票裁定更簡便。真的有爭執，才有進訴訟的必要。實務上更該先做的是確認對方名下有沒有財產，官司贏了卻執行不到，力氣等於白花。',
+          en: 'Often not. Where the amount and the facts are clear, a payment order is usually the fastest route: if the debtor raises no objection within twenty days of service, the finalised order is itself an enforcement title. If a promissory note was signed, a court ruling on the note is simpler still. Litigation is for genuinely contested claims. Either way, check first whether the debtor owns anything worth enforcing against.',
         },
       },
       {
@@ -554,8 +554,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'My parents died without a will — how is the estate divided?',
         },
         a: {
-          zh: '先由全體繼承人協商，依應繼分或大家同意的方式簽遺產分割協議，再辦理繼承登記；談不成時，可聲請調解或向法院訴請分割遺產。提醒：不動產辦理繼承登記前，須先完成遺產稅申報並取得繳清或免稅證明；若有人主張生前贈與或代墊費用，也建議在分割時一併釐清，避免日後再起爭執。',
-          en: 'The heirs first try to agree on a division based on statutory shares or mutual consent, sign a written partition agreement, and register the inheritance. If no agreement is reached, the matter can go to mediation or a court petition for estate partition. Note that before real property can be registered to the heirs, the estate tax return must be filed and a tax clearance or exemption certificate obtained; any claims of lifetime gifts or advanced expenses are best resolved at the same time.',
+          zh: '先由全體繼承人協商，依應繼分或大家同意的方式簽遺產分割協議，再辦理繼承登記。談不成，可以聲請調解，或向法院訴請分割遺產。不動產要辦繼承登記，得先完成遺產稅申報並取得繳清或免稅證明。另外，若有人主張生前受贈或代墊費用，這些帳最好在分割時一次算清，拖到後面常常變成第二場官司。',
+          en: 'The heirs first try to agree, either on statutory shares or on terms everyone accepts, sign a written partition agreement, and register the inheritance. If no agreement is reached, the matter goes to mediation or to a court petition for estate partition. Real property cannot be registered to the heirs until the estate tax return has been filed and a tax clearance or exemption certificate obtained. Claims of lifetime gifts or advanced expenses are best settled in the same round, or they become the next dispute.',
         },
       },
       {
@@ -564,8 +564,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'What is the deadline for renouncing an inheritance, and what documents are needed?',
         },
         a: {
-          zh: '要在知悉自己得繼承之時起三個月內，以書面向法院辦理，並檢附死亡證明、繼承系統表與戶籍資料等文件。補充一點：依現行法，就算不拋棄，繼承人原則上也只以繼承所得的遺產為限清償被繼承人債務；辦理拋棄的好處是完全退出繼承，不必參與後續清算或相關訴訟。',
-          en: 'Three months from learning that you are an heir, by written filing with the court, typically with the death certificate, a family tree showing all heirs, and household registration records. Note that under current law, even without renouncing, heirs are in principle liable for the deceased\'s debts only up to the value of the inherited estate — but renunciation removes you from the succession entirely, sparing you the ensuing settlement and any related litigation.',
+          zh: '知悉自己得繼承之時起三個月內，以書面向法院辦理，一般要附死亡證明、繼承系統表和戶籍資料。要說明的是，依現行法，就算不拋棄，繼承人原則上也只以繼承所得的遺產為限清償被繼承人的債務。拋棄的實益在於完全退出繼承，不必再參與後續清算，也不會被拉進相關訴訟。',
+          en: 'Three months from learning that you are an heir, by written filing with the court, normally with the death certificate, a family tree showing all heirs, and household registration records. Worth knowing: under current law, heirs who do not renounce are in principle still liable for the deceased\'s debts only up to the value of the inherited estate. What renunciation adds is a clean exit from the succession, with no part in the settlement or any litigation that follows.',
         },
       },
       {
@@ -574,29 +574,29 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'What can I claim after a traffic accident, and is there a time limit?',
         },
         a: {
-          zh: '可以請求醫療費、看護費、交通費、不能工作的薪資損失、車輛修復費用，以及精神慰撫金。要注意時效：侵權行為損害賠償原則上須在知悉損害及賠償義務人時起兩年內行使。建議先申請道路交通事故初步分析研判表，必要時再送車輛行車事故鑑定釐清肇責，之後決定和解、調解或起訴。',
-          en: 'Recoverable items include medical and nursing costs, transportation, lost income, vehicle repairs, and compensation for pain and suffering. Mind the limitation period: tort claims must generally be brought within two years of learning of the damage and the person liable. Obtain the police accident analysis report first and, where needed, a formal fault assessment, before deciding between settlement, mediation, or suit.',
+          zh: '可請求的項目包括醫療費、看護費、交通費、不能工作的薪資損失、車輛修復費用和精神慰撫金。時效要盯緊：侵權行為損害賠償原則上須在知悉損害及賠償義務人時起兩年內行使。程序上先申請道路交通事故初步分析研判表，肇責有爭議再送車輛行車事故鑑定，等責任比例大致清楚，再決定和解、調解還是起訴。',
+          en: 'Medical and nursing costs, transport, lost income, vehicle repairs and compensation for pain and suffering. The limitation period matters: tort claims must generally be brought within two years of learning of the damage and of who is liable. Start with the police accident analysis report, add a formal fault assessment if liability is contested, and decide between settlement, mediation and suit once the apportionment is reasonably clear.',
         },
       },
     ],
   },
   'intellectual-property': {
     metaDesc: {
-      zh: '安理國際法律事務所提供商標註冊、專利申請、專利侵權訴訟、著作權與營業秘密案件的法律服務，並與資訊安全顧問協作進行數位鑑識與電子證據保全，處理智慧財產及商業法院訴訟及跨境維權。',
-      en: 'Yang & Associates Law Firm (ANLI) in Taipei advises on trademark registration, patent filing and infringement litigation, copyright and trade secret matters, and cross-border IP enforcement, supported by digital forensics and electronic evidence preservation.',
+      zh: '安理國際法律事務所辦理商標註冊與商標侵權、專利申請與專利侵權訴訟、著作權侵害及營業秘密外洩案件，並與資訊安全顧問協作執行數位鑑識與電子證據保全，代理智慧財產及商業法院訴訟與跨境侵權維權。',
+      en: 'Yang & Associates Law Firm (ANLI), Taipei: trademark registration and oppositions, patent filing and infringement litigation, copyright and trade secret disputes, counterfeit and online piracy enforcement, with digital forensics support and cross-border coordination.',
     },
     intro: [
       {
-        zh: '商標被人搶先註冊、產品在電商平台出現仿冒品、離職員工帶走客戶名單與技術文件，或網路上的圖文被整篇盜用——這些是智慧財產權糾紛最常見的樣子。很多當事人是收到警告函，或發現損害已經擴大，才開始找律師。',
-        en: 'A competitor registers your brand name first. Counterfeits of your product appear on e-commerce platforms. A departing employee walks out with client lists and technical files. Your photos and articles are lifted wholesale online. These are the most common forms IP disputes take — and many clients only call a lawyer after a demand letter arrives or the damage has already spread.',
+        zh: '商標被人搶先註冊、電商平台冒出仿冒品、離職員工把客戶名單和技術文件一併帶走、網站圖文被整篇搬去別人家，智慧財產權糾紛多半是這幾種樣子。實務上很多當事人是收到警告函，或者損害已經擴散了，才想到找律師。',
+        en: 'IP disputes tend to arrive in a few recognisable shapes. A competitor registers your brand name first. Counterfeits turn up on e-commerce platforms. A departing employee leaves with client lists and technical files. A whole page of your images and text reappears on someone else\'s site. Most clients call us after a demand letter lands, or after the damage has already spread.',
       },
       {
-        zh: '先提醒兩件事。第一，專利、商標、著作權被侵害的損害賠償請求權有時效，原則上自知道損害及行為人時起二年內就要行使，最長不超過侵權行為時起十年。第二，電子證據很容易被刪除或修改，發現營業秘密外洩或網路侵權時，第一步是保全證據，不是先發函打草驚蛇。',
-        en: 'Two things to keep in mind. Damages claims for patent, trademark, and copyright infringement are subject to limitation periods — generally two years from when you learn of the harm and the infringer, and no more than ten years from the infringing act. And electronic evidence is easily deleted or altered: if you suspect a trade secret leak or online infringement, preserve the evidence first, before alerting the other side.',
+        zh: '損害賠償請求權有時效。專利、商標、著作權被侵害，原則上要在知道損害及行為人時起二年內行使，且自侵權行為時起最長十年。另一個現實問題是電子證據，刪改都很快，發現營業秘密外洩或網路侵權，先把證據固定下來，不要急著發函打草驚蛇。',
+        en: 'Damages claims run out. For patent, trademark and copyright infringement the limitation period is generally two years from the date you learn of the harm and the infringer, and in any event ten years from the infringing act. Electronic evidence is the other problem: it can be deleted or altered in minutes. If you suspect a trade secret leak or online infringement, lock the evidence down before you put the other side on notice.',
       },
       {
-        zh: '本所處理從商標註冊、專利申請到侵權訴訟的完整流程，並與資訊安全顧問長期協作，能在營業秘密與網路侵權案件中執行數位鑑識與電子證據保全。進入智慧財產及商業法院之前，我們會先評估證據強度，再決定要談判、起訴，還是先聲請保全。',
-        en: 'ANLI handles the full cycle from trademark registration and patent filing through infringement litigation before the Intellectual Property and Commercial Court. Working with information security consultants, we conduct digital forensics and preserve electronic evidence in trade secret and online infringement matters — and we assess the strength of your evidence before deciding whether to negotiate, litigate, or seek a preservation order first.',
+        zh: '本所從商標註冊、專利申請一路承辦到侵權訴訟。案件進智慧財產及商業法院之前，會先把證據強度評估清楚，再決定是談判、起訴，還是先聲請證據保全。涉及營業秘密與網路侵權的案子，我們長期與資訊安全顧問協作，由他們執行數位鑑識與電子證據保全。',
+        en: 'We handle the whole arc, from trademark registration and patent filing through to infringement litigation in the Intellectual Property and Commercial Court. Before a case is filed we work out how strong the evidence actually is, then decide whether to negotiate, sue, or first apply for a preservation order. In trade secret and online infringement matters we work with information security consultants who carry out the digital forensics and preserve electronic evidence.',
       },
     ],
     cases: [
@@ -606,8 +606,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Trademark Registration',
         },
         desc: {
-          zh: '品牌名稱要在台灣或海外註冊時，律師協助事前檢索、規劃類別，並處理核駁與異議。',
-          en: 'Clearance searches, class strategy, and prosecution of applications in Taiwan and abroad, including office actions and oppositions.',
+          zh: '品牌要在台灣或海外落地前，先做檢索、選定類別，遇到核駁或異議由律師接手答辯。',
+          en: 'Clearance searching, class selection, and prosecution in Taiwan and abroad, including responses to office actions and oppositions.',
         },
       },
       {
@@ -616,8 +616,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Trademark Infringement',
         },
         desc: {
-          zh: '發現他人使用近似商標或被指控侵權時，律師評估混淆可能性，發函、談判或提起訴訟。',
-          en: 'Assessing likelihood of confusion, then enforcing or defending through demand letters, negotiation, or litigation.',
+          zh: '市面上出現近似商標，或自己被指控侵權，律師先評估混淆誤認之虞，再決定發函、談判或訴訟。',
+          en: 'A similar mark appears on the market, or you are the one accused. We assess likelihood of confusion, then send demand letters, negotiate, or litigate.',
         },
       },
       {
@@ -626,8 +626,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Patent Filing & Portfolio Strategy',
         },
         desc: {
-          zh: '研發成果要申請專利時，律師協助評估可專利性，規劃申請時點與國內外佈局。',
-          en: 'Patentability assessments, filing strategy, and domestic and international portfolio planning for R&D results.',
+          zh: '研發成果值不值得申請專利、什麼時候申請、要佈局哪些國家，律師會一併評估後給建議。',
+          en: 'Whether an invention is worth patenting, when to file, and which jurisdictions the portfolio should cover.',
         },
       },
       {
@@ -636,8 +636,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Patent Infringement Litigation',
         },
         desc: {
-          zh: '產品被控侵害專利或發現對手抄襲技術時，律師分析侵權比對與專利有效性，進行訴訟攻防。',
-          en: 'Claim analysis, invalidity defenses, and litigation strategy — whether you are accused of infringement or a competitor has copied your technology.',
+          zh: '被控侵害專利，或發現對手抄走技術，律師做侵權比對、查專利有效性，並擬定訴訟攻防。',
+          en: 'Claim charts, validity analysis, and trial strategy, on either side of the dispute.',
         },
       },
       {
@@ -646,8 +646,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Copyright Infringement',
         },
         desc: {
-          zh: '程式、影音、出版品被重製或改作時，律師協助蒐證與求償；被控侵權時評估合理使用抗辯。',
-          en: 'Evidence gathering and damages claims when software, audiovisual works, or publications are copied — and fair use defenses when you are the one accused.',
+          zh: '程式、影音或出版品被重製、改作時，律師協助蒐證求償，被指控的一方則評估合理使用抗辯。',
+          en: 'Evidence and damages where software, audiovisual works, or publications have been copied or adapted. Fair use analysis where you are the accused party.',
         },
       },
       {
@@ -656,8 +656,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Trade Secret Misappropriation',
         },
         desc: {
-          zh: '機密資料疑似外流時，律師與資安顧問進行數位鑑識，保全證據後提起民事求償或刑事告訴。',
-          en: 'Digital forensics with security consultants to trace suspected leaks, preserve evidence, and pursue civil damages or criminal complaints.',
+          zh: '機密資料疑似外流，先由律師與資安顧問做數位鑑識、固定證據，再談民事求償或刑事告訴。',
+          en: 'Digital forensics with security consultants to trace a suspected leak and lock down evidence, before any civil claim or criminal complaint.',
         },
       },
       {
@@ -666,8 +666,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Departing Employee Data Theft',
         },
         desc: {
-          zh: '員工離職前大量下載檔案或跳槽帶走客戶資料，律師協助鑑識調查，並依保密與競業條款追究。',
-          en: 'Forensic investigation of mass downloads and data taken to a competitor, with enforcement of confidentiality and non-compete obligations.',
+          zh: '員工離職前大量下載檔案，或帶著客戶資料跳槽，律師安排鑑識調查，再依保密與競業條款追究。',
+          en: 'Forensic review of bulk downloads and files taken to a competitor, followed by enforcement of confidentiality and non-compete terms.',
         },
       },
       {
@@ -676,8 +676,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Counterfeit Goods',
         },
         desc: {
-          zh: '市場或電商平台出現仿冒品時，律師協助蒐證、下架、向海關申請查扣並追究責任。',
-          en: 'Evidence collection, platform takedowns, customs seizure applications, and enforcement against counterfeiters.',
+          zh: '市場或電商平台出現仿冒品，律師蒐證、通知平台下架，並向海關申請查扣、追究製造與販售者。',
+          en: 'Evidence collection, platform takedowns, customs seizure applications, and action against manufacturers and sellers.',
         },
       },
       {
@@ -686,8 +686,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Licensing Agreements',
         },
         desc: {
-          zh: '技術或品牌要授權他人使用時，律師起草與審閱合約，明訂範圍、權利金與違約處理。',
-          en: 'Drafting and reviewing licensing and technology transfer agreements — scope, royalties, and breach remedies.',
+          zh: '技術或品牌授權他人使用，律師起草與審閱合約，把授權範圍、權利金和違約處理寫清楚。',
+          en: 'Drafting and reviewing licences and technology transfers, with scope, royalties, and breach remedies spelled out.',
         },
       },
       {
@@ -696,8 +696,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Online Content Piracy',
         },
         desc: {
-          zh: '網站圖片、文章被整批盜用時，律師協助保全網頁證據、通知平台下架並求償。',
-          en: 'Preserving web evidence, issuing platform takedown notices, and claiming compensation when images or articles are lifted wholesale.',
+          zh: '網站的圖片、文章被整批搬走，律師先保全網頁證據，再通知平台下架並向盜用者求償。',
+          en: 'Preserving web evidence, notifying platforms to take the content down, and claiming compensation from whoever lifted it.',
         },
       },
       {
@@ -706,8 +706,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Cross-Border IP Enforcement',
         },
         desc: {
-          zh: '侵權發生在海外或橫跨多國時，本所與美國、英國律師協作，規劃各地蒐證與維權策略。',
-          en: 'Coordinated evidence gathering and enforcement strategy across jurisdictions, working with US and UK counsel.',
+          zh: '侵權發生在海外或橫跨數國，本所與美國、英國律師協作，安排各地蒐證與後續維權的順序。',
+          en: 'Evidence gathering and enforcement sequenced across jurisdictions, working with US and UK counsel.',
         },
       },
     ],
@@ -718,8 +718,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Someone registered my trademark first — is there anything I can do?',
         },
         a: {
-          zh: '還有機會，但要把握時間。商標註冊公告後三個月內，可以向經濟部智慧財產局提出異議；之後原則上五年內可以申請評定，撤銷其註冊。若對方是知道你先使用仍惡意搶註，商標法有撤銷的依據，但你必須拿得出先使用的證據，例如出貨紀錄、廣告、網頁存檔。越早處理，選項越多，建議先讓律師評估證據再決定怎麼走。',
-          en: 'Yes, but timing matters. An opposition can be filed with the Taiwan Intellectual Property Office within three months of the registration\'s publication; after that, an invalidation action is generally available within five years. If the registrant knew of your prior use and filed in bad faith, the Trademark Act provides grounds for cancellation — but you must produce evidence of prior use, such as sales records, advertising, and archived web pages. The earlier you act, the more options remain open.',
+          zh: '有機會，但時間抓得很緊。商標註冊公告後三個月內可以向經濟部智慧財產局提出異議。錯過這段期間，原則上五年內還可以申請評定，撤銷其註冊。如果對方是知道你先使用、仍惡意搶註，商標法有撤銷的依據，但你要拿得出先使用的證據，像是出貨紀錄、廣告或網頁存檔。這種案子拖越久，可走的程序越少，建議先讓律師看過手上有什麼資料。',
+          en: 'There is, but the clock is short. An opposition can be filed with the Taiwan Intellectual Property Office within three months of publication of the registration. Miss that window and an invalidation action is generally still available for five years. If the registrant knew of your prior use and filed in bad faith, the Trademark Act provides grounds for cancellation, but you have to produce proof of that prior use: sales records, advertising, archived web pages. The longer it sits, the fewer routes remain.',
         },
       },
       {
@@ -728,8 +728,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'A former employee took our confidential files to a competitor. Can we sue?',
         },
         a: {
-          zh: '可以，營業秘密外洩依營業秘密法有民事求償與刑事責任。但有兩個前提：公司平時要有合理保密措施，例如權限分級、保密協議；而且要能證明資料確實被帶走。發現當下不要先質問對方，第一步是保全電腦與雲端紀錄。本所與資訊安全顧問協作進行數位鑑識，把下載、外傳檔案的軌跡固定成證據，再決定提告或談判。',
-          en: 'Yes — under Taiwan\'s Trade Secrets Act, misappropriation carries both civil and criminal liability. Two prerequisites: your company must have taken reasonable confidentiality measures (access controls, NDAs), and you must be able to prove the data was actually taken. Do not confront the employee first — preserve the computers and cloud logs. We work with information security consultants to forensically document download and transfer trails before deciding whether to sue or negotiate.',
+          zh: '可以。營業秘密法下，外洩同時有民事求償和刑事責任。不過公司平時要做到合理保密措施，例如權限分級、簽保密協議，而且要證明資料確實被帶走，缺一項案子都不好打。發現的當下先不要去質問對方，優先保全電腦和雲端紀錄。本所與資訊安全顧問協作進行數位鑑識，把下載、外傳的軌跡固定成證據，再決定提告還是談判。',
+          en: 'Yes. Under the Trade Secrets Act, misappropriation carries both civil and criminal liability. But the company has to have taken reasonable confidentiality measures in the first place, such as access controls and signed NDAs, and it has to be able to show the data was in fact taken. Do not confront the employee straight away. Secure the machines and the cloud logs first. We work with information security consultants on the digital forensics, fixing the download and transfer trail as evidence before choosing between a lawsuit and a negotiation.',
         },
       },
       {
@@ -738,8 +738,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'My images and articles were stolen online. Can I claim damages?',
         },
         a: {
-          zh: '可以。盜圖、盜文屬於著作權侵害，可以要求下架和損害賠償；情節明確的也可以提刑事告訴，但告訴原則上要在知道行為人後六個月內提出。能求償多少，取決於你能證明的損害，所以發現時先完整保全證據：頁面截圖、網址、時間，必要時辦理公證，不要只留一張截圖就發文開戰。',
-          en: 'Yes. Unauthorized copying of images or articles is copyright infringement — you can demand takedown and claim damages, and clear-cut cases may support a criminal complaint, which generally must be filed within six months of identifying the infringer. Recovery depends on the loss you can prove, so preserve complete evidence first — full-page captures, URLs, timestamps, notarized if necessary — before going public.',
+          zh: '可以。盜圖、盜文是著作權侵害，可以要求下架並請求損害賠償，情節明確的還能提刑事告訴，但告訴原則上要在知道行為人後六個月內提出。賠得到多少，看你能證明多少損害。所以發現的第一時間就要把證據做完整：頁面截圖、網址、時間都要留，必要時辦理公證。只留一張截圖就上網開戰，後面通常很難收拾。',
+          en: 'Yes. Lifting images or text is copyright infringement. You can demand takedown and claim damages, and a clear-cut case can also support a criminal complaint, which generally has to be filed within six months of learning who the infringer is. What you recover depends on the loss you can prove, so capture the evidence properly at the outset: full-page captures, URLs, timestamps, notarised where it matters. Going public with a single screenshot usually makes the case harder, not easier.',
         },
       },
       {
@@ -748,29 +748,29 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Which court hears patent infringement cases in Taiwan, and how long do they take?',
         },
         a: {
-          zh: '專利、商標、著作權與營業秘密的民事訴訟，原則上由智慧財產及商業法院審理，法院位於新北市板橋。專利侵權訴訟通常伴隨專利有效性的攻防，時間常以年計，起訴前的侵權比對和證據準備往往影響成敗。值不值得打、要在台灣還是海外打，本所會先做完整評估，必要時協同美國、英國律師規劃跨境策略。',
-          en: 'Civil IP cases — patent, trademark, copyright, and trade secret — are generally heard by the Intellectual Property and Commercial Court, located in Banqiao, New Taipei City. Patent litigation typically involves validity challenges alongside infringement, so timelines are often measured in years, and pre-suit claim analysis and evidence preparation carry significant weight. We assess whether and where litigation makes sense, coordinating with US and UK counsel on cross-border strategy where needed.',
+          zh: '專利、商標、著作權和營業秘密的民事訴訟，原則上由智慧財產及商業法院審理，法院在新北市板橋。專利案幾乎一定會打到專利有效性，時間常以年計。真正決定勝負的，多半是起訴前的侵權比對和證據準備。要不要打、在台灣打還是到海外打，本所會先做完整評估，需要時協同美國、英國律師規劃跨境策略。',
+          en: 'Civil cases on patents, trademarks, copyright and trade secrets are generally heard by the Intellectual Property and Commercial Court, which sits in Banqiao, New Taipei City. Patent cases almost always turn into a fight over validity as well as infringement, so timelines run into years. What usually decides them is the claim analysis and evidence work done before filing. We assess whether litigation is worth it and where it should be brought, coordinating with US and UK counsel where the dispute crosses borders.',
         },
       },
     ],
   },
   'dispute-resolution': {
     metaDesc: {
-      zh: '安理國際法律事務所（台北）處理國際商務仲裁、跨國訴訟、涉外契約爭議、國際貿易糾紛、外國判決承認與執行及跨境債權回收，與美國、英國執業律師長期協作，以中英文處理跨境爭議。初次諮詢採預約制。',
-      en: 'ANLI, a Taipei-based law firm, handles international commercial arbitration, cross-border litigation, contract and trade disputes, recognition and enforcement of foreign judgments, and cross-border debt recovery, working with US and UK counsel across jurisdictions. Consultations by appointment.',
+      zh: '安理國際法律事務所位於台北，處理國際商務仲裁、跨國訴訟、涉外契約爭議與國際貿易糾紛，也代理外國判決與仲裁判斷在台灣的承認執行、跨境債權回收。與美國、英國執業律師長期協作，中英文皆可直接處理。諮詢採預約制。',
+      en: 'Yang & Associates Law Firm (ANLI), based in Taipei: international commercial arbitration, cross-border litigation, contract and trade disputes, enforcement of foreign judgments and arbitral awards, and cross-border debt recovery, handled in Chinese and English with US and UK counsel. By appointment.',
     },
     intro: [
       {
-        zh: '跟國外客戶簽了約，對方不付款；海外供應商交貨有問題，合約卻約定在外國仲裁；或者您拿到一份外國法院判決，想在台灣執行。這類涉外契約爭議和國際貿易糾紛，第一個問題往往不是輸贏，而是：該在哪裡打、用哪一國的法律打。',
-        en: 'A foreign customer refuses to pay. An overseas supplier delivers defective goods, but the contract points to arbitration abroad. Or you hold a foreign judgment and need to enforce it in Taiwan. In cross-border disputes, the first question is rarely who wins — it is where to fight, and under which law.',
+        zh: '涉外契約爭議和國際貿易糾紛找上門時，多數人先問勝算。實務上更急的其實是另一件事：這個案子該在哪裡處理、適用哪一國法律。國外客戶拖欠貨款、海外供應商交貨有瑕疵，或是手上有一份外國判決想在台灣執行，處理路徑差很多，走錯了得重來。',
+        en: 'A customer abroad stops paying. A supplier ships defective goods. You hold a foreign judgment with no obvious way to enforce it in Taiwan. In each case the merits matter less at the outset than two threshold questions: where the dispute belongs, and which law applies to it.',
       },
       {
-        zh: '管轄權和準據法，通常在簽約時就由合約裡的仲裁條款和準據法條款決定了。條款寫得不利，事後很難翻盤。所以糾紛發生時，第一步是把合約翻出來，確認爭端解決條款怎麼寫，再決定要仲裁、跨國訴訟，還是先透過調解與和解處理。',
-        en: 'Jurisdiction and governing law are usually settled the day you sign, by the arbitration and governing-law clauses in the contract — and a badly drafted clause is hard to undo later. So when a dispute arises, start with the contract: confirm what the dispute-resolution clause actually says, then decide between arbitration, litigation, and mediation or a negotiated settlement.',
+        zh: '管轄權和準據法多半在簽約當天就定了，靠的是合約裡那幾行仲裁條款和準據法條款。條款寫得對自己不利，事後幾乎救不回來。所以糾紛一發生，先把合約翻出來看爭端解決條款怎麼寫，再判斷該提付仲裁、進跨國訴訟，還是先用調解與和解談。',
+        en: 'Those questions are usually answered on the day the contract is signed, by the arbitration and governing-law clauses. A clause drafted against you is hard to undo later. So the first move in any dispute is to read the dispute-resolution clause closely, then choose between arbitration, cross-border litigation, and mediation or a negotiated settlement.',
       },
       {
-        zh: '安理的主持律師楊佳陵博士在美國柏克萊取得法律科學博士，事務所並與美國、英國執業律師長期協作。無論是國際商務仲裁、跨國訴訟、外國判決在台灣的承認與執行，或跨境債權回收，我們都能用中英文直接處理，並協調各地律師分工。',
-        en: 'Our principal attorney, Dr. Chia-Ling Yang, holds a J.S.D. from UC Berkeley, and the firm works closely with practicing US and UK lawyers. From international arbitration and cross-border litigation to enforcing foreign judgments in Taiwan and recovering debts abroad, we work directly in Chinese and English and coordinate counsel across jurisdictions.',
+        zh: '安理的主持律師楊佳陵博士取得美國柏克萊法律科學博士（J.S.D.），事務所也長期與美國、英國執業律師協作。不論是國際商務仲裁、跨國訴訟，或是外國判決在台灣的承認與執行、跨境債權回收，我們中英文都能直接處理，並視案件需要分配各地律師的工作。',
+        en: 'Our principal attorney, Dr. Chia-Ling Yang, holds a J.S.D. from UC Berkeley, and the firm works regularly with practicing US and UK lawyers. We handle international arbitration, cross-border litigation, recognition and enforcement of foreign judgments in Taiwan, and cross-border debt recovery directly in Chinese and English, and coordinate counsel in other jurisdictions as a case requires.',
       },
     ],
     cases: [
@@ -780,8 +780,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'International Commercial Arbitration',
         },
         desc: {
-          zh: '與外國企業約定以仲裁解決爭議時，律師代理仲裁程序攻防，並先評估仲裁地與規則的利弊。',
-          en: 'When your contract calls for arbitration, we act as counsel throughout the proceedings and assess the seat and rules before you commit to a strategy.',
+          zh: '合約約定以仲裁解決爭議時，先評估仲裁地與規則的利弊，再代理仲裁程序的實體攻防與證據提出。',
+          en: 'Where the contract sends disputes to arbitration, we weigh the seat and applicable rules first, then run the case through pleadings, evidence and hearing.',
         },
       },
       {
@@ -790,8 +790,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Cross-Border Litigation',
         },
         desc: {
-          zh: '糾紛牽涉多國法院時，律師協助評估在哪裡起訴較有利，並協調各國律師同步進行程序。',
-          en: 'Where a dispute spans several court systems, we advise on the choice of forum and coordinate parallel proceedings with local counsel.',
+          zh: '同一件糾紛在好幾個國家都能起訴時，協助判斷在哪裡告較有利，並與各國律師分工推進程序。',
+          en: 'When the same dispute could be filed in several countries, we advise on the better forum and divide the work with local counsel.',
         },
       },
       {
@@ -800,8 +800,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Enforcement of Foreign Judgments',
         },
         desc: {
-          zh: '在國外拿到勝訴判決後，須經台灣法院許可才能執行，律師代理訴請許可與後續強制執行。',
-          en: 'A foreign judgment cannot be enforced in Taiwan until a court grants leave in a separate action; we bring that action and handle the ensuing execution.',
+          zh: '在國外打贏的判決，要先向台灣法院訴請許可執行才動得了對方財產。我們代理許可之訴與強制執行。',
+          en: 'A judgment won abroad reaches no assets in Taiwan until a court grants leave to enforce it. We bring that action and handle the execution that follows.',
         },
       },
       {
@@ -810,8 +810,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'International Trade Disputes',
         },
         desc: {
-          zh: '進出口貨物瑕疵、遲延交貨或拒付貨款，律師整理單據與證據，以談判、仲裁或訴訟求償。',
-          en: 'Defective goods, late delivery, or unpaid invoices in import-export deals — we organize the documentary evidence and pursue claims through negotiation, arbitration, or litigation.',
+          zh: '進出口貨物有瑕疵、遲交或對方拒付貨款時，先把單據和驗貨紀錄整理成證據，再選談判、仲裁或訴訟求償。',
+          en: 'Defective shipments, late delivery, unpaid invoices. We build the documentary record from bills of lading and inspection reports, then pursue the claim by negotiation, arbitration or suit.',
         },
       },
       {
@@ -820,8 +820,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Cross-Border Contract Disputes',
         },
         desc: {
-          zh: '與外國公司的合約發生違約，律師先釐清準據法與管轄權，再擬定求償或防禦策略。',
-          en: 'When a contract with a foreign party is breached, we first pin down governing law and jurisdiction, then build the claim or the defense.',
+          zh: '與外國公司的合約出了問題，第一步是釐清準據法和管轄權，確認完再擬求償或防禦的策略。',
+          en: 'When a contract with a foreign party breaks down, governing law and jurisdiction come first. The claim, or the defence, is built on that footing.',
         },
       },
       {
@@ -830,8 +830,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Cross-Border Debt Recovery',
         },
         desc: {
-          zh: '外國客戶欠款不還，律師查明對方資產所在地，選擇可行程序跨境追討，控制求償成本。',
-          en: 'For unpaid foreign debtors, we locate assets, choose the most workable route to recovery, and keep collection costs proportionate.',
+          zh: '外國客戶欠錢不還，追不追得到要看資產在哪。我們查明資產所在地，挑成本合理的程序跨境追討。',
+          en: 'Whether a foreign debt is collectable turns on where the assets sit. We trace them and pick a recovery route proportionate to the sum at stake.',
         },
       },
       {
@@ -840,8 +840,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Arbitration Clause Review',
         },
         desc: {
-          zh: '簽約前審閱仲裁條款的仲裁地、機構、語言與規則，避免日後被迫在不利條件下仲裁。',
-          en: 'Before you sign, we review the seat, institution, language, and rules in the arbitration clause so you are not locked into an unfavorable forum later.',
+          zh: '簽約前把仲裁條款的仲裁地、機構、語言和適用規則看過一遍，別等出事才發現只能在不利的地方仲裁。',
+          en: 'We check the seat, institution, language and rules before you sign, so a dispute does not end up in a forum that suits only the other side.',
         },
       },
       {
@@ -850,8 +850,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Settlement Negotiation & Mediation',
         },
         desc: {
-          zh: '不是每個案子都值得打到底，律師評估勝算與執行可能性後，代理談判爭取合理和解條件。',
-          en: 'Not every case is worth fighting to the end; after weighing the merits and enforceability, we negotiate settlement terms that protect your position.',
+          zh: '不是每個案子都值得打到底。評估勝算和執行的可能性後，也可由律師出面談和解條件。',
+          en: 'Not every claim is worth taking to an award. Once the merits and enforceability are clear, we can negotiate terms instead.',
         },
       },
       {
@@ -860,8 +860,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Enforcement of Foreign Arbitral Awards',
         },
         desc: {
-          zh: '在境外取得仲裁判斷後，可聲請台灣法院裁定承認後執行，律師代理聲請與執行程序。',
-          en: 'A foreign arbitral award can be recognized by a Taiwan court order and then enforced; we handle the recognition application and execution.',
+          zh: '境外取得的仲裁判斷要先聲請台灣法院裁定承認，才能拿去執行，承認聲請和執行程序我們都能代理。',
+          en: 'An award made abroad needs a Taiwan court order recognizing it before it can be enforced. We file the recognition application and carry through the execution.',
         },
       },
       {
@@ -870,8 +870,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Joint Venture Disputes',
         },
         desc: {
-          zh: '與外國夥伴合資經營生變，律師處理股東協議解釋、出場機制與仲裁或訴訟的整體布局。',
-          en: 'When a venture with a foreign partner breaks down, we work through the shareholders\' agreement, exit mechanics, and the overall arbitration or litigation strategy.',
+          zh: '和外國夥伴合資經營談不攏，處理重點通常在股東協議怎麼解釋、能不能出場，以及要走仲裁還是訴訟。',
+          en: 'When a venture with a foreign partner falls apart, the fight is usually over the shareholders\' agreement, the exit terms, and whether to arbitrate or sue.',
         },
       },
       {
@@ -880,8 +880,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'International Licensing Disputes',
         },
         desc: {
-          zh: '技術或品牌授權橫跨多國，發生權利金或違約爭議時，律師釐清管轄與準據法並代理求償。',
-          en: 'In multi-jurisdictional technology or brand licensing, we resolve royalty and breach disputes, clarifying forum and governing law before pressing the claim.',
+          zh: '技術或品牌授權跨好幾個國家，權利金算法或違約認定容易起爭執。我們先確定管轄與準據法，再代理求償。',
+          en: 'Technology and brand licences spanning several countries breed royalty and breach disputes. We settle forum and governing law, then press the claim.',
         },
       },
       {
@@ -890,8 +890,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Cross-Border Fraud & Asset Tracing',
         },
         desc: {
-          zh: '款項遭境外詐騙或轉走，律師與資安顧問合作追蹤金流與加密貨幣，評估凍結及求償途徑。',
-          en: 'Where funds have been diverted abroad, we work with forensic and crypto-tracing consultants to follow the money and assess freezing and recovery options.',
+          zh: '款項被騙到境外或遭人轉走，我們與資安顧問合作追蹤金流和加密貨幣去向，評估凍結與求償的可行性。',
+          en: 'Where money has been moved offshore, we work with security consultants to follow the funds, crypto included, and assess freezing and recovery options.',
         },
       },
     ],
@@ -902,8 +902,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Can a foreign court judgment be enforced directly in Taiwan?',
         },
         a: {
-          zh: '不行，要先經台灣法院許可才能執行。外國確定判決在台灣原則上受承認，但要強制執行，須另外向法院起訴請求許可執行。法院會審查：外國法院有無管轄權、敗訴一方是否受合法通知、內容有無違反台灣公序良俗、該國是否也承認台灣的判決。建議先備妥判決正本、確定證明與中文譯本再行動。',
-          en: 'No — you first need a Taiwan court\'s leave to enforce. Foreign final judgments are generally recognized, but enforcement requires a separate court action for a judgment permitting execution. The court examines whether the foreign court had jurisdiction, whether the losing party was properly served, whether the judgment offends Taiwan\'s public policy, and whether that country reciprocally recognizes Taiwanese judgments. Prepare the original judgment, proof of finality, and a Chinese translation before you start.',
+          zh: '不行。外國確定判決在台灣原則上受承認，但要強制執行，必須另外向法院起訴請求許可執行，拿到許可判決才動得了對方財產。法院會審查幾件事：外國法院有沒有管轄權、敗訴一方有沒有受到合法通知、判決內容是否違反台灣的公序良俗、該國是不是也承認台灣法院的判決。實務上文件準備最花時間，判決正本、確定證明和中文譯本要先備齊。',
+          en: 'No. A foreign final judgment is generally recognized in Taiwan, but enforcing it takes a separate court action for leave to enforce, and only that judgment lets you reach the debtor\'s assets. The court examines whether the foreign court had jurisdiction, whether the losing party was properly served, whether the judgment offends Taiwan\'s public policy, and whether that country recognizes Taiwanese judgments in return. Gather the original judgment, proof of finality and a Chinese translation early. The paperwork usually takes longer than the filing.',
         },
       },
       {
@@ -912,8 +912,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Our contract says disputes go to arbitration in Singapore. Can I sue in Taiwan instead?',
         },
         a: {
-          zh: '原則上不行。有效的仲裁條款會排除法院訴訟；你若直接在台灣起訴，對方可以提出妨訴抗辯，法院通常會裁定停止訴訟，命先提付仲裁。所以第一步是檢視條款是否有效、涵蓋範圍多大。如果條款有效，就要評估在新加坡仲裁的成本與勝算，或透過談判與和解在程序外解決。安理可與當地及英美律師協作處理。',
-          en: 'Generally no. A valid arbitration clause excludes court litigation; if you sue anyway, the other side can invoke the clause and the court will typically stay the case and direct the parties to arbitrate. The first step is to examine whether the clause is valid and what it covers. If it holds, we assess the cost and merits of arbitrating at the designated seat — or pursue a negotiated settlement outside the proceedings, coordinating with local, US, and UK counsel as needed.',
+          zh: '原則上不行。仲裁條款只要有效，就排除了法院訴訟。若貿然在台灣起訴，對方一提妨訴抗辯，法院通常會裁定停止訴訟，命先提付仲裁。所以要先看條款本身有沒有效、涵蓋的爭議範圍到哪裡。條款站得住腳，接下來就是算在新加坡仲裁的成本和勝算，或者從談判與和解找出路。安理可與新加坡當地及英美律師協作處理。',
+          en: 'Generally no. A valid arbitration clause takes the dispute out of the courts. Sue in Taiwan anyway and the other side will invoke the clause; the court will normally stay the case and direct the parties to arbitrate. So start with the clause itself: is it valid, and how broadly is it drafted? If it holds, the real questions are what arbitration at the named seat will cost and whether the claim justifies it, or whether a negotiated settlement is the better route. We coordinate with local, US and UK counsel as the case requires.',
         },
       },
       {
@@ -922,8 +922,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'A foreign customer keeps defaulting on payments. How do I recover the debt across borders?',
         },
         a: {
-          zh: '可以追，但先確認三件事：合約的準據法與管轄權約定、對方與資產在哪個國家、債權時效還剩多久。跨境債權回收通常先發函與談判，談不成再依合約走仲裁或跨國訴訟；起訴地點盡量選在對方資產所在地，執行才有實益。各國時效長短不同，拖越久選項越少，建議及早處理。安理可用中英文直接與對方及外國律師交涉。',
-          en: 'Yes, but check three things first: the governing-law and jurisdiction clauses, where the debtor and its assets are located, and how much of the limitation period remains. Cross-border debt recovery usually starts with a demand letter and negotiation, then arbitration or litigation under the contract — ideally in a forum where the debtor holds assets, so a win can actually be enforced. Limitation periods vary by country and options narrow over time, so act early. We deal with the debtor and foreign counsel directly in English.',
+          zh: '追得回來的關鍵在三件事：合約怎麼約定準據法和管轄、對方和它的資產在哪個國家、時效還剩多久。實務上多半先發函催告並談判，談不成再依合約提付仲裁或提起跨國訴訟。起訴地點盡量選在對方有資產的地方，否則贏了也執行不到。各國時效長短不一，拖久了能用的手段就少。安理可用中英文直接和對方與外國律師交涉。',
+          en: 'Yes, but three things decide whether it is worth pursuing: what the contract says about governing law and jurisdiction, where the debtor and its assets are located, and how much of the limitation period is left. Recovery normally opens with a demand letter and negotiation, then arbitration or litigation under the contract. Sue where the assets are, since a judgment you cannot enforce is worth little. Limitation periods differ from country to country and the options narrow as time passes, so move early. We deal with the debtor and foreign counsel directly in English.',
         },
       },
       {
@@ -932,29 +932,29 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'What should I watch for in an arbitration clause when signing a cross-border contract?',
         },
         a: {
-          zh: '至少寫清楚四件事：仲裁地、仲裁機構與適用規則、仲裁語言、契約準據法。這些會直接決定日後糾紛在哪裡解決、用哪國法律、成本多高。建議以仲裁機構公布的示範條款為底稿，不要自創混合條款，也避免同時約定仲裁又約定法院管轄造成矛盾。簽約前請律師審一次條款，比出事後補救省得多。',
-          en: 'Spell out at least four things: the seat of arbitration, the institution and its rules, the language of the proceedings, and the governing law. These determine where a future dispute is fought, under which law, and at what cost. Start from the institution\'s model clause rather than drafting a hybrid from scratch, and avoid contradictory terms that provide for both arbitration and court jurisdiction. A short review before signing is far cheaper than fixing the clause after a dispute has begun.',
+          zh: '仲裁地、仲裁機構與適用規則、仲裁語言、契約準據法，這四項一定要寫清楚。日後爭議在哪裡解決、用哪一國法律、成本多高，都是它們決定的。條款建議直接採用仲裁機構公布的示範條款，自創的混合條款最容易出事。也不要一邊約定仲裁、一邊又約定法院管轄，兩者打架的條款常常先被拿來爭執效力。簽約前請律師看過一次，成本遠低於事後補救。',
+          en: 'Four things must be explicit: the seat, the institution and its rules, the language of the proceedings, and the governing law. Between them they decide where a dispute is heard, under which law, and at what cost. Use the institution\'s model clause rather than drafting a hybrid of your own. And never provide for both arbitration and court jurisdiction in the same contract, or the parties will litigate the clause before anyone reaches the merits. A review before signing costs far less than repairing the drafting afterwards.',
         },
       },
     ],
   },
   'corporate-governance': {
     metaDesc: {
-      zh: '股東糾紛、經營權爭奪、合夥拆夥怎麼處理？安理國際法律事務所位於台北，提供公司法諮詢、法令遵循制度建置、內部調查、個資法與洗錢防制合規服務，協助中小企業與新創經營者處理股東會與董事會爭議。初次諮詢採預約制。',
-      en: 'ANLI, a Taipei law firm, advises on shareholder disputes, corporate control contests, and shareholder and board meeting governance, and builds compliance programs covering internal investigations, data protection, and anti-money laundering. Initial consultations by appointment.',
+      zh: '股東糾紛、經營權爭奪、合夥拆夥，多半拖越久越難處理。安理國際法律事務所位於台北，處理股東會與董事會爭議、公司法諮詢，並協助企業建置法令遵循制度、進行內部調查，因應個資法與洗錢防制的查核。採預約制。',
+      en: 'Yang & Associates Law Firm (ANLI), based in Taipei, acts in shareholder disputes, corporate control contests, partnership break-ups and shareholders\' and board meeting disputes, and builds compliance programs covering internal investigations, personal data protection and anti-money laundering. Consultations by appointment.',
     },
     intro: [
       {
-        zh: '公司做起來了，股東卻開始吵：有人不出錢也不做事、有人私下另起爐灶、有人想把你踢出經營層。中小企業和新創最常見的就是股東糾紛、合夥拆夥、經營權爭奪，往往在股東會或董事會上一次爆發，拖越久對公司傷害越大。',
-        en: 'The company finally takes off — and the shareholders start fighting. One stops contributing, another quietly starts a competing business, a third wants you out of management. For SMEs and startups, shareholder disputes, partnership break-ups, and fights for corporate control often erupt at a shareholders\' or board meeting, and the longer they drag on, the more the company suffers.',
+        zh: '公司終於做起來，股東之間反而開始出事。有人只掛名不出力，有人在外面另開一家做同樣的生意。比較麻煩的是幾個股東聯手要換掉經營團隊。中小企業和新創的股東糾紛、合夥拆夥、經營權爭奪，大多在股東會或董事會上正式攤牌，拖越久越難收。',
+        en: 'A company finally starts making money, and that is often when the shareholders start fighting. One holds shares but contributes nothing. Another quietly sets up the same business on the side. Harder still is a group of them moving to replace the management team. For SMEs and startups, shareholder disputes, partnership break-ups and control contests usually come to a head at a shareholders\' or board meeting, and delay only makes them costlier.',
       },
       {
-        zh: '提醒一件事：股東會決議若召集程序或決議方法有瑕疵，依公司法要自決議之日起三十日內訴請法院撤銷，逾期就不能再以程序瑕疵爭執。開會通知、委託書、表決、議事錄，每一步都要留下紀錄。安理能在開會前幫你把程序做對，爭議發生後協助保全證據、進行訴訟。',
-        en: 'One point worth knowing early: under Taiwan\'s Company Act, a resolution tainted by defects in the convening procedure or voting method can only be set aside if an action is filed within 30 days of the resolution; after that, the procedural defect can no longer be raised. Every step — meeting notices, proxies, voting, minutes — should leave a record. ANLI helps clients get the procedure right before the meeting, and preserves evidence and litigates once a dispute breaks out.',
+        zh: '股東會決議只要召集程序或決議方法有瑕疵，依公司法要自決議之日起三十日內訴請法院撤銷。過了期間，就不能再用程序瑕疵爭執。開會通知、委託書、表決、議事錄，每一步都要留下紀錄。安理多半在開會前就先把程序做對，爭議發生後協助保全證據、進行訴訟。',
+        en: 'Where a shareholders\' resolution is defective in its convening procedure or voting method, the Company Act requires an action to set it aside within 30 days of the resolution. Miss that window and the procedural defect can no longer be raised. Meeting notices, proxies, voting, minutes: every step needs a record behind it. ANLI is usually brought in before the meeting to get the procedure right, and preserves evidence and litigates once a dispute breaks out.',
       },
       {
-        zh: '另一塊是法令遵循：個資法、洗錢防制、公司治理的要求越來越多，出事後才補救成本最高。我們協助企業建置法遵制度與吹哨者機制，遇到檢舉或掏空疑慮時進行內部調查，並與資安顧問合作做數位鑑識，必要時代表公司因應主管機關調查與跨境監理事務。',
-        en: 'The other half of this practice is compliance. Data protection, anti-money laundering, and corporate governance requirements keep expanding, and fixing things after an incident is always the most expensive option. We help companies build compliance programs and whistleblowing channels, run internal investigations — working with digital forensics specialists where needed — and represent them before regulators, including on cross-border regulatory matters.',
+        zh: '另一半是法令遵循。個資法、洗錢防制、公司治理的要求越來越多，出事後才補救，代價最高。我們協助企業建置法遵制度與吹哨者機制，接到檢舉或發現異常金流時進行內部調查，必要時與資安顧問合作做數位鑑識。主管機關調查與跨境監理事務，由律師出面因應。',
+        en: 'The other half of this practice is compliance. Personal data protection, anti-money laundering and corporate governance obligations keep expanding, and repairing the damage after an incident is always the expensive route. We build compliance programs and whistleblowing channels, run internal investigations when a report or an unexplained cash flow surfaces, and bring in digital forensics specialists where the facts require it. Counsel also handles regulatory investigations and cross-border regulatory matters.',
       },
     ],
     cases: [
@@ -964,8 +964,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Shareholder Disputes',
         },
         desc: {
-          zh: '股東間為出資、分紅或經營方向翻臉，律師協助談判、擬定股東協議或代理訴訟，避免僵局拖垮公司。',
-          en: 'When shareholders fall out over contributions, dividends, or direction, we negotiate, draft shareholder agreements, and litigate before deadlock damages the company.',
+          zh: '出資、分紅、公司方向談不攏，股東就卡住。律師可以協助談判、擬股東協議，必要時提起訴訟。',
+          en: 'Shareholders who cannot agree on funding, dividends or direction can bring a company to a standstill. We negotiate, draft shareholder agreements, and litigate when talks fail.',
         },
       },
       {
@@ -974,8 +974,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Corporate Control Contests',
         },
         desc: {
-          zh: '股東會改選、委託書徵求或解任董事的攻防，律師規劃合法程序，並即時聲請假處分等保全措施。',
-          en: 'Board elections, proxy solicitation, and director removal battles: we plan lawful procedures and move quickly on injunctions and other interim relief.',
+          zh: '改選董事、徵求委託書、解任現任經營者，攻防很快。律師規劃合法程序，必要時聲請假處分保全。',
+          en: 'Board elections, proxy solicitation and the removal of incumbents move fast. We map out a lawful procedure and apply for injunctions when timing demands it.',
         },
       },
       {
@@ -984,8 +984,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Shareholders\' Meeting Disputes',
         },
         desc: {
-          zh: '召集程序或決議方法有瑕疵，律師評估提起撤銷或確認無效訴訟，也協助公司把會開得合法。',
-          en: 'Where the convening procedure or voting method is defective, we assess actions to set aside the resolution or confirm its nullity — and help companies run their meetings correctly in the first place.',
+          zh: '召集程序或決議方法有瑕疵，可以提撤銷或確認無效之訴。律師評估與蒐證，也幫公司把會開對。',
+          en: 'A defective convening procedure or voting method can support an action to set a resolution aside or declare it void. We assess the case, and we also help companies run meetings properly.',
         },
       },
       {
@@ -994,8 +994,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Board Governance',
         },
         desc: {
-          zh: '董事會召集、利益迴避與議事程序常出爭議，律師協助設計治理規則，重大會議前先把關。',
-          en: 'Convening rules, conflicts of interest, and meeting procedure are frequent flashpoints; we design governance rules and vet critical meetings in advance.',
+          zh: '董事會的召集、利益迴避和議事程序最常出問題。律師協助訂治理規則，重大會議前先看過一遍。',
+          en: 'Convening rules, conflicts of interest and meeting procedure are where boards get into trouble. We draft governance rules and review the agenda before critical meetings.',
         },
       },
       {
@@ -1004,8 +1004,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Partnership Dissolution',
         },
         desc: {
-          zh: '拆夥時的帳目結算、客戶與商標歸屬最容易吵，律師協助清算、簽妥拆夥協議，避免事後互告。',
-          en: 'When partners split, accounts, clients, and trademarks are the usual battlegrounds; we handle the settlement and document the break-up to prevent later claims.',
+          zh: '拆夥吵的通常是帳目、客戶名單和商標歸誰。律師協助結算、把拆夥協議簽妥，避免拆完再互告。',
+          en: 'Partnership splits turn on the accounts, the client list and the trademarks. We handle the settlement and document the break-up so it does not resurface as litigation.',
         },
       },
       {
@@ -1014,8 +1014,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Company Act Advisory',
         },
         desc: {
-          zh: '增資、股權規劃、章程修訂或閉鎖性公司設計，律師依公司實際狀況給可以執行的意見。',
-          en: 'Capital increases, equity structuring, amendments to the articles, and close-company planning — practical advice tailored to how your company actually operates.',
+          zh: '增資、股權規劃、章程修訂、閉鎖性公司設計，律師會看公司實際狀況，給做得到的建議。',
+          en: 'Capital increases, equity structuring, amendments to the articles, closely held company design. Advice that fits how the company actually runs.',
         },
       },
       {
@@ -1024,8 +1024,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Compliance Program Design',
         },
         desc: {
-          zh: '協助企業盤點法規風險，建置法遵制度、內規與教育訓練，降低裁罰與負責人的法律責任風險。',
-          en: 'We map regulatory risks and build compliance systems, internal rules, and training that reduce the exposure of both the company and its responsible persons.',
+          zh: '由律師盤點公司的法規風險，建置法遵制度、內規與教育訓練，降低裁罰與負責人自身的責任風險。',
+          en: 'We map the regulatory risks a company is genuinely exposed to, then build the compliance program, internal rules and training that cut both corporate penalties and personal liability.',
         },
       },
       {
@@ -1034,8 +1034,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Internal Investigations',
         },
         desc: {
-          zh: '接獲檢舉或發現異常金流時，由律師主導調查與訪談，搭配數位鑑識，讓程序合法、證據可用。',
-          en: 'On a whistleblower report or suspicious cash flow, counsel leads the interviews and coordinates digital forensics so the process stays lawful and the evidence usable.',
+          zh: '公司接到檢舉或查到異常金流時，調查該由律師主導，搭配數位鑑識，程序才站得住、證據才用得上。',
+          en: 'When a report comes in or the cash flow looks wrong, counsel should lead the investigation, with digital forensics behind it, so the process holds up and the evidence remains usable.',
         },
       },
       {
@@ -1044,8 +1044,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Personal Data Compliance',
         },
         desc: {
-          zh: '個資蒐集、外洩通報與跨境傳輸都有法定要求，律師協助建立制度並因應主管機關調查。',
-          en: 'Data collection, breach notification, and cross-border transfers all carry statutory duties; we build compliant systems and handle regulator inquiries.',
+          zh: '個資蒐集、外洩通報、跨境傳輸各有法定要求。制度先建起來，主管機關來查時由律師代表公司說明。',
+          en: 'Collection, breach notification and cross-border transfer each carry statutory duties. We build the systems first, and speak for the company when the regulator asks.',
         },
       },
       {
@@ -1054,8 +1054,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Anti-Money Laundering',
         },
         desc: {
-          zh: '金融機構、虛擬資產業者與指定行業都有洗錢防制義務，律師協助建置內控並因應檢查與裁罰。',
-          en: 'Financial institutions, virtual-asset service providers, and designated businesses all carry AML obligations; we build internal controls and respond to examinations and sanctions.',
+          zh: '金融機構、虛擬資產業者與指定行業都有洗錢防制義務。內控由律師協助建置，檢查與裁罰一併因應。',
+          en: 'Financial institutions, virtual asset service providers and designated businesses all carry AML duties. We build the internal controls and handle examinations and penalties.',
         },
       },
       {
@@ -1064,8 +1064,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Breach of Trust and Asset Stripping',
         },
         desc: {
-          zh: '負責人或經理人涉嫌掏空公司資產，律師協助蒐證、提起刑事告訴，或為被告進行答辯。',
-          en: 'Where management is suspected of siphoning company assets, we gather evidence and file criminal complaints — or defend those accused.',
+          zh: '負責人或經理人把公司資產搬走，是刑事問題。律師協助蒐證、提出告訴，也承接被指控一方的辯護。',
+          en: 'Directors or managers moving company assets out is a criminal matter. We gather evidence and file complaints, and we also defend those on the receiving end.',
         },
       },
       {
@@ -1074,8 +1074,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Whistleblower Programs & Response',
         },
         desc: {
-          zh: '建置保密檢舉管道，收到吹哨後由律師規劃調查與處置，降低報復與洩密爭議的風險。',
-          en: 'We design confidential reporting channels and, when a report comes in, structure the investigation and follow-up to manage retaliation and confidentiality risks.',
+          zh: '檢舉管道要保密，收到檢舉更要有處理流程。律師協助建置管道並規劃調查，減少報復與洩密爭議。',
+          en: 'A reporting channel has to stay confidential, and a report that arrives needs a process behind it. We build the channel and structure what follows, limiting retaliation and confidentiality disputes.',
         },
       },
     ],
@@ -1086,8 +1086,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Can we force a troublesome shareholder out of the company?',
         },
         a: {
-          zh: '先講結論：不能直接把股東踢走。股份是股東的財產，除非他同意轉讓或符合法定的特殊情形，否則無法強制排除。實務上多半是協商收購股份、透過股東會改組經營層；僵局嚴重時，符合持股要件的股東也可以聲請法院裁定解散。建議先盤點雙方持股比例和章程規定，再決定談判或訴訟策略，越早處理籌碼越多。',
-          en: 'Generally, no — shares are the shareholder\'s property, and a shareholder cannot simply be expelled without their agreement or a specific statutory basis. In practice the realistic options are a negotiated buy-out, replacing management through the shareholders\' meeting, or, in a severe deadlock, a petition for court-ordered dissolution by shareholders who meet the statutory thresholds. Start by reviewing the shareholding structure and the articles of incorporation — the earlier you act, the more leverage you keep.',
+          zh: '不行。股份是股東的財產，沒有他同意轉讓，也沒有法定的特殊情形，就沒辦法強制排除。實務上走的路是協商收購股份，或透過股東會改組經營層。僵局嚴重時，持股符合法定要件的股東也可以聲請法院裁定解散公司。先把雙方持股比例和章程規定看清楚，再決定要談還是要打。動作越早，手上籌碼越多。',
+          en: 'No. Shares are the shareholder\'s property, and without their agreement to transfer or a specific statutory basis, nobody can be expelled. The realistic routes are a negotiated buy-out or replacing management through the shareholders\' meeting. Where the deadlock is severe, shareholders meeting the statutory thresholds may petition the court to dissolve the company. Start with the shareholding structure and the articles of incorporation, then decide whether to negotiate or litigate. The earlier you move, the more leverage you keep.',
         },
       },
       {
@@ -1096,8 +1096,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'How long do I have to challenge a shareholders\' meeting resolution?',
         },
         a: {
-          zh: '結論：召集程序或決議方法違法的，要自決議之日起三十日內向法院訴請撤銷，逾期就不能再以程序瑕疵爭執。如果是決議內容本身違反法令或章程，則決議無效，不受三十日限制。時間很短，發現開會有問題，請立刻保存開會通知、議事錄、錄音等證據並諮詢律師。',
-          en: 'If the defect lies in the convening procedure or the voting method, you must bring an action to set aside the resolution within 30 days of its adoption; after that, the procedural defect can no longer be raised. If the content of the resolution itself violates the law or the articles, the resolution is void, with no such deadline. The window is short — preserve the meeting notice, minutes, and any recordings immediately and seek advice.',
+          zh: '看瑕疵出在哪裡。召集程序或決議方法違法的，要自決議之日起三十日內向法院訴請撤銷，過了就不能再以程序瑕疵爭執。決議內容本身違反法令或章程的，那是無效，不受三十日限制。三十日很短，覺得會開得不對，先把開會通知、議事錄、錄音留下來，再找律師看。',
+          en: 'It depends where the defect lies. If it is in the convening procedure or the voting method, an action to set the resolution aside must be filed within 30 days of its adoption; after that the procedural defect can no longer be raised. If the content of the resolution itself breaches the law or the articles, the resolution is void and no such deadline applies. Thirty days goes quickly, so preserve the meeting notice, the minutes and any recordings before you take advice.',
         },
       },
       {
@@ -1106,8 +1106,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'An employee has reported senior management for embezzlement — what should we do?',
         },
         a: {
-          zh: '結論：先保全證據，再啟動內部調查，不要急著攤牌。第一步保護檢舉人身分，避免打草驚蛇；第二步由律師主導調查，必要時搭配數位鑑識，固定電腦與帳務紀錄；查證屬實再評估解任、民事求償或刑事告訴。程序做錯可能讓證據不能用，也可能被主張對吹哨者報復，建議及早讓外部律師介入。',
-          en: 'Preserve evidence first, then investigate — do not confront anyone prematurely. Protect the reporter\'s identity, have counsel lead the investigation with digital forensics where needed to secure computers and accounting records, and only then decide on removal, civil claims, or criminal complaints. A flawed process can render evidence unusable and invite retaliation claims, so bring in outside counsel early.',
+          zh: '不要先去質問當事人。先把證據固定住，同時保護檢舉人身分。調查由律師主導，需要時搭配數位鑑識，把電腦與帳務紀錄保全下來。查證確實有問題，再決定要解任、民事求償，還是提刑事告訴。程序做錯，證據可能不能用，公司也可能被主張對吹哨者報復，所以外部律師越早進來越好。',
+          en: 'Do not confront anyone yet. Secure the evidence and protect the reporter\'s identity. Let counsel lead the investigation, with digital forensics where needed to preserve computers and accounting records. Only once the facts are established should you weigh removal, civil claims or a criminal complaint. A flawed process can render the evidence unusable and expose the company to a retaliation claim, which is why outside counsel should come in early.',
         },
       },
       {
@@ -1116,29 +1116,29 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'We\'re splitting up a business partnership — how is the money divided?',
         },
         a: {
-          zh: '結論：有簽合夥契約就照契約；沒有就依民法，退夥或解散時結算合夥財產，原則上按出資比例分配損益。實務上最常吵的是帳目不清、客戶和商標歸誰。拆夥前先把帳冊和對話紀錄保存好，由律師協助結算、簽好拆夥協議，才不會拆完還被追債或互告。',
-          en: 'If there is a written partnership agreement, it governs. Without one, the Civil Code applies: on withdrawal or dissolution the partnership assets are settled, with profits and losses shared in proportion to contributions as the default. The usual fights are over unclear accounts and who keeps the clients and trademarks — preserve the books and correspondence, have counsel run the settlement, and sign a dissolution agreement.',
+          zh: '有合夥契約就照契約算。沒有的話依民法，退夥或解散時結算合夥財產，損益原則上按出資比例分配。實際上吵最兇的是帳目不清，還有客戶和商標歸誰。動手拆之前先把帳冊和對話紀錄留好，由律師協助結算並簽妥拆夥協議，才不會拆完還互相追債、互告。',
+          en: 'A written partnership agreement governs. Without one, the Civil Code applies: on withdrawal or dissolution the partnership assets are settled, and profits and losses are shared in proportion to contributions by default. The real fights are over unclear accounts and who keeps the clients and the trademarks. Preserve the books and the correspondence before you start unwinding, then have counsel run the settlement and sign a dissolution agreement.',
         },
       },
     ],
   },
   'cross-border-business': {
     metaDesc: {
-      zh: '安理國際法律事務所提供跨境併購、外人投資申請（投審會）、合資協議與國際商務合約談判等法律服務，並與美英律師共同辦案，協助英文契約審閱與台商海外布局。台北市中正區，初次諮詢採預約制。',
-      en: 'Yang & Associates Law Firm (ANLI) in Taipei advises on cross-border M&A, Taiwan foreign investment approvals, joint ventures, and international commercial contracts, working as co-counsel with US and UK attorneys. Initial consultations by appointment.',
+      zh: '安理國際法律事務所位於台北市中正區，承辦跨境併購、外人投資申請（投審會）、合資協議、英文契約審閱與國際商務合約談判。涉及美國、英國的案件與當地律師共同辦案，也協助台商海外布局。初次諮詢採預約制。',
+      en: 'Yang & Associates Law Firm (ANLI) in Taipei handles cross-border M&A, Taiwan foreign investment approvals, joint ventures, English contract review, and international commercial negotiations, acting as co-counsel with US and UK attorneys. Consultations by appointment.',
     },
     intro: [
       {
-        zh: '跟外國客戶簽了英文合約，出事才發現管轄權約定在國外；合資談好了出資，股權和退場機制卻沒寫進協議；原廠一紙通知就終止經銷代理，庫存和客戶不知道怎麼辦。跨國生意的糾紛，多半在簽約那一刻就已經埋下。',
-        en: 'Cross-border disputes are usually built into the deal itself: an English contract signed without review, a joint venture with no exit mechanism, a distributorship terminated by a single notice. By the time something goes wrong, the terms are already set.',
+        zh: '英文合約簽了，出事才發現要到對方的國家打官司。合資的出資談得很細，股權怎麼分、將來想退出怎麼退，協議裡一個字也沒寫。原廠寄一封終止通知，經銷權就沒了，倉庫裡的貨還在。跨國生意的糾紛大多不是突然冒出來的，是簽約那天就留下的。',
+        en: 'Most cross-border disputes are written into the deal long before anything goes wrong. An English contract signed without review. A joint venture with no exit terms. A distributorship ended by one letter, with the stock still in the warehouse. By then the terms are fixed.',
       },
       {
-        zh: '先提醒兩件常被忽略的事。外國人來台投資，多數情況要先取得經濟部投資審議司（原投審會）核准，程序沒走完，股權登記和後續增資都會卡住。另外，合約的準據法與管轄條款，決定將來在哪個國家、用哪國法律解決爭議，簽約前務必確認。',
-        en: 'Two points are often overlooked. Most foreign investment into Taiwan requires prior approval from the Department of Investment Review, MOEA (formerly the Investment Commission) before share registration can proceed. And the governing-law and jurisdiction clauses in your contract decide where, and under which law, any dispute will be resolved. Check them before you sign.',
+        zh: '外國人來台投資，多數情況要先取得經濟部投資審議司（原投審會）核准。程序沒走完，股權登記和後續增資都會卡住，錢匯進來也動不了。合約的準據法與管轄條款同樣容易被跳過，它們決定將來在哪個國家、依哪一國的法律解決爭議，簽名前一定要看清楚。',
+        en: 'Foreign investment into Taiwan usually needs approval from the Department of Investment Review, MOEA (formerly the Investment Commission) before shares can be registered or capital increased. Skip the step and the funds sit stranded. The governing-law and jurisdiction clauses deserve the same attention: they decide whose courts, and whose law, will handle any dispute.',
       },
       {
-        zh: '安理的主持律師在美國柏克萊取得法學博士，英文契約審閱與跨境談判是我們的日常業務。案件涉及美國、英國時，我們與當地執業律師共同辦案（co-counsel），由台北統籌進度，您不必自己面對外國律師。',
-        en: 'Our managing attorney holds a J.S.D. from UC Berkeley, and English contract review and cross-border negotiation are our daily work. Where a matter touches the US or UK, we act as co-counsel with local attorneys, coordinating everything from Taipei so you deal with one team.',
+        zh: '安理的主持律師楊佳陵博士在美國柏克萊取得法學博士（J.S.D.），英文契約審閱與跨境談判是事務所的日常業務。案件牽涉美國或英國時，我們與當地執業律師共同辦案（co-counsel），進度由台北這邊統籌，客戶不必自己跟外國律師來回周旋。',
+        en: 'Our managing attorney holds a J.S.D. from UC Berkeley, and English-language contracts and cross-border negotiation are routine work at the firm. On US and UK matters we act as co-counsel with attorneys admitted there, running the file from Taipei so clients are not left dealing with foreign lawyers on their own.',
       },
     ],
     cases: [
@@ -1148,8 +1148,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Foreign Investment Approval',
         },
         desc: {
-          zh: '外國股東要來台設公司或入股，律師協助向投資審議司（原投審會）申請核准並辦理登記。',
-          en: 'Approval filings with Taiwan\'s Department of Investment Review (formerly the Investment Commission) for foreign shareholders establishing or investing in Taiwanese companies.',
+          zh: '外國股東要在台設公司或入股，須先向投資審議司（原投審會）申請核准，我們備件並辦登記。',
+          en: 'Approval filings with the Department of Investment Review (formerly the Investment Commission) for foreign shareholders forming or buying into a Taiwanese company, through to registration.',
         },
       },
       {
@@ -1158,8 +1158,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Cross-Border M&A',
         },
         desc: {
-          zh: '收購外國公司或把股權賣給外資，律師規劃交易架構、執行盡職調查並審閱併購契約。',
-          en: 'Deal structuring, due diligence, and transaction documents for acquiring foreign targets or selling Taiwanese equity to overseas buyers.',
+          zh: '收購外國公司，或把股權賣給外資。我們規劃交易架構、執行盡職調查並審閱併購契約。',
+          en: 'Deal structuring, due diligence, and transaction documents for buying a foreign target or selling Taiwanese equity to an overseas buyer.',
         },
       },
       {
@@ -1168,8 +1168,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Joint Venture Agreements',
         },
         desc: {
-          zh: '與外國夥伴合資設公司或設廠，律師協助談判出資、股權比例、經營控制與退場機制。',
-          en: 'Negotiating capital contributions, control, deadlock, and exit terms for joint ventures with foreign partners.',
+          zh: '合資設廠最常漏掉的是退場機制。出資比例、經營控制與退場條件，由我們擬約並參與談判。',
+          en: 'Capital contributions, control, deadlock, and exit terms are what a joint venture lives on. We draft the agreement and sit in on the negotiation.',
         },
       },
       {
@@ -1178,8 +1178,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'English Contract Review',
         },
         desc: {
-          zh: '收到外國客戶的英文合約，律師逐條審閱、用中文說明風險，並直接提供英文修改文字。',
-          en: 'Clause-by-clause review of English-language agreements, with risks explained in plain Chinese and revisions drafted in English.',
+          zh: '外國客戶寄來英文合約，我們逐條審閱，用中文說明風險，並提供英文修改文字。',
+          en: 'Clause-by-clause review of English-language agreements, with the risks explained in Chinese and the revisions drafted in English.',
         },
       },
       {
@@ -1188,7 +1188,7 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'International Contract Negotiation',
         },
         desc: {
-          zh: '跨國買賣、服務或授權合約，律師陪同談判，把付款、違約與爭議解決條款談清楚。',
+          zh: '跨國買賣、服務或授權合約，我們陪同談判，把付款、違約與爭議解決條款談清楚。',
           en: 'Negotiating payment, liability, and dispute-resolution terms in cross-border sales, services, and licensing deals.',
         },
       },
@@ -1198,8 +1198,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Distribution & Agency Agreements',
         },
         desc: {
-          zh: '取得或授予國外品牌經銷代理權，律師審閱獨家條款、業績門檻與終止後的庫存處理。',
-          en: 'Reviewing exclusivity, sales targets, and termination and post-termination inventory terms in cross-border distribution and agency arrangements.',
+          zh: '獨家範圍、業績門檻、終止後的庫存處理，是經銷代理合約的重點，我們逐項審閱把關。',
+          en: 'Exclusivity, sales targets, termination, and what happens to inventory afterwards: the terms that decide how a distribution or agency deal ends.',
         },
       },
       {
@@ -1208,8 +1208,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'NDAs & Confidentiality',
         },
         desc: {
-          zh: '與外國廠商洽談合作前，律師草擬或審閱NDA，界定保密範圍、期間與違約責任。',
-          en: 'Drafting and reviewing NDAs before cross-border talks: scope, term, permitted use, and remedies for breach.',
+          zh: '洽談合作前先把NDA談好，我們草擬或審閱保密範圍、使用目的、期間與違約責任。',
+          en: 'Drafting and reviewing NDAs before talks begin: scope, permitted use, duration, and remedies for breach.',
         },
       },
       {
@@ -1218,8 +1218,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Export Controls & Trade Compliance',
         },
         desc: {
-          zh: '產品或技術涉及貿易管制，律師協助判斷是否屬管制貨品、申請輸出許可並建立內控。',
-          en: 'Assessing whether products or technology are controlled items, obtaining export permits, and building internal compliance programs.',
+          zh: '產品或技術可能受貿易管制。我們判斷是否屬管制貨品、代辦輸出許可，並建立內部審查。',
+          en: 'Assessing whether a product or technology is a controlled item, applying for export permits, and building internal screening procedures.',
         },
       },
       {
@@ -1228,8 +1228,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Outbound Investment',
         },
         desc: {
-          zh: '赴美國或東南亞設子公司、投資設廠，律師與當地律師合作規劃控股架構與投資契約。',
-          en: 'Working with local counsel to structure holding companies and investment agreements for Taiwanese businesses expanding abroad.',
+          zh: '赴美國或東南亞設子公司、投資設廠，我們與當地律師合作規劃控股架構與投資契約。',
+          en: 'Holding structures and investment agreements for Taiwanese businesses setting up in the US or Southeast Asia, developed with local counsel.',
         },
       },
       {
@@ -1238,8 +1238,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Supply Chain Contracts',
         },
         desc: {
-          zh: '供應商斷貨、品質瑕疵或交期延誤，律師檢視合約責任分配，協助求償或重新談判。',
-          en: 'Reviewing liability allocation in supply agreements and pursuing claims over supply failures, defects, or delays.',
+          zh: '供應商斷貨、瑕疵或交期延誤，我們檢視合約的責任分配，協助求償或重新談定條件。',
+          en: 'Supply failures, defects, and late delivery. We check how the contract allocates liability, then pursue the claim or renegotiate the terms.',
         },
       },
       {
@@ -1248,8 +1248,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Cross-Border Trade Disputes',
         },
         desc: {
-          zh: '跨境買賣收不到貨款或貨物有爭議，律師評估管轄與準據法，協助催收、仲裁或訴訟。',
-          en: 'Assessing jurisdiction and governing law, then pursuing recovery through negotiation, arbitration, or litigation.',
+          zh: '貨款收不回來，或到貨品質有爭議。我們先釐清管轄與準據法，再決定催收、仲裁或起訴。',
+          en: 'Jurisdiction and governing law first, then recovery through demand, arbitration, or litigation.',
         },
       },
       {
@@ -1258,8 +1258,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Technology Licensing',
         },
         desc: {
-          zh: '將技術或商標授權外國廠商使用，律師草擬授權契約，處理權利金、地域與侵權條款。',
-          en: 'Drafting license agreements covering royalties, territory, and infringement for technology and trademark licensing abroad.',
+          zh: '把技術或商標授權給外國廠商，我們草擬授權契約，處理權利金、地域與侵權條款。',
+          en: 'License agreements for technology and trademarks abroad, covering royalties, territory, and infringement.',
         },
       },
     ],
@@ -1270,8 +1270,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Does a foreign investor need government approval to invest in a Taiwanese company?',
         },
         a: {
-          zh: '多數情況要。外國人來台投資，原則上須先經經濟部投資審議司（原投審會）核准，才能辦理公司設立登記或股權變更。投資金額與產業不同，文件和審查程序也不同；陸資另有較嚴格的限制。建議在匯款、簽約前先確認程序，避免資金進來卻無法完成登記。',
-          en: 'In most cases, yes. Foreign investment into Taiwan generally requires prior approval from the Department of Investment Review, MOEA (formerly the Investment Commission) before company registration or a share transfer can be completed. Requirements vary by investment amount and industry, and investment from mainland China is subject to much stricter rules. Confirm the procedure before wiring funds or signing anything.',
+          zh: '多數情況要。外國人來台投資，原則上須先經經濟部投資審議司（原投審會）核准，才能辦理公司設立登記或股權變更。投資金額和產業別不同，要備的文件與審查方式也不一樣，陸資另有較嚴格的限制。實務上常見的情形是錢先匯進來了，才發現登記卡在核准前面，所以匯款和簽約前先把程序確認清楚。',
+          en: 'Usually, yes. Foreign investment into Taiwan generally requires prior approval from the Department of Investment Review, MOEA (formerly the Investment Commission) before company registration or a share transfer can go through. What you file depends on the amount and the industry, and investment from mainland China is subject to much stricter rules. Confirm the route before wiring funds or signing. Money that arrives ahead of approval tends to sit idle.',
         },
       },
       {
@@ -1280,8 +1280,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Can I just sign an English contract and sort out the details later?',
         },
         a: {
-          zh: '不建議。英文合約最會出問題的通常不是價格數量，而是準據法、管轄、賠償上限、智財歸屬這些放在後面的條款，出事時全靠它們。先簽再說，等於把談判籌碼交出去。英文契約審閱是我們的日常業務：逐條標出風險、用中文說明，並直接提供英文修改文字，讓您帶回談判桌。',
-          en: 'We advise against it. The clauses that cause the most damage are rarely price and quantity—they are governing law, jurisdiction, liability caps, and IP ownership, buried near the end. Signing first means giving up your leverage. English contract review is our daily work: we flag risks clause by clause, explain them in plain terms, and draft the English revisions you can take back to the table.',
+          zh: '不建議。價格和數量客戶大多看得懂，真正出事的是準據法、管轄、賠償上限和智財歸屬這幾條，位置通常在合約後段。先簽再說，等於把談判籌碼先交出去。英文契約審閱是我們的日常業務，逐條標出風險、用中文說明，並提供可以直接帶回談判桌的英文修改文字。',
+          en: 'We advise against it. Price and quantity are the easy parts. The damage usually comes from governing law, jurisdiction, liability caps, and IP ownership, which sit near the back of the document. Signing first hands over your leverage. English contracts are routine work here: we mark the risks clause by clause, explain them in Chinese, and draft the English revisions you take back to the table.',
         },
       },
       {
@@ -1290,8 +1290,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'When should I sign an NDA with a foreign business partner?',
         },
         a: {
-          zh: '在交出任何技術資料、客戶名單或報價之前就要簽。NDA要寫清楚保密範圍、使用目的、期間和違約責任，也要注意準據法與管轄——若約定只能在國外求償，將來成本會很高。對方提出的版本通常對它自己有利，簽名前值得花一點時間請律師看過。',
-          en: 'Before you hand over any technical data, customer lists, or pricing. An NDA should clearly define scope, permitted use, duration, and remedies for breach—and watch the governing-law and jurisdiction clauses, since being forced to sue abroad can be prohibitively expensive. The other side\'s template usually favors them; have a lawyer review it before you sign.',
+          zh: '在交出任何技術資料、客戶名單或報價之前就要簽。NDA要寫清楚保密範圍、使用目的、期間和違約責任。準據法與管轄同樣要看，如果約定只能到國外求償，將來的成本可能高到不值得走這一趟。對方提出的版本通常對它自己有利，簽名前請律師看過並不會花太久。',
+          en: 'Before you hand over technical data, customer lists, or pricing. A workable NDA defines scope, permitted use, duration, and remedies for breach. Check the governing-law and jurisdiction clauses too, because an NDA you can only enforce abroad may cost more to use than it is worth. The counterparty\'s template is written for the counterparty. Have it reviewed first.',
         },
       },
       {
@@ -1300,29 +1300,29 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'How do I know whether my products are subject to export controls?',
         },
         a: {
-          zh: '先確認產品或技術是否列入戰略性高科技貨品清單；若屬管制貨品，輸出前要取得許可，出口到受管制或受制裁地區另有限制。要留意的是，美國出口管制規定可能因產品含美國技術而適用到台灣公司。我們可協助判斷是否受管制、申請許可，並建立內部審查流程。',
-          en: 'Start by checking whether the product or technology appears on Taiwan\'s Strategic High-Tech Commodities list; controlled items require an export permit, and shipments to restricted or sanctioned destinations face additional limits. Note that US export controls can also reach Taiwanese companies when products incorporate US technology. We help determine whether controls apply, obtain permits, and set up internal screening procedures.',
+          zh: '先確認產品或技術有沒有列入戰略性高科技貨品清單。屬於管制貨品的，輸出前要取得許可，出口到受管制或受制裁地區還有額外限制。容易被忽略的是，產品含有美國技術時，美國的出口管制規定可能適用到台灣公司。我們協助判斷是否受管制、申請輸出許可，並建立內部審查流程。',
+          en: 'Start with Taiwan\'s Strategic High-Tech Commodities list. Controlled items need an export permit before shipment, and restricted or sanctioned destinations carry further limits. The point most exporters miss is that US export controls can reach a Taiwanese company when the product incorporates US technology. We assess whether controls apply, handle permit applications, and set up internal screening.',
         },
       },
     ],
   },
   'tax-wealth': {
     metaDesc: {
-      zh: '安理國際法律事務所提供遺產稅、贈與稅與生前贈與規劃，運用信託與閉鎖性股份有限公司安排家族傳承，並代理復查、訴願、行政訴訟等稅務行政救濟，處理海外資產與CFC申報。初次諮詢採預約制。',
-      en: 'Yang & Associates Law Firm (ANLI) in Taipei advises on estate and gift tax planning, trusts, family business succession, CFC compliance, and tax dispute resolution.',
+      zh: '安理國際法律事務所位於台北市中正區，處理遺產稅與贈與稅申報、生前分年贈與規劃，以信託或閉鎖性股份有限公司安排家族企業傳承，並代理復查、訴願與稅務行政訴訟，也協助海外資產申報與CFC制度評估。採預約制。',
+      en: 'Taipei-based Yang & Associates Law Firm (ANLI) handles estate and gift tax filings, lifetime gifting plans, trusts and close-company structures for family succession, offshore and CFC reporting, and tax disputes from recheck through the administrative courts.',
     },
     intro: [
       {
-        zh: '很多人是在收到國稅局的補稅通知後，才第一次認真面對稅的問題：長輩過世才發現名下財產比想像複雜、幾年前的一筆匯款被認定是贈與、海外帳戶從來沒有申報過。到了這一步，能做的往往只剩下補稅、繳罰鍰，和有限的救濟程序。',
-        en: 'For many families, tax planning begins only after a deficiency notice arrives: a parent passes away leaving a more complicated estate than expected, a transfer made years ago is recharacterized as a taxable gift, or an offshore account was never reported. By that point, the options are usually limited to back taxes, penalties, and formal remedies.',
+        zh: '多數人真正處理稅務問題，是從收到國稅局的通知開始。長輩過世後才發現名下財產遠比想像複雜，幾年前給子女的一筆匯款被認定成贈與，海外帳戶擺了十幾年從沒申報過。走到這一步，能談的多半只剩補稅金額、罰鍰輕重，以及救濟期限還剩幾天。',
+        en: 'Most people confront tax questions only after a notice arrives from the tax authority. A parent dies and the estate turns out to be far more tangled than anyone expected. A transfer made to a child years ago is recharacterized as a gift. An offshore account has sat unreported for a decade. By then the conversation is narrow: how much back tax, how large the penalty, how many days are left to seek relief.',
       },
       {
-        zh: '稅務行政救濟有嚴格期限：對國稅局的核定不服，要先在法定期限內申請復查，之後才能提起訴願、再進入行政訴訟；任何一個階段逾期，處分就告確定。遺產稅則原則上應在被繼承人死亡之日起六個月內申報。期限一過，再有道理也很難補救。',
-        en: 'Taiwan\'s tax remedies run on strict deadlines. A taxpayer must first apply to the tax authority for a recheck of the assessment, then file an administrative appeal, and only then bring the case before the administrative courts; missing any deadline makes the assessment final. Estate tax returns are generally due within six months of the date of death. Once a deadline passes, even a strong case is hard to save.',
+        zh: '稅務救濟每一關都有期限。對國稅局的核定不服，要先在法定期限內申請復查，復查決定出來還是不服才能提訴願，訴願駁回後才輪到行政訴訟。任何一關逾期，處分就確定了，之後再有道理也難翻。遺產稅原則上也要在被繼承人死亡之日起六個月內申報。',
+        en: 'Tax remedies in Taiwan run on fixed deadlines. A taxpayer who disputes an assessment must first apply to the tax authority for a recheck, then file an administrative appeal, and only then take the case to the administrative courts. Miss one deadline and the assessment stands, however good the argument. Estate tax returns are generally due within six months of the date of death.',
       },
       {
-        zh: '更重要的是，多數稅務風險其實可以事先避開。生前贈與怎麼分年安排、要不要用信託或閉鎖性股份有限公司持有家族資產、境外公司是否落入CFC申報範圍，都是能提前規劃的事。安理協助您在事情發生前把架構想清楚，也在爭議發生後陪您走完每一個救濟程序。',
-        en: 'Most tax exposure, however, can be managed before it arises. Structuring lifetime gifts, holding family assets through trusts or a closely held company, and assessing whether offshore entities fall within Taiwan\'s CFC rules are all matters best addressed in advance. ANLI helps clients think through these structures early—and stands with them through every stage of a dispute when one occurs.',
+        zh: '不過多數稅務風險是可以事先避開的。財產分幾年贈與、家族股權要不要放進信託或閉鎖性股份有限公司、境外公司會不會落入CFC申報範圍，這些都是事前能算清楚的事。安理的作法是先把架構和資金流向確認清楚再動手。真的起了爭議，也從復查陪到行政訴訟。',
+        en: 'Most of this exposure is avoidable. How many years to spread gifts over, whether family shares belong in a trust or a closely held company, whether an offshore entity falls within Taiwan\'s CFC rules: all of these have answers before the fact. ANLI works through the structure and the money trail first, and stays with clients from recheck through litigation when a dispute does arrive.',
       },
     ],
     cases: [
@@ -1332,8 +1332,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Lifetime Gift Planning',
         },
         desc: {
-          zh: '想分年把財產移轉給子女，律師協助規劃贈與方式、時點與申報，降低日後被補稅的風險。',
-          en: 'Structuring gifts to children across multiple years, advising on timing, form, and reporting to reduce the risk of later reassessment.',
+          zh: '打算分年把財產移轉給子女，我們協助安排贈與的時點與方式並辦理申報，減少日後被追補稅的風險。',
+          en: 'For clients moving assets to their children over several years, we plan the timing and form of each gift and handle the filings, reducing the risk of later reassessment.',
         },
       },
       {
@@ -1342,8 +1342,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Estate Tax Filing',
         },
         desc: {
-          zh: '親人過世後原則上須在六個月內申報遺產稅，律師協助盤點財產、確認扣除額並如期申報。',
-          en: 'Helping heirs inventory the estate, apply available deductions, and file the estate tax return within the statutory deadline.',
+          zh: '親人過世後遺產稅原則上六個月內要申報。律師協助盤點財產、確認扣除額，並如期送件。',
+          en: 'Estate tax is generally due six months after death. We inventory the estate, confirm available deductions, and file on time.',
         },
       },
       {
@@ -1352,8 +1352,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Gift Tax Disputes',
         },
         desc: {
-          zh: '親屬間資金往來被國稅局認定為贈與而補稅，律師協助說明資金性質並提出救濟。',
-          en: 'Responding when family fund transfers are recharacterized as taxable gifts, presenting evidence and pursuing remedies.',
+          zh: '親屬間資金往來被國稅局認定為贈與而補稅，律師協助整理金流證據、說明款項性質並提起救濟。',
+          en: 'When transfers between family members are recharacterized as taxable gifts, we document the source and purpose of the funds and pursue the available remedies.',
         },
       },
       {
@@ -1362,8 +1362,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Testamentary Trusts',
         },
         desc: {
-          zh: '擔心繼承人年幼或不擅理財，律師協助以遺囑設立信託，由受託人依約管理並分期給付。',
-          en: 'Establishing a trust by will so that assets are managed by a trustee and distributed to young or vulnerable heirs over time.',
+          zh: '繼承人年幼或不擅理財，可以用遺囑設立信託，由律師協助擬定條款，讓受託人依約管理並分期給付。',
+          en: 'Where heirs are young or inexperienced with money, a trust created by will lets a trustee hold the assets and release them in stages. We draft the terms.',
         },
       },
       {
@@ -1372,8 +1372,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Lifetime Trusts',
         },
         desc: {
-          zh: '想在生前透過信託照顧家人，律師協助設計信託架構並評估他益信託的贈與稅課稅問題。',
-          en: 'Designing lifetime trust structures to provide for family members, including the gift tax treatment of trusts with third-party beneficiaries.',
+          zh: '生前就想透過信託照顧家人的，律師協助設計信託架構，並事先評估他益信託的贈與稅負擔。',
+          en: 'For clients providing for family during their lifetime, we design the trust structure and assess the gift tax treatment when the beneficiary is someone other than the settlor.',
         },
       },
       {
@@ -1382,8 +1382,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Family Business Succession',
         },
         desc: {
-          zh: '家族公司要交棒，擔心股權分散或經營權旁落，律師協助設計持股架構與接班安排。',
-          en: 'Planning the handover of a family company while keeping ownership consolidated and control within the family.',
+          zh: '家族公司要交棒，最怕股權分散、經營權旁落。律師協助設計持股架構與接班安排。',
+          en: 'Handing a family company to the next generation without fragmenting ownership or losing control. We design the shareholding structure and the succession plan.',
         },
       },
       {
@@ -1392,8 +1392,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Closely Held Companies',
         },
         desc: {
-          zh: '想用閉鎖性股份有限公司集中家族持股，律師協助設計章程、股份轉讓限制與特別股。',
-          en: 'Using Taiwan\'s close company regime to consolidate family shareholding through tailored articles, transfer restrictions, and special shares.',
+          zh: '要把家族持股集中在閉鎖性股份有限公司底下，律師協助處理章程設計、股份轉讓限制與特別股條款。',
+          en: 'Consolidating family shareholdings in a close company, with articles, transfer restrictions, and special share rights drafted to fit the family.',
         },
       },
       {
@@ -1402,8 +1402,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Tax Recheck & Appeals',
         },
         desc: {
-          zh: '收到補稅或罰鍰處分不服，律師協助在法定期限內申請復查、提起訴願，爭取撤銷或減輕。',
-          en: 'Challenging assessments and penalties through recheck and administrative appeal within the statutory deadlines.',
+          zh: '收到補稅或罰鍰處分不服，律師在法定期限內協助申請復查、提起訴願，爭取撤銷或減輕。',
+          en: 'An assessment or penalty can be challenged by applying for a recheck within the statutory period and appealing from there. We prepare the filings and argue for cancellation or reduction.',
         },
       },
       {
@@ -1412,8 +1412,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Tax Litigation',
         },
         desc: {
-          zh: '訴願遭駁回後，律師協助向行政法院提起行政訴訟，整理帳證資料並建構法律主張。',
-          en: 'Pursuing tax cases in the administrative courts after an unsuccessful appeal, marshaling accounting records, evidence, and legal arguments.',
+          zh: '訴願被駁回不代表結束。律師協助向行政法院提起行政訴訟，重新整理帳證資料，並建構法律主張。',
+          en: 'A rejected appeal is not the end of the road. We take the case to the administrative court, rebuild the accounting record, and frame the legal arguments.',
         },
       },
       {
@@ -1422,8 +1422,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Offshore Asset Reporting',
         },
         desc: {
-          zh: '持有海外存款、股票或不動產，律師協助釐清海外所得申報義務，降低漏報受罰風險。',
-          en: 'Clarifying reporting obligations for overseas deposits, securities, and real property to reduce penalty exposure.',
+          zh: '手上有海外存款、股票或不動產，律師協助釐清哪些必須列入海外所得申報，降低漏報被罰的風險。',
+          en: 'For overseas deposits, securities, and property, we work out what has to be declared as foreign-source income and reduce the exposure to penalties for omission.',
         },
       },
       {
@@ -1432,8 +1432,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'CFC Compliance',
         },
         desc: {
-          zh: '透過境外公司投資或持有資產，律師協助評估CFC制度的影響，規劃申報或調整架構。',
-          en: 'Assessing how Taiwan\'s controlled foreign company rules apply to offshore entities and advising on reporting or restructuring.',
+          zh: '透過境外公司投資或持有資產的，律師協助評估是否落入CFC制度，再決定辦理申報或調整架構。',
+          en: 'For assets held through offshore entities, we assess whether Taiwan\'s CFC rules bite and advise on reporting or restructuring.',
         },
       },
       {
@@ -1442,8 +1442,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Wills & Reserved Portions',
         },
         desc: {
-          zh: '想預立遺囑安排財產，律師協助確認遺囑法定方式與特留分規定，減少日後繼承糾紛。',
-          en: 'Drafting wills that satisfy statutory formalities and respect reserved portion rules, reducing the risk of inheritance disputes.',
+          zh: '要立遺囑分配身後財產，律師協助確認遺囑的法定方式，並把特留分納入計算，減少日後的繼承糾紛。',
+          en: 'For clients making a will, we confirm the statutory formalities and factor in reserved portions, reducing the risk of inheritance disputes later.',
         },
       },
     ],
@@ -1454,8 +1454,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'When is the estate tax return due in Taiwan, and what if I miss it?',
         },
         a: {
-          zh: '原則上應在被繼承人死亡之日起六個月內申報，有正當理由可以在期限屆滿前以書面申請延長。逾期申報或漏報財產，可能被加徵罰鍰。要注意的是，遺產範圍常比想像中大：被繼承人死亡前二年內贈與配偶或特定近親的財產，依法仍會被視為遺產課稅。建議儘早盤點財產、儘早尋求協助，避免漏報。',
-          en: 'The return is generally due within six months of the date of death, with an extension available on written application for legitimate reasons before the deadline. Late filing or omitted assets can trigger penalties. Note that the taxable estate is often larger than expected: gifts made to the spouse or certain close relatives within two years before death are brought back into the taxable estate by law. Start the inventory early and get advice before filing.',
+          zh: '原則上是被繼承人死亡之日起六個月內。有正當理由的，可以在期限屆滿前以書面申請延長。逾期申報或漏報財產，都可能被加徵罰鍰。實務上比較容易出事的是遺產範圍：被繼承人死亡前二年內贈與配偶或特定近親的財產，依法仍要視為遺產課稅，盤點時最常漏掉的就是這一塊。財產狀況複雜的話，越早開始清查越好。',
+          en: 'Generally within six months of the date of death. If there is good reason, you can apply in writing to extend the deadline before it expires. Filing late or leaving assets out can draw penalties. The usual trap is the scope of the estate: gifts made to a spouse or certain close relatives within two years before death are pulled back into the taxable estate by law, and that is the item people miss when they take inventory. The more complicated the assets, the earlier the work should start.',
         },
       },
       {
@@ -1464,8 +1464,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'Do annual cash gifts to my children need to be reported?',
         },
         a: {
-          zh: '同一年度內，贈與人的贈與總額在免稅額以內，原則上不必繳稅也不必申報；超過免稅額，就要在贈與行為後三十日內申報贈與稅。免稅額金額會隨主管機關公告調整，規劃前應先確認當年度數字。另外，即使金額在免稅額內，匯款憑證與資金用途最好留存，多年後國稅局仍可能要求說明。分年贈與是常見做法，但時點與財產種類都會影響稅負，建議整體規劃。',
-          en: 'If a donor\'s total gifts within a calendar year stay within the annual exemption, no tax or filing is generally required; gifts exceeding the exemption must be reported within thirty days of the gift. The exemption amount is adjusted periodically by official announcement, so confirm the current figure before planning. Even for exempt gifts, keep transfer records and documentation of purpose—the tax authority may ask about them years later. Annual gifting is common, but timing and asset type both affect the tax outcome, so plan the whole picture rather than year by year.',
+          zh: '同一年度內贈與總額沒有超過免稅額，原則上不用繳稅，也不用申報。超過免稅額，就要在贈與行為後三十日內申報贈與稅。免稅額金額會隨主管機關公告調整，規劃前先確認當年度的數字。另外，即使金額在免稅額內，匯款憑證和資金用途的說明資料還是留著比較好，國稅局隔幾年才來問的情形並不少見。分年贈與是常見作法，但贈與時點和財產種類都會影響稅負，最好整體算過再動。',
+          en: 'If a donor\'s total gifts in a calendar year stay within the annual exemption, no tax is due and no return is required. Anything above the exemption must be reported within thirty days of the gift. The exemption figure is adjusted by official announcement, so check the current year\'s number before planning around it. Keep transfer records and evidence of purpose even for exempt gifts. The tax authority may ask about them years later. Annual gifting is common, but timing and asset type both move the result, so work through the whole plan rather than one year at a time.',
         },
       },
       {
@@ -1474,8 +1474,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'I received a tax assessment I disagree with. What can I do?',
         },
         a: {
-          zh: '不能置之不理。第一步是在法定期限內申請復查；對復查決定仍不服，再提起訴願；訴願被駁回後，才能向行政法院提起行政訴訟。每個階段都有期限，逾期處分就確定。另外，已依法申請復查者，原則上暫緩移送強制執行；進入訴願階段，則可依規定繳納部分稅款或提供相當擔保，暫緩移送強制執行。建議收到處分書就儘早請律師評估，不要等期限快到才處理。',
-          en: 'Do not ignore it. The first step is to apply for a recheck within the statutory period; if the recheck decision is still unfavorable, file an administrative appeal, and only after that can you bring the case before the administrative courts. Each stage has its own deadline, and missing one makes the assessment final. A pending recheck application generally defers referral for compulsory enforcement; at the appeal stage, paying part of the assessed tax or providing adequate security can defer enforcement. Have a lawyer assess the case as soon as the notice arrives, not when the deadline is closing in.',
+          zh: '擺著不理是最糟的選項。程序上第一步是在法定期限內申請復查，對復查決定仍不服才提起訴願，訴願被駁回後才能向行政法院提起行政訴訟。每個階段都有期限，逾期處分就確定。強制執行的部分，已依法申請復查者原則上暫緩移送強制執行。進入訴願階段，則可依規定繳納部分稅款或提供相當擔保，暫緩移送強制執行。收到處分書就該找律師評估，不要拖到期限剩沒幾天。',
+          en: 'Ignoring it is the worst option. The first step is to apply for a recheck within the statutory period. If the recheck decision still goes against you, file an administrative appeal, and only after that can the case go to the administrative courts. Each stage carries its own deadline, and missing one makes the assessment final. On enforcement: a taxpayer who has duly applied for a recheck generally has referral for compulsory enforcement deferred, and at the appeal stage, paying part of the assessed tax or providing adequate security will defer it as well. Bring the notice to a lawyer when it arrives, not when the deadline is days away.',
         },
       },
       {
@@ -1484,8 +1484,8 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
           en: 'I hold assets through an offshore company. Do Taiwan\'s CFC rules affect me?',
         },
         a: {
-          zh: '會受影響。台灣已施行受控外國企業（CFC）制度：個人與關係人對低稅負地區的境外公司合計持股達一定比率或具重大影響力時，即使盈餘沒有匯回台灣，也可能要視同分配課稅並辦理申報。過去把資產放在境外公司就「放著不動」的做法，現在可能產生申報義務與補稅、罰鍰風險。建議重新檢視持股架構，評估是否落入CFC範圍，再決定調整或申報方式。',
-          en: 'Quite possibly. Under Taiwan\'s controlled foreign company regime, where an individual and related parties together hold a sufficient stake in—or exercise significant influence over—a company in a low-tax jurisdiction, its earnings may be taxed as deemed distributions even if nothing is remitted to Taiwan. Simply parking assets in an offshore company is no longer a passive arrangement: it can create filing obligations and exposure to back taxes and penalties. Review the structure, assess whether the CFC rules apply, and decide whether to restructure or report.',
+          zh: '會受影響。台灣已施行受控外國企業（CFC）制度，個人與關係人對低稅負地區的境外公司合計持股達一定比率，或具有重大影響力，即使盈餘沒有匯回台灣，也可能要視同分配課稅並辦理申報。過去把資產放進境外公司就擺著不動的做法，現在會產生申報義務，也有補稅與罰鍰的風險。手上有境外架構的，先重新檢視持股比例與控制關係，確認是否落入CFC範圍，再決定要申報還是調整架構。',
+          en: 'They may well. Under Taiwan\'s controlled foreign company regime, where an individual and related parties together hold a set proportion of a company in a low-tax jurisdiction, or exercise significant influence over it, its earnings can be taxed as deemed distributions and reported even if nothing is remitted to Taiwan. An offshore holding company is no longer something you set up and leave alone: it carries filing obligations and exposure to back taxes and penalties. Review the shareholding and control position first, then decide whether to report or restructure.',
         },
       },
     ],
