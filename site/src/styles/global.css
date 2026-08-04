@@ -31,6 +31,8 @@
   --font-size-reading-lead: clamp(1.1875rem, 1.08rem + 0.45vw, 1.375rem);
   --font-size-reading-detail: clamp(1.03125rem, 0.99rem + 0.2vw, 1.125rem);
   --line-height-reading: 1.9;
+  /* 全站共用的頁面左右留白。所有區塊、卡片、頁尾都以它為唯一的對齊基準。 */
+  --gutter: clamp(18px, 5vw, 72px);
 }
 
 html[lang='en'] {
@@ -297,7 +299,7 @@ body.menu-open { overflow: hidden; }
   .brand-hero { min-height: 680px; }
 
   .brand-hero-content {
-    padding: 38px 20px 64px;
+    padding: 38px var(--gutter) 64px;
   }
 
   .brand-hero-monogram {
@@ -374,7 +376,7 @@ a:hover { color: var(--gold-bright); }
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px clamp(18px, 5vw, 72px);
+  padding: 16px var(--gutter);
   background: rgba(10, 10, 11, 0.80);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -406,6 +408,11 @@ a:hover { color: var(--gold-bright); }
   min-width: 0;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/* 手機只剩「安理…」兩個字加刪節號，不如收起來 */
+@media (max-width: 560px) {
+  .brand-sub { display: none; }
 }
 
 .nav-desktop {
@@ -656,6 +663,49 @@ a:hover { color: var(--gold-bright); }
 .cell-hover { transition: background 0.25s ease; }
 .cell-hover:hover { background: #0d0d0f; }
 
+/* ---- 區塊標題 ---- */
+
+.section-title {
+  margin: 0;
+  color: var(--ink-bright);
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-wrap: pretty;
+}
+
+/* ---- 格狀內容磚 ---- */
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(var(--tile-min, 280px), 1fr));
+  gap: var(--tile-gap, 0);
+}
+
+.tile {
+  min-width: 0;
+  padding: var(--tile-pt, 30px) var(--tile-px, clamp(20px, 2.2vw, 34px)) var(--tile-pb, 34px);
+}
+
+.tile-ruled {
+  min-width: 0;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line-hair);
+}
+
+/*
+  手機一律單欄。磚塊此時左右已無鄰居，內縮的留白會讓內文比區塊標題往右錯開一段，
+  所以改成貼齊頁面左右緣，全頁只留一條左緣。
+*/
+@media (max-width: 640px) {
+  .tile-grid { grid-template-columns: 1fr; }
+  .tile { padding-inline: 0; }
+  .tile-ruled { border-left: 0; }
+  .section-title { text-wrap: balance; }
+}
+
 /* ---- 首頁執業範疇卡片（可點擊） ---- */
 
 .practice-card {
@@ -759,6 +809,30 @@ a:hover { color: var(--gold-bright); }
 .practice-faq .faq-body {
   padding: 0 4px 26px;
   max-width: 68ch;
+}
+
+/* 手機取消 4px 微留白，讓問答切齊頁面左緣 */
+@media (max-width: 640px) {
+  .practice-faq summary,
+  .practice-faq .faq-body { padding-inline: 0; }
+}
+
+/* ---- 執業領域頁：諮詢區塊 ---- */
+
+.practice-cta-box {
+  margin-top: clamp(56px, 8vh, 96px);
+  padding: clamp(32px, 5vh, 52px) clamp(22px, 3vw, 44px);
+  border: 1px solid rgba(194, 163, 104, 0.30);
+  background: var(--gold-wash);
+}
+
+/* 手機滿版：底色延伸到螢幕兩側，內文回到共用左緣 */
+@media (max-width: 640px) {
+  .practice-cta-box {
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    border-inline: 0;
+  }
 }
 
 /* 閱讀型文字：維持至少 18px，讓深色背景上的長文更容易辨識。 */
@@ -1184,26 +1258,56 @@ a:hover { color: var(--gold-bright); }
   .contact-consultation { padding-top: 48px; }
 }
 
-@media (max-width: 580px) {
-  .contact-section { padding-top: 66px; padding-bottom: 82px; }
-  .contact-section::before { top: 30px; font-size: 5.2rem; }
-  .contact-heading { margin-bottom: 38px; }
-  .contact-kicker { margin-bottom: 18px; }
-  .contact-heading h2 { font-size: clamp(2.25rem, 12vw, 3.25rem); }
-
-  .contact-intro {
-    grid-template-columns: 22px 1fr;
-    gap: 13px;
+@media (max-width: 620px) {
+  .contact-section {
+    padding-top: 66px;
+    padding-bottom: 82px;
+    padding-inline: var(--gutter);
   }
 
-  .contact-composition { margin: 0 -1px; }
+  /* 原本 5.2rem 的 CONTACT 字樣比螢幕還寬，左側會被裁掉半個字母 */
+  .contact-section::before {
+    top: 30px;
+    font-size: min(3.6rem, 15vw);
+  }
+
+  .contact-heading { margin-bottom: 38px; }
+  .contact-kicker { margin-bottom: 18px; }
+
+  /* 縮到十個中文字排得下一行，標題就不會斷在「一／次」中間 */
+  .contact-heading h2 {
+    max-width: none;
+    font-size: clamp(1.75rem, 8.4vw, 2.6rem);
+  }
+
+  /* 金色短線改放到文字上方，段落才不會比其他內文縮排 35px */
+  .contact-intro {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-intro-rule {
+    width: 40px;
+    margin-top: 0;
+  }
+
+  /*
+    地圖與聯絡資訊在手機上滿版：外框貼齊螢幕，內距改用共用 gutter，
+    區塊內的文字就和上方標題落在同一條左緣。
+  */
+  .contact-composition {
+    margin-inline: calc(var(--gutter) * -1);
+    border-inline: 0;
+  }
+
   .contact-map-panel { padding: 36px 0 0; }
 
   .contact-map-meta {
     width: 100%;
     height: 36px;
     flex-direction: row;
-    padding: 0 14px;
+    padding-block: 0;
+    padding-inline: var(--gutter);
     writing-mode: horizontal-tb;
     transform: none;
   }
@@ -1214,7 +1318,7 @@ a:hover { color: var(--gold-bright); }
     grid-template-columns: 1fr;
     gap: 18px;
     margin-left: 0;
-    padding: 24px 20px 26px;
+    padding: 24px var(--gutter) 26px;
   }
 
   .contact-map-link {
@@ -1223,11 +1327,21 @@ a:hover { color: var(--gold-bright); }
     padding-top: 17px;
   }
 
-  .contact-directory { padding: 28px 20px 32px; }
+  .contact-directory { padding: 28px var(--gutter) 32px; }
   .contact-directory-head { margin-bottom: 26px; }
   .contact-directory-row { padding-top: 21px; padding-bottom: 21px; }
   .contact-directory-arrow { bottom: 22px; }
   .contact-consultation { padding-top: 44px; }
+}
+
+/* 桌機頁尾欄位較寬，收一下行長；手機本來就只有一欄，收窄只會讓「樓」孤字落單 */
+.footer-address {
+  max-width: 26ch;
+  text-wrap: pretty;
+}
+
+@media (max-width: 640px) {
+  .footer-address { max-width: none; }
 }
 
 .footer-link {
@@ -1265,7 +1379,11 @@ a:hover { color: var(--gold-bright); }
 }
 
 @media (max-width: 700px) {
-  .insight-row { grid-template-columns: 1fr; gap: 12px; }
+  .insight-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-inline: 0;
+  }
 }
 
 /* ---- 法律頁段落列 ---- */

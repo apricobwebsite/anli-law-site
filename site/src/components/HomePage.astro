@@ -170,9 +170,9 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
             >{t(lang, LAW.team_h.label)}</span>
             <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
           </div>
-          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0;">
+          <div class="tile-grid" style="--tile-min:240px;">
             {LAW.team.map((m, i) => (
-              <article data-reveal style="border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06); min-width:0;">
+              <article data-reveal class="tile-ruled">
                 <div style="position:relative; aspect-ratio:3/4; overflow:hidden; background:#161719; border-bottom:1px solid rgba(236,231,223,0.08);">
                   <img
                     src={m.image}
@@ -190,7 +190,7 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
                     {String(i + 1).padStart(2, '0')}
                   </div>
                 </div>
-                <div style="padding:24px clamp(18px,2vw,30px) 30px;">
+                <div class="tile" style="--tile-pt:24px; --tile-px:clamp(18px,2vw,30px); --tile-pb:30px;">
                   <div style="font-size:clamp(20px,1.35vw,23px); font-weight:600; color:#ECE7DF; line-height:1.5; margin-bottom:7px;">
                     {t(lang, m.name)}
                   </div>
@@ -225,9 +225,7 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(28px,5vw,80px);">
         <div data-reveal>
           <div class="kicker" style="margin-bottom:18px;">02 — {t(lang, LAW.about.label)}</div>
-          <h2
-            style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.2; letter-spacing:-0.01em; margin:0; color:#F4F0E8; text-wrap:pretty;"
-          >{t(lang, LAW.about.title)}</h2>
+          <h2 class="section-title">{t(lang, LAW.about.title)}</h2>
         </div>
         <div data-reveal style="display:flex; flex-direction:column; gap:24px; max-width:62ch; padding-top:6px;">
           <p class="reading-copy" style="color:#cfc9bf; margin:0; font-weight:400; text-wrap:pretty;">
@@ -240,10 +238,11 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
       </div>
 
       <div
-        style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1px; margin-top:clamp(48px,7vh,86px); background:rgba(236,231,223,0.10);"
+        class="tile-grid"
+        style="--tile-gap:1px; margin-top:clamp(48px,7vh,86px); background:rgba(236,231,223,0.10);"
       >
         {SITE.values.map((v, i) => (
-          <div data-reveal class="cell-hover" style="background:#0a0a0b; padding:34px clamp(20px,2.2vw,34px) 38px;">
+          <div data-reveal class="cell-hover tile" style="background:#0a0a0b; --tile-pt:34px; --tile-pb:38px;">
             <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.2em; color:#C2A368; margin-bottom:20px;">
               {String(i + 1).padStart(2, '0')}
             </div>
@@ -265,9 +264,7 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
     >
       <div data-reveal style="margin-bottom:52px;">
         <div class="kicker" style="margin-bottom:18px;">03 — {t(lang, LAW.practice_h.label)}</div>
-        <h2
-          style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.16; letter-spacing:-0.01em; margin:0; color:#F4F0E8;"
-        >{t(lang, LAW.practice_h.title)}</h2>
+        <h2 class="section-title">{t(lang, LAW.practice_h.title)}</h2>
         <p
           style="display:flex; align-items:baseline; gap:10px; margin:20px 0 0; font-size:14.5px; letter-spacing:0.05em; color:#8f897f;"
         >
@@ -275,13 +272,13 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
           {t(lang, LAW.practice_h.hint)}
         </p>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:0;">
+      <div class="tile-grid" style="--tile-min:320px;">
         {LAW.practice.map((p, i) => (
           <a
             data-reveal
             href={practicePath(lang, p.slug)}
-            class="practice-card"
-            style="padding:32px clamp(20px,2.4vw,40px) 36px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06);"
+            class="practice-card tile tile-ruled"
+            style="--tile-pt:32px; --tile-px:clamp(20px,2.4vw,40px); --tile-pb:36px;"
           >
             <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#C2A368; margin-bottom:16px; letter-spacing:0.2em;">
               {String(i + 1).padStart(2, '0')}
@@ -320,21 +317,19 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
       >
         <div>
           <div class="kicker" style="margin-bottom:18px;">04 — {t(lang, SITE.insights_h.label)}</div>
-          <h2
-            style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.16; letter-spacing:-0.01em; margin:0; color:#F4F0E8;"
-          >{t(lang, SITE.insights_h.title)}</h2>
+          <h2 class="section-title">{t(lang, SITE.insights_h.title)}</h2>
         </div>
         <p class="reading-detail" style="color:#9a948a; margin:0; max-width:42ch; font-weight:400;">
           {t(lang, SITE.insights_h.para)}
         </p>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:0;">
+      <div class="tile-grid">
         {teaser.map((a) => (
           <a
             data-reveal
             href={articlePath(lang, slugOf(a))}
-            class="card-hover"
-            style="display:block; padding:28px clamp(18px,2vw,32px) 32px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06); text-decoration:none; color:inherit;"
+            class="card-hover tile tile-ruled"
+            style="display:block; --tile-pt:28px; --tile-px:clamp(18px,2vw,32px); --tile-pb:32px; text-decoration:none; color:inherit;"
           >
             <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:16px;">
               <span
@@ -458,9 +453,7 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
       >
         <div style="flex:1 1 320px; min-width:0;">
           <div class="kicker" style="margin-bottom:20px;">06 — {t(lang, SITE.line.label)}</div>
-          <h2
-            style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.5rem,2.5vw,2.2rem); line-height:1.25; margin:0 0 18px; color:#F4F0E8; text-wrap:pretty;"
-          >{t(lang, SITE.line.title)}</h2>
+          <h2 class="section-title" style="margin-bottom:18px;">{t(lang, SITE.line.title)}</h2>
           <p class="reading-copy" style="color:#a09a90; margin:0 0 30px; max-width:52ch; font-weight:400; text-wrap:pretty;">
             {t(lang, SITE.line.para)}
           </p>

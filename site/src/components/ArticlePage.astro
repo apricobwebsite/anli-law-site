@@ -56,12 +56,12 @@ const others = (await getInsights(lang)).filter((e) => e.id !== entry.id).slice(
         <div
           style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase; margin-bottom:24px;"
         >{t(lang, SITE.ui.more)}</div>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:0;">
+        <div class="tile-grid">
           {others.map((o) => (
             <a
               href={articlePath(lang, slugOf(o))}
-              class="card-hover"
-              style="display:block; padding:26px clamp(18px,2vw,32px) 30px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06); text-decoration:none; color:inherit;"
+              class="card-hover tile tile-ruled"
+              style="display:block; --tile-pt:26px; --tile-px:clamp(18px,2vw,32px); --tile-pb:30px; text-decoration:none; color:inherit;"
             >
               <div
                 style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.2em; color:#C2A368; text-transform:uppercase; margin-bottom:14px;"
