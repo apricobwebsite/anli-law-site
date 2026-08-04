@@ -84,12 +84,13 @@ const title =
               data-reveal
               style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:800; font-size:clamp(1.9rem,3.4vw,3.1rem); line-height:1.06; letter-spacing:-0.01em; margin:0 0 14px; color:#F4F0E8;"
             >{t(lang, LAW.principal.name)}</h2>
-            <div data-reveal style="font-size:15.5px; letter-spacing:0.04em; color:#C2A368; margin-bottom:28px; line-height:1.6;">
+            <div data-reveal class="reading-detail" style="letter-spacing:0.04em; color:#C2A368; margin-bottom:28px;">
               {t(lang, LAW.principal.title)}
             </div>
             <p
               data-reveal
-              style="font-size:clamp(15.5px,1.1vw,17px); line-height:1.95; color:#cfc9bf; margin:0 0 44px; max-width:64ch; font-weight:400; text-wrap:pretty;"
+              class="reading-copy"
+              style="color:#cfc9bf; margin:0 0 44px; max-width:64ch; font-weight:400; text-wrap:pretty;"
             >{t(lang, LAW.principal.intro)}</p>
 
             <div data-reveal style="margin-bottom:clamp(36px,6vh,52px);">
@@ -102,11 +103,11 @@ const title =
               <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:clamp(26px,4vw,56px);">
                 {LAW.specialties.map((s) => (
                   <div>
-                    <div style="font-size:16px; font-weight:600; letter-spacing:0.05em; color:#ECE7DF; margin-bottom:14px;">
+                    <div class="reading-detail" style="font-weight:600; letter-spacing:0.05em; color:#ECE7DF; margin-bottom:14px;">
                       {t(lang, s.cat)}
                     </div>
                     {s.lead && (
-                      <p style="font-size:15px; line-height:1.85; color:#a09a90; margin:0 0 14px; font-weight:400; text-wrap:pretty;">
+                      <p class="reading-detail" style="color:#a09a90; margin:0 0 14px; font-weight:400; text-wrap:pretty;">
                         {t(lang, s.lead)}
                       </p>
                     )}
@@ -114,7 +115,7 @@ const title =
                       {tl(lang, s.items).map((d) => (
                         <div style="display:flex; align-items:baseline; gap:10px;">
                           <span style="width:4px; height:1px; background:#C2A368; flex:none; transform:translateY(-4px);"></span>
-                          <span style="font-size:14.5px; line-height:1.65; color:#b8b2a8; font-weight:400;">{d}</span>
+                          <span class="reading-detail" style="color:#b8b2a8; font-weight:400;">{d}</span>
                         </div>
                       ))}
                     </div>
@@ -133,8 +134,8 @@ const title =
                 </div>
                 {LAW.education.map((e) => (
                   <div style="padding:16px 0; border-bottom:1px solid rgba(236,231,223,0.09);">
-                    <div style="font-size:15.5px; color:#ECE7DF; line-height:1.5; margin-bottom:6px;">{t(lang, e.school)}</div>
-                    <div style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#a09a90; letter-spacing:0.02em;">
+                    <div class="reading-detail" style="color:#ECE7DF; margin-bottom:6px;">{t(lang, e.school)}</div>
+                    <div style="font-family:'IBM Plex Mono',monospace; font-size:14px; line-height:1.7; color:#a09a90; letter-spacing:0.02em;">
                       {t(lang, e.degree)}
                     </div>
                   </div>
@@ -149,8 +150,8 @@ const title =
                 </div>
                 {LAW.experience.map((x) => (
                   <div style="padding:14px 0; border-bottom:1px solid rgba(236,231,223,0.09);">
-                    <div style="font-size:15px; color:#ECE7DF; line-height:1.45; margin-bottom:5px;">{t(lang, x.org)}</div>
-                    <div style="font-size:14px; color:#a09a90;">{t(lang, x.role)}</div>
+                    <div class="reading-detail" style="color:#ECE7DF; margin-bottom:5px;">{t(lang, x.org)}</div>
+                    <div style="font-size:16px; line-height:1.65; color:#a09a90;">{t(lang, x.role)}</div>
                   </div>
                 ))}
               </div>
@@ -186,23 +187,23 @@ const title =
                   </div>
                 </div>
                 <div style="padding:24px clamp(18px,2vw,30px) 30px;">
-                  <div style="font-size:clamp(17px,1.25vw,20px); font-weight:600; color:#ECE7DF; line-height:1.5; margin-bottom:7px;">
+                  <div style="font-size:clamp(20px,1.35vw,23px); font-weight:600; color:#ECE7DF; line-height:1.5; margin-bottom:7px;">
                     {t(lang, m.name)}
                   </div>
-                  <div style="font-size:14px; letter-spacing:0.06em; color:#C2A368; margin-bottom:20px;">{t(lang, m.role)}</div>
+                  <div style="font-size:16px; line-height:1.6; letter-spacing:0.06em; color:#C2A368; margin-bottom:20px;">{t(lang, m.role)}</div>
                   {m.expertise && (
                     <div style="margin-bottom:16px;">
                       <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; color:#6f6a62; text-transform:uppercase; margin-bottom:6px;">
                         {t(lang, LAW.team_h.expertiseLabel)}
                       </div>
-                      <div style="font-size:14.5px; line-height:1.75; color:#b8b2a8;">{t(lang, m.expertise)}</div>
+                      <div class="reading-detail" style="color:#b8b2a8;">{t(lang, m.expertise)}</div>
                     </div>
                   )}
                   <div>
                     <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.16em; color:#6f6a62; text-transform:uppercase; margin-bottom:6px;">
                       {t(lang, LAW.team_h.educationLabel)}
                     </div>
-                    <div style="font-size:14.5px; line-height:1.75; color:#a09a90; text-wrap:pretty;">{t(lang, m.education)}</div>
+                    <div class="reading-detail" style="color:#a09a90; text-wrap:pretty;">{t(lang, m.education)}</div>
                   </div>
                 </div>
               </article>
@@ -225,10 +226,10 @@ const title =
           >{t(lang, LAW.about.title)}</h2>
         </div>
         <div data-reveal style="display:flex; flex-direction:column; gap:24px; max-width:62ch; padding-top:6px;">
-          <p style="font-size:clamp(15.5px,1.15vw,17.5px); line-height:1.95; color:#cfc9bf; margin:0; font-weight:400; text-wrap:pretty;">
+          <p class="reading-copy" style="color:#cfc9bf; margin:0; font-weight:400; text-wrap:pretty;">
             {t(lang, LAW.about.para1)}
           </p>
-          <p style="font-size:clamp(15.5px,1.15vw,17.5px); line-height:1.95; color:#a09a90; margin:0; font-weight:400; text-wrap:pretty;">
+          <p class="reading-copy" style="color:#a09a90; margin:0; font-weight:400; text-wrap:pretty;">
             {t(lang, LAW.about.para2)}
           </p>
         </div>
@@ -242,10 +243,10 @@ const title =
             <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.2em; color:#C2A368; margin-bottom:20px;">
               {String(i + 1).padStart(2, '0')}
             </div>
-            <h3 style="font-size:clamp(17px,1.35vw,20px); font-weight:600; margin:0 0 14px; color:#ECE7DF; line-height:1.4;">
+            <h3 style="font-size:clamp(20px,1.45vw,23px); font-weight:600; margin:0 0 14px; color:#ECE7DF; line-height:1.4;">
               {t(lang, v.title)}
             </h3>
-            <p style="font-size:15px; line-height:1.85; color:#a09a90; margin:0; font-weight:400; text-wrap:pretty;">
+            <p class="reading-detail" style="color:#a09a90; margin:0; font-weight:400; text-wrap:pretty;">
               {t(lang, v.desc)}
             </p>
           </div>
@@ -308,7 +309,7 @@ const title =
             style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.16; letter-spacing:-0.01em; margin:0; color:#F4F0E8;"
           >{t(lang, SITE.insights_h.title)}</h2>
         </div>
-        <p style="font-size:15px; line-height:1.8; color:#9a948a; margin:0; max-width:42ch; font-weight:400;">
+        <p class="reading-detail" style="color:#9a948a; margin:0; max-width:42ch; font-weight:400;">
           {t(lang, SITE.insights_h.para)}
         </p>
       </div>
@@ -328,7 +329,7 @@ const title =
                 {fmtDate(lang, a.data.date)}
               </span>
             </div>
-            <h3 style="font-size:clamp(17px,1.4vw,21px); font-weight:600; line-height:1.45; margin:0 0 16px; color:#ECE7DF; text-wrap:pretty;">
+            <h3 style="font-size:clamp(20px,1.55vw,24px); font-weight:600; line-height:1.45; margin:0 0 16px; color:#ECE7DF; text-wrap:pretty;">
               {a.data.title}
             </h3>
             <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; letter-spacing:0.1em; color:#C2A368;">
@@ -359,7 +360,7 @@ const title =
           <h2
             style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.6vw,3.2rem); line-height:1.12; letter-spacing:-0.01em; margin:0 0 22px; color:#F4F0E8; text-wrap:pretty;"
           >{t(lang, LAW.contact.title)}</h2>
-          <p style="font-size:16px; line-height:1.85; color:#a09a90; margin:0; max-width:46ch; font-weight:400; text-wrap:pretty;">
+          <p class="reading-copy" style="color:#a09a90; margin:0; max-width:46ch; font-weight:400; text-wrap:pretty;">
             {t(lang, LAW.contact.para)}
           </p>
         </div>
@@ -393,13 +394,14 @@ const title =
               style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.22em; color:#6f6a62; text-transform:uppercase; margin-bottom:10px;"
             >Office</div>
             <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:6px;">
-              <span style="font-size:16px; color:#ECE7DF; letter-spacing:0.04em;">{t(lang, LAW.contact.office)}</span>
+              <span class="reading-detail" style="color:#ECE7DF; letter-spacing:0.04em;">{t(lang, LAW.contact.office)}</span>
               <span
                 style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8f897f; letter-spacing:0.12em;"
               >{LAW.contact.zip}</span>
             </div>
             <address
-              style="font-style:normal; font-size:16px; line-height:1.75; color:#a09a90; max-width:34ch; text-wrap:pretty;"
+              class="reading-detail"
+              style="font-style:normal; color:#a09a90; max-width:34ch; text-wrap:pretty;"
             >{t(lang, LAW.contact.street)}</address>
           </div>
           <a
@@ -428,7 +430,7 @@ const title =
           <h2
             style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.5rem,2.5vw,2.2rem); line-height:1.25; margin:0 0 18px; color:#F4F0E8; text-wrap:pretty;"
           >{t(lang, SITE.line.title)}</h2>
-          <p style="font-size:15.5px; line-height:1.9; color:#a09a90; margin:0 0 30px; max-width:52ch; font-weight:400; text-wrap:pretty;">
+          <p class="reading-copy" style="color:#a09a90; margin:0 0 30px; max-width:52ch; font-weight:400; text-wrap:pretty;">
             {t(lang, SITE.line.para)}
           </p>
           <div style="display:inline-flex; align-items:center; gap:18px; padding:14px 22px; border:1px solid rgba(236,231,223,0.16);">

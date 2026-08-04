@@ -42,7 +42,7 @@ const others = (await getInsights(lang)).filter((e) => e.id !== entry.id).slice(
       <h1
         style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.8vw,3.2rem); line-height:1.18; letter-spacing:-0.015em; margin:0 0 26px; color:#F4F0E8; text-wrap:pretty;"
       >{entry.data.title}</h1>
-      <p style="font-size:clamp(17px,1.5vw,21px); line-height:1.75; color:#C2A368; margin:0 0 40px; font-weight:400; text-wrap:pretty;">
+      <p class="reading-copy-lead" style="color:#C2A368; margin:0 0 40px; font-weight:400; text-wrap:pretty;">
         {entry.data.lead}
       </p>
       <div style="height:1px; background:rgba(236,231,223,0.14); margin-bottom:40px;"></div>
@@ -66,7 +66,7 @@ const others = (await getInsights(lang)).filter((e) => e.id !== entry.id).slice(
               <div
                 style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.2em; color:#C2A368; text-transform:uppercase; margin-bottom:14px;"
               >{o.data.category}</div>
-              <h3 style="font-size:clamp(17px,1.4vw,21px); font-weight:600; line-height:1.45; margin:0; color:#ECE7DF; text-wrap:pretty;">
+              <h3 style="font-size:clamp(20px,1.55vw,24px); font-weight:600; line-height:1.45; margin:0; color:#ECE7DF; text-wrap:pretty;">
                 {o.data.title}
               </h3>
             </a>

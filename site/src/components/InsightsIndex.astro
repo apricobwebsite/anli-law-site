@@ -39,7 +39,7 @@ const entries = await getInsights(lang);
           style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.6vw,3.2rem); line-height:1.14; letter-spacing:-0.015em; margin:0; color:#F4F0E8;"
         >{t(lang, SITE.insights_h.title)}</h1>
       </div>
-      <p style="font-size:15px; line-height:1.8; color:#9a948a; margin:0; max-width:42ch; font-weight:400;">
+      <p class="reading-detail" style="color:#9a948a; margin:0; max-width:42ch; font-weight:400;">
         {t(lang, SITE.insights_h.para)}
       </p>
     </div>
@@ -56,10 +56,10 @@ const entries = await getInsights(lang);
             </span>
           </div>
           <div style="min-width:0;">
-            <h3 style="font-size:clamp(18px,1.6vw,24px); font-weight:600; line-height:1.4; margin:0 0 10px; color:#ECE7DF; text-wrap:pretty;">
+            <h3 style="font-size:clamp(21px,1.7vw,26px); font-weight:600; line-height:1.4; margin:0 0 10px; color:#ECE7DF; text-wrap:pretty;">
               {a.data.title}
             </h3>
-            <p style="font-size:15px; line-height:1.8; color:#a09a90; margin:0 0 14px; font-weight:400; max-width:56ch; text-wrap:pretty;">
+            <p class="reading-copy" style="color:#a09a90; margin:0 0 14px; font-weight:400; max-width:56ch; text-wrap:pretty;">
               {a.data.lead}
             </p>
             <span style="display:inline-flex; align-items:center; gap:8px; font-size:14px; letter-spacing:0.1em; color:#C2A368;">

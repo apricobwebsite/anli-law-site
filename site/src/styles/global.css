@@ -27,6 +27,10 @@
   --font-mono: 'IBM Plex Mono', monospace;
   --font-serif: 'Noto Serif TC', 'Songti TC', serif;
   --font-serif-en: 'Cormorant Garamond', 'Times New Roman', serif;
+  --font-size-reading: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
+  --font-size-reading-lead: clamp(1.1875rem, 1.08rem + 0.45vw, 1.375rem);
+  --font-size-reading-detail: clamp(1.03125rem, 0.99rem + 0.2vw, 1.125rem);
+  --line-height-reading: 1.9;
 }
 
 * { box-sizing: border-box; }
@@ -598,6 +602,25 @@ a:hover { color: var(--gold-bright); }
 .cell-hover { transition: background 0.25s ease; }
 .cell-hover:hover { background: #0d0d0f; }
 
+/* 閱讀型文字：維持至少 18px，讓深色背景上的長文更容易辨識。 */
+.reading-copy {
+  font-size: var(--font-size-reading);
+  line-height: var(--line-height-reading);
+  overflow-wrap: break-word;
+}
+
+.reading-copy-lead {
+  font-size: var(--font-size-reading-lead);
+  line-height: 1.85;
+  overflow-wrap: break-word;
+}
+
+.reading-detail {
+  font-size: var(--font-size-reading-detail);
+  line-height: 1.75;
+  overflow-wrap: break-word;
+}
+
 .footer-link {
   font-size: 15px;
   color: var(--muted-5);
@@ -655,14 +678,14 @@ a:hover { color: var(--gold-bright); }
 .article-body {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 30px;
 }
 
 .article-body > * { margin: 0; }
 
 .article-body p {
-  font-size: clamp(15.5px, 1.15vw, 17.5px);
-  line-height: 2.0;
+  font-size: var(--font-size-reading);
+  line-height: var(--line-height-reading);
   color: var(--muted-1);
   font-weight: 400;
   text-wrap: pretty;
@@ -670,7 +693,7 @@ a:hover { color: var(--gold-bright); }
 
 .article-body h2 {
   font-family: var(--font-display);
-  font-size: clamp(19px, 1.6vw, 24px);
+  font-size: clamp(1.5rem, 1.3rem + 0.8vw, 1.875rem);
   font-weight: 600;
   color: var(--ink-bright);
   line-height: 1.5;
@@ -678,7 +701,7 @@ a:hover { color: var(--gold-bright); }
 }
 
 .article-body h3 {
-  font-size: clamp(17px, 1.4vw, 19.5px);
+  font-size: clamp(1.25rem, 1.12rem + 0.5vw, 1.4375rem);
   font-weight: 600;
   color: var(--ink);
   line-height: 1.5;
@@ -694,8 +717,8 @@ a:hover { color: var(--gold-bright); }
 }
 
 .article-body li {
-  font-size: clamp(15.5px, 1.15vw, 17.5px);
-  line-height: 1.9;
+  font-size: var(--font-size-reading);
+  line-height: var(--line-height-reading);
   color: var(--muted-1);
   font-weight: 400;
 }
@@ -728,8 +751,11 @@ a:hover { color: var(--gold-bright); }
 .article-body img { border: 1px solid var(--gold-line); }
 
 .article-body table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: var(--font-size-reading-detail);
   line-height: 1.8;
 }
 .article-body th,

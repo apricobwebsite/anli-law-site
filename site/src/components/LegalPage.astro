@@ -40,15 +40,16 @@ const legal = doc === 'privacy' ? SITE.legal.privacy : SITE.legal.disclaimer;
         {t(lang, SITE.legal.updated)}
       </div>
       <p
-        style="font-size:clamp(15.5px,1.2vw,18px); line-height:1.95; color:#cfc9bf; margin:0 0 clamp(36px,6vh,60px); font-weight:400; text-wrap:pretty;"
+        class="reading-copy-lead"
+        style="color:#cfc9bf; margin:0 0 clamp(36px,6vh,60px); font-weight:400; text-wrap:pretty;"
       >{t(lang, legal.lead)}</p>
       <div style="display:flex; flex-direction:column; gap:clamp(28px,4vh,44px);">
         {legal.sections.map((s) => (
           <div class="legal-row">
-            <h2 style="font-size:clamp(16.5px,1.25vw,18px); font-weight:600; letter-spacing:0.04em; line-height:1.6; margin:0; color:#ECE7DF;">
+            <h2 style="font-size:clamp(1.25rem,1.13rem + 0.45vw,1.4375rem); font-weight:600; letter-spacing:0.04em; line-height:1.6; margin:0; color:#ECE7DF;">
               {t(lang, s.h)}
             </h2>
-            <p style="font-size:15.5px; line-height:1.95; color:#a09a90; margin:0; font-weight:400; text-wrap:pretty;">
+            <p class="reading-copy" style="color:#a09a90; margin:0; font-weight:400; text-wrap:pretty;">
               {t(lang, s.p)}
             </p>
           </div>
