@@ -1,5 +1,5 @@
 ---
-title: "Due diligence: the questions that are not on the checklist"
+title: 'Due diligence: the questions that are not on the checklist'
 lead: A checklist finds the risks someone wrote down. The expensive ones were never written down at all.
 category: M&A
 date: 2026-01-01
