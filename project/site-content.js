@@ -78,7 +78,7 @@ export const SITE = {
     label: { zh: "法律洞察", en: "Insights" },
     title: { zh: "我們對法律的思考", en: "How we think about the law" },
     para: {
-      zh: "關於跨境交易、爭端與治理的觀察筆記。內容僅供一般參考，不構成針對個案的法律意見。",
+      zh: "內容僅供一般參考，不構成針對個案的法律意見。",
       en: "Notes on cross-border transactions, disputes, and governance. General information only — not legal advice on any specific matter.",
     },
   },

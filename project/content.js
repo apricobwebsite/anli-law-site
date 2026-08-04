@@ -132,26 +132,26 @@ export const LAW = {
     },
   ],
 
-  // 團隊成員（姓名均為示意假資料，待正式名單替換）
+  // 團隊成員
   team_h: {
     label: { zh: "團隊成員", en: "Team" },
   },
 
   team: [
     {
-      name:  { zh: "陳威宇 律師", en: "Wei-Yu Chen" },
+      name:  { zh: "楊定諺", en: "楊定諺" },
       role:  { zh: "律師", en: "Attorney" },
-      focus: { zh: "跨國商務與公司治理", en: "Cross-border commerce & governance" },
+      focus: { zh: "國立台灣大學法律學系畢業", en: "Department of Law, National Taiwan University" },
     },
     {
-      name:  { zh: "林珮瑄 律師", en: "Pei-Hsuan Lin" },
+      name:  { zh: "詹前晟", en: "詹前晟" },
       role:  { zh: "律師", en: "Attorney" },
-      focus: { zh: "爭端解決與智慧財產", en: "Disputes & intellectual property" },
+      focus: { zh: "國立政治大學法律學系", en: "Department of Law, National Chengchi University" },
     },
     {
-      name:  { zh: "張俊凱", en: "Chun-Kai Chang" },
+      name:  { zh: "黃煜翔", en: "黃煜翔" },
       role:  { zh: "資訊顧問", en: "Information Consultant" },
-      focus: { zh: "法律科技與資訊安全", en: "Legal technology & information security" },
+      focus: { zh: "資訊安全、數位鑑識｜國立台灣大學資訊工程學系與數學系雙主修畢業", en: "Information Security & Digital Forensics | Dual major in Computer Science and Mathematics, National Taiwan University" },
     },
   ],
 

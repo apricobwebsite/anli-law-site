@@ -167,16 +167,45 @@ const title =
           </div>
           <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0;">
             {LAW.team.map((m, i) => (
-              <div style="padding:26px clamp(18px,2vw,30px) 30px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06);">
-                <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#5e5a53; margin-bottom:16px;">
-                  {String(i + 1).padStart(2, '0')}
+              <article data-reveal style="border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06); min-width:0;">
+                <div style="position:relative; aspect-ratio:3/4; overflow:hidden; background:#161719; border-bottom:1px solid rgba(236,231,223,0.08);">
+                  <img
+                    src={m.image}
+                    alt={t(lang, m.imageAlt)}
+                    width="1254"
+                    height="1254"
+                    loading="lazy"
+                    decoding="async"
+                    style="width:100%; height:100%; object-fit:cover; filter:contrast(1.02);"
+                  />
+                  <div
+                    aria-hidden="true"
+                    style="position:absolute; top:18px; left:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#c9c4ba; background:rgba(10,10,11,0.72); padding:7px 9px; backdrop-filter:blur(8px);"
+                  >
+                    {String(i + 1).padStart(2, '0')}
+                  </div>
                 </div>
-                <div style="font-size:clamp(16px,1.2vw,19px); font-weight:500; color:#ECE7DF; line-height:1.5; margin-bottom:8px;">
-                  {t(lang, m.name)}
+                <div style="padding:24px clamp(18px,2vw,30px) 30px;">
+                  <div style="font-size:clamp(17px,1.25vw,20px); font-weight:500; color:#ECE7DF; line-height:1.5; margin-bottom:7px;">
+                    {t(lang, m.name)}
+                  </div>
+                  <div style="font-size:13px; letter-spacing:0.06em; color:#C2A368; margin-bottom:20px;">{t(lang, m.role)}</div>
+                  {m.expertise && (
+                    <div style="margin-bottom:16px;">
+                      <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; color:#68635c; text-transform:uppercase; margin-bottom:6px;">
+                        {t(lang, LAW.team_h.expertiseLabel)}
+                      </div>
+                      <div style="font-size:12.5px; line-height:1.75; color:#a39d93;">{t(lang, m.expertise)}</div>
+                    </div>
+                  )}
+                  <div>
+                    <div style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.16em; color:#68635c; text-transform:uppercase; margin-bottom:6px;">
+                      {t(lang, LAW.team_h.educationLabel)}
+                    </div>
+                    <div style="font-size:12.5px; line-height:1.75; color:#8f897f; text-wrap:pretty;">{t(lang, m.education)}</div>
+                  </div>
                 </div>
-                <div style="font-size:13px; letter-spacing:0.06em; color:#C2A368; margin-bottom:12px;">{t(lang, m.role)}</div>
-                <div style="font-size:12.5px; line-height:1.7; color:#8f897f;">{t(lang, m.focus)}</div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

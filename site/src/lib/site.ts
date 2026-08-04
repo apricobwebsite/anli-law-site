@@ -43,12 +43,12 @@ export const LAW = {
       en: 'A boutique firm defined by international depth',
     },
     para1: {
-      zh: '安理國際法律事務所立足台灣、放眼全球。我們深信，真正的國際化不只是語言，而是對不同法域、商業文化與爭端邏輯的深刻理解。',
-      en: 'ANLI is a boutique law firm rooted in Taiwan with a global outlook. We hold that genuine internationalism is not a matter of language alone, but of deep fluency across jurisdictions, business cultures, and the logic of dispute.',
+      zh: '安理國際法律事務所立足台灣、放眼全球。事務所由兼具柏克萊、史丹佛與台大三校法學訓練的楊佳陵博士主持，融合學術的嚴謹、深厚的法學素養與實務的敏銳。',
+      en: 'ANLI is a law firm rooted in Taiwan with a global outlook. The firm is led by Dr. Chia-Ling Yang — trained in law at UC Berkeley, Stanford, and National Taiwan University — uniting academic rigor, deep legal scholarship, and practical acuity.',
     },
     para2: {
-      zh: '事務所由具備柏克萊、史丹佛與台大三校法學訓練的楊佳陵博士主持，結合學術的嚴謹與實務的敏銳，為客戶在跨境交易、爭端與治理中提供完整且可信賴的法律解決方案。',
-      en: 'Led by Dr. Chia-Ling Yang — trained at Berkeley, Stanford, and National Taiwan University — the firm unites academic rigor with practical acuity, delivering complete and dependable counsel across cross-border transactions, disputes, and governance.',
+      zh: '安理並與英美執業律師及資訊安全科技顧問組成跨國協作團隊，為客戶在法律糾紛、憲法訴訟、跨國爭端與公司治理中，提供完整且可信賴的法律解決方案。',
+      en: 'Working alongside practitioners qualified in the United States and the United Kingdom, together with cybersecurity advisors, ANLI assembles cross-border teams that deliver complete and dependable legal solutions in disputes, constitutional litigation, international controversies, and corporate governance.',
     },
   },
 
@@ -98,6 +98,20 @@ export const LAW = {
       desc: {
         zh: '董事會治理、法令遵循與跨境監理風險之管理。',
         en: 'Board governance, regulatory compliance, and cross-jurisdictional risk management.',
+      },
+    },
+    {
+      title: { zh: '跨國商務與投資', en: 'Cross-Border Business & Investment' },
+      desc: {
+        zh: '跨境交易架構、外人投資與國際商務合約的全程法律規劃。',
+        en: 'End-to-end legal planning for cross-border transaction structures, foreign investment, and international commercial contracts.',
+      },
+    },
+    {
+      title: { zh: '稅務規劃與財富傳承', en: 'Tax Planning & Wealth Succession' },
+      desc: {
+        zh: '以事前規劃降低稅務風險，為資產與家族傳承建立長遠布局。',
+        en: 'Forward-looking tax planning that manages risk and builds enduring structures for asset and family succession.',
       },
     },
   ],
@@ -203,26 +217,58 @@ export const LAW = {
     },
   ],
 
-  // 團隊成員（姓名均為示意假資料，待正式名單替換）
+  // 團隊成員
   team_h: {
     label: { zh: '團隊成員', en: 'Team' },
+    expertiseLabel: { zh: '專長', en: 'Expertise' },
+    educationLabel: { zh: '學歷', en: 'Education' },
   },
 
   team: [
     {
-      name: { zh: '陳威宇 律師', en: 'Wei-Yu Chen' },
+      name: { zh: '楊定諺', en: '楊定諺' },
       role: { zh: '律師', en: 'Attorney' },
-      focus: { zh: '跨國商務與公司治理', en: 'Cross-border commerce & governance' },
+      expertise: null,
+      education: {
+        zh: '國立台灣大學法律學系畢業',
+        en: 'Department of Law, National Taiwan University',
+      },
+      image: '/assets/team-yang.png',
+      imageAlt: {
+        zh: '楊定諺律師照片',
+        en: 'Portrait of attorney 楊定諺',
+      },
     },
     {
-      name: { zh: '林珮瑄 律師', en: 'Pei-Hsuan Lin' },
+      name: { zh: '詹前晟', en: '詹前晟' },
       role: { zh: '律師', en: 'Attorney' },
-      focus: { zh: '爭端解決與智慧財產', en: 'Disputes & intellectual property' },
+      expertise: null,
+      education: {
+        zh: '國立政治大學法律學系',
+        en: 'Department of Law, National Chengchi University',
+      },
+      image: '/assets/team-zhan-placeholder.webp',
+      imageAlt: {
+        zh: '詹前晟律師暫用灰色假人示意圖',
+        en: 'Temporary gray mannequin placeholder for attorney 詹前晟',
+      },
     },
     {
-      name: { zh: '張俊凱', en: 'Chun-Kai Chang' },
+      name: { zh: '黃煜翔', en: '黃煜翔' },
       role: { zh: '資訊顧問', en: 'Information Consultant' },
-      focus: { zh: '法律科技與資訊安全', en: 'Legal technology & information security' },
+      expertise: {
+        zh: '資訊安全、數位鑑識、加密貨幣金流追蹤、公開來源情報分析',
+        en: 'Information Security, Digital Forensics, Cryptocurrency Flow Tracking & Open-Source Intelligence Analysis',
+      },
+      education: {
+        zh: '國立台灣大學資訊工程學系與數學系雙主修畢業',
+        en: 'Dual major in Computer Science and Mathematics, National Taiwan University',
+      },
+      image: '/assets/team-huang.png',
+      imageAlt: {
+        zh: '黃煜翔資訊顧問照片',
+        en: 'Portrait of information consultant 黃煜翔',
+      },
     },
   ],
 
@@ -284,24 +330,24 @@ export const SITE = {
 
   values: [
     {
-      title: { zh: '先於問題的判斷', en: 'Judgment ahead of the problem' },
+      title: { zh: '量身定制策略', en: 'Tailored strategy' },
       desc: {
-        zh: '法律工作真正的價值，往往在爭端發生之前。我們把時間花在預先識別風險、設計架構，讓客戶不必在最壞的時刻做最急的決定。',
-        en: 'The real value of legal work usually lies before the dispute. We invest in identifying risk early and designing structures, so that clients never have to make urgent decisions at the worst moment.',
+        zh: '法律工作真正的價值，往往在爭端發生之前。我們把時間花在預先識別風險、設計架構，讓客戶不必在最壞的時刻做最急的決定，並針對您的目標與風險承受度，打造專屬的法律解決方案。',
+        en: 'The real value of legal work usually lies before the dispute. We invest in identifying risk early and designing structures, so that clients never have to make urgent decisions at the worst moment — and we craft bespoke legal solutions around your goals and risk tolerance.',
       },
     },
     {
-      title: { zh: '跨法域的同一標準', en: 'One standard across jurisdictions' },
+      title: { zh: '全球視野', en: 'A global perspective' },
       desc: {
-        zh: '台北、加州或北京，程序不同、邏輯不同，但客戶所應得到的縝密程度不應該有差別。我們以同一套嚴謹標準處理每一個法域的文件與策略。',
-        en: 'Taipei, California, or Beijing — procedure and logic differ, but the rigour a client receives should not. We apply a single exacting standard to documents and strategy in every jurisdiction.',
+        zh: '跨越司法管轄區，為客戶提供無縫接軌的跨國法律諮詢與執行方案。',
+        en: 'Across jurisdictions, we deliver seamless cross-border legal counsel and execution.',
       },
     },
     {
-      title: { zh: '由主持律師親自負責', en: 'The principal stays on the file' },
+      title: { zh: '法律與科技並進', en: 'Law and technology in step' },
       desc: {
-        zh: '安理是精品事務所，不以人數取勝。每一件委任案由主持律師親自掌握關鍵判斷，客戶不會在案件中途面對一張陌生的臉。',
-        en: 'ANLI is a boutique practice; we do not compete on headcount. On every engagement the principal holds the key judgments — clients never meet an unfamiliar face midway through a matter.',
+        zh: '現代爭端不只發生在法庭。安理與英美執業律師及資訊安全科技顧問長期協作，從跨境法律攻防到數位鑑識與加密貨幣金流追蹤，為客戶提供證據到策略的完整戰力。',
+        en: 'Modern disputes are not confined to the courtroom. ANLI works in long-standing collaboration with UK- and US-qualified lawyers and information-security consultants — from cross-border legal strategy to digital forensics and cryptocurrency tracing — delivering full capability from evidence to strategy.',
       },
     },
   ],
@@ -332,13 +378,21 @@ export const SITE = {
       zh: ['董事會治理架構', '法令遵循制度建置', '內部調查', '跨境監理應對'],
       en: ['Board governance', 'Compliance programmes', 'Internal investigations', 'Cross-border regulatory response'],
     },
+    {
+      zh: ['跨境交易架構設計', '外人投資申報與許可', '國際商務合約談判', '跨國供應鏈法律風險'],
+      en: ['Cross-border transaction structuring', 'Foreign investment filings & approvals', 'International contract negotiation', 'Supply-chain legal risk management'],
+    },
+    {
+      zh: ['事前稅務規劃', '資產與家族傳承', '稅務行政救濟'],
+      en: ['Advance tax planning', 'Asset & family succession', 'Tax administrative remedies'],
+    },
   ] as BiList[],
 
   insights_h: {
     label: { zh: '法律洞察', en: 'Insights' },
     title: { zh: '我們對法律的思考', en: 'How we think about the law' },
     para: {
-      zh: '關於跨境交易、爭端與治理的觀察筆記。內容僅供一般參考，不構成針對個案的法律意見。',
+      zh: '內容僅供一般參考，不構成針對個案的法律意見。',
       en: 'Notes on cross-border transactions, disputes, and governance. General information only — not legal advice on any specific matter.',
     },
   },
