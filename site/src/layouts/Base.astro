@@ -36,7 +36,7 @@ const enHref = lang === 'en' ? currentPath : altPath;
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif+TC:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Noto+Serif+TC:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -104,16 +104,16 @@ const enHref = lang === 'en' ? currentPath : altPath;
           <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:14px;">
             <span class="brand-mark" style="font-size:17px; letter-spacing:0.28em;">YANG</span>
           </div>
-          <div style="font-size:13.5px; color:#8f897f; line-height:1.8; margin-bottom:8px;">
+          <div style="font-size:15px; color:#a09a90; line-height:1.8; margin-bottom:8px;">
             {t(lang, LAW.firm.full)}
           </div>
-          <div style="font-size:12.5px; color:#5e5a53; letter-spacing:0.06em;">
+          <div style="font-size:14px; color:#8f897f; letter-spacing:0.06em;">
             {t(lang, LAW.footer.note)}
           </div>
         </div>
         <div style="display:flex; flex-direction:column; gap:12px;">
           <span
-            style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;"
+            style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.22em; color:#6f6a62; text-transform:uppercase; margin-bottom:4px;"
           >{t(lang, SITE.footer.navLabel)}</span>
           <a class="footer-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
           <a class="footer-link" href={`${home}#about`}>{t(lang, LAW.nav.about)}</a>
@@ -122,14 +122,14 @@ const enHref = lang === 'en' ? currentPath : altPath;
         </div>
         <div style="display:flex; flex-direction:column; gap:12px;">
           <span
-            style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;"
+            style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.22em; color:#6f6a62; text-transform:uppercase; margin-bottom:4px;"
           >{t(lang, SITE.footer.legalLabel)}</span>
           <a class="footer-link" href={legalPath(lang, 'privacy')}>{t(lang, SITE.legal.navPrivacy)}</a>
           <a class="footer-link" href={legalPath(lang, 'disclaimer')}>{t(lang, SITE.legal.navDisclaimer)}</a>
         </div>
         <div style="display:flex; flex-direction:column; gap:12px;">
           <span
-            style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;"
+            style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.22em; color:#6f6a62; text-transform:uppercase; margin-bottom:4px;"
           >{t(lang, SITE.footer.contactLabel)}</span>
           <a class="footer-link gold" href={`mailto:${LAW.contact.email}`}>{LAW.contact.email}</a>
           <a
@@ -137,16 +137,16 @@ const enHref = lang === 'en' ? currentPath : altPath;
             style="font-family:'IBM Plex Mono',monospace; letter-spacing:0.04em;"
             href={`tel:${LAW.contact.phoneHref}`}
           >{LAW.contact.phone}</a>
-          <address style="font-style:normal; font-size:13.5px; line-height:1.75; color:#8f897f; max-width:26ch;">
+          <address style="font-style:normal; font-size:15px; line-height:1.75; color:#8f897f; max-width:26ch;">
             <span style="display:flex; align-items:baseline; gap:10px; color:#a29b90; margin-bottom:2px;">
               <span>{t(lang, LAW.contact.office)}</span>
-              <span style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#5e5a53; letter-spacing:0.1em;">
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; color:#8f897f; letter-spacing:0.1em;">
                 {LAW.contact.zip}
               </span>
             </span>
             {t(lang, LAW.contact.street)}
           </address>
-          <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8f897f;">
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:13.5px; color:#8f897f;">
             LINE {SITE.line.account}
           </span>
         </div>
@@ -154,7 +154,7 @@ const enHref = lang === 'en' ? currentPath : altPath;
       <div
         style="max-width:1480px; margin:0 auto; padding:22px clamp(18px,5vw,72px) 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid rgba(236,231,223,0.08);"
       >
-        <span style="font-size:12px; color:#4d4a44;">{t(lang, LAW.footer.copyright)}</span>
+        <span style="font-size:13.5px; color:#8f897f;">{t(lang, LAW.footer.copyright)}</span>
       </div>
     </footer>
 

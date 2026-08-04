@@ -156,7 +156,7 @@ body.menu-open { overflow: hidden; }
   color: #d4a360;
   font-family: var(--font-serif-en);
   font-size: clamp(1.08rem, 2.05vw, 1.75rem);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.18em;
   line-height: 1.35;
   text-transform: uppercase;
@@ -326,7 +326,7 @@ body.menu-open { overflow: hidden; }
 
   .brand-hero-principal {
     margin-top: 24px;
-    font-size: 0.92rem;
+    font-size: 0.95rem;
     letter-spacing: 0.1em;
   }
 
@@ -391,9 +391,9 @@ a:hover { color: var(--gold-bright); }
 }
 
 .brand-sub {
-  font-size: 12.5px;
+  font-size: 14px;
   letter-spacing: 0.10em;
-  color: var(--muted-6);
+  color: var(--muted-5);
   white-space: nowrap;
   min-width: 0;
   overflow: hidden;
@@ -418,7 +418,7 @@ a:hover { color: var(--gold-bright); }
 }
 
 .nav-link {
-  font-size: 13.5px;
+  font-size: 15px;
   letter-spacing: 0.10em;
   color: var(--muted-2);
   text-decoration: none;
@@ -436,13 +436,13 @@ a:hover { color: var(--gold-bright); }
   align-items: center;
   gap: 7px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
 }
-.nav-mobile .lang-switch { font-size: 13px; }
+.nav-mobile .lang-switch { font-size: 13.5px; }
 .lang-slash { color: #3a372f; }
 .lang-active { color: var(--ink); font-weight: 600; text-decoration: none; }
 .lang-active:hover { color: var(--ink); }
-.lang-idle { color: var(--muted-7); font-weight: 400; text-decoration: none; }
+.lang-idle { color: var(--muted-5); font-weight: 400; text-decoration: none; }
 .lang-idle:hover { color: var(--ink); }
 
 .menu-btn {
@@ -519,9 +519,9 @@ a:hover { color: var(--gold-bright); }
 }
 .mm-contact-label {
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: 11.5px;
   letter-spacing: 0.22em;
-  color: var(--muted-7);
+  color: var(--muted-6);
   text-transform: uppercase;
 }
 .mm-email {
@@ -542,7 +542,7 @@ a:hover { color: var(--gold-bright); }
 
 .kicker {
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12px;
   letter-spacing: 0.24em;
   color: var(--gold);
 }
@@ -555,7 +555,7 @@ a:hover { color: var(--gold-bright); }
   padding: 15px 30px;
   border: 1px solid var(--gold);
   color: var(--gold);
-  font-size: 13.5px;
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-decoration: none;
   white-space: nowrap;
@@ -571,7 +571,7 @@ a:hover { color: var(--gold-bright); }
   min-height: 52px;
   padding: 15px 8px;
   color: var(--muted-2);
-  font-size: 13.5px;
+  font-size: 15px;
   letter-spacing: 0.12em;
   text-decoration: none;
   border-bottom: 1px solid transparent;
@@ -585,7 +585,7 @@ a:hover { color: var(--gold-bright); }
   gap: 10px;
   min-height: 44px;
   font-family: var(--font-mono);
-  font-size: 11.5px;
+  font-size: 12.5px;
   letter-spacing: 0.18em;
   color: var(--muted-5);
   text-decoration: none;
@@ -599,7 +599,7 @@ a:hover { color: var(--gold-bright); }
 .cell-hover:hover { background: #0d0d0f; }
 
 .footer-link {
-  font-size: 13.5px;
+  font-size: 15px;
   color: var(--muted-5);
   text-decoration: none;
 }
@@ -608,9 +608,9 @@ a:hover { color: var(--gold-bright); }
 .footer-link.gold:hover { color: var(--gold-bright); }
 
 .legal-tab {
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.08em;
-  color: var(--muted-6);
+  color: var(--muted-5);
   text-decoration: none;
   padding-bottom: 6px;
   border-bottom: 1px solid transparent;
@@ -661,10 +661,10 @@ a:hover { color: var(--gold-bright); }
 .article-body > * { margin: 0; }
 
 .article-body p {
-  font-size: clamp(15px, 1.1vw, 17px);
+  font-size: clamp(15.5px, 1.15vw, 17.5px);
   line-height: 2.0;
   color: var(--muted-1);
-  font-weight: 300;
+  font-weight: 400;
   text-wrap: pretty;
 }
 
@@ -678,8 +678,8 @@ a:hover { color: var(--gold-bright); }
 }
 
 .article-body h3 {
-  font-size: clamp(16px, 1.3vw, 19px);
-  font-weight: 500;
+  font-size: clamp(17px, 1.4vw, 19.5px);
+  font-weight: 600;
   color: var(--ink);
   line-height: 1.5;
   margin-top: 8px;
@@ -694,10 +694,10 @@ a:hover { color: var(--gold-bright); }
 }
 
 .article-body li {
-  font-size: clamp(15px, 1.1vw, 17px);
+  font-size: clamp(15.5px, 1.15vw, 17.5px);
   line-height: 1.9;
   color: var(--muted-1);
-  font-weight: 300;
+  font-weight: 400;
 }
 .article-body li::marker { color: var(--gold); }
 
@@ -707,7 +707,7 @@ a:hover { color: var(--gold-bright); }
 }
 .article-body blockquote p { color: var(--muted-2); }
 
-.article-body strong { color: var(--ink); font-weight: 500; }
+.article-body strong { color: var(--ink); font-weight: 600; }
 
 .article-body a { color: var(--gold); }
 .article-body a:hover { color: var(--gold-bright); }
@@ -729,7 +729,7 @@ a:hover { color: var(--gold-bright); }
 
 .article-body table {
   border-collapse: collapse;
-  font-size: 14.5px;
+  font-size: 15px;
   line-height: 1.8;
 }
 .article-body th,
@@ -737,11 +737,11 @@ a:hover { color: var(--gold-bright); }
   border: 1px solid var(--line);
   padding: 10px 16px;
   color: var(--muted-1);
-  font-weight: 300;
+  font-weight: 400;
   text-align: left;
 }
 .article-body th {
   color: var(--ink);
-  font-weight: 500;
+  font-weight: 600;
   background: var(--gold-wash);
 }
