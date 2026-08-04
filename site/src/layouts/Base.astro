@@ -54,6 +54,19 @@ const enHref = lang === 'en' ? currentPath : altPath;
         <a class="nav-link" href={`${home}#practice`}>{t(lang, LAW.nav.practice)}</a>
         <a class="nav-link" href={insightsPath(lang)}>{t(lang, SITE.ui.insightsNav)}</a>
         <a class="nav-link" href={`${home}#contact`}>{t(lang, LAW.nav.contact)}</a>
+        <a
+          class="social-link social-link-nav"
+          href={SITE.social.facebook.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={t(lang, SITE.social.facebook.label)}
+          title={t(lang, SITE.social.facebook.label)}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M13.7 21v-8h2.7l.4-3.1h-3.1V7.92c0-.9.25-1.51 1.55-1.51h1.66V3.63c-.29-.04-1.27-.13-2.41-.13-2.38 0-4.01 1.45-4.01 4.11V9.9H7.8V13h2.69v8h3.21Z" />
+          </svg>
+          <span class="sr-only">{t(lang, SITE.social.facebook.label)}</span>
+        </a>
         <span class="nav-sep"></span>
         <span class="lang-switch">
           <a href={zhHref} class={lang === 'zh' ? 'lang-active' : 'lang-idle'}>中</a>
@@ -63,6 +76,19 @@ const enHref = lang === 'en' ? currentPath : altPath;
       </div>
 
       <div class="nav-mobile">
+        <a
+          class="social-link social-link-nav"
+          href={SITE.social.facebook.url}
+          target="_blank"
+          rel="noreferrer"
+          aria-label={t(lang, SITE.social.facebook.label)}
+          title={t(lang, SITE.social.facebook.label)}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M13.7 21v-8h2.7l.4-3.1h-3.1V7.92c0-.9.25-1.51 1.55-1.51h1.66V3.63c-.29-.04-1.27-.13-2.41-.13-2.38 0-4.01 1.45-4.01 4.11V9.9H7.8V13h2.69v8h3.21Z" />
+          </svg>
+          <span class="sr-only">{t(lang, SITE.social.facebook.label)}</span>
+        </a>
         <span class="lang-switch">
           <a href={zhHref} class={lang === 'zh' ? 'lang-active' : 'lang-idle'}>中</a>
           <span class="lang-slash">/</span>

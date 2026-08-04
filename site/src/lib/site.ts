@@ -326,6 +326,17 @@ export const LAW = {
       zh: '10049 台北市中正區仁愛路二段 68 號 6 樓',
       en: "6F, No. 68, Sec. 2, Ren'ai Rd., Zhongzheng Dist., Taipei 10049, Taiwan",
     },
+    map: {
+      query: '台北市中正區仁愛路二段68號',
+      district: { zh: '台北・中正區', en: 'Taipei · Zhongzheng' },
+      title: { zh: '安理國際法律事務所台北所位置', en: 'Location of Yang & Associates Law Firm, Taipei Office' },
+      directions: { zh: '在 Google Maps 規劃路線', en: 'Plan your route on Google Maps' },
+      contactLabel: { zh: '直接聯繫', en: 'Direct line' },
+      note: {
+        zh: '所有初步聯繫均由本所審慎處理，並以保密為原則。',
+        en: 'Every initial enquiry is handled with care and in confidence.',
+      },
+    },
     cta: { zh: '預約諮詢', en: 'Request a consultation' },
   },
 
@@ -339,6 +350,13 @@ export const LAW = {
 };
 
 export const SITE = {
+  social: {
+    facebook: {
+      url: 'https://www.facebook.com/p/%E5%AE%89%E7%90%86%E5%9C%8B%E9%9A%9B%E6%B3%95%E5%BE%8B%E4%BA%8B%E5%8B%99%E6%89%80-Yang-Associates-Law-Firm-100063850968087',
+      label: { zh: 'Facebook 粉絲專頁', en: 'Facebook' },
+    },
+  },
+
   ui: {
     insightsNav: { zh: '法律洞察', en: 'Insights' },
     readMore: { zh: '閱讀全文', en: 'Read' },

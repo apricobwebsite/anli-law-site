@@ -24,6 +24,9 @@ const title =
   lang === 'zh'
     ? `${LAW.firm.full.zh}｜${LAW.hero.line1.zh}${LAW.hero.line2.zh}`
     : `${LAW.firm.full.en} — ${LAW.hero.line1.en} ${LAW.hero.line2.en}`;
+const mapQuery = encodeURIComponent(LAW.contact.map.query);
+const mapEmbed = `https://www.google.com/maps?q=${mapQuery}&output=embed&hl=${lang === 'zh' ? 'zh-TW' : 'en'}`;
+const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQuery}`;
 ---
 
 <Base lang={lang} title={title} description={t(lang, LAW.hero.para)} altPath={homePath(otherLang(lang))}>
@@ -360,70 +363,86 @@ const title =
     </section>
 
     <!-- Contact -->
-    <section
-      id="contact"
-      style="scroll-margin-top:88px; padding:clamp(64px,12vh,140px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); background:#0c0c0e;"
-    >
-      <div
-        style="max-width:1480px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:clamp(32px,6vw,90px); align-items:center;"
-      >
-        <div data-reveal>
-          <div class="kicker" style="margin-bottom:22px;">05 — {t(lang, LAW.contact.label)}</div>
-          <h2
-            style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.6vw,3.2rem); line-height:1.12; letter-spacing:-0.01em; margin:0 0 22px; color:#F4F0E8; text-wrap:pretty;"
-          >{t(lang, LAW.contact.title)}</h2>
-          <p class="reading-copy" style="color:#a09a90; margin:0; max-width:46ch; font-weight:400; text-wrap:pretty;">
-            {t(lang, LAW.contact.para)}
-          </p>
-        </div>
-        <div data-reveal style="display:flex; flex-direction:column;">
-          <a
-            href={`mailto:${LAW.contact.email}`}
-            style="display:block; padding:24px 0; border-top:1px solid rgba(236,231,223,0.14); text-decoration:none;"
-          >
-            <div
-              style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.22em; color:#6f6a62; text-transform:uppercase; margin-bottom:10px;"
-            >Email</div>
-            <div style="font-family:Archivo,sans-serif; font-size:clamp(18px,1.6vw,23px); color:#C2A368; letter-spacing:0.01em;">
-              {LAW.contact.email}
-            </div>
-          </a>
-          <a
-            href={`tel:${LAW.contact.phoneHref}`}
-            style="display:block; padding:24px 0; border-top:1px solid rgba(236,231,223,0.14); text-decoration:none;"
-          >
-            <div
-              style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.22em; color:#6f6a62; text-transform:uppercase; margin-bottom:10px;"
-            >Tel</div>
-            <div
-              style="font-family:'IBM Plex Mono',monospace; font-size:clamp(16px,1.3vw,19px); color:#ECE7DF; letter-spacing:0.04em;"
-            >{LAW.contact.phone}</div>
-          </a>
-          <div
-            style="padding:24px 0; border-top:1px solid rgba(236,231,223,0.14); border-bottom:1px solid rgba(236,231,223,0.14);"
-          >
-            <div
-              style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.22em; color:#6f6a62; text-transform:uppercase; margin-bottom:10px;"
-            >Office</div>
-            <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:6px;">
-              <span class="reading-detail" style="color:#ECE7DF; letter-spacing:0.04em;">{t(lang, LAW.contact.office)}</span>
-              <span
-                style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8f897f; letter-spacing:0.12em;"
-              >{LAW.contact.zip}</span>
-            </div>
-            <address
-              class="reading-detail"
-              style="font-style:normal; color:#a09a90; max-width:34ch; text-wrap:pretty;"
-            >{t(lang, LAW.contact.street)}</address>
+    <section id="contact" class="contact-section">
+      <div class="contact-shell">
+        <header class="contact-heading">
+          <div data-reveal>
+            <div class="kicker contact-kicker">05 — {t(lang, LAW.contact.label)}</div>
+            <h2>{t(lang, LAW.contact.title)}</h2>
           </div>
-          <a
-            href={`mailto:${LAW.contact.email}`}
-            class="btn-gold"
-            style="align-self:flex-start; margin-top:28px;"
-          >
-            {t(lang, LAW.contact.cta)}
-            <span style="font-family:'IBM Plex Mono',monospace;">→</span>
-          </a>
+          <div data-reveal class="contact-intro">
+            <span class="contact-intro-rule" aria-hidden="true"></span>
+            <p class="reading-copy">{t(lang, LAW.contact.para)}</p>
+          </div>
+        </header>
+
+        <div class="contact-composition">
+          <div data-reveal class="contact-map-panel">
+            <div class="contact-map-meta" aria-hidden="true">
+              <span>TAIPEI OFFICE</span>
+              <span>NO. 68 · REN'AI RD.</span>
+            </div>
+            <div class="contact-map-viewport">
+              <iframe
+                src={mapEmbed}
+                title={t(lang, LAW.contact.map.title)}
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+              <div class="contact-map-shade" aria-hidden="true"></div>
+            </div>
+
+            <div class="contact-location-card">
+              <span class="contact-location-number" aria-hidden="true">01</span>
+              <div class="contact-location-copy">
+                <span class="contact-location-district">{t(lang, LAW.contact.map.district)}</span>
+                <div class="contact-location-office">
+                  <strong>{t(lang, LAW.contact.office)}</strong>
+                  <span>{LAW.contact.zip}</span>
+                </div>
+                <address>{t(lang, LAW.contact.street)}</address>
+              </div>
+              <a
+                class="contact-map-link"
+                href={mapDirections}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={t(lang, LAW.contact.map.directions)}
+              >
+                <span>{t(lang, LAW.contact.map.directions)}</span>
+                <span class="contact-map-link-arrow" aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <aside data-reveal class="contact-directory">
+            <div class="contact-directory-head">
+              <span>{t(lang, LAW.contact.map.contactLabel)}</span>
+              <span aria-hidden="true">02</span>
+            </div>
+
+            <a class="contact-directory-row" href={`mailto:${LAW.contact.email}`}>
+              <span class="contact-directory-label">Email</span>
+              <span class="contact-directory-value contact-directory-email">{LAW.contact.email}</span>
+              <span class="contact-directory-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <a class="contact-directory-row" href={`tel:${LAW.contact.phoneHref}`}>
+              <span class="contact-directory-label">Tel</span>
+              <span class="contact-directory-value contact-directory-phone">{LAW.contact.phone}</span>
+              <span class="contact-directory-arrow" aria-hidden="true">↗</span>
+            </a>
+
+            <div class="contact-consultation">
+              <div class="contact-consultation-mark" aria-hidden="true">A</div>
+              <p>{t(lang, LAW.contact.map.note)}</p>
+              <a href={`mailto:${LAW.contact.email}`} class="btn-gold contact-consultation-cta">
+                {t(lang, LAW.contact.cta)}
+                <span aria-hidden="true">→</span>
+              </a>
+            </div>
+          </aside>
         </div>
       </div>
     </section>
