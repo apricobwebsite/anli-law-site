@@ -10,7 +10,7 @@ const insights = defineCollection({
     lead: z.string(),
     category: z.string(),
     date: z.coerce.date(),
-    readMinutes: z.number().int().positive().default(5),
+    readMinutes: z.number().int().positive().nullish().transform((v) => v ?? 5),
     draft: z.boolean().default(false),
   }),
 });

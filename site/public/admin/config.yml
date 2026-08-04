@@ -1,0 +1,108 @@
+# yaml-language-server: $schema=https://unpkg.com/@sveltia/cms/schema/sveltia-cms.json
+#
+# Sveltia CMS 設定（Git-based CMS，無資料庫）
+# 後台網址：/admin/index.html
+# - 本機編輯：npm run dev 後開 http://localhost:4321/admin/index.html，
+#   點「Work with Local Repository」選取 repo 根目錄（安理/），存檔直接寫入本機檔案。
+# - 線上編輯：部署後開 https://<網站>/admin/，點「Sign In with Token」
+#   以 GitHub fine-grained Personal Access Token 登入，存檔即 commit 到 GitHub。
+
+backend:
+  name: github
+  repo: apricobwebsite/anli-law-site
+  branch: main
+  # 目前採 Token 登入（免伺服器）。若日後改用 OAuth（多人、非技術編輯），
+  # 部署 https://github.com/sveltia/sveltia-cms-auth 到 Cloudflare Workers，
+  # 加上 base_url: https://<worker>.workers.dev 並移除 auth_methods。
+  auth_methods: [token]
+
+# 圖片存放：repo 內 site/public/assets/，文章中以 /assets/... 引用（沿用現有慣例）
+media_folder: /site/public/assets
+public_folder: /assets
+
+media_libraries:
+  default:
+    config:
+      slugify_filename: true
+      max_file_size: 5242880 # 5 MB
+
+site_url: https://www.anli-law.com
+
+output:
+  # 選填欄位（如 readMinutes）被清空時直接省略該欄位，而不是寫入 null（null 會使 build 失敗）
+  omit_empty_optional_fields: true
+
+# 中英文雙語：site/src/content/insights/{zh,en}/<slug>.md，同檔名＝同一篇文章
+i18n:
+  structure: multiple_folders
+  locales: [zh, en]
+  default_locale: zh
+  initial_locales: [zh] # 新文章預設只開中文；英文版可於編輯器右上「⋯」選單啟用
+  omit_default_locale_from_preview_path: true
+
+collections:
+  - name: insights
+    label: 法律洞察
+    label_singular: 文章
+    description: >-
+      新增文章時，表單最上方會出現「網址代稱（Slug）」欄位，請填英文小寫與連字號
+      （例如 arbitration-clause），這會成為檔名與網址；中英文版共用同一個代稱。
+      已儲存的文章日後可由編輯器右上「⋯」選單的 Edit Slug 改名（會改變網址，請謹慎）。
+    folder: site/src/content/insights
+    create: true
+    delete: true
+    i18n: true
+    slug: '{{fields._slug}}'
+    preview_path: '/{{locale}}/insights/{{slug}}/'
+    summary: '{{title}}'
+    sortable_fields:
+      fields: [date, title, readMinutes]
+      default:
+        field: date
+        direction: descending
+    fields:
+      - name: title
+        label: 標題
+        widget: string
+        i18n: true
+        required: true
+      - name: lead
+        label: 導言
+        widget: text
+        i18n: true
+        required: true
+        hint: 顯示於列表與文章開頭的首段導言。
+      - name: category
+        label: 分類
+        widget: string
+        i18n: true
+        required: true
+        hint: 自由文字，中英文各自填寫。現有分類——中文：併購、兩岸法務、公司治理、智慧財產、爭端解決、跨國投資；英文：M&A、Cross-Strait、Governance、IP、Disputes、Investment。
+      - name: date
+        label: 日期
+        widget: datetime
+        type: date
+        picker_utc: true
+        i18n: duplicate
+        required: true
+        hint: 決定文章排序（新到舊），中英文共用。
+      - name: readMinutes
+        label: 閱讀分鐘數
+        widget: number
+        value_type: int
+        min: 1
+        default: 5
+        i18n: duplicate
+        required: false
+      - name: draft
+        label: 草稿（不發佈）
+        widget: boolean
+        default: false
+        i18n: duplicate
+        required: false
+        hint: 開啟後整篇文章（含另一語言版本）不會出現在網站上。
+      - name: body
+        label: 內文
+        widget: richtext
+        i18n: true
+        required: true

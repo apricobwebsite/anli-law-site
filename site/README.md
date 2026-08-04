@@ -13,6 +13,19 @@ npm run dev     # 開發預覽（http://localhost:4321）
 npm run build   # 產出正式靜態檔到 dist/
 ```
 
+## 圖形化後台（Sveltia CMS）
+
+本站內建 [Sveltia CMS](https://sveltiacms.app) 圖形化後台，位於 `/admin/`（設定檔在 `public/admin/`）。它是 Git-based CMS——**沒有資料庫、沒有後端伺服器**，後台只是一層編輯介面，存檔時直接寫入 repo 裡的 `.md` 檔（線上使用時即是幫你 commit，並自動觸發部署）。
+
+兩種使用方式：
+
+1. **本機編輯**：`npm run dev` 後，用 Chromium 系瀏覽器（Chrome / Edge）開 `http://localhost:4321/admin/index.html`，點「Work with Local Repository」並選取 **repo 根目錄**。存檔會直接改動本機檔案，之後照常用 git 提交。
+2. **線上編輯**：部署後開 `https://<網站>/admin/`，點「Sign In Using Access Token」，依對話框連結建立 GitHub fine-grained Personal Access Token（只需該 repo 的 Contents 讀寫權限）並貼上。存檔即 commit 到 `main`，GitHub Actions 會自動重新 build 網站。
+
+後台編輯文章時，中英文在同一個編輯畫面以左右欄並列；新文章預設只開中文，英文版可從右上「⋯」選單啟用。**新增文章時請在表單最上方的「網址代稱（Slug）」欄位填英文小寫連字號**（會成為檔名與網址；已存文章日後可由「⋯」選單的 Edit Slug 改名，但會改變網址）。
+
+以下手動維護方式依然完全有效——後台與手改 `.md` 檔是同一份資料。
+
 ## 維護「法律洞察」文章
 
 文章放在 `src/content/insights/`：
