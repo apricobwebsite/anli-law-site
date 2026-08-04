@@ -1,22 +1,17 @@
-# CODING AGENTS: READ THIS FIRST
+# 安理國際法律事務所 — 網站
 
-This is a **handoff bundle** from Claude Design (claude.ai/design).
+| 目錄 | 內容 |
+|---|---|
+| **[`site/`](site/)** | **正式網站**（Astro 靜態網站，中英雙語）。「法律洞察」文章以 Markdown 維護，說明見 [site/README.md](site/README.md)。 |
+| [`project/`](project/) | Claude Design（claude.ai/design）匯出的原始設計原型，僅供設計參考，非正式程式碼。 |
 
-A user mocked up designs in HTML/CSS/JS using an AI design tool, then exported this bundle so a coding agent can implement the designs for real.
+## 常用指令
 
-## What you should do — IMPORTANT
+```bash
+cd site
+npm install     # 第一次使用
+npm run dev     # 本機預覽
+npm run build   # 產出靜態檔到 site/dist/
+```
 
-**Read `untitled/project/安理國際網站.dc.html` in full.** The user had this file open when they triggered the handoff, so it's almost certainly the primary design they want built. Read it top to bottom — don't skim. Then **follow its imports**: open every file it pulls in (shared components, CSS, scripts) so you understand how the pieces fit together before you start implementing.
-
-**If anything is ambiguous, ask the user to confirm before you start implementing.** It's much cheaper to clarify scope up front than to build the wrong thing.
-
-## About the design files
-
-The design medium is **HTML/CSS/JS** — these are prototypes, not production code. Your job is to **recreate them pixel-perfectly** in whatever technology makes sense for the target codebase (React, Vue, native, whatever fits). Match the visual output; don't copy the prototype's internal structure unless it happens to fit.
-
-**Don't render these files in a browser or take screenshots unless the user asks you to.** Everything you need — dimensions, colors, layout rules — is spelled out in the source. Read the HTML and CSS directly; a screenshot won't tell you anything they don't.
-
-## Bundle contents
-
-- `untitled/README.md` — this file
-- `untitled/project/` — the `安理國際律師事務所網站設計` project files (HTML prototypes, assets, components)
+新增／修改文章：編輯 `site/src/content/insights/zh/*.md`（英文版放 `en/`）。推上 GitHub 後，`.github/workflows/deploy.yml` 會自動 build 並部署到 GitHub Pages（需在 repo Settings → Pages 啟用「GitHub Actions」來源）。

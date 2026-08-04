@@ -1,0 +1,78 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib/site';
+import { t, insightsPath, articlePath, pageTitle, fmtDate, type Lang } from '../lib/i18n';
+import { getInsights, slugOf, type Insight } from '../lib/insights';
+
+interface Props {
+  lang: Lang;
+  entry: Insight;
+  /** 本文在另一語言的網址；若無對應版本則為該語言的洞察列表 */
+  altPath: string;
+}
+
+const { lang, entry, altPath } = Astro.props;
+const { Content } = await render(entry);
+const others = (await getInsights(lang)).filter((e) => e.id !== entry.id).slice(0, 3);
+---
+
+<Base
+  lang={lang}
+  title={pageTitle(lang, entry.data.title)}
+  description={entry.data.lead}
+  altPath={altPath}
+  ogType="article"
+>
+  <main style="max-width:1480px; margin:0 auto; padding:clamp(32px,6vh,72px) clamp(18px,5vw,72px) clamp(56px,9vh,110px);">
+    <a href={insightsPath(lang)} class="back-link"><span>←</span> {t(lang, SITE.ui.backList)}</a>
+
+    <article style="max-width:78ch; margin:clamp(24px,4vh,44px) 0 0;">
+      <div style="display:flex; align-items:baseline; gap:18px; flex-wrap:wrap; margin-bottom:22px;">
+        <span
+          style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C2A368; text-transform:uppercase;"
+        >{entry.data.category}</span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5e5a53;">
+          {fmtDate(lang, entry.data.date)}
+        </span>
+        <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5e5a53;">
+          {entry.data.readMinutes} {t(lang, SITE.ui.minRead)}
+        </span>
+      </div>
+      <h1
+        style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.8vw,3.2rem); line-height:1.18; letter-spacing:-0.015em; margin:0 0 26px; color:#F4F0E8; text-wrap:pretty;"
+      >{entry.data.title}</h1>
+      <p style="font-size:clamp(17px,1.5vw,21px); line-height:1.75; color:#C2A368; margin:0 0 40px; font-weight:300; text-wrap:pretty;">
+        {entry.data.lead}
+      </p>
+      <div style="height:1px; background:rgba(236,231,223,0.14); margin-bottom:40px;"></div>
+      <div class="article-body">
+        <Content />
+      </div>
+    </article>
+
+    {others.length > 0 && (
+      <div style="margin-top:clamp(56px,9vh,100px);">
+        <div
+          style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase; margin-bottom:24px;"
+        >{t(lang, SITE.ui.more)}</div>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:0;">
+          {others.map((o) => (
+            <a
+              href={articlePath(lang, slugOf(o))}
+              class="card-hover"
+              style="display:block; padding:26px clamp(18px,2vw,32px) 30px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06); text-decoration:none; color:inherit;"
+            >
+              <div
+                style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.2em; color:#C2A368; text-transform:uppercase; margin-bottom:14px;"
+              >{o.data.category}</div>
+              <h3 style="font-size:17px; font-weight:500; line-height:1.45; margin:0; color:#ECE7DF; text-wrap:pretty;">
+                {o.data.title}
+              </h3>
+            </a>
+          ))}
+        </div>
+      </div>
+    )}
+  </main>
+</Base>

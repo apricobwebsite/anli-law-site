@@ -1,0 +1,75 @@
+---
+import Base from '../layouts/Base.astro';
+import { LAW, SITE } from '../lib/site';
+import {
+  t,
+  homePath,
+  insightsPath,
+  articlePath,
+  otherLang,
+  pageTitle,
+  fmtDate,
+  type Lang,
+} from '../lib/i18n';
+import { getInsights, slugOf } from '../lib/insights';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const entries = await getInsights(lang);
+---
+
+<Base
+  lang={lang}
+  title={pageTitle(lang, t(lang, SITE.insights_h.label))}
+  description={t(lang, SITE.insights_h.para)}
+  altPath={insightsPath(otherLang(lang))}
+>
+  <main style="max-width:1480px; margin:0 auto; padding:clamp(32px,6vh,72px) clamp(18px,5vw,72px) clamp(56px,9vh,110px);">
+    <a href={homePath(lang)} class="back-link"><span>←</span> {t(lang, SITE.ui.back)}</a>
+
+    <div
+      style="display:flex; flex-wrap:wrap; gap:clamp(20px,4vw,64px); align-items:flex-end; justify-content:space-between; margin:clamp(24px,4vh,44px) 0 clamp(36px,6vh,56px);"
+    >
+      <div>
+        <div class="kicker" style="margin-bottom:18px;">{t(lang, SITE.insights_h.label)}</div>
+        <h1
+          style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.6vw,3.2rem); line-height:1.14; letter-spacing:-0.015em; margin:0; color:#F4F0E8;"
+        >{t(lang, SITE.insights_h.title)}</h1>
+      </div>
+      <p style="font-size:13.5px; line-height:1.8; color:#6f6a62; margin:0; max-width:42ch; font-weight:300;">
+        {t(lang, SITE.insights_h.para)}
+      </p>
+    </div>
+
+    <div style="display:flex; flex-direction:column;">
+      {entries.map((a) => (
+        <a data-reveal href={articlePath(lang, slugOf(a))} class="insight-row card-hover">
+          <div style="display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;">
+            <span
+              style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C2A368; text-transform:uppercase;"
+            >{a.data.category}</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5e5a53;">
+              {fmtDate(lang, a.data.date)}
+            </span>
+          </div>
+          <div style="min-width:0;">
+            <h3 style="font-size:clamp(18px,1.6vw,24px); font-weight:500; line-height:1.4; margin:0 0 10px; color:#ECE7DF; text-wrap:pretty;">
+              {a.data.title}
+            </h3>
+            <p style="font-size:14px; line-height:1.8; color:#8f897f; margin:0 0 14px; font-weight:300; max-width:56ch; text-wrap:pretty;">
+              {a.data.lead}
+            </p>
+            <span style="display:inline-flex; align-items:center; gap:8px; font-size:12.5px; letter-spacing:0.1em; color:#C2A368;">
+              {t(lang, SITE.ui.readMore)}
+              <span style="font-family:'IBM Plex Mono',monospace;">→</span>
+            </span>
+          </div>
+        </a>
+      ))}
+      <div style="height:1px; background:rgba(236,231,223,0.12);"></div>
+    </div>
+  </main>
+</Base>

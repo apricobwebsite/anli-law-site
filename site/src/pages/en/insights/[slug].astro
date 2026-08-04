@@ -1,0 +1,20 @@
+---
+import ArticlePage from '../../../components/ArticlePage.astro';
+import { articlePath, insightsPath } from '../../../lib/i18n';
+import { getInsights, findCounterpart, slugOf, type Insight } from '../../../lib/insights';
+
+export async function getStaticPaths() {
+  const entries = await getInsights('en');
+  return entries.map((entry) => ({ params: { slug: slugOf(entry) }, props: { entry } }));
+}
+
+interface Props {
+  entry: Insight;
+}
+
+const { entry } = Astro.props;
+const counterpart = await findCounterpart(entry);
+const altPath = counterpart ? articlePath('zh', slugOf(entry)) : insightsPath('zh');
+---
+
+<ArticlePage lang="en" entry={entry} altPath={altPath} />

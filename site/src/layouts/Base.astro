@@ -1,0 +1,202 @@
+---
+import '../styles/global.css';
+import { LAW, SITE } from '../lib/site';
+import { t, homePath, insightsPath, legalPath, type Lang } from '../lib/i18n';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  description?: string;
+  /** 本頁在另一語言的網址（語言切換與 hreflang 用） */
+  altPath: string;
+  ogType?: string;
+}
+
+const { lang, title, description, altPath, ogType = 'website' } = Astro.props;
+const home = homePath(lang);
+const currentPath = Astro.url.pathname;
+const zhHref = lang === 'zh' ? currentPath : altPath;
+const enHref = lang === 'en' ? currentPath : altPath;
+---
+
+<!doctype html>
+<html lang={lang === 'zh' ? 'zh-Hant-TW' : 'en'}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    {description && <meta name="description" content={description} />}
+    <meta property="og:title" content={title} />
+    {description && <meta property="og:description" content={description} />}
+    <meta property="og:type" content={ogType} />
+    <meta property="og:site_name" content={t(lang, LAW.firm.full)} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate" hreflang="zh-Hant" href={zhHref} />
+    <link rel="alternate" hreflang="en" href={enHref} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Noto+Sans+TC:wght@300;400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="site-nav">
+      <a href={home} class="brand">
+        <span class="brand-mark">ANLI</span>
+        <span class="brand-sub">{LAW.firm.full.zh}</span>
+      </a>
+
+      <div class="nav-desktop">
+        <a class="nav-link" href={`${home}#about`}>{t(lang, LAW.nav.about)}</a>
+        <a class="nav-link" href={`${home}#practice`}>{t(lang, LAW.nav.practice)}</a>
+        <a class="nav-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
+        <a class="nav-link" href={insightsPath(lang)}>{t(lang, SITE.ui.insightsNav)}</a>
+        <a class="nav-link" href={`${home}#contact`}>{t(lang, LAW.nav.contact)}</a>
+        <span class="nav-sep"></span>
+        <span class="lang-switch">
+          <a href={zhHref} class={lang === 'zh' ? 'lang-active' : 'lang-idle'}>中</a>
+          <span class="lang-slash">/</span>
+          <a href={enHref} class={lang === 'en' ? 'lang-active' : 'lang-idle'}>EN</a>
+        </span>
+      </div>
+
+      <div class="nav-mobile">
+        <span class="lang-switch">
+          <a href={zhHref} class={lang === 'zh' ? 'lang-active' : 'lang-idle'}>中</a>
+          <span class="lang-slash">/</span>
+          <a href={enHref} class={lang === 'en' ? 'lang-active' : 'lang-idle'}>EN</a>
+        </span>
+        <button id="menu-open" aria-label="Menu" class="menu-btn">
+          <span></span>
+          <span></span>
+          <span class="short"></span>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="mobile-menu">
+      <div class="mm-head">
+        <span class="brand-mark">ANLI</span>
+        <button id="menu-close" aria-label="Close" class="mm-close">✕</button>
+      </div>
+      <div class="mm-links">
+        <a class="mm-link" href={`${home}#about`}>{t(lang, LAW.nav.about)}</a>
+        <a class="mm-link" href={`${home}#practice`}>{t(lang, LAW.nav.practice)}</a>
+        <a class="mm-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
+        <a class="mm-link" href={insightsPath(lang)}>{t(lang, SITE.ui.insightsNav)}</a>
+        <a class="mm-link gold" href={`${home}#contact`}>{t(lang, LAW.nav.contact)}</a>
+      </div>
+      <div class="mm-contact">
+        <span class="mm-contact-label">Contact</span>
+        <a class="mm-email" href={`mailto:${LAW.contact.email}`}>{LAW.contact.email}</a>
+        <span class="mm-phone">{LAW.contact.phone}</span>
+      </div>
+    </div>
+
+    <slot />
+
+    <footer style="border-top:1px solid rgba(236,231,223,0.10);">
+      <div
+        style="max-width:1480px; margin:0 auto; padding:clamp(40px,6vh,64px) clamp(18px,5vw,72px) 30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:clamp(28px,4vw,64px);"
+      >
+        <div>
+          <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:14px;">
+            <span class="brand-mark" style="font-size:17px; letter-spacing:0.28em;">ANLI</span>
+          </div>
+          <div style="font-size:13.5px; color:#8f897f; line-height:1.8; margin-bottom:8px;">
+            {t(lang, LAW.firm.full)}
+          </div>
+          <div style="font-size:12.5px; color:#5e5a53; letter-spacing:0.06em;">
+            {t(lang, LAW.footer.note)}
+          </div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <span
+            style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;"
+          >{t(lang, SITE.footer.navLabel)}</span>
+          <a class="footer-link" href={`${home}#about`}>{t(lang, LAW.nav.about)}</a>
+          <a class="footer-link" href={`${home}#practice`}>{t(lang, LAW.nav.practice)}</a>
+          <a class="footer-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
+          <a class="footer-link" href={insightsPath(lang)}>{t(lang, SITE.ui.insightsNav)}</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <span
+            style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;"
+          >{t(lang, SITE.footer.legalLabel)}</span>
+          <a class="footer-link" href={legalPath(lang, 'privacy')}>{t(lang, SITE.legal.navPrivacy)}</a>
+          <a class="footer-link" href={legalPath(lang, 'disclaimer')}>{t(lang, SITE.legal.navDisclaimer)}</a>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <span
+            style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#4d4a44; text-transform:uppercase; margin-bottom:4px;"
+          >{t(lang, SITE.footer.contactLabel)}</span>
+          <a class="footer-link gold" href={`mailto:${LAW.contact.email}`}>{LAW.contact.email}</a>
+          <span style="font-size:13.5px; color:#8f897f;">{LAW.contact.phone}</span>
+          <span style="font-size:13.5px; color:#8f897f;">{t(lang, LAW.contact.address)}</span>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#8f897f;">
+            LINE {SITE.line.account}
+          </span>
+        </div>
+      </div>
+      <div
+        style="max-width:1480px; margin:0 auto; padding:22px clamp(18px,5vw,72px) 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid rgba(236,231,223,0.08);"
+      >
+        <span style="font-size:12px; color:#4d4a44;">{t(lang, LAW.footer.copyright)}</span>
+      </div>
+    </footer>
+
+    <script>
+      // 行動版選單開關
+      const menu = document.getElementById('mobile-menu');
+      const setMenu = (open: boolean) => {
+        menu?.classList.toggle('open', open);
+        document.body.classList.toggle('menu-open', open);
+      };
+      document.getElementById('menu-open')?.addEventListener('click', () => setMenu(true));
+      document.getElementById('menu-close')?.addEventListener('click', () => setMenu(false));
+      menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
+
+      // 進場顯示動畫（未載入 JS 時內容照常顯示）
+      const ease =
+        'opacity .85s cubic-bezier(.22,.61,.36,1), transform .85s cubic-bezier(.22,.61,.36,1)';
+      const nodes = document.querySelectorAll<HTMLElement>('[data-reveal]');
+      const io =
+        'IntersectionObserver' in window
+          ? new IntersectionObserver(
+              (entries) => {
+                entries.forEach((en) => {
+                  if (en.isIntersecting) {
+                    const el = en.target as HTMLElement;
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                    io?.unobserve(el);
+                  }
+                });
+              },
+              { rootMargin: '0px 0px -6% 0px', threshold: 0.03 },
+            )
+          : null;
+      let above = 0;
+      nodes.forEach((el) => {
+        el.style.transition = ease;
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(18px)';
+        const top = el.getBoundingClientRect().top;
+        if (top < window.innerHeight * 0.94) {
+          const d = Math.min(above, 7) * 90;
+          above += 1;
+          window.setTimeout(() => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+          }, 60 + d);
+        } else if (io) {
+          io.observe(el);
+        } else {
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+        }
+      });
+    </script>
+  </body>
+</html>

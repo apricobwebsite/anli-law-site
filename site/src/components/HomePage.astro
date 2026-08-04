@@ -1,0 +1,410 @@
+---
+import Base from '../layouts/Base.astro';
+import { LAW, SITE } from '../lib/site';
+import {
+  t,
+  tl,
+  homePath,
+  insightsPath,
+  articlePath,
+  otherLang,
+  fmtDate,
+  type Lang,
+} from '../lib/i18n';
+import { getInsights, slugOf } from '../lib/insights';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const teaser = (await getInsights(lang)).slice(0, 3);
+const title =
+  lang === 'zh'
+    ? `${LAW.firm.full.zh}｜${LAW.hero.line1.zh}${LAW.hero.line2.zh}`
+    : `${LAW.firm.full.en} — ${LAW.hero.line1.en} ${LAW.hero.line2.en}`;
+---
+
+<Base lang={lang} title={title} description={t(lang, LAW.hero.para)} altPath={homePath(otherLang(lang))}>
+  <main>
+    <!-- Hero -->
+    <section
+      style="display:flex; flex-wrap:wrap; gap:clamp(28px,5vw,72px); align-items:center; padding:clamp(40px,7vh,96px) clamp(18px,5vw,72px) clamp(40px,6vh,72px); max-width:1480px; margin:0 auto;"
+    >
+      <div style="flex:1.35 1 340px; min-width:0;">
+        <div data-reveal style="display:flex; align-items:center; gap:14px; margin-bottom:30px;">
+          <span style="width:36px; height:1px; background:#C2A368;"></span>
+          <span
+            style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.26em; text-transform:uppercase; color:#C2A368;"
+          >{t(lang, LAW.hero.kicker)}</span>
+        </div>
+        <h1
+          data-reveal
+          style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:800; font-size:clamp(2.5rem,6.2vw,5.4rem); line-height:1.04; letter-spacing:-0.02em; margin:0 0 28px; color:#F4F0E8; text-wrap:pretty;"
+        >
+          <span style="display:block;">{t(lang, LAW.hero.line1)}</span>
+          <span style="display:block; color:#C2A368;">{t(lang, LAW.hero.line2)}</span>
+        </h1>
+        <p
+          data-reveal
+          style="max-width:48ch; font-size:clamp(15px,1.15vw,17px); line-height:1.9; color:#b8b2a8; margin:0 0 36px; font-weight:300; text-wrap:pretty;"
+        >{t(lang, LAW.hero.para)}</p>
+        <div data-reveal style="display:flex; flex-wrap:wrap; align-items:center; gap:14px; margin-bottom:44px;">
+          <a href="#contact" class="btn-gold">
+            {t(lang, LAW.hero.cta)}
+            <span style="font-family:'IBM Plex Mono',monospace;">→</span>
+          </a>
+          <a href="#principal" class="link-ghost">{t(lang, LAW.hero.cta2)}</a>
+        </div>
+        <div
+          data-reveal
+          style="display:flex; align-items:center; gap:clamp(14px,2vw,30px); flex-wrap:wrap; padding-top:28px; border-top:1px solid rgba(236,231,223,0.10);"
+        >
+          <span
+            style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase;"
+          >Formation</span>
+          {LAW.creds.map((c) => (
+            <span style="font-size:13px; letter-spacing:0.06em; color:#8f897f;">{t(lang, c)}</span>
+          ))}
+        </div>
+      </div>
+
+      <div data-reveal style="flex:1 1 300px; position:relative; min-height:clamp(380px,58vh,600px);">
+        <div style="position:absolute; inset:0; border:1px solid rgba(194,163,104,0.28);"></div>
+        <img
+          src="/assets/yang-mono.jpg"
+          alt={t(lang, LAW.principal.name)}
+          style="position:absolute; inset:14px; width:calc(100% - 28px); height:calc(100% - 28px); object-fit:cover; object-position:center 22%; filter:grayscale(0.1) contrast(1.02);"
+        />
+        <div
+          style="position:absolute; left:-13px; bottom:34px; transform:rotate(-90deg); transform-origin:left bottom; font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.30em; color:#C2A368; text-transform:uppercase; white-space:nowrap;"
+        >Principal · 主持律師</div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section
+      id="about"
+      style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); max-width:1480px; margin:0 auto;"
+    >
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(28px,5vw,80px);">
+        <div data-reveal>
+          <div class="kicker" style="margin-bottom:18px;">01 — {t(lang, LAW.about.label)}</div>
+          <h2
+            style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.2; letter-spacing:-0.01em; margin:0; color:#F4F0E8; text-wrap:pretty;"
+          >{t(lang, LAW.about.title)}</h2>
+        </div>
+        <div data-reveal style="display:flex; flex-direction:column; gap:24px; max-width:62ch; padding-top:6px;">
+          <p style="font-size:clamp(15px,1.1vw,17px); line-height:1.95; color:#cfc9bf; margin:0; font-weight:300; text-wrap:pretty;">
+            {t(lang, LAW.about.para1)}
+          </p>
+          <p style="font-size:clamp(15px,1.1vw,17px); line-height:1.95; color:#9a948a; margin:0; font-weight:300; text-wrap:pretty;">
+            {t(lang, LAW.about.para2)}
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1px; margin-top:clamp(48px,7vh,86px); background:rgba(236,231,223,0.10);"
+      >
+        {SITE.values.map((v, i) => (
+          <div data-reveal class="cell-hover" style="background:#0a0a0b; padding:34px clamp(20px,2.2vw,34px) 38px;">
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C2A368; margin-bottom:20px;">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <h3 style="font-size:clamp(17px,1.35vw,20px); font-weight:500; margin:0 0 14px; color:#ECE7DF; line-height:1.4;">
+              {t(lang, v.title)}
+            </h3>
+            <p style="font-size:14px; line-height:1.85; color:#8f897f; margin:0; font-weight:300; text-wrap:pretty;">
+              {t(lang, v.desc)}
+            </p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Practice -->
+    <section
+      id="practice"
+      style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); max-width:1480px; margin:0 auto;"
+    >
+      <div data-reveal style="margin-bottom:52px;">
+        <div class="kicker" style="margin-bottom:18px;">02 — {t(lang, LAW.practice_h.label)}</div>
+        <h2
+          style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.16; letter-spacing:-0.01em; margin:0; color:#F4F0E8;"
+        >{t(lang, LAW.practice_h.title)}</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:0;">
+        {LAW.practice.map((p, i) => (
+          <div
+            data-reveal
+            class="card-hover"
+            style="padding:32px clamp(20px,2.4vw,40px) 36px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06);"
+          >
+            <div style="font-family:'IBM Plex Mono',monospace; font-size:13px; color:#C2A368; margin-bottom:16px; letter-spacing:0.06em;">
+              {String(i + 1).padStart(2, '0')}
+            </div>
+            <h3 style="font-size:clamp(18px,1.4vw,21px); font-weight:500; margin:0 0 12px; color:#ECE7DF; line-height:1.35;">
+              {t(lang, p.title)}
+            </h3>
+            <p style="font-size:14px; line-height:1.75; color:#8f897f; margin:0 0 22px; font-weight:300; max-width:38ch; text-wrap:pretty;">
+              {t(lang, p.desc)}
+            </p>
+            <div style="display:flex; flex-direction:column; gap:9px; padding-top:18px; border-top:1px solid rgba(236,231,223,0.07);">
+              {(SITE.practiceDetail[i] ? tl(lang, SITE.practiceDetail[i]) : []).map((d) => (
+                <div style="display:flex; align-items:baseline; gap:10px;">
+                  <span style="width:4px; height:1px; background:#C2A368; flex:none; transform:translateY(-4px);"></span>
+                  <span style="font-size:13px; line-height:1.6; color:#a09a90; font-weight:300;">{d}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Principal -->
+    <section
+      id="principal"
+      style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); background:#0c0c0e;"
+    >
+      <div style="max-width:1480px; margin:0 auto;">
+        <div data-reveal class="kicker" style="margin-bottom:44px;">03 — {t(lang, LAW.principal.label)}</div>
+        <div style="display:flex; flex-wrap:wrap; gap:clamp(30px,5vw,80px); align-items:flex-start;">
+          <div data-reveal style="flex:0.8 1 280px; min-width:0;">
+            <div style="position:relative; aspect-ratio:3/4; border:1px solid rgba(194,163,104,0.30);">
+              <img
+                src="/assets/yang-mono.jpg"
+                alt={t(lang, LAW.principal.name)}
+                style="position:absolute; inset:12px; width:calc(100% - 24px); height:calc(100% - 24px); object-fit:cover; object-position:center 20%;"
+              />
+            </div>
+            <div
+              style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.18em; color:#5e5a53; margin-top:16px; text-transform:uppercase;"
+            >{t(lang, LAW.principal.plate)}</div>
+          </div>
+          <div style="flex:1.3 1 340px; min-width:0;">
+            <h2
+              data-reveal
+              style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:800; font-size:clamp(1.9rem,3.4vw,3.1rem); line-height:1.06; letter-spacing:-0.01em; margin:0 0 14px; color:#F4F0E8;"
+            >{t(lang, LAW.principal.name)}</h2>
+            <div data-reveal style="font-size:14.5px; letter-spacing:0.04em; color:#C2A368; margin-bottom:28px; line-height:1.6;">
+              {t(lang, LAW.principal.title)}
+            </div>
+            <p
+              data-reveal
+              style="font-size:clamp(15px,1.05vw,16.5px); line-height:1.95; color:#b8b2a8; margin:0 0 44px; max-width:64ch; font-weight:300; text-wrap:pretty;"
+            >{t(lang, LAW.principal.intro)}</p>
+
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:clamp(28px,4vw,56px);">
+              <div data-reveal>
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px;">
+                  <span
+                    style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase;"
+                  >{t(lang, LAW.principal.eduLabel)}</span>
+                  <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
+                </div>
+                {LAW.education.map((e) => (
+                  <div style="padding:16px 0; border-bottom:1px solid rgba(236,231,223,0.09);">
+                    <div style="font-size:14.5px; color:#ECE7DF; line-height:1.5; margin-bottom:6px;">{t(lang, e.school)}</div>
+                    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; color:#8f897f; letter-spacing:0.02em;">
+                      {t(lang, e.degree)}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div data-reveal>
+                <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px;">
+                  <span
+                    style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase;"
+                  >{t(lang, LAW.principal.expLabel)}</span>
+                  <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
+                </div>
+                {LAW.experience.map((x) => (
+                  <div style="padding:14px 0; border-bottom:1px solid rgba(236,231,223,0.09);">
+                    <div style="font-size:14px; color:#ECE7DF; line-height:1.45; margin-bottom:5px;">{t(lang, x.org)}</div>
+                    <div style="font-size:12.5px; color:#8f897f;">{t(lang, x.role)}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div data-reveal style="margin-top:clamp(48px,8vh,88px);">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:26px;">
+            <span
+              style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase;"
+            >{t(lang, LAW.team_h.label)}</span>
+            <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:0;">
+            {LAW.team.map((m, i) => (
+              <div style="padding:26px clamp(18px,2vw,30px) 30px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06);">
+                <div style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#5e5a53; margin-bottom:16px;">
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                <div style="font-size:clamp(16px,1.2vw,19px); font-weight:500; color:#ECE7DF; line-height:1.5; margin-bottom:8px;">
+                  {t(lang, m.name)}
+                </div>
+                <div style="font-size:13px; letter-spacing:0.06em; color:#C2A368; margin-bottom:12px;">{t(lang, m.role)}</div>
+                <div style="font-size:12.5px; line-height:1.7; color:#8f897f;">{t(lang, m.focus)}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Insights teaser -->
+    <section
+      id="insights"
+      style="scroll-margin-top:88px; padding:clamp(56px,10vh,124px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); max-width:1480px; margin:0 auto;"
+    >
+      <div
+        data-reveal
+        style="display:flex; flex-wrap:wrap; gap:clamp(20px,4vw,64px); align-items:flex-end; justify-content:space-between; margin-bottom:48px;"
+      >
+        <div>
+          <div class="kicker" style="margin-bottom:18px;">04 — {t(lang, SITE.insights_h.label)}</div>
+          <h2
+            style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.6rem,2.8vw,2.6rem); line-height:1.16; letter-spacing:-0.01em; margin:0; color:#F4F0E8;"
+          >{t(lang, SITE.insights_h.title)}</h2>
+        </div>
+        <p style="font-size:13.5px; line-height:1.8; color:#6f6a62; margin:0; max-width:42ch; font-weight:300;">
+          {t(lang, SITE.insights_h.para)}
+        </p>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:0;">
+        {teaser.map((a) => (
+          <a
+            data-reveal
+            href={articlePath(lang, slugOf(a))}
+            class="card-hover"
+            style="display:block; padding:28px clamp(18px,2vw,32px) 32px; border-top:1px solid rgba(236,231,223,0.12); border-left:1px solid rgba(236,231,223,0.06); text-decoration:none; color:inherit;"
+          >
+            <div style="display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:16px;">
+              <span
+                style="font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#C2A368; text-transform:uppercase;"
+              >{a.data.category}</span>
+              <span style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#5e5a53;">
+                {fmtDate(lang, a.data.date)}
+              </span>
+            </div>
+            <h3 style="font-size:clamp(17px,1.4vw,21px); font-weight:500; line-height:1.45; margin:0 0 16px; color:#ECE7DF; text-wrap:pretty;">
+              {a.data.title}
+            </h3>
+            <span style="display:inline-flex; align-items:center; gap:8px; font-size:12.5px; letter-spacing:0.1em; color:#C2A368;">
+              {t(lang, SITE.ui.readMore)}
+              <span style="font-family:'IBM Plex Mono',monospace;">→</span>
+            </span>
+          </a>
+        ))}
+      </div>
+      <div data-reveal style="margin-top:40px; padding-top:32px; border-top:1px solid rgba(236,231,223,0.12);">
+        <a href={insightsPath(lang)} class="btn-gold">
+          {t(lang, SITE.ui.viewAll)}
+          <span style="font-family:'IBM Plex Mono',monospace;">→</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section
+      id="contact"
+      style="scroll-margin-top:88px; padding:clamp(64px,12vh,140px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08); background:#0c0c0e;"
+    >
+      <div
+        style="max-width:1480px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:clamp(32px,6vw,90px); align-items:center;"
+      >
+        <div data-reveal>
+          <div class="kicker" style="margin-bottom:22px;">05 — {t(lang, LAW.contact.label)}</div>
+          <h2
+            style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.9rem,3.6vw,3.2rem); line-height:1.12; letter-spacing:-0.01em; margin:0 0 22px; color:#F4F0E8; text-wrap:pretty;"
+          >{t(lang, LAW.contact.title)}</h2>
+          <p style="font-size:16px; line-height:1.85; color:#9a948a; margin:0; max-width:46ch; font-weight:300; text-wrap:pretty;">
+            {t(lang, LAW.contact.para)}
+          </p>
+        </div>
+        <div data-reveal style="display:flex; flex-direction:column;">
+          <a
+            href={`mailto:${LAW.contact.email}`}
+            style="display:block; padding:24px 0; border-top:1px solid rgba(236,231,223,0.14); text-decoration:none;"
+          >
+            <div
+              style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase; margin-bottom:10px;"
+            >Email</div>
+            <div style="font-family:Archivo,sans-serif; font-size:clamp(18px,1.6vw,23px); color:#C2A368; letter-spacing:0.01em;">
+              {LAW.contact.email}
+            </div>
+          </a>
+          <div
+            style="display:flex; flex-wrap:wrap; gap:16px 48px; padding:24px 0; border-top:1px solid rgba(236,231,223,0.14); border-bottom:1px solid rgba(236,231,223,0.14);"
+          >
+            <div>
+              <div
+                style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase; margin-bottom:10px;"
+              >Tel</div>
+              <div style="font-size:16px; color:#ECE7DF;">{LAW.contact.phone}</div>
+            </div>
+            <div>
+              <div
+                style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.22em; color:#5e5a53; text-transform:uppercase; margin-bottom:10px;"
+              >Office</div>
+              <div style="font-size:16px; color:#ECE7DF;">{t(lang, LAW.contact.address)}</div>
+            </div>
+          </div>
+          <a
+            href={`mailto:${LAW.contact.email}`}
+            class="btn-gold"
+            style="align-self:flex-start; margin-top:28px;"
+          >
+            {t(lang, LAW.contact.cta)}
+            <span style="font-family:'IBM Plex Mono',monospace;">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINE -->
+    <section
+      id="line"
+      style="scroll-margin-top:88px; padding:clamp(56px,9vh,110px) clamp(18px,5vw,72px); border-top:1px solid rgba(236,231,223,0.08);"
+    >
+      <div
+        data-reveal
+        style="max-width:1480px; margin:0 auto; display:flex; flex-wrap:wrap; gap:clamp(28px,5vw,72px); align-items:center;"
+      >
+        <div style="flex:1 1 320px; min-width:0;">
+          <div class="kicker" style="margin-bottom:20px;">06 — {t(lang, SITE.line.label)}</div>
+          <h2
+            style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.5rem,2.5vw,2.2rem); line-height:1.25; margin:0 0 18px; color:#F4F0E8; text-wrap:pretty;"
+          >{t(lang, SITE.line.title)}</h2>
+          <p style="font-size:15px; line-height:1.9; color:#9a948a; margin:0 0 30px; max-width:52ch; font-weight:300; text-wrap:pretty;">
+            {t(lang, SITE.line.para)}
+          </p>
+          <div style="display:inline-flex; align-items:center; gap:18px; padding:14px 22px; border:1px solid rgba(236,231,223,0.16);">
+            <span
+              style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.2em; color:#5e5a53; text-transform:uppercase;"
+            >{t(lang, SITE.line.accountLabel)}</span>
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:17px; color:#C2A368; letter-spacing:0.04em;">
+              {SITE.line.account}
+            </span>
+          </div>
+        </div>
+        <div style="flex:0 0 auto; display:flex; flex-direction:column; gap:12px; align-items:center;">
+          <div
+            style="width:clamp(180px,22vw,220px); aspect-ratio:1/1; border:1px solid rgba(236,231,223,0.16); background-image:repeating-linear-gradient(135deg, rgba(236,231,223,0.05) 0 6px, transparent 6px 12px); display:flex; align-items:center; justify-content:center; padding:20px; text-align:center;"
+          >
+            <span style="font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.18em; color:#6f6a62; line-height:1.8;">
+              {t(lang, SITE.line.qrNote)}
+            </span>
+          </div>
+          <span style="font-family:'IBM Plex Mono',monospace; font-size:10px; letter-spacing:0.2em; color:#4d4a44; text-transform:uppercase;">
+            LINE QR
+          </span>
+        </div>
+      </div>
+    </section>
+  </main>
+</Base>

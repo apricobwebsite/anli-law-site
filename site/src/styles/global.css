@@ -1,0 +1,443 @@
+/* 安理國際法律事務所 — 全站樣式（自 Claude Design 原型移植） */
+
+:root {
+  --bg: #0a0a0b;
+  --bg-alt: #0c0c0e;
+  --ink: #ECE7DF;
+  --ink-bright: #F4F0E8;
+  --gold: #C2A368;
+  --gold-bright: #E0C68C;
+  --muted-1: #cfc9bf;
+  --muted-2: #b8b2a8;
+  --muted-3: #a09a90;
+  --muted-4: #9a948a;
+  --muted-5: #8f897f;
+  --muted-6: #6f6a62;
+  --muted-7: #5e5a53;
+  --muted-8: #4d4a44;
+  --line-strong: rgba(236, 231, 223, 0.14);
+  --line: rgba(236, 231, 223, 0.12);
+  --line-soft: rgba(236, 231, 223, 0.10);
+  --line-faint: rgba(236, 231, 223, 0.08);
+  --line-hair: rgba(236, 231, 223, 0.06);
+  --gold-line: rgba(194, 163, 104, 0.28);
+  --gold-wash: rgba(194, 163, 104, 0.04);
+  --font-display: Archivo, 'Noto Sans TC', sans-serif;
+  --font-body: 'Noto Sans TC', Archivo, sans-serif;
+  --font-mono: 'IBM Plex Mono', monospace;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body.menu-open { overflow: hidden; }
+
+::selection { background: var(--gold); color: var(--bg); }
+
+img { display: block; max-width: 100%; }
+
+a { color: var(--gold); }
+a:hover { color: var(--gold-bright); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0a0a0b; }
+::-webkit-scrollbar-thumb { background: #2a2823; }
+::-webkit-scrollbar-thumb:hover { background: #3a372f; }
+
+/* ---- 導覽列 ---- */
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px clamp(18px, 5vw, 72px);
+  background: rgba(10, 10, 11, 0.80);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  text-decoration: none;
+  color: inherit;
+  min-width: 0;
+}
+
+.brand-mark {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: 0.30em;
+  color: var(--ink);
+}
+
+.brand-sub {
+  font-size: 12.5px;
+  letter-spacing: 0.10em;
+  color: var(--muted-6);
+  white-space: nowrap;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 2.2vw, 34px);
+}
+
+.nav-mobile {
+  display: none;
+  align-items: center;
+  gap: 18px;
+}
+
+@media (max-width: 899px) {
+  .nav-desktop { display: none; }
+  .nav-mobile { display: flex; }
+}
+
+.nav-link {
+  font-size: 13.5px;
+  letter-spacing: 0.10em;
+  color: var(--muted-2);
+  text-decoration: none;
+}
+.nav-link:hover { color: var(--ink); }
+
+.nav-sep {
+  width: 1px;
+  height: 16px;
+  background: rgba(236, 231, 223, 0.18);
+}
+
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+.nav-mobile .lang-switch { font-size: 13px; }
+.lang-slash { color: #3a372f; }
+.lang-active { color: var(--ink); font-weight: 600; text-decoration: none; }
+.lang-active:hover { color: var(--ink); }
+.lang-idle { color: var(--muted-7); font-weight: 400; text-decoration: none; }
+.lang-idle:hover { color: var(--ink); }
+
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 48px;
+  height: 48px;
+  padding: 0 11px;
+  background: none;
+  border: 1px solid rgba(236, 231, 223, 0.18);
+  color: inherit;
+  cursor: pointer;
+}
+.menu-btn span { display: block; height: 1px; background: var(--ink); }
+.menu-btn span.short { background: var(--gold); width: 60%; }
+
+/* ---- 行動版全螢幕選單 ---- */
+
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: var(--bg);
+  display: none;
+  flex-direction: column;
+  padding: 20px clamp(18px, 6vw, 40px) 40px;
+}
+.mobile-menu.open { display: flex; }
+
+.mm-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 26px;
+  border-bottom: 1px solid var(--line);
+}
+.mm-head .brand-mark { font-size: 18px; }
+
+.mm-close {
+  width: 48px;
+  height: 48px;
+  background: none;
+  border: 1px solid rgba(236, 231, 223, 0.18);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.mm-links { display: flex; flex-direction: column; margin-top: 12px; }
+
+.mm-link {
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  font-size: 20px;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--line-faint);
+}
+.mm-link:hover { color: var(--ink); }
+.mm-link.gold { color: var(--gold); }
+.mm-link.gold:hover { color: var(--gold); }
+
+.mm-contact {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 32px;
+}
+.mm-contact-label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  color: var(--muted-7);
+  text-transform: uppercase;
+}
+.mm-email {
+  font-family: var(--font-display);
+  font-size: 17px;
+  color: var(--gold);
+  text-decoration: none;
+}
+.mm-phone { font-size: 15px; color: var(--muted-5); }
+
+/* ---- 常用元件 ---- */
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.24em;
+  color: var(--gold);
+}
+
+.btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 15px 30px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-size: 13.5px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  background: none;
+  font-family: var(--font-body);
+}
+.btn-gold:hover { background: var(--gold); color: var(--bg); }
+
+.link-ghost {
+  display: inline-flex;
+  align-items: center;
+  min-height: 52px;
+  padding: 15px 8px;
+  color: var(--muted-2);
+  font-size: 13.5px;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  white-space: nowrap;
+}
+.link-ghost:hover { color: var(--ink); border-bottom: 1px solid rgba(236, 231, 223, 0.4); }
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  color: var(--muted-5);
+  text-decoration: none;
+}
+.back-link:hover { color: var(--gold); }
+
+.card-hover { transition: background 0.25s ease; }
+.card-hover:hover { background: var(--gold-wash); }
+
+.cell-hover { transition: background 0.25s ease; }
+.cell-hover:hover { background: #0d0d0f; }
+
+.footer-link {
+  font-size: 13.5px;
+  color: var(--muted-5);
+  text-decoration: none;
+}
+.footer-link:hover { color: var(--ink); }
+.footer-link.gold { color: var(--gold); }
+.footer-link.gold:hover { color: var(--gold-bright); }
+
+.legal-tab {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--muted-6);
+  text-decoration: none;
+  padding-bottom: 6px;
+  border-bottom: 1px solid transparent;
+}
+.legal-tab:hover { color: var(--ink); }
+.legal-tab.on { color: var(--gold); border-bottom-color: var(--gold); }
+.legal-tab.on:hover { color: var(--gold); }
+
+/* ---- 洞察列表列 ---- */
+
+.insight-row {
+  display: grid;
+  grid-template-columns: minmax(200px, 260px) 1fr;
+  gap: clamp(14px, 3vw, 48px);
+  align-items: baseline;
+  padding: 30px 4px 32px;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 700px) {
+  .insight-row { grid-template-columns: 1fr; gap: 12px; }
+}
+
+/* ---- 法律頁段落列 ---- */
+
+.legal-row {
+  display: grid;
+  grid-template-columns: minmax(220px, 300px) 1fr;
+  gap: clamp(14px, 3vw, 40px);
+  padding-top: 26px;
+  border-top: 1px solid var(--line-soft);
+}
+
+@media (max-width: 700px) {
+  .legal-row { grid-template-columns: 1fr; }
+}
+
+/* ---- 文章內文（Markdown 渲染） ---- */
+
+.article-body {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.article-body > * { margin: 0; }
+
+.article-body p {
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 2.0;
+  color: var(--muted-1);
+  font-weight: 300;
+  text-wrap: pretty;
+}
+
+.article-body h2 {
+  font-family: var(--font-display);
+  font-size: clamp(19px, 1.6vw, 24px);
+  font-weight: 600;
+  color: var(--ink-bright);
+  line-height: 1.5;
+  margin-top: 18px;
+}
+
+.article-body h3 {
+  font-size: clamp(16px, 1.3vw, 19px);
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.article-body ul,
+.article-body ol {
+  padding-left: 1.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.article-body li {
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.9;
+  color: var(--muted-1);
+  font-weight: 300;
+}
+.article-body li::marker { color: var(--gold); }
+
+.article-body blockquote {
+  padding: 4px 0 4px 22px;
+  border-left: 2px solid var(--gold);
+}
+.article-body blockquote p { color: var(--muted-2); }
+
+.article-body strong { color: var(--ink); font-weight: 500; }
+
+.article-body a { color: var(--gold); }
+.article-body a:hover { color: var(--gold-bright); }
+
+.article-body hr {
+  border: none;
+  height: 1px;
+  background: var(--line-strong);
+  margin: 12px 0;
+}
+
+.article-body code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  color: var(--gold-bright);
+}
+
+.article-body img { border: 1px solid var(--gold-line); }
+
+.article-body table {
+  border-collapse: collapse;
+  font-size: 14.5px;
+  line-height: 1.8;
+}
+.article-body th,
+.article-body td {
+  border: 1px solid var(--line);
+  padding: 10px 16px;
+  color: var(--muted-1);
+  font-weight: 300;
+  text-align: left;
+}
+.article-body th {
+  color: var(--ink);
+  font-weight: 500;
+  background: var(--gold-wash);
+}

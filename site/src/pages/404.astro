@@ -1,0 +1,25 @@
+---
+import Base from '../layouts/Base.astro';
+import { SITE } from '../lib/site';
+import { pageTitle } from '../lib/i18n';
+---
+
+<Base lang="zh" title={pageTitle('zh', SITE.ui.notFoundTitle.zh)} altPath="/en/">
+  <main
+    style="max-width:1480px; margin:0 auto; padding:clamp(64px,16vh,160px) clamp(18px,5vw,72px); display:flex; flex-direction:column; align-items:flex-start; gap:22px;"
+  >
+    <div class="kicker">404</div>
+    <h1
+      style="font-family:Archivo,'Noto Sans TC',sans-serif; font-weight:700; font-size:clamp(1.8rem,3.4vw,3rem); line-height:1.16; margin:0; color:#F4F0E8;"
+    >
+      {SITE.ui.notFoundTitle.zh}<span style="color:#5e5a53;"> / {SITE.ui.notFoundTitle.en}</span>
+    </h1>
+    <p style="font-size:15.5px; line-height:1.9; color:#9a948a; margin:0; font-weight:300;">
+      {SITE.ui.notFoundPara.zh}<br />{SITE.ui.notFoundPara.en}
+    </p>
+    <a href="/" class="btn-gold" style="margin-top:10px;">
+      {SITE.ui.back.zh}
+      <span style="font-family:'IBM Plex Mono',monospace;">→</span>
+    </a>
+  </main>
+</Base>
