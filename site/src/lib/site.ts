@@ -85,8 +85,8 @@ export const LAW = {
       slug: 'medical-life-sciences',
       title: { zh: '醫療與生技法律', en: 'Healthcare & Life Sciences' },
       desc: {
-        zh: '主持律師現任全國性醫師團體律師顧問，承辦醫療糾紛、醫事法規、健保爭議、臨床試驗與藥品食品法遵。',
-        en: "Led by counsel to Taiwan's national medical association — medical disputes, healthcare regulation, NHI matters, clinical trials, and pharmaceutical & food compliance.",
+        zh: '主持律師曾任全國性醫師團體法律顧問，承辦醫療糾紛、醫事法規、健保爭議、臨床試驗與藥品食品法遵。',
+        en: "Led by a former legal advisor to Taiwan's national medical association — medical disputes, healthcare regulation, NHI matters, clinical trials, and pharmaceutical & food compliance.",
       },
     },
     {
@@ -163,8 +163,8 @@ export const LAW = {
       en: 'Principal Attorney · Doctor of the Science of Law (J.S.D.)',
     },
     intro: {
-      zh: '楊佳陵博士擁有美國柏克萊加州大學法律科學博士（J.S.D.）學位，並先後取得史丹佛大學法律科學碩士與國立臺灣大學法學士，執業生涯歷經理律、萬國等台灣頂尖法律事務所，並曾於柏克萊從事博士後研究與中國法教學。她長期深耕醫療與生醫法制，現任中華民國醫師公會全國聯合會律師顧問及全國律師聯合會醫藥與健保委員會委員，於全國層級參與醫師權益、醫事法規與重大醫療政策議題，所服務的全國性醫師團體代表逾五萬名醫師。',
-      en: "Dr. Chia-Ling Yang holds a Doctor of the Science of Law (J.S.D.) from UC Berkeley, a Master of the Science of Law from Stanford, and a Bachelor of Laws from National Taiwan University. Her practice runs through Taiwan's leading firms, Lee and Li and Formosa Transnational, alongside postdoctoral research and Chinese-law teaching at Berkeley. Much of her career has been devoted to healthcare and life-sciences law: she serves as legal advisor to the Taiwan Medical Association — whose membership exceeds fifty thousand physicians nationwide — and sits on the Taiwan Bar Association's Medicine, Pharmaceuticals and National Health Insurance Committee, working at the national level on physicians' rights, healthcare regulation, and major health-policy issues.",
+      zh: '楊佳陵博士擁有美國柏克萊加州大學法律科學博士（J.S.D.）學位，並先後取得史丹佛大學法律科學碩士與國立臺灣大學法學士，執業生涯歷經理律、萬國等台灣頂尖法律事務所，並曾於柏克萊從事博士後研究與中國法教學。她長期深耕醫療與生醫法制，曾任第 13 屆中華民國醫師公會全國聯合會法律顧問，現任全國律師聯合會醫藥與健保委員會委員，於全國層級參與醫師權益、醫事法規與重大醫療政策議題，該全國性醫師團體代表逾五萬名醫師。',
+      en: "Dr. Chia-Ling Yang holds a Doctor of the Science of Law (J.S.D.) from UC Berkeley, a Master of the Science of Law from Stanford, and a Bachelor of Laws from National Taiwan University. Her practice runs through Taiwan's leading firms, Lee and Li and Formosa Transnational, alongside postdoctoral research and Chinese-law teaching at Berkeley. Much of her career has been devoted to healthcare and life-sciences law: she served as legal advisor to the Taiwan Medical Association for its 13th term — a body whose membership exceeds fifty thousand physicians nationwide — and sits on the Taiwan Bar Association's Medicine, Pharmaceuticals and National Health Insurance Committee, working at the national level on physicians' rights, healthcare regulation, and major health-policy issues.",
     },
     eduLabel: { zh: '學歷', en: 'Education' },
     expLabel: { zh: '主要經歷', en: 'Experience' },
@@ -178,13 +178,13 @@ export const LAW = {
     kicker: { zh: '醫療與生醫法制', en: 'Healthcare & Life Sciences' },
     title: { zh: '從醫療現場到憲法法庭', en: 'From the ward to the Constitutional Court' },
     para: {
-      zh: '站在全國醫界的法律第一線。楊佳陵律師現任中華民國醫師公會全國聯合會律師顧問，參與醫師權益、醫事法規與重大醫療政策議題，曾出席憲法法庭醫療費用收取標準案不公開說明會，並連續多屆擔任台灣醫法論壇場次主持人／座長，長年促成醫療專業、司法實務與公共政策的跨域對話。從醫療糾紛、健保法制、臨床試驗到細胞治療與 AI 醫療，她將訴訟實務、政策法制與生醫科技結合，為醫師、醫療機構與生醫產業提供完整的法律策略。',
-      en: "On the legal front line of Taiwan's medical profession. Yang serves as legal advisor to the Taiwan Medical Association, engaging in physicians' rights, healthcare regulation, and major health-policy issues; she took part in the Constitutional Court's closed-door session on the medical-fee standards case, and has chaired sessions of Taiwan's medical-law forums across successive years, sustaining a long-running dialogue among medicine, the bar, and public policy. From medical disputes, NHI regulation, and clinical trials to cell therapy and AI in medicine, she brings litigation, policy, and life-science regulation together into complete legal strategies for physicians, healthcare institutions, and the biomedical industry.",
+      zh: '站在全國醫界的法律第一線。楊佳陵律師曾任第 13 屆中華民國醫師公會全國聯合會法律顧問，參與醫師權益、醫事法規與重大醫療政策議題，曾出席憲法法庭醫療費用收取標準案不公開說明會，並連續多屆擔任台灣醫法論壇場次主持人／座長，長年促成醫療專業、司法實務與公共政策的跨域對話。從醫療糾紛、健保法制、臨床試驗到細胞治療與 AI 醫療，她將訴訟實務、政策法制與生醫科技結合，為醫師、醫療機構與生醫產業提供完整的法律策略。',
+      en: "On the legal front line of Taiwan's medical profession. Yang served as legal advisor to the Taiwan Medical Association for its 13th term, engaging in physicians' rights, healthcare regulation, and major health-policy issues; she took part in the Constitutional Court's closed-door session on the medical-fee standards case, and has chaired sessions of Taiwan's medical-law forums across successive years, sustaining a long-running dialogue among medicine, the bar, and public policy. From medical disputes, NHI regulation, and clinical trials to cell therapy and AI in medicine, she brings litigation, policy, and life-science regulation together into complete legal strategies for physicians, healthcare institutions, and the biomedical industry.",
     },
     facts: [
       {
         big: { zh: '50,000+', en: '50,000+' },
-        label: { zh: '所服務全國性醫師團體代表之醫師人數', en: 'Physicians represented by the national medical body she advises' },
+        label: { zh: '曾服務之全國性醫師團體代表醫師人數', en: 'Physicians represented by the national medical body she advised' },
       },
       {
         big: { zh: '憲法法庭', en: 'Constitutional Court' },
@@ -202,8 +202,8 @@ export const LAW = {
     {
       cat: { zh: '醫療與生醫法制', en: 'Healthcare & Life Sciences' },
       lead: {
-        zh: '現任中華民國醫師公會全國聯合會律師顧問、全國律師聯合會醫藥與健保委員會委員：',
-        en: "Legal advisor to the Taiwan Medical Association; member of the Taiwan Bar Association's Medicine, Pharmaceuticals & NHI Committee:",
+        zh: '曾任第 13 屆中華民國醫師公會全國聯合會法律顧問，現任全國律師聯合會醫藥與健保委員會委員：',
+        en: "Former legal advisor to the Taiwan Medical Association; member of the Taiwan Bar Association's Medicine, Pharmaceuticals & NHI Committee:",
       },
       items: {
         zh: [
@@ -284,7 +284,7 @@ export const LAW = {
   experience: [
     {
       org: { zh: '中華民國醫師公會全國聯合會', en: 'Taiwan Medical Association' },
-      role: { zh: '律師顧問（現任）', en: 'Legal Advisor (current)' },
+      role: { zh: '法律顧問（第 13 屆）', en: 'Legal Advisor (13th term)' },
     },
     {
       org: { zh: '全國律師聯合會・醫藥與健保委員會', en: 'Taiwan Bar Association — Medicine, Pharmaceuticals & NHI Committee' },
