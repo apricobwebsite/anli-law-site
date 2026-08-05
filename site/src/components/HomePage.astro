@@ -54,10 +54,21 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
       </div>
 
       <div class="brand-hero-content">
-        <div data-reveal class="brand-hero-monogram" aria-hidden="true">A</div>
+        <div data-reveal class="brand-hero-lockup">
+          <img
+            class="brand-hero-mark"
+            src="/assets/logo-mark.svg"
+            alt=""
+            width="366"
+            height="220"
+          />
+          <h1 id="brand-hero-title" class="brand-hero-cjk">
+            <span class="cjk-primary">安理國際</span>
+            <span class="cjk-secondary">法律事務所</span>
+          </h1>
+        </div>
 
         <div data-reveal class="brand-hero-wordmark">
-          <h1 id="brand-hero-title">安理國際<wbr />法律事務所</h1>
           <div class="brand-hero-rule"><span></span></div>
           <p>{LAW.firm.full.en}</p>
         </div>

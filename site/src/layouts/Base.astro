@@ -44,7 +44,7 @@ const enHref = lang === 'en' ? currentPath : altPath;
   <body>
     <nav class="site-nav">
       <a href={home} class="brand">
-        <span class="brand-mark">YANG</span>
+        <img class="brand-logo" src="/assets/logo-mark.svg" alt="" width="366" height="220" />
         <span class="brand-sub">{LAW.firm.full.zh}</span>
       </a>
 
@@ -103,7 +103,7 @@ const enHref = lang === 'en' ? currentPath : altPath;
 
     <div id="mobile-menu" class="mobile-menu">
       <div class="mm-head">
-        <span class="brand-mark">YANG</span>
+        <img class="brand-logo" src="/assets/logo-mark.svg" alt="" width="366" height="220" />
         <button id="menu-close" aria-label="Close" class="mm-close">✕</button>
       </div>
       <div class="mm-links">
@@ -126,8 +126,14 @@ const enHref = lang === 'en' ? currentPath : altPath;
         style="max-width:1480px; margin:0 auto; padding:clamp(40px,6vh,64px) clamp(18px,5vw,72px) 30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:clamp(28px,4vw,64px);"
       >
         <div>
-          <div style="display:flex; align-items:baseline; gap:12px; margin-bottom:14px;">
-            <span class="brand-mark" style="font-size:17px; letter-spacing:0.28em;">YANG</span>
+          <div style="display:flex; align-items:center; margin-bottom:14px;">
+            <img
+              src="/assets/logo-mark.svg"
+              alt=""
+              width="366"
+              height="220"
+              style="width:44px; height:auto;"
+            />
           </div>
           <div class="reading-detail" style="color:#a09a90; margin-bottom:8px;">
             {t(lang, LAW.firm.full)}
