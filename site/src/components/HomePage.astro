@@ -103,17 +103,36 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
       <div style="max-width:1480px; margin:0 auto;">
         <div data-reveal class="kicker" style="margin-bottom:44px;">01 — {t(lang, LAW.principal.label)}</div>
         <div style="display:flex; flex-wrap:wrap; gap:clamp(30px,5vw,80px); align-items:flex-start;">
-          <div data-reveal style="flex:0.8 1 280px; min-width:0;">
-            <div style="position:relative; aspect-ratio:3/4; border:1px solid rgba(194,163,104,0.30);">
-              <img
-                src="/assets/yang-professional.jpg"
-                alt={t(lang, LAW.principal.name)}
-                style="position:absolute; inset:12px; width:calc(100% - 24px); height:calc(100% - 24px); object-fit:cover; object-position:60% center; filter:saturate(0.68) sepia(0.11) contrast(1.05) brightness(0.96);"
-              />
+          <div class="principal-aside" style="flex:0.8 1 280px; min-width:0;">
+            <div data-reveal>
+              <div style="position:relative; aspect-ratio:3/4; border:1px solid rgba(194,163,104,0.30);">
+                <img
+                  src="/assets/yang-professional.jpg"
+                  alt={t(lang, LAW.principal.name)}
+                  style="position:absolute; inset:12px; width:calc(100% - 24px); height:calc(100% - 24px); object-fit:cover; object-position:60% center; filter:saturate(0.68) sepia(0.11) contrast(1.05) brightness(0.96);"
+                />
+              </div>
+              <div
+                style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.18em; color:#6f6a62; margin-top:16px; text-transform:uppercase;"
+              >{t(lang, LAW.principal.plate)}</div>
             </div>
-            <div
-              style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.18em; color:#6f6a62; margin-top:16px; text-transform:uppercase;"
-            >{t(lang, LAW.principal.plate)}</div>
+
+            <!-- 側欄常駐預約卡：桌機隨長篇履歷一路跟著讀者 -->
+            <aside data-reveal class="consult-rail" aria-label={t(lang, LAW.consult.kicker)}>
+              <div class="consult-rail-head" aria-hidden="true">
+                <span>Consultation</span>
+                <span class="consult-rail-index">→ 03</span>
+              </div>
+              <p class="consult-rail-note">{t(lang, LAW.consult.rail.note)}</p>
+              <a class="consult-rail-cta" href="#contact">
+                <span>{t(lang, LAW.consult.rail.cta)}</span>
+                <span class="consult-rail-arrow" aria-hidden="true">→</span>
+              </a>
+              <a class="consult-rail-tel" href={`tel:${LAW.contact.phoneHref}`}>
+                <span class="consult-rail-tel-label">{t(lang, LAW.consult.rail.telLabel)}</span>
+                <span class="consult-rail-tel-value">{LAW.contact.phone}</span>
+              </a>
+            </aside>
           </div>
           <div style="flex:1.3 1 340px; min-width:0;">
             <h2
@@ -160,6 +179,17 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
                   </div>
                 ))}
               </div>
+
+              <a class="consult-inset" href="#contact">
+                <span class="consult-inset-copy">
+                  <span class="consult-mark" aria-hidden="true">↳</span>
+                  <span class="consult-inset-note">{t(lang, LAW.consult.medical.note)}</span>
+                </span>
+                <span class="consult-inset-action">
+                  {t(lang, LAW.consult.medical.cta)}
+                  <span class="consult-inset-arrow" aria-hidden="true">→</span>
+                </span>
+              </a>
             </div>
 
             <div data-reveal style="margin-bottom:clamp(36px,6vh,52px);">
@@ -192,6 +222,17 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
                 ))}
               </div>
             </div>
+
+            <a data-reveal class="consult-strip" href="#contact">
+              <span class="consult-strip-copy">
+                <span class="consult-mark" aria-hidden="true">↳</span>
+                <span class="consult-strip-note">{t(lang, LAW.consult.inline.note)}</span>
+              </span>
+              <span class="consult-strip-cta">
+                {t(lang, LAW.consult.inline.cta)}
+                <span class="consult-strip-arrow" aria-hidden="true">→</span>
+              </span>
+            </a>
 
             <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(270px,1fr)); gap:clamp(28px,4vw,56px);">
               <div data-reveal>
@@ -434,6 +475,29 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+
+        <!-- 主持律師區塊收尾：把讀完履歷的訪客帶到 03 聯絡安理 -->
+        <div data-reveal class="consult-closer">
+          <div class="consult-closer-copy">
+            <div class="consult-closer-kicker">
+              <span>{t(lang, LAW.consult.closer.kicker)}</span>
+              <span class="consult-closer-rule" aria-hidden="true"></span>
+              <span class="consult-closer-index" aria-hidden="true">03</span>
+            </div>
+            <h3 class="consult-closer-title">{t(lang, LAW.consult.closer.title)}</h3>
+            <p class="consult-closer-para">{t(lang, LAW.consult.closer.para)}</p>
+          </div>
+          <div class="consult-closer-actions">
+            <a class="consult-closer-cta" href="#contact">
+              <span>{t(lang, LAW.consult.closer.cta)}</span>
+              <span class="consult-closer-arrow" aria-hidden="true">→</span>
+            </a>
+            <a class="consult-closer-tel" href={`tel:${LAW.contact.phoneHref}`}>
+              <span class="consult-closer-tel-label">{t(lang, LAW.consult.closer.alt)}</span>
+              <span class="consult-closer-tel-value">{LAW.contact.phone}</span>
+            </a>
           </div>
         </div>
       </div>

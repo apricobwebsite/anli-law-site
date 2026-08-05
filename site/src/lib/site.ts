@@ -158,6 +158,43 @@ export const LAW = {
     plate: { zh: '圖版 01 — 主持律師', en: 'Plate 01 — Principal' },
   },
 
+  // 主持律師區塊內的預約入口（四處：側欄常駐、醫法亮點、專長領域之後、區塊收尾）
+  consult: {
+    kicker: { zh: '預約諮詢', en: 'Consultation' },
+    rail: {
+      note: {
+        zh: '初步諮詢採預約制，由主持律師親自了解案情，內容保密。',
+        en: 'Initial consultations are by appointment, taken by the principal attorney herself, and held in confidence.',
+      },
+      cta: { zh: '預約諮詢', en: 'Request a consultation' },
+      telLabel: { zh: '或直接來電', en: 'Or call the office' },
+    },
+    medical: {
+      note: {
+        zh: '醫療糾紛、醫事法規或臨床試驗上的疑問，歡迎先簡述情況。',
+        en: 'Medical disputes, healthcare regulation, clinical trials — send us a brief outline of the situation.',
+      },
+      cta: { zh: '預約醫法諮詢', en: 'Book a consultation' },
+    },
+    inline: {
+      note: {
+        zh: '不確定案件屬於哪一類，也可以先來談。',
+        en: 'Unsure which area your matter falls under? Talk to us first.',
+      },
+      cta: { zh: '預約諮詢', en: 'Request a consultation' },
+    },
+    closer: {
+      kicker: { zh: '下一步', en: 'Next step' },
+      title: { zh: '先談一次，再決定下一步', en: 'Talk it through, then decide' },
+      para: {
+        zh: '來信或來電簡述時間、對象與目前進度，我們會回覆可安排的諮詢時段。',
+        en: 'Write or call with the timeline, the parties involved, and where the matter now stands; we will come back with times we can offer.',
+      },
+      cta: { zh: '預約諮詢', en: 'Request a consultation' },
+      alt: { zh: '直接來電', en: 'Call the office' },
+    },
+  },
+
   // 主持律師醫法亮點（首頁 callout；資料來源：醫師全聯會理監事會紀錄、全律會委員會名單、憲法法庭 111 年憲民字第 4156 號說明會）
   medical: {
     kicker: { zh: '醫療與生醫法制', en: 'Healthcare & Life Sciences' },

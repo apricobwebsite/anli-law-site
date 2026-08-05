@@ -950,6 +950,426 @@ a:hover { color: var(--gold-bright); }
   overflow-wrap: break-word;
 }
 
+/* ---- 主持律師・預約諮詢入口 ---- */
+/*
+  01 主持律師是全頁最長的一段。四個入口分工：
+  側欄常駐卡（桌機跟著捲動）、醫法亮點內的情境入口、專長領域後的細線帶、區塊收尾的大卡。
+  全部指向 #contact（03 聯絡安理）。
+*/
+
+.principal-aside {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(26px, 3.6vh, 40px);
+  /* 撐滿整列高度，側欄的預約卡才有空間一路跟著右側長文 */
+  align-self: stretch;
+}
+
+.consult-rail {
+  position: sticky;
+  top: 104px;
+  display: none;
+  padding: 24px clamp(20px, 1.6vw, 26px) 22px;
+  border: 1px solid rgba(194, 163, 104, 0.28);
+  background:
+    linear-gradient(158deg, rgba(194, 163, 104, 0.085) 0%, rgba(194, 163, 104, 0.014) 48%, rgba(10, 10, 11, 0.4) 100%),
+    #0a0a0b;
+}
+
+/* 手機單欄時側欄緊接在照片下方，會比姓名還早出現；改由其餘三個入口承接 */
+@media (min-width: 900px) {
+  .consult-rail { display: block; }
+}
+
+.consult-rail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(194, 163, 104, 0.22);
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.consult-rail-index {
+  color: var(--muted-6);
+  letter-spacing: 0.12em;
+}
+
+.consult-rail-note {
+  margin: 18px 0 22px;
+  color: var(--muted-3);
+  font-size: 14.5px;
+  line-height: 1.85;
+  text-wrap: pretty;
+}
+
+.consult-rail-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-height: 54px;
+  padding: 14px 20px;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: #0b0a08;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.consult-rail-cta:hover {
+  background: var(--gold-bright);
+  border-color: var(--gold-bright);
+}
+
+.consult-rail-arrow {
+  font-family: var(--font-mono);
+  transition: transform 0.25s ease;
+}
+
+.consult-rail-cta:hover .consult-rail-arrow { transform: translateX(4px); }
+
+.consult-rail-tel {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line-soft);
+  text-decoration: none;
+}
+
+.consult-rail-tel-label {
+  color: var(--muted-6);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.consult-rail-tel-value {
+  color: var(--muted-2);
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  letter-spacing: 0.03em;
+  transition: color 0.25s ease;
+}
+
+.consult-rail-tel:hover .consult-rail-tel-value { color: var(--gold-bright); }
+
+/* 醫法亮點方框內的情境入口：接在三格事實之後 */
+.consult-inset {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 30px;
+  margin-top: clamp(22px, 3vh, 30px);
+  padding-top: clamp(20px, 2.6vh, 26px);
+  border-top: 1px solid rgba(194, 163, 104, 0.24);
+  text-decoration: none;
+}
+
+.consult-inset-copy {
+  display: flex;
+  min-width: 0;
+  max-width: 48ch;
+  align-items: baseline;
+  gap: 12px;
+}
+
+/*
+  中文一行放得下、英文較長要另起一行。用 margin-left:auto 取代 space-between：
+  同一行時按鈕靠右，換行後在桌機仍靠右收邊，手機則回到左緣對齊內文。
+*/
+.consult-inset-action { margin-left: auto; }
+
+@media (max-width: 720px) {
+  .consult-inset-action { margin-left: 0; }
+}
+
+/* 全站「往下一步」的既有語彙（見執業範疇提示行） */
+.consult-mark {
+  flex: none;
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.consult-inset-note {
+  color: var(--muted-2);
+  font-size: 15px;
+  line-height: 1.7;
+  text-wrap: pretty;
+  transition: color 0.25s ease;
+}
+
+.consult-inset-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 12px 22px;
+  border: 1px solid rgba(194, 163, 104, 0.55);
+  color: var(--gold);
+  font-size: 14.5px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+  transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+}
+
+.consult-inset-arrow {
+  font-family: var(--font-mono);
+  transition: transform 0.25s ease;
+}
+
+.consult-inset:hover .consult-inset-note,
+.consult-inset:focus-visible .consult-inset-note { color: var(--ink); }
+
+.consult-inset:hover .consult-inset-action,
+.consult-inset:focus-visible .consult-inset-action {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #0b0a08;
+}
+
+.consult-inset:hover .consult-inset-arrow,
+.consult-inset:focus-visible .consult-inset-arrow { transform: translateX(4px); }
+
+/* 專長領域與學經歷之間的細線帶：安靜、不與主要按鈕爭焦點 */
+.consult-strip {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 30px;
+  margin: 0 0 clamp(36px, 6vh, 52px);
+  padding: 20px 0;
+  border-top: 1px solid var(--line-soft);
+  border-bottom: 1px solid var(--line-soft);
+  text-decoration: none;
+}
+
+.consult-strip::before {
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--gold);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(.22, .61, .36, 1);
+}
+
+.consult-strip:hover::before,
+.consult-strip:focus-visible::before { transform: scaleX(1); }
+
+.consult-strip-copy {
+  display: flex;
+  min-width: 0;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.consult-strip-note {
+  color: var(--muted-3);
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+  text-wrap: pretty;
+  transition: color 0.25s ease;
+}
+
+.consult-strip-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--gold);
+  font-size: 14.5px;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+}
+
+.consult-strip-arrow {
+  font-family: var(--font-mono);
+  transition: transform 0.3s ease;
+}
+
+.consult-strip:hover .consult-strip-note,
+.consult-strip:focus-visible .consult-strip-note { color: var(--ink); }
+
+.consult-strip:hover .consult-strip-arrow,
+.consult-strip:focus-visible .consult-strip-arrow { transform: translateX(5px); }
+
+/* 區塊收尾：履歷與團隊都讀完之後的主要行動點 */
+.consult-closer {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(250px, 0.58fr);
+  gap: clamp(28px, 5vw, 76px);
+  align-items: center;
+  margin-top: clamp(56px, 9vh, 104px);
+  padding: clamp(34px, 5vh, 58px) clamp(26px, 3.4vw, 56px);
+  border: 1px solid rgba(194, 163, 104, 0.30);
+  background:
+    radial-gradient(circle at 92% 8%, rgba(194, 163, 104, 0.10), transparent 44%),
+    linear-gradient(120deg, rgba(194, 163, 104, 0.05) 0%, rgba(10, 10, 11, 0.25) 62%),
+    #0a0a0b;
+}
+
+.consult-closer-kicker {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.consult-closer-rule {
+  flex: 1 1 auto;
+  max-width: 110px;
+  height: 1px;
+  background: rgba(194, 163, 104, 0.32);
+}
+
+.consult-closer-index {
+  color: var(--muted-6);
+  letter-spacing: 0.14em;
+}
+
+.consult-closer-title {
+  margin: 0 0 14px;
+  color: var(--ink-bright);
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+.consult-closer-para {
+  max-width: 52ch;
+  margin: 0;
+  color: var(--muted-3);
+  font-size: var(--font-size-reading-detail);
+  font-weight: 400;
+  line-height: 1.8;
+  text-wrap: pretty;
+}
+
+.consult-closer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.consult-closer-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 58px;
+  padding: 16px 26px;
+  border: 1px solid var(--gold);
+  background: var(--gold);
+  color: #0b0a08;
+  font-size: 15.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.consult-closer-cta:hover {
+  background: var(--gold-bright);
+  border-color: var(--gold-bright);
+}
+
+.consult-closer-arrow {
+  font-family: var(--font-mono);
+  transition: transform 0.25s ease;
+}
+
+.consult-closer-cta:hover .consult-closer-arrow { transform: translateX(4px); }
+
+.consult-closer-tel {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line-soft);
+  text-decoration: none;
+}
+
+.consult-closer-tel-label {
+  color: var(--muted-6);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.consult-closer-tel-value {
+  color: var(--muted-2);
+  font-family: var(--font-mono);
+  font-size: 13.5px;
+  letter-spacing: 0.03em;
+  transition: color 0.25s ease;
+}
+
+.consult-closer-tel:hover .consult-closer-tel-value { color: var(--gold-bright); }
+
+.consult-inset:focus-visible,
+.consult-strip:focus-visible,
+.consult-rail-cta:focus-visible,
+.consult-rail-tel:focus-visible,
+.consult-closer-cta:focus-visible,
+.consult-closer-tel:focus-visible {
+  outline: 1px solid rgba(224, 198, 140, 0.7);
+  outline-offset: 5px;
+}
+
+@media (max-width: 860px) {
+  .consult-closer {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+/* 手機滿版：底色延伸到螢幕兩側，內文回到共用左緣 */
+@media (max-width: 640px) {
+  .consult-closer {
+    margin-inline: calc(var(--gutter) * -1);
+    padding-inline: var(--gutter);
+    border-inline: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .consult-strip::before,
+  .consult-strip-arrow,
+  .consult-inset-arrow,
+  .consult-rail-arrow,
+  .consult-closer-arrow { transition: none; }
+}
+
 /* ---- 主持律師・主要經歷 ---- */
 
 .experience-list {
