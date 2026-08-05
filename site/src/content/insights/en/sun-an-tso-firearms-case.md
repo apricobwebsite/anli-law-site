@@ -1,5 +1,5 @@
 ---
-title: "Flames, Firearms, and Lost Boundaries: Lessons from the Sun An-tso Case for Society and Parents"
+title: 'Flames, Firearms, and Lost Boundaries: Lessons from the Sun An-tso Case for Society and Parents'
 lead: What truly put Sun An-tso behind bars was not the flamethrower, but the non-standard shotgun and replica firearm found in his home — a reminder that a child drifting toward the edge of the law needs firm boundaries, not boundless indulgence.
 category: Criminal Defense
 date: 2026-05-18
