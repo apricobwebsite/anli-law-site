@@ -54,32 +54,43 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
       </div>
 
       <div class="brand-hero-content">
-        <div data-reveal class="brand-hero-lockup">
-          <img
-            class="brand-hero-mark"
-            src="/assets/logo-mark.svg"
-            alt=""
-            width="366"
-            height="220"
-          />
-          <h1 id="brand-hero-title" class="brand-hero-cjk">
-            <span class="cjk-primary">安理國際</span>
-            <span class="cjk-secondary">法律事務所</span>
-          </h1>
+        <div class="brand-hero-main">
+          <div data-reveal class="brand-hero-lockup">
+            <div class="brand-hero-lockup-row">
+              <img
+                class="brand-hero-mark"
+                src="/assets/logo-mark.svg"
+                alt=""
+                width="366"
+                height="220"
+              />
+              <h1 id="brand-hero-title" class="brand-hero-cjk">
+                <span>安理國際</span>
+                <span>法律事務所</span>
+              </h1>
+            </div>
+            <div class="brand-hero-rule" aria-hidden="true"><span></span></div>
+            <p class="brand-hero-wordmark">{LAW.firm.full.en}</p>
+          </div>
+
+          <p data-reveal class="brand-hero-para">{t(lang, LAW.hero.para)}</p>
+
+          <div data-reveal class="brand-hero-actions">
+            <a class="brand-hero-cta" href="#contact">{t(lang, LAW.hero.cta)}</a>
+            <a class="brand-hero-cta-ghost" href="#principal">
+              {t(lang, LAW.hero.cta2)}
+              <span class="arr" aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
 
-        <div data-reveal class="brand-hero-wordmark">
-          <div class="brand-hero-rule"><span></span></div>
-          <p>{LAW.firm.full.en}</p>
-        </div>
-
-        <div data-reveal class="brand-hero-promise">
-          <span aria-hidden="true"></span>
-          <strong>{lang === 'zh' ? '洞見跨越疆界' : 'Foresight beyond borders'}</strong>
-        </div>
-
-        <div data-reveal class="brand-hero-principal">
-          {t(lang, LAW.principal.name)} <span aria-hidden="true">｜</span> {t(lang, LAW.principal.label)}
+        <div data-reveal class="brand-hero-creds" role="list" aria-label={t(lang, LAW.hero.credsLabel)}>
+          {LAW.creds.map((c) => (
+            <div class="brand-hero-cred" role="listitem">
+              <div class="brand-hero-cred-inst">{c.inst}</div>
+              <div class="brand-hero-cred-deg">{c.deg}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

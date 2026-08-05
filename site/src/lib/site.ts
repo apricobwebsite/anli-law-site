@@ -18,7 +18,7 @@ export const LAW = {
   },
 
   hero: {
-    kicker: { zh: '國際法律顧問', en: 'International Legal Counsel' },
+    kicker: { zh: '國際觀點 · 在地實踐', en: 'Global perspective · Local practice' },
     line1: { zh: '跨越疆界的', en: 'Legal foresight' },
     line2: { zh: '法律遠見', en: 'beyond borders' },
     para: {
@@ -26,14 +26,16 @@ export const LAW = {
       en: 'From Berkeley to Taipei, from the hospital ward to the Constitutional Court — ANLI pairs cross-jurisdictional scholarship with frontline practice, helping enterprises, healthcare institutions, and individuals act with foresight on their most complex matters.',
     },
     cta: { zh: '預約諮詢', en: 'Request a consultation' },
-    cta2: { zh: '認識主持律師', en: 'Meet the principal' },
+    cta2: { zh: '認識楊佳陵博士', en: 'Meet Dr. Chia-Ling Yang' },
+    credsLabel: { zh: '主持律師學歷', en: 'Principal credentials' },
   },
 
+  // 首屏底部的學歷背書帶（主持律師的學術訓練）
   creds: [
-    { zh: '柏克萊加州大學', en: 'UC Berkeley' },
-    { zh: '史丹佛大學', en: 'Stanford' },
-    { zh: '國立臺灣大學', en: 'NTU' },
-  ] as Bi[],
+    { inst: 'BERKELEY', deg: 'J.S.D. · LL.M.' },
+    { inst: 'STANFORD', deg: 'J.S.M.' },
+    { inst: 'NTU 臺大', deg: 'LL.B.' },
+  ],
 
   practice_h: {
     label: { zh: '專業領域', en: 'Practice Areas' },
