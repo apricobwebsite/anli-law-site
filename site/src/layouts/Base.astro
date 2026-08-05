@@ -45,7 +45,10 @@ const enHref = lang === 'en' ? currentPath : altPath;
     <nav class="site-nav">
       <a href={home} class="brand">
         <img class="brand-logo" src="/assets/logo-mark.svg" alt="" width="366" height="220" />
-        <span class="brand-sub">{LAW.firm.full.zh}</span>
+        <span class="brand-text">
+          <span class="brand-zh">{LAW.firm.full.zh}</span>
+          <span class="brand-en">{LAW.firm.full.en}</span>
+        </span>
       </a>
 
       <div class="nav-desktop">
