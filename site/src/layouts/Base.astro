@@ -126,7 +126,8 @@ const enHref = lang === 'en' ? currentPath : altPath;
 
     <footer style="border-top:1px solid rgba(236,231,223,0.10);">
       <div
-        style="max-width:1480px; margin:0 auto; padding:clamp(40px,6vh,64px) clamp(18px,5vw,72px) 30px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:clamp(28px,4vw,64px);"
+        class="shell footer-grid"
+        style="padding-block:clamp(40px,6vh,64px) 30px;"
       >
         <div>
           <div style="display:flex; align-items:center; margin-bottom:14px;">
@@ -147,7 +148,7 @@ const enHref = lang === 'en' ? currentPath : altPath;
         </div>
         <div style="display:flex; flex-direction:column; gap:12px;">
           <span
-            style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.22em; color:#6f6a62; text-transform:uppercase; margin-bottom:4px;"
+            style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.22em; color:#8f897f; text-transform:uppercase; margin-bottom:4px;"
           >{t(lang, SITE.footer.navLabel)}</span>
           <a class="footer-link" href={`${home}#principal`}>{t(lang, LAW.nav.principal)}</a>
           <a class="footer-link" href={`${home}#practice`}>{t(lang, LAW.nav.practice)}</a>
@@ -155,14 +156,14 @@ const enHref = lang === 'en' ? currentPath : altPath;
         </div>
         <div style="display:flex; flex-direction:column; gap:12px;">
           <span
-            style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.22em; color:#6f6a62; text-transform:uppercase; margin-bottom:4px;"
+            style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.22em; color:#8f897f; text-transform:uppercase; margin-bottom:4px;"
           >{t(lang, SITE.footer.legalLabel)}</span>
           <a class="footer-link" href={legalPath(lang, 'privacy')}>{t(lang, SITE.legal.navPrivacy)}</a>
           <a class="footer-link" href={legalPath(lang, 'disclaimer')}>{t(lang, SITE.legal.navDisclaimer)}</a>
         </div>
         <div style="display:flex; flex-direction:column; gap:12px;">
           <span
-            style="font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.22em; color:#6f6a62; text-transform:uppercase; margin-bottom:4px;"
+            style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.22em; color:#8f897f; text-transform:uppercase; margin-bottom:4px;"
           >{t(lang, SITE.footer.contactLabel)}</span>
           <a class="footer-link gold" href={`mailto:${LAW.contact.email}`}>{LAW.contact.email}</a>
           <a
@@ -185,7 +186,8 @@ const enHref = lang === 'en' ? currentPath : altPath;
         </div>
       </div>
       <div
-        style="max-width:1480px; margin:0 auto; padding:22px clamp(18px,5vw,72px) 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid rgba(236,231,223,0.08);"
+        class="shell"
+        style="padding-block:22px 40px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid rgba(236,231,223,0.08);"
       >
         <span style="font-size:13.5px; color:#8f897f;">{t(lang, LAW.footer.copyright)}</span>
       </div>
