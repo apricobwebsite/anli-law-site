@@ -23,8 +23,8 @@ export const LAW = {
     line1: { zh: '跨越疆界的', en: 'Legal foresight' },
     line2: { zh: '法律遠見', en: 'beyond borders' },
     para: {
-      zh: '從柏克萊到台北，安理以跨法域的學術訓練與第一線實務經驗，協助企業與個人在最複雜的跨境難題中，做出最具遠見的決策。',
-      en: 'From Berkeley to Taipei, ANLI pairs cross-jurisdictional scholarship with frontline practice — helping enterprises and individuals act with foresight on their most complex cross-border matters.',
+      zh: '從柏克萊到台北，從醫療現場到憲法法庭。安理以跨法域的學術訓練與第一線實務經驗，協助企業、醫療機構與個人在最複雜的法律難題中，做出最具遠見的決策。',
+      en: 'From Berkeley to Taipei, from the hospital ward to the Constitutional Court — ANLI pairs cross-jurisdictional scholarship with frontline practice, helping enterprises, healthcare institutions, and individuals act with foresight on their most complex matters.',
     },
     cta: { zh: '預約諮詢', en: 'Request a consultation' },
     cta2: { zh: '認識主持律師', en: 'Meet the principal' },
@@ -47,8 +47,8 @@ export const LAW = {
       en: 'ANLI is a law firm rooted in Taiwan with a global outlook. The firm is led by Dr. Chia-Ling Yang — trained in law at UC Berkeley, Stanford, and National Taiwan University — uniting academic rigor, deep legal scholarship, and practical acuity.',
     },
     para2: {
-      zh: '安理並與英美執業律師及資訊安全科技顧問組成跨國協作團隊，為客戶在法律糾紛、憲法訴訟、跨國爭端與公司治理中，提供完整且可信賴的法律解決方案。',
-      en: 'Working alongside practitioners qualified in the United States and the United Kingdom, together with cybersecurity advisors, ANLI assembles cross-border teams that deliver complete and dependable legal solutions in disputes, constitutional litigation, international controversies, and corporate governance.',
+      zh: '安理長期站在醫療與生醫法制的第一線，並與英美執業律師及資訊安全科技顧問組成跨國協作團隊，為客戶在醫療爭議、法律糾紛、憲法訴訟、跨國爭端與公司治理中，提供完整且可信賴的法律解決方案。',
+      en: 'ANLI has long worked on the front line of healthcare and life-sciences law. Alongside practitioners qualified in the United States and the United Kingdom, together with cybersecurity advisors, the firm assembles cross-border teams that deliver complete and dependable legal solutions in medical controversies, disputes, constitutional litigation, international matters, and corporate governance.',
     },
   },
 
@@ -81,6 +81,14 @@ export const LAW = {
   },
 
   practice: [
+    {
+      slug: 'medical-life-sciences',
+      title: { zh: '醫療與生技法律', en: 'Healthcare & Life Sciences' },
+      desc: {
+        zh: '主持律師現任全國性醫師團體律師顧問，承辦醫療糾紛、醫事法規、健保爭議、臨床試驗與藥品食品法遵。',
+        en: "Led by counsel to Taiwan's national medical association — medical disputes, healthcare regulation, NHI matters, clinical trials, and pharmaceutical & food compliance.",
+      },
+    },
     {
       slug: 'family-custody',
       title: { zh: '家事、跨境親權與兒童權利', en: "Family, Cross-Border Custody & Children's Rights" },
@@ -155,22 +163,74 @@ export const LAW = {
       en: 'Principal Attorney · Doctor of the Science of Law (J.S.D.)',
     },
     intro: {
-      zh: '楊佳陵博士擁有美國柏克萊加州大學法律科學博士（J.S.D.）學位，並先後取得史丹佛大學法律科學碩士與國立臺灣大學法學士，學術養成橫跨太平洋兩岸。執業生涯歷經理律、萬國等台灣頂尖法律事務所，並於柏克萊從事博士後研究與中國法教學，兼具深厚的學術底蘊與第一線跨境實務經驗。',
-      en: "Dr. Chia-Ling Yang holds a Doctor of the Science of Law (J.S.D.) from UC Berkeley, a Master of the Science of Law from Stanford, and a Bachelor of Laws from National Taiwan University — a formation spanning both shores of the Pacific. Her practice runs through Taiwan's leading firms, Lee and Li and Formosa Transnational, alongside postdoctoral research and Chinese-law teaching at Berkeley, uniting scholarly depth with frontline cross-border experience.",
+      zh: '楊佳陵博士擁有美國柏克萊加州大學法律科學博士（J.S.D.）學位，並先後取得史丹佛大學法律科學碩士與國立臺灣大學法學士，執業生涯歷經理律、萬國等台灣頂尖法律事務所，並曾於柏克萊從事博士後研究與中國法教學。她長期深耕醫療與生醫法制，現任中華民國醫師公會全國聯合會律師顧問及全國律師聯合會醫藥與健保委員會委員，於全國層級參與醫師權益、醫事法規與重大醫療政策議題，所服務的全國性醫師團體代表逾五萬名醫師。',
+      en: "Dr. Chia-Ling Yang holds a Doctor of the Science of Law (J.S.D.) from UC Berkeley, a Master of the Science of Law from Stanford, and a Bachelor of Laws from National Taiwan University. Her practice runs through Taiwan's leading firms, Lee and Li and Formosa Transnational, alongside postdoctoral research and Chinese-law teaching at Berkeley. Much of her career has been devoted to healthcare and life-sciences law: she serves as legal advisor to the Taiwan Medical Association — whose membership exceeds fifty thousand physicians nationwide — and sits on the Taiwan Bar Association's Medicine, Pharmaceuticals and National Health Insurance Committee, working at the national level on physicians' rights, healthcare regulation, and major health-policy issues.",
     },
     eduLabel: { zh: '學歷', en: 'Education' },
     expLabel: { zh: '主要經歷', en: 'Experience' },
     specLabel: { zh: '專長領域', en: 'Areas of Expertise' },
+    pubLabel: { zh: '醫藥法律著作選錄', en: 'Selected Publications · Healthcare & Life Sciences' },
     plate: { zh: '圖版 01 — 主持律師', en: 'Plate 01 — Principal' },
   },
 
-  // 主持律師專長領域（非訟／訴訟兩類；lead 為類別引言，可省略）
+  // 主持律師醫法亮點（首頁 callout；資料來源：醫師全聯會理監事會紀錄、全律會委員會名單、憲法法庭 111 年憲民字第 4156 號說明會）
+  medical: {
+    kicker: { zh: '醫療與生醫法制', en: 'Healthcare & Life Sciences' },
+    title: { zh: '從醫療現場到憲法法庭', en: 'From the ward to the Constitutional Court' },
+    para: {
+      zh: '站在全國醫界的法律第一線。楊佳陵律師現任中華民國醫師公會全國聯合會律師顧問，參與醫師權益、醫事法規與重大醫療政策議題，曾出席憲法法庭醫療費用收取標準案不公開說明會，並連續多屆擔任台灣醫法論壇場次主持人／座長，長年促成醫療專業、司法實務與公共政策的跨域對話。從醫療糾紛、健保法制、臨床試驗到細胞治療與 AI 醫療，她將訴訟實務、政策法制與生醫科技結合，為醫師、醫療機構與生醫產業提供完整的法律策略。',
+      en: "On the legal front line of Taiwan's medical profession. Yang serves as legal advisor to the Taiwan Medical Association, engaging in physicians' rights, healthcare regulation, and major health-policy issues; she took part in the Constitutional Court's closed-door session on the medical-fee standards case, and has chaired sessions of Taiwan's medical-law forums across successive years, sustaining a long-running dialogue among medicine, the bar, and public policy. From medical disputes, NHI regulation, and clinical trials to cell therapy and AI in medicine, she brings litigation, policy, and life-science regulation together into complete legal strategies for physicians, healthcare institutions, and the biomedical industry.",
+    },
+    facts: [
+      {
+        big: { zh: '50,000+', en: '50,000+' },
+        label: { zh: '所服務全國性醫師團體代表之醫師人數', en: 'Physicians represented by the national medical body she advises' },
+      },
+      {
+        big: { zh: '憲法法庭', en: 'Constitutional Court' },
+        label: { zh: '參與醫療費用收取標準案相關程序', en: 'Participation in the medical-fee standards case proceedings' },
+      },
+      {
+        big: { zh: '醫藥與健保委員會', en: 'Medicine & NHI Committee' },
+        label: { zh: '全國律師聯合會・現任委員', en: 'Serving member, Taiwan Bar Association' },
+      },
+    ],
+  },
+
+  // 主持律師專長領域（醫療生醫／非訟／訴訟三類；lead 為類別引言，可省略）
   specialties: [
+    {
+      cat: { zh: '醫療與生醫法制', en: 'Healthcare & Life Sciences' },
+      lead: {
+        zh: '現任中華民國醫師公會全國聯合會律師顧問、全國律師聯合會醫藥與健保委員會委員：',
+        en: "Legal advisor to the Taiwan Medical Association; member of the Taiwan Bar Association's Medicine, Pharmaceuticals & NHI Committee:",
+      },
+      items: {
+        zh: [
+          '醫療糾紛與醫療過失責任',
+          '告知同意、病歷與護理紀錄',
+          '醫師、護理人員與醫療機構責任',
+          '健保法制與醫療費用管制',
+          '臨床試驗、細胞治療與再生醫療',
+          '藥品、醫材與特殊營養食品法規',
+          '智慧醫療、醫療個資與 AI 法律責任',
+        ],
+        en: [
+          'Medical disputes & malpractice liability',
+          'Informed consent, medical records & nursing documentation',
+          'Liability of physicians, nurses & healthcare institutions',
+          'NHI regulation & control of medical fees',
+          'Clinical trials, cell therapy & regenerative medicine',
+          'Pharmaceuticals, medical devices & special-nutrition foods',
+          'Smart healthcare, health data & AI liability',
+        ],
+      },
+    },
     {
       cat: { zh: '非訟類', en: 'Advisory & Non-Contentious' },
       lead: {
-        zh: '醫療法、藥事法、神經科學法（Neuro Law）、專利法、生物科技之倫理與法律、全民健保法制、勞基法、公平交易法等領域：',
-        en: 'Across medical law, pharmaceutical affairs law, neurolaw, patent law, the ethics and law of biotechnology, National Health Insurance regulation, labor standards, and fair trade law:',
+        zh: '神經科學法（Neuro Law）、專利法、生物科技之倫理與法律、勞基法、公平交易法等領域：',
+        en: 'Across neurolaw, patent law, the ethics and law of biotechnology, labor standards, and fair trade law:',
       },
       items: {
         zh: [
@@ -223,6 +283,18 @@ export const LAW = {
 
   experience: [
     {
+      org: { zh: '中華民國醫師公會全國聯合會', en: 'Taiwan Medical Association' },
+      role: { zh: '律師顧問（現任）', en: 'Legal Advisor (current)' },
+    },
+    {
+      org: { zh: '全國律師聯合會・醫藥與健保委員會', en: 'Taiwan Bar Association — Medicine, Pharmaceuticals & NHI Committee' },
+      role: { zh: '委員（現任）', en: 'Committee Member (current)' },
+    },
+    {
+      org: { zh: '台灣醫法實務論壇・台灣醫法醫政論壇', en: "Taiwan Medical Law Forum Series" },
+      role: { zh: '連續多屆場次主持人／座長（2023–2026）', en: 'Session Chair, successive editions (2023–2026)' },
+    },
+    {
       org: { zh: '台北律師職業工會', en: "Taipei Lawyers' Professional Union" },
       role: { zh: '創會理事長', en: 'Founding Chairperson' },
     },
@@ -245,6 +317,98 @@ export const LAW = {
     {
       org: { zh: '國立臺北護理健康大學・旅遊健康研究所', en: "Nat'l Taipei Univ. of Nursing & Health Sciences" },
       role: { zh: '兼任助理教授', en: 'Adjunct Assistant Professor' },
+    },
+  ],
+
+  // 主持律師醫藥法律著作選錄（首頁主持律師區塊）
+  publications: [
+    {
+      title: {
+        zh: '《生醫法律面面觀：生醫業必備的法律錦囊》（合著）',
+        en: 'Biomedical Law in Every Aspect: A Legal Companion for the Life-Sciences Industry (co-author)',
+      },
+      venue: {
+        zh: '合記圖書出版社・2015｜涵蓋健保、技術移轉、專利、藥物、醫材、醫療資訊、醫療機構經營與醫療糾紛',
+        en: 'Ho-Chi Book Publishing, 2015 — NHI, technology transfer, patents, drugs, devices, health information, hospital management & medical disputes',
+      },
+    },
+    {
+      title: {
+        zh: '〈從美國 Juno 公司 CAR-T 免疫細胞療法之發展與事故看細胞療法臨床試驗之賠償責任與股東集體訴訟〉',
+        en: 'CAR-T after Juno: Compensation Liability in Cell-Therapy Clinical Trials and Shareholder Class Actions',
+      },
+      venue: { zh: '萬國法律雙月刊第 209 期・2016', en: 'FT Law Review No. 209, 2016' },
+    },
+    {
+      title: {
+        zh: '〈新聞稿行不行？藥廠應否及如何公布臨床試驗之研究結果〉（合著）',
+        en: 'To Publish or Not: Whether and How Pharmaceutical Companies Should Disclose Clinical-Trial Results (co-author)',
+      },
+      venue: { zh: '萬國法律雙月刊第 206 期・2016', en: 'FT Law Review No. 206, 2016' },
+    },
+    {
+      title: {
+        zh: '〈醫美糾紛注意義務之認定標準與辯護新視界〉',
+        en: 'Standards of Care in Aesthetic-Medicine Disputes: A New Horizon for the Defence',
+      },
+      venue: { zh: '台灣醫療法學術研討會論文集・2017', en: 'Taiwan Medical Law Conference Proceedings, 2017' },
+    },
+    {
+      title: {
+        zh: '〈美國細胞與基因治療品之法律規制模式評析〉',
+        en: 'The U.S. Regulatory Model for Cell and Gene Therapy Products: An Appraisal',
+      },
+      venue: { zh: '期刊專文', en: 'Journal article' },
+    },
+    {
+      title: {
+        zh: '《別讓醫院殺了你：揭開美國醫療體制的共犯結構》（譯作）',
+        en: "Don't Let the Hospital Kill You: Inside the U.S. Medical System (translator)",
+      },
+      venue: { zh: '商周出版・2006', en: 'Business Weekly Publications, 2006' },
+    },
+  ],
+
+  // 主持律師醫法論壇主持／座長經歷（首頁主持律師區塊；場次名稱依各屆公開議程）
+  forums_h: {
+    label: { zh: '醫法論壇主持・座長', en: 'Forum Chair — Medical Law' },
+    lead: {
+      zh: '長年站在醫界、法界與政策界的對話現場，連續多屆擔任台灣醫法論壇場次主持人及座長，促成醫療專業、司法實務與公共政策的跨域交流。',
+      en: "A long-standing presence where medicine, the bar, and policy meet — chairing sessions of Taiwan's medical-law forums across successive editions.",
+    },
+  },
+  forums: [
+    {
+      year: '2026',
+      forum: { zh: '台灣醫法醫政論壇', en: 'Taiwan Medical Law & Health Policy Forum' },
+      topic: {
+        zh: '個資保護與護理人員勞動權益——解析 AI 時代醫療個資保護與法律責任',
+        en: 'Data protection and the labor rights of nursing professionals — health-data protection and legal liability in the age of AI',
+      },
+    },
+    {
+      year: '2025',
+      forum: { zh: '第五屆台灣醫法實務論壇（台北場）', en: '5th Taiwan Medical Law Practice Forum (Taipei)' },
+      topic: {
+        zh: '論醫院雇主之保護義務——以護理人員執行職務遭受不法侵害為例',
+        en: "The hospital employer's duty of protection — unlawful harm to nurses in the course of duty",
+      },
+    },
+    {
+      year: '2024',
+      forum: { zh: '第四屆台灣醫法實務論壇（台北場）', en: '4th Taiwan Medical Law Practice Forum (Taipei)' },
+      topic: {
+        zh: '護理機構之法律議題——護理人員、照服員過失責任與機構負責人責任',
+        en: 'Legal issues of nursing institutions — negligence liability of nurses and care workers, and the responsibility of institution heads',
+      },
+    },
+    {
+      year: '2023',
+      forum: { zh: '第三屆台灣醫法實務論壇', en: '3rd Taiwan Medical Law Practice Forum' },
+      topic: {
+        zh: '護理人員相關勞資法律問題',
+        en: 'Labor and employment law issues for nursing professionals',
+      },
     },
   ],
 
@@ -403,6 +567,10 @@ export const SITE = {
 
   // 專業領域的細項（對應 LAW.practice 陣列順序）
   practiceDetail: [
+    {
+      zh: ['醫療糾紛與醫事行政爭訟', '健保費用核減與停約救濟', '臨床試驗、細胞治療與再生醫療', '藥品、醫材與特殊營養食品法遵'],
+      en: ['Medical disputes & administrative litigation', 'NHI reimbursement cuts & contract remedies', 'Clinical trials, cell therapy & regenerative medicine', 'Pharma, device & special-nutrition food compliance'],
+    },
     {
       zh: ['親權改定與停止親權', '交付子女與跨國親權爭議', '兒童表意權與程序保障', '憲法訴訟（111 年憲判字第 8 號）'],
       en: ['Custody modification & termination', 'Child handover & cross-border disputes', "Children's right to be heard & due process", 'Constitutional litigation (TCC Judgment No. 8 of 2022)'],

@@ -28,6 +28,190 @@ export interface PracticeDetailContent {
 }
 
 export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
+  'medical-life-sciences': {
+    metaDesc: {
+      zh: '安理國際法律事務所位於台北市中正區，主持律師楊佳陵現任中華民國醫師公會全國聯合會律師顧問，承辦醫療糾紛、醫事行政爭訟、健保費用核減與停約救濟、臨床試驗與細胞治療契約、藥品醫材與特殊營養食品標示廣告等案件。諮詢採預約制。',
+      en: 'Yang & Associates Law Firm (ANLI), Taipei: medical malpractice defence, healthcare administrative litigation, NHI reimbursement disputes, clinical trial and cell-therapy agreements, and labelling and advertising compliance for pharmaceuticals, medical devices and special-nutrition foods. Consultations by appointment.',
+    },
+    intro: [
+      {
+        zh: '醫療與生技的法律問題，很少只有一個戰場。醫師收到刑事傳票，多半同時面對民事求償與衛生局的行政調查，有時還有媒體。醫院和護理之家要處理的，是醫糾之外的機構責任與評鑑。藥廠、醫材商和營養品業者的一支廣告、一張標示，可能同時牽動藥事法、食品安全衛生管理法與公平交易法。',
+        en: 'Legal trouble in healthcare rarely stays on one front. A physician served with a criminal summons is usually facing a civil claim and a health-bureau investigation at the same time, sometimes with the press watching. Hospitals and nursing homes carry institutional liability and accreditation issues beyond the dispute itself. For pharmaceutical companies, device makers and nutrition brands, a single advertisement or label can engage the Pharmaceutical Affairs Act, the Food Safety and Sanitation Act, and the Fair Trade Act all at once.',
+      },
+      {
+        zh: '本所主持律師楊佳陵長期站在全國醫界的法律第一線。她現任中華民國醫師公會全國聯合會律師顧問，參與醫師權益、醫事法規與重大醫療政策議題，所服務的全國性醫師團體代表逾五萬名醫師；並擔任全國律師聯合會醫藥與健保委員會委員，曾出席憲法法庭醫療費用收取標準案不公開說明會，且連續多屆擔任台灣醫法論壇場次主持人／座長，主持醫療機構責任、醫院雇主保護義務、護理人員執業安全、醫療個資與 AI 法律責任等議題。她也曾任國立臺北護理健康大學兼任助理教授，是《生醫法律面面觀：生醫業必備的法律錦囊》共同作者，並發表 CAR-T 細胞療法臨床試驗責任、細胞與基因治療產品法規等專論。',
+        en: "The firm's principal, Dr. Chia-Ling Yang, has long worked on the legal front line of Taiwan's medical profession. She serves as legal advisor to the Taiwan Medical Association — the national body representing more than fifty thousand physicians — sits on the Taiwan Bar Association's Medicine, Pharmaceuticals and NHI Committee, and took part in the Constitutional Court's closed-door session on the medical-fee standards case. Across successive editions of Taiwan's medical-law forums she has chaired sessions on institutional liability, the hospital employer's duty of protection, workplace safety for nurses, and health-data and AI liability. A former adjunct assistant professor at the National Taipei University of Nursing and Health Sciences, she co-authored a practitioner's handbook on biomedical law and has published on CAR-T clinical-trial liability and the regulation of cell and gene therapy products.",
+      },
+      {
+        zh: '本所為醫師、護理人員與醫療機構處理醫療糾紛的民事、刑事與行政程序，包括醫療鑑定與調解；為醫院、診所與護理機構規劃內部風險管理；也為生技醫藥與食品業者處理臨床試驗契約、查驗登記、標示與廣告合規。諮詢採預約制。',
+        en: 'We act for physicians, nurses and healthcare institutions through the civil, criminal and administrative phases of medical disputes, including expert appraisal and mediation; design risk-management frameworks for hospitals, clinics and nursing facilities; and advise life-sciences and food companies on clinical trial agreements, product registration, and labelling and advertising compliance. Consultations are by appointment.',
+      },
+    ],
+    cases: [
+      {
+        term: {
+          zh: '醫療糾紛民事求償',
+          en: 'Medical Malpractice — Civil',
+        },
+        desc: {
+          zh: '病人或家屬求償，爭點多在注意義務、告知義務與因果關係。我們從病歷與護理紀錄著手，代理調解與訴訟。',
+          en: 'Claims by patients or families usually turn on the standard of care, informed consent and causation. We start from the medical and nursing records, and act in mediation and at trial.',
+        },
+      },
+      {
+        term: {
+          zh: '醫療刑事辯護',
+          en: 'Medical Criminal Defence',
+        },
+        desc: {
+          zh: '業務過失致死傷的偵查與審判，對醫師的執業與名譽影響最大。我們陪同應訊、擬定辯護策略，並處理醫療鑑定意見。',
+          en: "Prosecutions for professional negligence weigh heaviest on a physician's licence and name. We accompany you through questioning, build the defence, and engage with the expert appraisal.",
+        },
+      },
+      {
+        term: {
+          zh: '醫事行政爭訟',
+          en: 'Healthcare Administrative Litigation',
+        },
+        desc: {
+          zh: '衛生局裁罰、停業處分、廢止執照或醫師懲戒，都有救濟期限。我們代理陳述意見、訴願與行政訴訟。',
+          en: 'Fines, suspension orders, licence revocations and disciplinary measures all run on strict deadlines. We act in submissions, administrative appeals and litigation.',
+        },
+      },
+      {
+        term: {
+          zh: '健保爭議',
+          en: 'NHI Disputes',
+        },
+        desc: {
+          zh: '健保費用核減、違約記點到停約，金額與影響逐級放大。我們協助申復、爭議審議與後續行政救濟。',
+          en: 'Reimbursement cuts, penalty points and contract suspension escalate quickly. We handle re-examinations, dispute reviews, and the administrative remedies that follow.',
+        },
+      },
+      {
+        term: {
+          zh: '醫療機構與護理之家治理',
+          en: 'Hospital & Nursing-Home Governance',
+        },
+        desc: {
+          zh: '從人力配置、紀錄制度到意外事件的通報與究責，機構責任常藏在細節裡。我們協助建立制度，事故發生時代理應對。',
+          en: 'From staffing and record-keeping to incident reporting and accountability, institutional liability lives in the details. We build the systems, and act for the institution when something goes wrong.',
+        },
+      },
+      {
+        term: {
+          zh: '告知同意與病歷爭議',
+          en: 'Informed Consent & Medical Records',
+        },
+        desc: {
+          zh: '同意書怎麼簽、病歷怎麼寫，進了法院就是證據。我們協助設計告知流程與文件，爭議發生時分析攻防。',
+          en: 'How consent is taken and how the chart is written becomes the evidence. We design the process and the paperwork, and analyse both when a dispute arrives.',
+        },
+      },
+      {
+        term: {
+          zh: '臨床試驗',
+          en: 'Clinical Trials',
+        },
+        desc: {
+          zh: '受試者同意、試驗契約、不良事件的補償與保險，出事前就要談清楚。我們審閱契約，並處理事故後的責任分配。',
+          en: 'Subject consent, trial agreements, and compensation and insurance for adverse events need settling before anything happens. We review the contracts and sort out liability after an incident.',
+        },
+      },
+      {
+        term: {
+          zh: '細胞治療與再生醫療',
+          en: 'Cell Therapy & Regenerative Medicine',
+        },
+        desc: {
+          zh: '特管辦法與再生醫療法制下，診所與生技公司的合作模式、收費與廣告都有規範。我們協助設計合規的架構。',
+          en: 'Under the Special Regulations and the regenerative-medicine framework, collaboration models, fees and advertising are all regulated. We structure arrangements that comply.',
+        },
+      },
+      {
+        term: {
+          zh: '藥品與醫療器材法規',
+          en: 'Pharmaceuticals & Medical Devices',
+        },
+        desc: {
+          zh: '查驗登記、仿單標示、藥害救濟與回收下架，每一步都對應不同的主管機關程序。我們協助規劃與應對。',
+          en: 'Registration, package inserts, drug-injury relief and recalls each follow a different regulatory track. We plan the route and handle the response.',
+        },
+      },
+      {
+        term: {
+          zh: '特殊營養食品與健康食品',
+          en: 'Special-Nutrition & Health Foods',
+        },
+        desc: {
+          zh: '特定疾病配方食品要查驗登記，健康食品的功效宣稱有法定範圍。我們協助申請、審閱標示，並做上市前合規檢視。',
+          en: 'Foods for special medical purposes require registration, and health-food efficacy claims have statutory limits. We handle applications, review labels, and run pre-launch compliance checks.',
+        },
+      },
+      {
+        term: {
+          zh: '食品與醫藥廣告合規',
+          en: 'Food & Medical Advertising Compliance',
+        },
+        desc: {
+          zh: '廣告涉及醫療效能，罰鍰可以按次開。文字、圖像與前後文是整體認定，我們在上檔前完整檢視，被開罰時協助陳述意見與救濟。',
+          en: 'Advertising that implies medical efficacy draws fines that repeat with every publication, and copy, images and context are judged as a whole. We review the full piece before it runs, and handle submissions and appeals when a penalty lands.',
+        },
+      },
+      {
+        term: {
+          zh: '醫療個資與智慧醫療',
+          en: 'Health Data & Smart Healthcare',
+        },
+        desc: {
+          zh: '病歷數位化、跨機構共享與 AI 工具進入診間，個資法的邊界要先畫清楚。我們協助訂定資料治理與契約條款。',
+          en: 'Digitised records, cross-institution sharing and AI tools in the consulting room all press against the Personal Data Protection Act. We draw the boundaries in governance rules and contracts.',
+        },
+      },
+    ],
+    faq: [
+      {
+        q: {
+          zh: '收到病人求償、提告或主管機關通知，第一時間該做什麼？',
+          en: 'A patient has filed a claim or sued me, or a regulator has sent a notice. What should I do first?',
+        },
+        a: {
+          zh: '先依院內流程通知主管與醫務、法務或風險管理單位，同時保全收到通知當時的完整資料：病歷、護理紀錄、同意書、醫囑與用藥紀錄、檢驗與影像、值班表、系統的存取與修改軌跡，以及與案件直接相關的公務通訊。電子病歷不要只匯出一份 PDF，操作紀錄同樣要留。原始紀錄不得刪除、覆蓋或回填日期；確有遺漏需要補充，醫療法本來就允許增刪，但要簽名或蓋章並註明日期，刪改處畫線保留、不得塗燬，並明確標示為事後補充，寫清楚實際補充的日期與理由。會出事的是看起來像當時就完成的補記。接著確認通知的程序性質與期限：醫療爭議的民事訴訟原則上要先依醫療事故預防及爭議處理法申請調解，刑事案件則是在偵查或審理中由檢察官或法院移付調解，衛生局的行政調查另依函文所載法源、要求事項與期限處理。調解過程中的道歉、讓步與不利於己的陳述，未經全體當事人同意原則上不得作為本案訴訟證據或裁判基礎，但病歷、影像這類客觀資料不在此限。應訊或出席前先確認自己在程序中的身分，再與院方窗口及律師一起把資料看過。',
+          en: 'Tell your supervisor and the hospital\'s medical affairs, legal or risk unit through the internal channel, and at the same time preserve the record as it stood when the notice arrived: the chart, nursing records, consent forms, orders and medication records, labs and imaging, duty rosters, the system\'s access and edit trail, and any work correspondence directly about the case. For electronic records, exporting a PDF is not enough — the audit trail matters too. Nothing may be deleted, overwritten or back-dated. If something genuinely needs adding, the Medical Care Act allows amendment: sign or seal it, date it, strike through rather than obliterate what is being changed, and label the entry plainly as a later addition with the real date and the reason. What destroys a case is an addition that looks as though it was written at the time. Then identify what kind of notice it is and what clock it starts. A civil medical claim generally goes to mediation under the Medical Accident Prevention and Dispute Resolution Act before suit; in a criminal case it is the prosecutor or the court that refers the matter to mediation during investigation or trial; a health bureau inquiry runs on the legal basis, scope and deadline stated in its own letter. Apologies, concessions and statements against interest made in mediation cannot generally be used as evidence or as the basis of a ruling without every party\'s consent, though the chart, imaging and other objective material are not covered by that shield. Before you answer questions or attend, confirm what capacity you are in, then go through the material with the hospital\'s contact and a lawyer.',
+        },
+      },
+      {
+        q: {
+          zh: '健保費用被核減，或收到停約處分，還有救濟機會嗎？',
+          en: 'My NHI reimbursement was cut, or my contract suspended. Is there any remedy?',
+        },
+        a: {
+          zh: '有，但程序要看案件性質，而且第一個期限通常只有 30 天或 60 天。醫療費用被核減，一般是在核減通知到達後 60 日內向健保署申復，對申復結果不服再申請爭議審議，之後多半直接向行政法院提起行政訴訟，不必先經訴願。停約這類特約管理處置，通常是收到通知後 30 日內申請複核，再申請爭議審議，對審定結果不服則依審定書所載期限提起訴願。追扣費用的法律性質可能與停約不同，救濟途徑也會分流，不能一概而論。收到通知先確認送達日期，留好函文、信封與送達證明，再把病歷、醫令、申報資料、訪查紀錄與抽樣回推的計算，逐項對回健保署的事實認定與法規依據。',
+          en: 'Yes, but the route depends on the type of case, and the first deadline is usually only 30 or 60 days. A reimbursement cut is normally challenged by filing for re-examination with the NHIA within 60 days of the notice arriving; if that fails, dispute review follows within 60 days, and from there the case usually goes straight to the administrative court rather than through an administrative appeal. Contract measures such as suspension normally start with a request for reconsideration within 30 days, then dispute review, with an administrative appeal available within the period stated in the decision. Clawbacks can be legally different from suspension and may take a separate route. Confirm the service date as soon as the notice arrives, keep the letter, envelope and proof of service, then work through the chart, orders, claim data, inspection records and the sampling extrapolation against the findings and legal basis the NHIA relied on.',
+        },
+      },
+      {
+        q: {
+          zh: '我們是營養品業者，產品文案怎樣會踩到「醫療效能」的紅線？',
+          en: 'We sell nutrition products. When does our marketing copy cross the "medical efficacy" line?',
+        },
+        a: {
+          zh: '食品的標示、宣傳與廣告不得不實、誇張或易生誤解，也不得宣稱醫療效能，這是食品安全衛生管理法第 28 條的界線。涉及預防、改善、減輕、診斷或治療疾病、症候群或症狀的說法，原則上會被認定為醫療效能；「改善」兩個字本身不必然違法，關鍵在改善的是疾病症狀，還是法規允許的營養或生理功能。代言見證、使用前後對照圖與社群貼文，只要被用來推廣產品或招徠交易，都可能一併納入廣告判斷。特定疾病配方食品另須查驗登記，並依核定內容標示適用對象、使用方式與必要警語；嬰兒與較大嬰兒配方食品的廣告及促銷限制更嚴。主管機關是就文字、圖像、聲音、連結與前後文的整體表現綜合認定，不是孤立看單一句子，上檔前做完整的法遵審查，能降低按次處罰、停止刊播與回收改正的風險。',
+          en: 'Food labelling, promotion and advertising may not be false, exaggerated or misleading, and may not claim medical efficacy — the line drawn by Article 28 of the Food Safety and Sanitation Act. Claims to prevent, improve, alleviate, diagnose or treat a disease, syndrome or symptom will generally be read as medical efficacy. The word "improves" is not unlawful in itself; what matters is whether it points at a disease or at a nutritional or physiological function the rules allow. Endorsements, before-and-after images and social posts can be pulled into the assessment whenever they are used to promote a product or solicit business. Foods for special medical purposes also require registration and must carry the approved indications, directions and warnings, while infant and follow-up formula face tighter advertising and promotion limits. Regulators judge the copy, images, audio, links and surrounding context as a whole rather than sentence by sentence, so a full compliance review before launch reduces the risk of repeat fines, publication bans and forced recall.',
+        },
+      },
+      {
+        q: {
+          zh: '臨床試驗發生不良事件，廠商與醫院的責任怎麼分？',
+          en: 'An adverse event occurred in our clinical trial. How is liability divided between sponsor and site?',
+        },
+        a: {
+          zh: '先分清楚不良事件與試驗相關傷害。GCP 所稱的不良事件不以與試驗藥品有因果關係為前提，發生了不等於誰就要賠。責任歸屬要看原因出在哪裡：屬於試驗產品、方案設計、監測或安全通報的問題，藥品臨床試驗規範原則上要求試驗委託者負擔因試驗所生的賠償責任，或安排責任保險；由主持人或試驗機構醫療疏失所致的部分，則不在委託者承擔的範圍內，主持人與機構本身仍負有安全執行、醫療照護與不良事件通報的義務。試驗契約、受試者同意書與保單會影響補償程序、抗辯與追償、費用負擔，但不能免除各方依法對受試者應負的責任。Juno 的 CAR-T 試驗死亡事件後續引發證券集體訴訟，顯示上市公司除了受試者安全與求償，還要處理資訊揭露與股東訴訟的風險。試驗啟動前把責任條款、補償機制與承保範圍檢視一遍，能減少事後的責任爭議與未獲承保的風險。',
+          en: 'Start by separating an adverse event from a trial-related injury: under GCP an adverse event need not be causally linked to the study drug, so one occurring does not by itself mean someone owes compensation. Liability follows the cause. Where the problem lies in the product, the protocol, monitoring or safety reporting, the rules for drug trials generally require the sponsor to answer for damage arising from the trial or to carry liability insurance; harm caused by the investigator\'s or the site\'s own clinical negligence falls outside what the sponsor takes on, and the investigator and institution remain bound to run the trial safely, provide care and report adverse events. The trial agreement, the consent form and the policy shape how compensation, defence, recovery and costs run, but none of them can waive what each party owes the subject by law. The deaths in Juno\'s CAR-T trial went on to trigger securities class actions, so a listed sponsor faces disclosure and shareholder exposure alongside subject safety and claims. Reviewing the liability clauses, the compensation mechanism and the scope of cover before the trial starts reduces both later disputes and the risk of finding the claim uninsured.',
+        },
+      },
+    ],
+  },
   'family-custody': {
     metaDesc: {
       zh: '安理國際法律事務所位於台北市中正區，承辦離婚、子女監護權（親權酌定）、扶養費、夫妻剩餘財產分配、家暴保護令、會面交往與跨國親權爭議，也處理收養認可與監護宣告。諮詢採預約制，可來電或來信預約。',

@@ -33,12 +33,10 @@
         "run",
         "dev",
         "--prefix",
-        "site",
-        "--",
-        "--port",
-        "4400"
+        "site"
       ],
-      "port": 4400
+      "port": 4400,
+      "autoPort": true
     },
     {
       "name": "site-dev-alt3",
