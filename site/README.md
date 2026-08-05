@@ -96,7 +96,7 @@ readMinutes: 6
 文章以外的所有文案（導覽、首頁各區塊、主持律師介紹、隱私權政策、免責聲明等）集中在 **`src/lib/site.ts`**，每個欄位都是 `{ zh, en }` 一組，直接改字串即可。
 
 - 版面與樣式：`src/styles/global.css`、`src/components/*.astro`
-- 主持律師照片：`public/assets/yang-color.jpg`
+- 主持律師照片：`public/assets/yang-professional.jpg`（原有照片檔案仍保留）
 
 ## 部署
 

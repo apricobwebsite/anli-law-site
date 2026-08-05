@@ -31,6 +31,12 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
 const experienceFoldAfter = LAW.experience.findIndex((x) => x.org.zh === '台北律師職業工會');
 const featuredExperience = LAW.experience.slice(0, experienceFoldAfter >= 0 ? experienceFoldAfter + 1 : 4);
 const earlierExperience = LAW.experience.slice(featuredExperience.length);
+const featuredPublicationTitles = new Set<string>([
+  '《生醫法律面面觀：生醫業必備的法律錦囊》（合著）',
+  '〈從美國 Juno 公司 CAR-T 免疫細胞療法之發展與事故看細胞療法臨床試驗之賠償責任與股東集體訴訟〉',
+]);
+const featuredPublications = LAW.publications.filter((p) => featuredPublicationTitles.has(p.title.zh));
+const archivedPublications = LAW.publications.filter((p) => !featuredPublicationTitles.has(p.title.zh));
 ---
 
 <Base lang={lang} title={title} description={t(lang, LAW.hero.para)} altPath={homePath(otherLang(lang))}>
@@ -78,7 +84,7 @@ const earlierExperience = LAW.experience.slice(featuredExperience.length);
           <div data-reveal style="flex:0.8 1 280px; min-width:0;">
             <div style="position:relative; aspect-ratio:3/4; border:1px solid rgba(194,163,104,0.30);">
               <img
-                src="/assets/yang-color-v2.jpg"
+                src="/assets/yang-professional.jpg"
                 alt={t(lang, LAW.principal.name)}
                 style="position:absolute; inset:12px; width:calc(100% - 24px); height:calc(100% - 24px); object-fit:cover; object-position:60% center; filter:saturate(0.68) sepia(0.11) contrast(1.05) brightness(0.96);"
               />
@@ -249,15 +255,53 @@ const earlierExperience = LAW.experience.slice(featuredExperience.length);
                 >{t(lang, LAW.principal.pubLabel)}</span>
                 <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
               </div>
-              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:0 clamp(28px,4vw,56px);">
+              <div class="publication-records-desktop">
                 {LAW.publications.map((p) => (
-                  <div style="padding:14px 0; border-bottom:1px solid rgba(236,231,223,0.09);">
-                    <div class="reading-detail" style="color:#ECE7DF; margin-bottom:5px; text-wrap:pretty;">{t(lang, p.title)}</div>
-                    <div style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.7; color:#8f897f; letter-spacing:0.02em;">
-                      {t(lang, p.venue)}
-                    </div>
+                  <div class="publication-record">
+                    <div class="publication-title">{t(lang, p.title)}</div>
+                    <div class="publication-venue">{t(lang, p.venue)}</div>
                   </div>
                 ))}
+              </div>
+
+              <div class="publication-records-mobile">
+                {featuredPublications.map((p) => (
+                  <div class="publication-record publication-record-featured">
+                    <div class="publication-title">{t(lang, p.title)}</div>
+                    <div class="publication-venue">{t(lang, p.venue)}</div>
+                  </div>
+                ))}
+
+                {archivedPublications.length > 0 && (
+                  <details class="mobile-archive publication-archive">
+                    <summary>
+                      <span class="archive-more-rule" aria-hidden="true"></span>
+                      <span class="archive-more-copy">
+                        <span class="archive-more-kicker">
+                          Publication archive · {String(archivedPublications.length).padStart(2, '0')}
+                        </span>
+                        <span class="archive-more-closed">
+                          {lang === 'zh'
+                            ? `展開其餘 ${archivedPublications.length} 篇著作`
+                            : `View ${archivedPublications.length} more publications`}
+                        </span>
+                        <span class="archive-more-open">
+                          {lang === 'zh' ? '收起其他著作' : 'Hide other publications'}
+                        </span>
+                      </span>
+                      <span class="archive-more-mark" aria-hidden="true"></span>
+                    </summary>
+
+                    <div class="publication-archive-panel">
+                      {archivedPublications.map((p) => (
+                        <div class="publication-record">
+                          <div class="publication-title">{t(lang, p.title)}</div>
+                          <div class="publication-venue">{t(lang, p.venue)}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </details>
+                )}
               </div>
             </div>
 
@@ -285,21 +329,21 @@ const earlierExperience = LAW.experience.slice(featuredExperience.length);
                 ))}
               </div>
 
-              <details class="forum-records-mobile">
+              <details class="forum-records-mobile mobile-archive">
                 <summary>
-                  <span class="forum-more-rule" aria-hidden="true"></span>
-                  <span class="forum-more-copy">
-                    <span class="forum-more-kicker">
+                  <span class="archive-more-rule" aria-hidden="true"></span>
+                  <span class="archive-more-copy">
+                    <span class="archive-more-kicker">
                       Forum archive · {String(LAW.forums.length).padStart(2, '0')}
                     </span>
-                    <span class="forum-more-closed">
+                    <span class="archive-more-closed">
                       {lang === 'zh' ? '展開論壇紀錄' : 'View forum history'}
                     </span>
-                    <span class="forum-more-open">
+                    <span class="archive-more-open">
                       {lang === 'zh' ? '收起論壇紀錄' : 'Hide forum history'}
                     </span>
                   </span>
-                  <span class="forum-more-mark" aria-hidden="true"></span>
+                  <span class="archive-more-mark" aria-hidden="true"></span>
                 </summary>
 
                 <div class="forum-records-panel">

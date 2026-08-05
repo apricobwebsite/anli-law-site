@@ -1045,6 +1045,40 @@ a:hover { color: var(--gold-bright); }
   .experience-more summary::before { transition: none; }
 }
 
+/* ---- 醫藥法律著作：桌機展開、手機精選兩篇 ---- */
+
+.publication-records-desktop {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0 clamp(28px, 4vw, 56px);
+}
+
+.publication-records-mobile { display: none; }
+
+.publication-record {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(236, 231, 223, 0.09);
+}
+
+.publication-title {
+  margin-bottom: 5px;
+  color: var(--ink);
+  font-size: var(--font-size-reading-detail);
+  line-height: 1.75;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+.publication-venue {
+  color: var(--muted-5);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.02em;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
 /* ---- 醫法論壇紀錄：桌機展開、手機收合 ---- */
 
 .forum-records-desktop {
@@ -1083,15 +1117,41 @@ a:hover { color: var(--gold-bright); }
 }
 
 @media (max-width: 640px) {
-  .forum-records-desktop { display: none; }
+  .forum-records-desktop,
+  .publication-records-desktop { display: none; }
+
+  .publication-records-mobile { display: block; }
+
+  .publication-records-mobile > .publication-record:first-child {
+    border-top: 1px solid rgba(236, 231, 223, 0.09);
+  }
+
+  .publication-records-mobile .publication-record {
+    padding: 16px 0 17px;
+  }
+
+  .publication-records-mobile .publication-title {
+    font-size: 16px;
+    line-height: 1.78;
+  }
+
+  .publication-records-mobile .publication-venue {
+    font-size: 11.5px;
+    line-height: 1.75;
+  }
+
+  .publication-record-featured .publication-title { color: var(--ink-bright); }
 
   .forum-records-mobile {
     display: block;
     border-top: 1px solid rgba(194, 163, 104, 0.18);
+  }
+
+  .mobile-archive {
     border-bottom: 1px solid rgba(194, 163, 104, 0.22);
   }
 
-  .forum-records-mobile summary {
+  .mobile-archive summary {
     display: grid;
     grid-template-columns: 24px minmax(0, 1fr) 32px;
     gap: 12px;
@@ -1104,20 +1164,20 @@ a:hover { color: var(--gold-bright); }
     transition: color 220ms ease, background-color 220ms ease;
   }
 
-  .forum-records-mobile summary::-webkit-details-marker { display: none; }
+  .mobile-archive summary::-webkit-details-marker { display: none; }
 
-  .forum-records-mobile summary:hover,
-  .forum-records-mobile summary:focus-visible {
+  .mobile-archive summary:hover,
+  .mobile-archive summary:focus-visible {
     color: var(--ink-bright);
     background: linear-gradient(90deg, transparent, rgba(194, 163, 104, 0.045), transparent);
   }
 
-  .forum-records-mobile summary:focus-visible {
+  .mobile-archive summary:focus-visible {
     outline: 1px solid rgba(224, 198, 140, 0.7);
     outline-offset: 4px;
   }
 
-  .forum-more-rule {
+  .archive-more-rule {
     width: 24px;
     height: 1px;
     background: var(--gold);
@@ -1127,21 +1187,21 @@ a:hover { color: var(--gold-bright); }
     transition: opacity 220ms ease, transform 280ms cubic-bezier(.22, .61, .36, 1);
   }
 
-  .forum-records-mobile summary:hover .forum-more-rule,
-  .forum-records-mobile summary:focus-visible .forum-more-rule,
-  .forum-records-mobile[open] .forum-more-rule {
+  .mobile-archive summary:hover .archive-more-rule,
+  .mobile-archive summary:focus-visible .archive-more-rule,
+  .mobile-archive[open] .archive-more-rule {
     opacity: 1;
     transform: scaleX(1);
   }
 
-  .forum-more-copy {
+  .archive-more-copy {
     display: flex;
     min-width: 0;
     flex-direction: column;
     gap: 5px;
   }
 
-  .forum-more-kicker {
+  .archive-more-kicker {
     color: var(--muted-6);
     font-family: var(--font-mono);
     font-size: 9.5px;
@@ -1150,18 +1210,18 @@ a:hover { color: var(--gold-bright); }
     text-transform: uppercase;
   }
 
-  .forum-more-closed,
-  .forum-more-open {
+  .archive-more-closed,
+  .archive-more-open {
     font-size: 14px;
     letter-spacing: 0.06em;
     line-height: 1.45;
   }
 
-  .forum-more-open { display: none; }
-  .forum-records-mobile[open] .forum-more-closed { display: none; }
-  .forum-records-mobile[open] .forum-more-open { display: inline; }
+  .archive-more-open { display: none; }
+  .mobile-archive[open] .archive-more-closed { display: none; }
+  .mobile-archive[open] .archive-more-open { display: inline; }
 
-  .forum-more-mark {
+  .archive-more-mark {
     position: relative;
     width: 32px;
     height: 32px;
@@ -1170,8 +1230,8 @@ a:hover { color: var(--gold-bright); }
     transition: border-color 220ms ease, transform 320ms cubic-bezier(.22, .61, .36, 1);
   }
 
-  .forum-more-mark::before,
-  .forum-more-mark::after {
+  .archive-more-mark::before,
+  .archive-more-mark::after {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -1182,17 +1242,20 @@ a:hover { color: var(--gold-bright); }
     transform: translate(-50%, -50%);
   }
 
-  .forum-more-mark::after { transform: translate(-50%, -50%) rotate(90deg); }
+  .archive-more-mark::after { transform: translate(-50%, -50%) rotate(90deg); }
 
-  .forum-records-mobile[open] .forum-more-mark {
+  .mobile-archive[open] .archive-more-mark {
     border-color: rgba(224, 198, 140, 0.65);
     transform: rotate(45deg);
   }
 
-  .forum-records-panel {
+  .forum-records-panel,
+  .publication-archive-panel {
     border-top: 1px solid rgba(236, 231, 223, 0.07);
-    animation: forum-records-reveal 440ms cubic-bezier(.22, .61, .36, 1) both;
+    animation: mobile-archive-reveal 440ms cubic-bezier(.22, .61, .36, 1) both;
   }
+
+  .publication-archive-panel .publication-record:last-child { border-bottom: 0; }
 
   .forum-records-panel .forum-record {
     padding: 17px 0 18px;
@@ -1217,15 +1280,16 @@ a:hover { color: var(--gold-bright); }
   }
 }
 
-@keyframes forum-records-reveal {
+@keyframes mobile-archive-reveal {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .forum-records-panel { animation: none; }
-  .forum-more-mark,
-  .forum-more-rule { transition: none; }
+  .forum-records-panel,
+  .publication-archive-panel { animation: none; }
+  .archive-more-mark,
+  .archive-more-rule { transition: none; }
 }
 
 /* ---- 聯絡與地圖 ---- */

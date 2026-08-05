@@ -367,6 +367,13 @@ export const LAW = {
       },
       venue: { zh: '商周出版・2006', en: 'Business Weekly Publications, 2006' },
     },
+    {
+      title: {
+        zh: '《美國法導論：美國法律與司法制度概述》（譯作）',
+        en: 'American Law: An Introduction (translator)',
+      },
+      venue: { zh: '商周出版・2004', en: 'Business Weekly Publications, 2004' },
+    },
   ],
 
   // 主持律師醫法論壇主持／座長經歷（首頁主持律師區塊；場次名稱依各屆公開議程）
