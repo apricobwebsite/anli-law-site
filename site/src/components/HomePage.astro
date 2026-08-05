@@ -87,8 +87,12 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
         <div data-reveal class="brand-hero-creds" role="list" aria-label={t(lang, LAW.hero.credsLabel)}>
           {LAW.creds.map((c) => (
             <div class="brand-hero-cred" role="listitem">
-              <div class="brand-hero-cred-inst">{c.inst}</div>
-              <div class="brand-hero-cred-deg">{c.deg}</div>
+              <div class:list={['brand-hero-cred-word', lang === 'en' && 'is-cjk']}>
+                {lang === 'en' ? c.zh : c.en}
+              </div>
+              <div class:list={['brand-hero-cred-note', lang !== 'en' && 'is-cjk']}>
+                {lang === 'en' ? c.en : c.zh}
+              </div>
             </div>
           ))}
         </div>
@@ -625,7 +629,6 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
             </a>
 
             <div class="contact-consultation">
-              <div class="contact-consultation-mark" aria-hidden="true">A</div>
               <p>{t(lang, LAW.contact.map.note)}</p>
               <a href={`mailto:${LAW.contact.email}`} class="btn-gold contact-consultation-cta">
                 {t(lang, LAW.contact.cta)}

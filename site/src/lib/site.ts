@@ -27,14 +27,15 @@ export const LAW = {
     },
     cta: { zh: '預約諮詢', en: 'Request a consultation' },
     cta2: { zh: '認識楊佳陵博士', en: 'Meet Dr. Chia-Ling Yang' },
-    credsLabel: { zh: '主持律師學歷', en: 'Principal credentials' },
+    credsLabel: { zh: '事務所核心信念', en: 'Core values' },
   },
 
-  // 首屏底部的學歷背書帶（主持律師的學術訓練）
+  // 首屏底部的信念帶：一個詞的兩種語言，上下疊置。
+  // 中文版金色行為英文、灰字為中文；英文版顛倒過來，讓母語成為小字、外語成為標題。
   creds: [
-    { inst: 'BERKELEY', deg: 'J.S.D. · LL.M.' },
-    { inst: 'STANFORD', deg: 'J.S.M.' },
-    { inst: 'NTU 臺大', deg: 'LL.B.' },
+    { en: 'VISION', zh: '遠見' },
+    { en: 'INNOVATION', zh: '創新' },
+    { en: 'PROFESSION', zh: '專業' },
   ],
 
   practice_h: {

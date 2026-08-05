@@ -246,32 +246,47 @@ body.menu-open { overflow: hidden; }
 
 .brand-hero-cta-ghost:hover .arr { transform: translateX(4px); }
 
-/* 學歷背書帶:貼齊首屏底部的一條 hairline */
+/* 信念帶:貼齊首屏底部的一條 hairline */
 .brand-hero-creds {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px clamp(36px, 4.5vw, 64px);
+  gap: 18px clamp(44px, 5.6vw, 84px);
   padding-top: clamp(22px, 3.2vh, 30px);
   border-top: 1px solid var(--line-faint);
 }
 
-.brand-hero-cred-inst {
+/* 金色主行:拉丁字放大字距,讀起來像刻字而非清單 */
+.brand-hero-cred-word {
   color: var(--gold);
   font-family: var(--font-display);
   font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.14em;
-  /* 固定行高:「NTU 臺大」的中文字框較高,避免和純拉丁項目基線錯位 */
-  line-height: 18px;
+  letter-spacing: 0.2em;
+  /* 固定行高:中文字框較高,避免兩種語言版本的基線位置不同 */
+  line-height: 20px;
 }
 
-.brand-hero-cred-deg {
-  margin-top: 6px;
+/* 英文版主行為中文:兩字需加大級數才撐得起同樣的視覺重量 */
+.brand-hero-cred-word.is-cjk {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+}
+
+.brand-hero-cred-note {
+  margin-top: 7px;
   color: var(--muted-5);
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.08em;
+  font-size: 11.5px;
+  /* 只有一個詞,字距放到最寬才不像被截斷的殘句 */
+  letter-spacing: 0.22em;
   line-height: 16px;
+}
+
+.brand-hero-cred-note.is-cjk {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  letter-spacing: 0.3em;
 }
 
 .brand-hero-orbit {
@@ -395,16 +410,31 @@ body.menu-open { overflow: hidden; }
     margin-top: 34px;
   }
 
+  /* 手機收字距、縮間距,讓三個詞仍能在 hairline 上並成一排 */
   .brand-hero-creds {
-    gap: 16px 28px;
+    gap: 16px 24px;
     padding-top: 22px;
   }
 
-  .brand-hero-cred-inst { font-size: 13px; }
-
-  .brand-hero-cred-deg {
-    margin-top: 4px;
+  .brand-hero-cred-word {
     font-size: 11px;
+    letter-spacing: 0.13em;
+  }
+
+  .brand-hero-cred-word.is-cjk {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+  }
+
+  .brand-hero-cred-note {
+    margin-top: 5px;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+  }
+
+  .brand-hero-cred-note.is-cjk {
+    font-size: 11px;
+    letter-spacing: 0.22em;
   }
 
   .brand-hero-orbit {
@@ -2148,19 +2178,6 @@ a:hover { color: var(--gold-bright); }
 .contact-consultation {
   margin-top: auto;
   padding-top: clamp(48px, 8vh, 94px);
-}
-
-.contact-consultation-mark {
-  width: 48px;
-  aspect-ratio: 1;
-  display: grid;
-  place-items: center;
-  margin-bottom: 22px;
-  border: 1px solid rgba(194, 163, 104, 0.55);
-  color: var(--gold);
-  font-family: var(--font-serif-en);
-  font-size: 31px;
-  line-height: 1;
 }
 
 .contact-consultation p {
