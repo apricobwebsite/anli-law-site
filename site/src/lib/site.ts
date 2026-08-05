@@ -12,7 +12,6 @@ export const LAW = {
   },
 
   nav: {
-    about: { zh: '事務所', en: 'Firm' },
     practice: { zh: '專業領域', en: 'Practice' },
     principal: { zh: '主持律師', en: 'Principal' },
     contact: { zh: '聯絡', en: 'Contact' },
@@ -35,22 +34,6 @@ export const LAW = {
     { zh: '史丹佛大學', en: 'Stanford' },
     { zh: '國立臺灣大學', en: 'NTU' },
   ] as Bi[],
-
-  about: {
-    label: { zh: '事務所', en: 'The Firm' },
-    title: {
-      zh: '以國際縱深定義的精品法律事務所',
-      en: 'A boutique firm defined by international depth',
-    },
-    para1: {
-      zh: '安理國際法律事務所立足台灣、放眼全球。事務所由兼具柏克萊、史丹佛與台大三校法學訓練的楊佳陵博士主持，融合學術的嚴謹、深厚的法學素養與實務的敏銳。',
-      en: 'ANLI is a law firm rooted in Taiwan with a global outlook. The firm is led by Dr. Chia-Ling Yang — trained in law at UC Berkeley, Stanford, and National Taiwan University — uniting academic rigor, deep legal scholarship, and practical acuity.',
-    },
-    para2: {
-      zh: '安理長期站在醫療與生醫法制的第一線，並與英美執業律師及資訊安全科技顧問組成跨國協作團隊，為客戶在醫療爭議、法律糾紛、憲法訴訟、跨國爭端與公司治理中，提供完整且可信賴的法律解決方案。',
-      en: 'ANLI has long worked on the front line of healthcare and life-sciences law. Alongside practitioners qualified in the United States and the United Kingdom, together with cybersecurity advisors, the firm assembles cross-border teams that deliver complete and dependable legal solutions in medical controversies, disputes, constitutional litigation, international matters, and corporate governance.',
-    },
-  },
 
   practice_h: {
     label: { zh: '專業領域', en: 'Practice Areas' },
@@ -542,35 +525,6 @@ export const SITE = {
       en: 'The page you are looking for does not exist or has moved.',
     },
   },
-
-  values_h: {
-    label: { zh: '執業理念', en: 'Our Approach' },
-    title: { zh: '三項不妥協的原則', en: 'Three principles we do not compromise' },
-  },
-
-  values: [
-    {
-      title: { zh: '量身定制策略', en: 'Tailored strategy' },
-      desc: {
-        zh: '法律工作真正的價值，往往在爭端發生之前。我們把時間花在預先識別風險、設計架構，讓客戶不必在最壞的時刻做最急的決定，並針對您的目標與風險承受度，打造專屬的法律解決方案。',
-        en: 'The real value of legal work usually lies before the dispute. We invest in identifying risk early and designing structures, so that clients never have to make urgent decisions at the worst moment — and we craft bespoke legal solutions around your goals and risk tolerance.',
-      },
-    },
-    {
-      title: { zh: '全球視野', en: 'A global perspective' },
-      desc: {
-        zh: '跨越司法管轄區，為客戶提供無縫接軌的跨國法律諮詢與執行方案。',
-        en: 'Across jurisdictions, we deliver seamless cross-border legal counsel and execution.',
-      },
-    },
-    {
-      title: { zh: '法律與科技並進', en: 'Law and technology in step' },
-      desc: {
-        zh: '現代爭端不只發生在法庭。安理與英美執業律師及資訊安全科技顧問長期協作，從跨境法律攻防到數位鑑識與加密貨幣金流追蹤，為客戶提供證據到策略的完整戰力。',
-        en: 'Modern disputes are not confined to the courtroom. ANLI works in long-standing collaboration with UK- and US-qualified lawyers and information-security consultants — from cross-border legal strategy to digital forensics and cryptocurrency tracing — delivering full capability from evidence to strategy.',
-      },
-    },
-  ],
 
   // 專業領域的細項（對應 LAW.practice 陣列順序）
   practiceDetail: [
