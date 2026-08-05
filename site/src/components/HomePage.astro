@@ -27,6 +27,10 @@ const title =
 const mapQuery = encodeURIComponent(LAW.contact.map.query);
 const mapEmbed = `https://www.google.com/maps?q=${mapQuery}&output=embed&hl=${lang === 'zh' ? 'zh-TW' : 'en'}`;
 const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQuery}`;
+// 履歷保留至「台北律師職業工會・創會理事長」，更早的經歷收入可展開的典藏區。
+const experienceFoldAfter = LAW.experience.findIndex((x) => x.org.zh === '台北律師職業工會');
+const featuredExperience = LAW.experience.slice(0, experienceFoldAfter >= 0 ? experienceFoldAfter + 1 : 4);
+const earlierExperience = LAW.experience.slice(featuredExperience.length);
 ---
 
 <Base lang={lang} title={title} description={t(lang, LAW.hero.para)} altPath={homePath(otherLang(lang))}>
@@ -185,12 +189,55 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
                   >{t(lang, LAW.principal.expLabel)}</span>
                   <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
                 </div>
-                {LAW.experience.map((x) => (
-                  <div style="padding:14px 0; border-bottom:1px solid rgba(236,231,223,0.09);">
-                    <div class="reading-detail" style="color:#ECE7DF; margin-bottom:5px;">{t(lang, x.org)}</div>
-                    <div style="font-size:16px; line-height:1.65; color:#a09a90;">{t(lang, x.role)}</div>
-                  </div>
-                ))}
+                <div class="experience-list">
+                  {featuredExperience.map((x, i) => (
+                    <div class="experience-entry">
+                      <span class="experience-index" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                      <div class="experience-copy">
+                        <div class="experience-org">{t(lang, x.org)}</div>
+                        <div class="experience-role">{t(lang, x.role)}</div>
+                      </div>
+                    </div>
+                  ))}
+
+                  {earlierExperience.length > 0 && (
+                    <details class="experience-more">
+                      <summary>
+                        <span class="experience-more-copy">
+                          <span class="experience-more-kicker">
+                            {lang === 'zh' ? 'Earlier appointments' : 'Experience archive'}
+                          </span>
+                          <span class="experience-more-closed">
+                            {lang === 'zh'
+                              ? `展開其餘 ${earlierExperience.length} 項經歷`
+                              : `View ${earlierExperience.length} earlier roles`}
+                          </span>
+                          <span class="experience-more-open">
+                            {lang === 'zh' ? '收起較早經歷' : 'Hide earlier roles'}
+                          </span>
+                        </span>
+                        <span class="experience-more-count" aria-hidden="true">
+                          {String(earlierExperience.length).padStart(2, '0')}
+                        </span>
+                        <span class="experience-more-mark" aria-hidden="true"></span>
+                      </summary>
+
+                      <div class="experience-more-panel">
+                        {earlierExperience.map((x, i) => (
+                          <div class="experience-entry">
+                            <span class="experience-index" aria-hidden="true">
+                              {String(i + featuredExperience.length + 1).padStart(2, '0')}
+                            </span>
+                            <div class="experience-copy">
+                              <div class="experience-org">{t(lang, x.org)}</div>
+                              <div class="experience-role">{t(lang, x.role)}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </details>
+                  )}
+                </div>
               </div>
             </div>
 
@@ -225,16 +272,49 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
               <p class="reading-detail" style="color:#a09a90; margin:0 0 18px; max-width:62ch; font-weight:400; text-wrap:pretty;">
                 {t(lang, LAW.forums_h.lead)}
               </p>
-              <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:0 clamp(28px,4vw,56px);">
+              <div class="forum-records-desktop">
                 {LAW.forums.map((f) => (
-                  <div style="padding:14px 0; border-bottom:1px solid rgba(236,231,223,0.09);">
-                    <div
-                      style="font-family:'IBM Plex Mono',monospace; font-size:12.5px; line-height:1.7; color:#C2A368; letter-spacing:0.04em; margin-bottom:5px;"
-                    >{f.year} — {t(lang, f.forum)}</div>
-                    <div class="reading-detail" style="color:#b8b2a8; text-wrap:pretty;">{t(lang, f.topic)}</div>
+                  <div class="forum-record">
+                    <div class="forum-record-meta">
+                      <span class="forum-record-year">{f.year}</span>
+                      <span class="forum-record-separator" aria-hidden="true">—</span>
+                      <span class="forum-record-name">{t(lang, f.forum)}</span>
+                    </div>
+                    <div class="forum-record-topic">{t(lang, f.topic)}</div>
                   </div>
                 ))}
               </div>
+
+              <details class="forum-records-mobile">
+                <summary>
+                  <span class="forum-more-rule" aria-hidden="true"></span>
+                  <span class="forum-more-copy">
+                    <span class="forum-more-kicker">
+                      Forum archive · {String(LAW.forums.length).padStart(2, '0')}
+                    </span>
+                    <span class="forum-more-closed">
+                      {lang === 'zh' ? '展開論壇紀錄' : 'View forum history'}
+                    </span>
+                    <span class="forum-more-open">
+                      {lang === 'zh' ? '收起論壇紀錄' : 'Hide forum history'}
+                    </span>
+                  </span>
+                  <span class="forum-more-mark" aria-hidden="true"></span>
+                </summary>
+
+                <div class="forum-records-panel">
+                  {LAW.forums.map((f) => (
+                    <div class="forum-record">
+                      <div class="forum-record-meta">
+                        <span class="forum-record-year">{f.year}</span>
+                        <span class="forum-record-separator" aria-hidden="true">—</span>
+                        <span class="forum-record-name">{t(lang, f.forum)}</span>
+                      </div>
+                      <div class="forum-record-topic">{t(lang, f.topic)}</div>
+                    </div>
+                  ))}
+                </div>
+              </details>
             </div>
           </div>
         </div>

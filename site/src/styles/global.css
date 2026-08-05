@@ -855,6 +855,379 @@ a:hover { color: var(--gold-bright); }
   overflow-wrap: break-word;
 }
 
+/* ---- 主持律師・主要經歷 ---- */
+
+.experience-list {
+  --experience-index: 28px;
+  --experience-gap: 14px;
+}
+
+.experience-entry {
+  display: grid;
+  grid-template-columns: var(--experience-index) minmax(0, 1fr);
+  gap: var(--experience-gap);
+  align-items: start;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(236, 231, 223, 0.09);
+}
+
+.experience-index {
+  padding-top: 6px;
+  color: var(--muted-7);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.experience-org {
+  margin-bottom: 5px;
+  color: var(--ink);
+  font-size: var(--font-size-reading-detail);
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.experience-role {
+  color: var(--muted-3);
+  font-size: 16px;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.experience-more {
+  border-bottom: 1px solid rgba(194, 163, 104, 0.2);
+}
+
+.experience-more summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto 32px;
+  gap: 14px;
+  align-items: center;
+  min-height: 72px;
+  padding: 14px 0 14px calc(var(--experience-index) + var(--experience-gap));
+  color: var(--muted-2);
+  cursor: pointer;
+  list-style: none;
+  transition: color 220ms ease, background-color 220ms ease;
+}
+
+.experience-more summary::-webkit-details-marker { display: none; }
+
+.experience-more summary::before {
+  position: absolute;
+  left: 0;
+  width: var(--experience-index);
+  height: 1px;
+  background: var(--gold);
+  content: '';
+  opacity: 0.68;
+  transform: scaleX(0.45);
+  transform-origin: left center;
+  transition: opacity 220ms ease, transform 280ms cubic-bezier(.22, .61, .36, 1);
+}
+
+.experience-more summary:hover,
+.experience-more summary:focus-visible {
+  color: var(--ink-bright);
+  background: linear-gradient(90deg, transparent 0%, rgba(194, 163, 104, 0.035) 58%, transparent 100%);
+}
+
+.experience-more summary:hover::before,
+.experience-more summary:focus-visible::before,
+.experience-more[open] summary::before {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+.experience-more summary:focus-visible {
+  outline: 1px solid rgba(224, 198, 140, 0.7);
+  outline-offset: 4px;
+}
+
+.experience-more-copy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.experience-more-kicker {
+  color: var(--muted-6);
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.17em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.experience-more-closed,
+.experience-more-open {
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  line-height: 1.45;
+}
+
+.experience-more-open { display: none; }
+.experience-more[open] .experience-more-closed { display: none; }
+.experience-more[open] .experience-more-open { display: inline; }
+
+.experience-more-count {
+  color: var(--muted-6);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.experience-more-mark {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(194, 163, 104, 0.35);
+  border-radius: 50%;
+  transition: border-color 220ms ease, transform 320ms cubic-bezier(.22, .61, .36, 1);
+}
+
+.experience-more-mark::before,
+.experience-more-mark::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 1px;
+  background: var(--gold-bright);
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.experience-more-mark::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+.experience-more[open] summary {
+  border-bottom: 1px solid rgba(236, 231, 223, 0.07);
+}
+
+.experience-more[open] .experience-more-mark {
+  border-color: rgba(224, 198, 140, 0.65);
+  transform: rotate(45deg);
+}
+
+.experience-more-panel {
+  animation: experience-reveal 440ms cubic-bezier(.22, .61, .36, 1) both;
+}
+
+.experience-more-panel .experience-entry:last-child { border-bottom: 0; }
+
+@keyframes experience-reveal {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+  .experience-list {
+    --experience-index: 22px;
+    --experience-gap: 10px;
+  }
+
+  .experience-more summary {
+    grid-template-columns: minmax(0, 1fr) 30px;
+    gap: 12px;
+    min-height: 70px;
+  }
+
+  .experience-more-count { display: none; }
+  .experience-more-mark { width: 30px; height: 30px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-more-panel { animation: none; }
+  .experience-more-mark,
+  .experience-more summary::before { transition: none; }
+}
+
+/* ---- 醫法論壇紀錄：桌機展開、手機收合 ---- */
+
+.forum-records-desktop {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0 clamp(28px, 4vw, 56px);
+}
+
+.forum-records-mobile { display: none; }
+
+.forum-record {
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(236, 231, 223, 0.09);
+}
+
+.forum-record-meta {
+  display: flex;
+  gap: 0.45em;
+  align-items: baseline;
+  margin-bottom: 5px;
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  line-height: 1.7;
+}
+
+.forum-record-name { min-width: 0; }
+
+.forum-record-topic {
+  color: var(--muted-2);
+  font-size: var(--font-size-reading-detail);
+  line-height: 1.75;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+}
+
+@media (max-width: 640px) {
+  .forum-records-desktop { display: none; }
+
+  .forum-records-mobile {
+    display: block;
+    border-top: 1px solid rgba(194, 163, 104, 0.18);
+    border-bottom: 1px solid rgba(194, 163, 104, 0.22);
+  }
+
+  .forum-records-mobile summary {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr) 32px;
+    gap: 12px;
+    align-items: center;
+    min-height: 74px;
+    padding: 13px 0;
+    color: var(--muted-2);
+    cursor: pointer;
+    list-style: none;
+    transition: color 220ms ease, background-color 220ms ease;
+  }
+
+  .forum-records-mobile summary::-webkit-details-marker { display: none; }
+
+  .forum-records-mobile summary:hover,
+  .forum-records-mobile summary:focus-visible {
+    color: var(--ink-bright);
+    background: linear-gradient(90deg, transparent, rgba(194, 163, 104, 0.045), transparent);
+  }
+
+  .forum-records-mobile summary:focus-visible {
+    outline: 1px solid rgba(224, 198, 140, 0.7);
+    outline-offset: 4px;
+  }
+
+  .forum-more-rule {
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.7;
+    transform: scaleX(0.5);
+    transform-origin: left center;
+    transition: opacity 220ms ease, transform 280ms cubic-bezier(.22, .61, .36, 1);
+  }
+
+  .forum-records-mobile summary:hover .forum-more-rule,
+  .forum-records-mobile summary:focus-visible .forum-more-rule,
+  .forum-records-mobile[open] .forum-more-rule {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  .forum-more-copy {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .forum-more-kicker {
+    color: var(--muted-6);
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+
+  .forum-more-closed,
+  .forum-more-open {
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    line-height: 1.45;
+  }
+
+  .forum-more-open { display: none; }
+  .forum-records-mobile[open] .forum-more-closed { display: none; }
+  .forum-records-mobile[open] .forum-more-open { display: inline; }
+
+  .forum-more-mark {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    border: 1px solid rgba(194, 163, 104, 0.35);
+    border-radius: 50%;
+    transition: border-color 220ms ease, transform 320ms cubic-bezier(.22, .61, .36, 1);
+  }
+
+  .forum-more-mark::before,
+  .forum-more-mark::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 1px;
+    background: var(--gold-bright);
+    content: '';
+    transform: translate(-50%, -50%);
+  }
+
+  .forum-more-mark::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+  .forum-records-mobile[open] .forum-more-mark {
+    border-color: rgba(224, 198, 140, 0.65);
+    transform: rotate(45deg);
+  }
+
+  .forum-records-panel {
+    border-top: 1px solid rgba(236, 231, 223, 0.07);
+    animation: forum-records-reveal 440ms cubic-bezier(.22, .61, .36, 1) both;
+  }
+
+  .forum-records-panel .forum-record {
+    padding: 17px 0 18px;
+  }
+
+  .forum-records-panel .forum-record:last-child { border-bottom: 0; }
+
+  .forum-records-panel .forum-record-meta {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 11.5px;
+    line-height: 1.6;
+  }
+
+  .forum-records-panel .forum-record-separator { display: none; }
+
+  .forum-records-panel .forum-record-topic {
+    font-size: 15.5px;
+    line-height: 1.78;
+  }
+}
+
+@keyframes forum-records-reveal {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forum-records-panel { animation: none; }
+  .forum-more-mark,
+  .forum-more-rule { transition: none; }
+}
+
 /* ---- 聯絡與地圖 ---- */
 
 .contact-section {
