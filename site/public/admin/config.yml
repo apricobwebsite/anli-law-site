@@ -26,7 +26,7 @@ media_libraries:
       slugify_filename: true
       max_file_size: 5242880 # 5 MB
 
-site_url: https://anli-law-site.pages.dev
+site_url: https://ayanglaw.com
 
 output:
   # 選填欄位（如 readMinutes）被清空時直接省略該欄位，而不是寫入 null（null 會使 build 失敗）

@@ -102,8 +102,8 @@ readMinutes: 6
 
 `npm run build` 產出的 `dist/` 是純靜態檔，任何靜態主機（GitHub Pages、Netlify、Vercel、Cloudflare Pages、一般虛擬主機）都能放。
 
-**Cloudflare Pages（現行方案）**：正式站在 https://anli-law-site.pages.dev （專案 `anli-law-site`）。每次 push 到 `main`（包含 Sveltia 後台的存檔 commit），`.github/workflows/deploy.yml` 會自動 build 並部署——**也就是說，在 `/admin/` 後台或 GitHub 網頁上編輯文章存檔，網站就會自動更新**。
+**Cloudflare Pages（現行方案）**：正式站在 https://ayanglaw.com（Pages 專案 `anli-law-site`，備用網址 https://anli-law-site.pages.dev）。每次 push 到 `main`（包含 Sveltia 後台的存檔 commit），`.github/workflows/deploy.yml` 會自動 build 並部署——**也就是說，在 `/admin/` 後台或 GitHub 網頁上編輯文章存檔，網站就會自動更新**。
 
 - 自動部署需要 repo secrets `CLOUDFLARE_ACCOUNT_ID` 與 `CLOUDFLARE_API_TOKEN`（Account → Cloudflare Pages → Edit 權限）。
 - 手動部署：`npm run build` 後 `npx wrangler pages deploy dist --project-name anli-law-site --branch main`。
-- 有正式網域後：在 Cloudflare Pages 綁定自訂網域，並把 `astro.config.mjs` 的 `site` 與 `public/admin/config.yml` 的 `site_url` 改成實際網址。
+- 正式網域設定於 `astro.config.mjs` 的 `site` 與 `public/admin/config.yml` 的 `site_url`，兩者變更時需保持一致。
