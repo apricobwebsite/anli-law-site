@@ -186,7 +186,7 @@ export const LAW = {
     },
     closer: {
       kicker: { zh: '下一步', en: 'Next step' },
-      title: { zh: '先談一次，再決定下一步', en: 'Talk it through, then decide' },
+      title: { zh: '立刻預約諮詢', en: 'Talk it through, then decide' },
       para: {
         zh: '來信或來電簡述時間、對象與目前進度，我們會回覆可安排的諮詢時段。',
         en: 'Write or call with the timeline, the parties involved, and where the matter now stands; we will come back with times we can offer.',
@@ -466,7 +466,7 @@ export const LAW = {
     },
     {
       name: { zh: '詹前晟', en: '詹前晟' },
-      role: { zh: '律師', en: 'Attorney' },
+      role: { zh: '實習律師', en: 'Trainee Attorney' },
       expertise: null,
       education: {
         zh: '國立政治大學法律學系',
@@ -474,8 +474,8 @@ export const LAW = {
       },
       image: '/assets/team-zhan-placeholder.webp',
       imageAlt: {
-        zh: '詹前晟律師暫用灰色假人示意圖',
-        en: 'Temporary gray mannequin placeholder for attorney 詹前晟',
+        zh: '詹前晟實習律師暫用灰色假人示意圖',
+        en: 'Temporary gray mannequin placeholder for trainee attorney 詹前晟',
       },
     },
     {
@@ -608,7 +608,7 @@ export const SITE = {
 
   insights_h: {
     label: { zh: '法律洞察', en: 'Insights' },
-    title: { zh: '我們對法律的思考', en: 'How we think about the law' },
+    title: { zh: '新聞案件評析', en: 'How we think about the law' },
     para: {
       zh: '內容僅供一般參考，不構成針對個案的法律意見。',
       en: 'Notes on cross-border transactions, disputes, and governance. General information only — not legal advice on any specific matter.',
