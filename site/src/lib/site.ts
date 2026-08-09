@@ -553,7 +553,9 @@ export const SITE = {
 
   ui: {
     insightsNav: { zh: '法律洞察', en: 'Insights' },
+    mediaNav: { zh: '媒體報導', en: 'Media Coverage' },
     readMore: { zh: '閱讀全文', en: 'Read' },
+    openReport: { zh: '閱讀報導', en: 'View coverage' },
     viewAll: { zh: '瀏覽全部文章', en: 'View all articles' },
     back: { zh: '返回首頁', en: 'Back to home' },
     backList: { zh: '返回洞察列表', en: 'Back to insights' },
@@ -612,6 +614,15 @@ export const SITE = {
     para: {
       zh: '內容僅供一般參考，不構成針對個案的法律意見。',
       en: 'Notes on cross-border transactions, disputes, and governance. General information only — not legal advice on any specific matter.',
+    },
+  },
+
+  media_h: {
+    label: { zh: '媒體報導', en: 'Media Coverage' },
+    title: { zh: '媒體報導', en: 'In the news' },
+    para: {
+      zh: '楊佳陵律師參與重大案件及公共法律議題的媒體報導選錄。',
+      en: 'Selected media coverage of matters and public legal issues involving Dr. Chia-Ling Yang.',
     },
   },
 

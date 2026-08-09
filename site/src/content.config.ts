@@ -15,4 +15,15 @@ const insights = defineCollection({
   }),
 });
 
-export const collections = { insights };
+// 媒體報導：每則只保存標題、新聞日期與外部新聞連結，首頁依日期新到舊排列。
+const mediaReports = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/media-reports' }),
+  schema: z.object({
+    title: z.string(),
+    date: z.coerce.date(),
+    url: z.string().url(),
+    draft: z.boolean().default(false),
+  }),
+});
+
+export const collections = { insights, mediaReports };

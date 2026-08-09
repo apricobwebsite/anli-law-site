@@ -106,3 +106,45 @@ collections:
         widget: richtext
         i18n: true
         required: true
+
+  - name: media_reports
+    label: 媒體報導
+    label_singular: 報導
+    description: >-
+      維護首頁最下方的媒體報導。每則報導包含標題、新聞發布日期與外部新聞連結；
+      網站會自動依新聞日期由新到舊排列。
+    folder: site/src/content/media-reports
+    create: true
+    delete: true
+    i18n: false
+    identifier_field: title
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    summary: '{{date}} — {{title}}'
+    sortable_fields:
+      fields: [date, title]
+      default:
+        field: date
+        direction: descending
+    fields:
+      - name: title
+        label: 標題
+        widget: string
+        required: true
+      - name: date
+        label: 新聞時間
+        widget: datetime
+        type: date
+        picker_utc: true
+        required: true
+        hint: 網站會依此日期由新到舊排列。
+      - name: url
+        label: 新聞連結
+        widget: string
+        required: true
+        hint: 請貼上包含 https:// 的完整新聞網址。
+      - name: draft
+        label: 草稿（不發佈）
+        widget: boolean
+        default: false
+        required: false
+        hint: 開啟後，此則報導不會顯示在網站上。

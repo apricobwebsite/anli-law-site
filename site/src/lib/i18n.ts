@@ -46,3 +46,11 @@ export function fmtDate(lang: Lang, d: Date): string {
   const m = d.getUTCMonth();
   return lang === 'zh' ? `${y} 年 ${m + 1} 月` : `${EN_MONTHS[m]} ${y}`;
 }
+
+/** 新聞日期顯示：zh「2026 年 6 月 18 日」／en「18 June 2026」 */
+export function fmtFullDate(lang: Lang, d: Date): string {
+  const y = d.getUTCFullYear();
+  const m = d.getUTCMonth();
+  const day = d.getUTCDate();
+  return lang === 'zh' ? `${y} 年 ${m + 1} 月 ${day} 日` : `${day} ${EN_MONTHS[m]} ${y}`;
+}

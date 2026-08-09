@@ -10,9 +10,11 @@ import {
   practicePath,
   otherLang,
   fmtDate,
+  fmtFullDate,
   type Lang,
 } from '../lib/i18n';
 import { getInsights, slugOf } from '../lib/insights';
+import { getMediaReports } from '../lib/mediaReports';
 
 interface Props {
   lang: Lang;
@@ -20,6 +22,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const teaser = (await getInsights(lang)).slice(0, 3);
+const mediaReports = await getMediaReports();
 const title =
   lang === 'zh'
     ? `${LAW.firm.full.zh}｜${LAW.hero.line1.zh}${LAW.hero.line2.zh}`
@@ -730,6 +733,43 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
           {t(lang, SITE.ui.viewAll)}
           <span style="font-family:'IBM Plex Mono',monospace;">→</span>
         </a>
+      </div>
+    </section>
+
+    <!-- Media coverage -->
+    <section
+      id="media"
+      class="shell media-section"
+    >
+      <div data-reveal class="media-heading">
+        <div>
+          <div class="kicker" style="margin-bottom:18px;">06 — {t(lang, SITE.media_h.label)}</div>
+          <h2 class="section-title">{t(lang, SITE.media_h.title)}</h2>
+        </div>
+        <p class="reading-detail media-intro">
+          {t(lang, SITE.media_h.para)}
+        </p>
+      </div>
+
+      <div class="media-report-list">
+        {mediaReports.map((report) => (
+          <a
+            data-reveal
+            class="media-report-row"
+            href={report.data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <time datetime={report.data.date.toISOString().slice(0, 10)} class="media-report-date">
+              {fmtFullDate(lang, report.data.date)}
+            </time>
+            <h3 class="media-report-title">{report.data.title}</h3>
+            <span class="media-report-link">
+              {t(lang, SITE.ui.openReport)}
+              <span aria-hidden="true">↗</span>
+            </span>
+          </a>
+        ))}
       </div>
     </section>
   </main>
