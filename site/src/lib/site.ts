@@ -458,7 +458,9 @@ export const LAW = {
         zh: '國立台灣大學法律學系畢業',
         en: 'Department of Law, National Taiwan University',
       },
-      image: '/assets/team-yang.png',
+      image: '/assets/team-yang.webp',
+      imageWidth: 800,
+      imageHeight: 799,
       imageAlt: {
         zh: '楊定諺律師照片',
         en: 'Portrait of attorney 楊定諺',
@@ -473,6 +475,8 @@ export const LAW = {
         en: 'Department of Law, National Chengchi University',
       },
       image: '/assets/team-zhan-placeholder.webp',
+      imageWidth: 720,
+      imageHeight: 960,
       imageAlt: {
         zh: '詹前晟實習律師暫用灰色假人示意圖',
         en: 'Temporary gray mannequin placeholder for trainee attorney 詹前晟',
@@ -489,7 +493,9 @@ export const LAW = {
         zh: '國立台灣大學資訊工程學系與數學系雙主修畢業',
         en: 'Dual major in Computer Science and Mathematics, National Taiwan University',
       },
-      image: '/assets/team-huang.png',
+      image: '/assets/team-huang.webp',
+      imageWidth: 960,
+      imageHeight: 960,
       imageAlt: {
         zh: '黃煜翔資訊顧問照片',
         en: 'Portrait of information consultant 黃煜翔',

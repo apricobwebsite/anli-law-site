@@ -1,0 +1,18 @@
+# Cloudflare Pages 快取規則。
+# 沒有這個檔時 Pages 一律套 public, max-age=14400, must-revalidate，連檔名已經帶內容
+# 雜湊的檔案也一樣，於是超過四小時的回訪得多付一次阻塞式 revalidation。
+#
+# HTML 不設規則，維持 Pages 預設的 max-age=0 + must-revalidate：靜態站要讓每次部署
+# 立刻生效，這個預設是對的，不要動。
+
+# Astro 產出，檔名含內容雜湊，內容變了檔名就會變，可以永久快取。
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# public/ 複製過來的檔案沒有雜湊，換圖會沿用同一個網址，所以不能標 immutable。
+# 一天內直接命中，之後背景更新，使用者不必等。
+/assets/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000
+
+/favicon.svg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=2592000

@@ -25,7 +25,9 @@
   --font-display: Archivo, 'Noto Sans TC', sans-serif;
   --font-body: 'Noto Sans TC', Archivo, sans-serif;
   --font-mono: 'IBM Plex Mono', monospace;
-  --font-serif: 'Noto Serif TC', 'Songti TC', serif;
+  /* 沒有任何規則消費這個變數。它曾指向 Noto Serif TC，但那個家族光是 @font-face
+     規則就要 100KB render-blocking CSS，為了一個沒人用的變數不值得，改用系統襯線。 */
+  --font-serif: 'Songti TC', 'Noto Serif CJK TC', serif;
   --font-serif-en: 'Cormorant Garamond', 'Times New Roman', serif;
   --font-size-reading: clamp(1.125rem, 1.05rem + 0.35vw, 1.25rem);
   --font-size-reading-lead: clamp(1.1875rem, 1.08rem + 0.45vw, 1.375rem);
@@ -2654,4 +2656,57 @@ a:hover { color: var(--gold-bright); }
   color: var(--ink);
   font-weight: 600;
   background: var(--gold-wash);
+}
+
+/* ---- 進場顯示動畫 ---- */
+
+/* 初始隱藏狀態只有在 <head> 那支 inline script 掛上 .reveal-js 時才生效
+   （支援 ES module 且未要求減少動態）。以前這段是 module script 在頁面畫出來之後
+   才用 inline style 補上的，等於先讓內容閃一下再抹掉。 */
+.reveal-js [data-reveal] {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.reveal-js [data-reveal].is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* 首屏 hero 改由 CSS animation 驅動，第一次繪製就開始播。
+   交給 module script 的話，淡入要等 stylesheet 下載完 + HTML 解析完 + script 執行完
+   才起跑，LCP 元素（.brand-hero-para）會整段被壓在 opacity:0。 */
+.reveal-js .brand-hero [data-reveal] {
+  animation: reveal-rise 0.85s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+/* 與 .reveal-js .brand-hero [data-reveal] 同權重，靠順序覆寫簡寫裡的 animation-delay。 */
+.reveal-js .brand-hero .brand-hero-lockup { animation-delay: 0ms; }
+.reveal-js .brand-hero .brand-hero-para { animation-delay: 90ms; }
+.reveal-js .brand-hero .brand-hero-actions { animation-delay: 180ms; }
+.reveal-js .brand-hero .brand-hero-creds { animation-delay: 270ms; }
+
+@keyframes reveal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* 載入後才改偏好設定的情況；載入時就設好的會直接沒有 .reveal-js。 */
+@media (prefers-reduced-motion: reduce) {
+  .reveal-js [data-reveal],
+  .reveal-js .brand-hero [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    animation: none;
+  }
 }

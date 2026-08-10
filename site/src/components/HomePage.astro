@@ -116,6 +116,10 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
                 <img
                   src="/assets/yang-professional.jpg"
                   alt={t(lang, LAW.principal.name)}
+                  width="1225"
+                  height="1393"
+                  loading="lazy"
+                  decoding="async"
                   style="position:absolute; inset:12px; width:calc(100% - 24px); height:calc(100% - 24px); object-fit:cover; object-position:60% center; filter:saturate(0.68) sepia(0.11) contrast(1.05) brightness(0.96);"
                 />
               </div>
@@ -447,8 +451,8 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
                   <img
                     src={m.image}
                     alt={t(lang, m.imageAlt)}
-                    width="1254"
-                    height="1254"
+                    width={m.imageWidth}
+                    height={m.imageHeight}
                     loading="lazy"
                     decoding="async"
                     style="width:100%; height:100%; object-fit:cover; filter:contrast(1.02);"

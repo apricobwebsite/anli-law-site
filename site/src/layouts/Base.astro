@@ -33,10 +33,31 @@ const enHref = lang === 'en' ? currentPath : altPath;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate" hreflang="zh-Hant" href={zhHref} />
     <link rel="alternate" hreflang="en" href={enHref} />
+    {/*
+      進場動畫的初始隱藏狀態交給 CSS（global.css 的 .reveal-js [data-reveal]）。這支 script
+      必須是 inline 且在首次繪製前執行，否則內容會先畫出來再被抹掉。不支援 ES module 的
+      瀏覽器（底下那支 module script 不會執行）與偏好減少動態者一律跳過，內容直接顯示。
+    */}
+    <script is:inline>
+      if (
+        'noModule' in HTMLScriptElement.prototype &&
+        !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      ) {
+        document.documentElement.classList.add('reveal-js');
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    {/*
+      這支 stylesheet 是 render-blocking，字重寫法直接決定它多大：css2 API 會把
+      「每個 weight × 每個 unicode-range subset」展開成獨立 @font-face，CJK 家族用列舉
+      字重會炸成數百條規則。可變字型改用 wght@a..b 區間語法，woff2 檔完全相同（本來就是
+      同一組可變字型檔），但規則數與 CSS 體積少一個量級：897 條 / 271KB → 128 條 / 34KB。
+      Noto Serif TC 全站沒有任何元素使用（見 global.css 的 --font-serif），已移除。
+      新增字重／家族前先確認實際有人用，這裡每一項都是首屏的阻塞成本。
+    */}
     <link
-      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;600;700;900&family=Noto+Serif+TC:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400..900&family=Cormorant+Garamond:wght@600&family=Noto+Sans+TC:wght@400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <slot name="head" />
@@ -207,46 +228,51 @@ const enHref = lang === 'en' ? currentPath : altPath;
       document.getElementById('menu-close')?.addEventListener('click', () => setMenu(false));
       menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
 
-      // 進場顯示動畫（未載入 JS 時內容照常顯示）
-      const ease =
-        'opacity .85s cubic-bezier(.22,.61,.36,1), transform .85s cubic-bezier(.22,.61,.36,1)';
-      const nodes = document.querySelectorAll<HTMLElement>('[data-reveal]');
-      const io =
-        'IntersectionObserver' in window
-          ? new IntersectionObserver(
-              (entries) => {
-                entries.forEach((en) => {
-                  if (en.isIntersecting) {
-                    const el = en.target as HTMLElement;
-                    el.style.opacity = '1';
-                    el.style.transform = 'none';
-                    io?.unobserve(el);
-                  }
-                });
-              },
-              { rootMargin: '0px 0px -6% 0px', threshold: 0.03 },
-            )
-          : null;
-      let above = 0;
-      nodes.forEach((el) => {
-        el.style.transition = ease;
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(18px)';
-        const top = el.getBoundingClientRect().top;
-        if (top < window.innerHeight * 0.94) {
-          const d = Math.min(above, 7) * 90;
-          above += 1;
-          window.setTimeout(() => {
-            el.style.opacity = '1';
-            el.style.transform = 'none';
-          }, 60 + d);
-        } else if (io) {
-          io.observe(el);
-        } else {
-          el.style.opacity = '1';
-          el.style.transform = 'none';
-        }
-      });
+      // 進場顯示動畫。初始隱藏與 transition 都在 CSS（.reveal-js [data-reveal]），由 <head>
+      // 那支 inline script 在首次繪製前決定是否啟用，這裡只負責掛 .is-revealed。
+      // 首屏 hero 不走這條路：它由 CSS animation 自己播，不必等這支 deferred module，
+      // 否則 LCP 元素（.brand-hero-para）會被壓在 opacity:0 直到 script 執行完。
+      if (document.documentElement.classList.contains('reveal-js')) {
+        const nodes = Array.from(
+          document.querySelectorAll<HTMLElement>('[data-reveal]'),
+        ).filter((el) => !el.closest('.brand-hero'));
+
+        // 先一次讀完所有幾何再寫入。讀寫交錯會讓每個節點各觸發一次同步 style flush。
+        const limit = window.innerHeight * 0.94;
+        const rects = nodes.map((el) => el.getBoundingClientRect());
+
+        const io =
+          'IntersectionObserver' in window
+            ? new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((en) => {
+                    if (en.isIntersecting) {
+                      en.target.classList.add('is-revealed');
+                      io?.unobserve(en.target);
+                    }
+                  });
+                },
+                { rootMargin: '0px 0px -6% 0px', threshold: 0.03 },
+              )
+            : null;
+
+        let above = 0;
+        nodes.forEach((el, i) => {
+          const rect = rects[i];
+          // 尺寸為 0 代表當下 display:none（例如行動版隱藏的側欄），
+          // getBoundingClientRect 會回 top 0 而被誤判成首屏，交給 observer 處理。
+          const rendered = rect.width > 0 || rect.height > 0;
+          if (rendered && rect.top < limit) {
+            const d = Math.min(above, 7) * 90;
+            above += 1;
+            window.setTimeout(() => el.classList.add('is-revealed'), 60 + d);
+          } else if (io) {
+            io.observe(el);
+          } else {
+            el.classList.add('is-revealed');
+          }
+        });
+      }
     </script>
   </body>
 </html>
