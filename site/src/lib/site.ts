@@ -314,6 +314,10 @@ export const LAW = {
       role: { zh: '委員（現任）', en: 'Committee Member (current)' },
     },
     {
+      org: { zh: '勞動部', en: 'Ministry of Labor' },
+      role: { zh: '勞資爭議仲裁委員（第 5 屆）', en: 'Labor Dispute Arbitrator (5th term)' },
+    },
+    {
       org: { zh: '台灣醫法實務論壇・台灣醫法醫政論壇', en: "Taiwan Medical Law Forum Series" },
       role: { zh: '連續多屆場次主持人／座長（2023–2026）', en: 'Session Chair, successive editions (2023–2026)' },
     },
@@ -336,6 +340,10 @@ export const LAW = {
     {
       org: { zh: '柏克萊加州大學法學院・中國法課程', en: "UC Berkeley — Chinese Law Program" },
       role: { zh: '兼任助教', en: 'Teaching Assistant' },
+    },
+    {
+      org: { zh: '靜宜大學法律學系', en: 'Providence University — Department of Law' },
+      role: { zh: '兼任助理教授', en: 'Adjunct Assistant Professor' },
     },
     {
       org: { zh: '國立臺北護理健康大學・旅遊健康研究所', en: "Nat'l Taipei Univ. of Nursing & Health Sciences" },

@@ -411,6 +411,14 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
         en: 'Most disputes can start with free mediation at the local labor bureau, and while it is pending your employer may not dismiss you or take other adverse action over the dispute. In court, the Labor Incident Act tilts several rules toward employees. Hours shown in attendance records are presumed to be working time. In claims for wages, severance pay, or confirmation of employment, two-thirds of the court filing fee is provisionally waived at the outset.',
       },
       {
+        zh: '本所主持律師楊佳陵現任勞動部第五屆勞資爭議仲裁委員，並兼任靜宜大學法律學系助理教授。憑藉擔任仲裁委員之裁判者視角，楊律師能精準洞悉勞資雙方於程序中之攻防優劣；在代理案件時，此一經驗使其能跳脫單方盲點，準確評估訴訟爭點並完善舉證結構，為當事人擬定最有利的訴訟策略。',
+        en: "The firm's principal, Dr. Chia-Ling Yang, currently serves as a labor dispute arbitrator appointed by the Ministry of Labor for its fifth term, and holds a concurrent appointment as assistant professor in the Department of Law at Providence University. Sitting as an arbitrator affords her the adjudicator's vantage point: she sees precisely which arguments and which evidence carry weight as a matter proceeds, and which do not. Acting for a client, that experience allows her to step outside a single party's blind spots, assess the points genuinely in issue, complete the evidentiary structure, and set the litigation strategy that best serves the client.",
+      },
+      {
+        zh: '此外，楊律師亦為台北律師職業工會創會理事長。從工會之發起、籌備、登記至實務運作，均親力親為。這份從無到有的實戰經驗，使其對勞方於爭議中所面臨的實務困境，有著超越卷證的深刻體悟，從而能提供最具實效之法律解方。',
+        en: "Dr. Yang is also the founding chairperson of the Taipei Lawyers' Professional Union, having taken personal charge of its founding, organisation, registration and day-to-day operation. Building a union from nothing has given her an understanding of the practical difficulties employees face in a dispute that goes well beyond the case file, and with it the ability to offer remedies that work in practice.",
+      },
+      {
         zh: '證據要趁在職時拿。出勤紀錄、薪資單、獎金辦法、勞退專戶明細、主管交辦工作的訊息，離職後往往就調不到了。安理國際法律事務所在台北市中正區，處理主管與專業人士的白領勞資爭議，從發函、陪同調解到訴訟，核算金額與擬定策略都由律師負責。諮詢採預約制。',
         en: 'Collect the evidence while you are still employed. Attendance records, payslips, bonus plans, labor pension account statements, and messages assigning work are usually out of reach once you have left. Yang & Associates Law Firm (ANLI) is based in Taipei\'s Zhongzheng District and handles white-collar employment disputes for managers and professionals, from demand letters through accompanied mediation to litigation, with the calculations and the strategy handled by a lawyer. Consultations are by appointment.',
       },
