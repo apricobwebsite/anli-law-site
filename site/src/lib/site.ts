@@ -482,12 +482,12 @@ export const LAW = {
         zh: '國立政治大學法律學系',
         en: 'Department of Law, National Chengchi University',
       },
-      image: '/assets/team-zhan-placeholder.webp',
+      image: '/assets/team-zhan.webp',
       imageWidth: 720,
       imageHeight: 960,
       imageAlt: {
-        zh: '詹前晟實習律師暫用灰色假人示意圖',
-        en: 'Temporary gray mannequin placeholder for trainee attorney 詹前晟',
+        zh: '詹前晟實習律師照片',
+        en: 'Portrait of trainee attorney 詹前晟',
       },
     },
     {
