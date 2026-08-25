@@ -411,7 +411,7 @@ export const PRACTICE_CONTENT: Record<string, PracticeDetailContent> = {
         en: 'Most disputes can start with free mediation at the local labor bureau, and while it is pending your employer may not dismiss you or take other adverse action over the dispute. In court, the Labor Incident Act tilts several rules toward employees. Hours shown in attendance records are presumed to be working time. In claims for wages, severance pay, or confirmation of employment, two-thirds of the court filing fee is provisionally waived at the outset.',
       },
       {
-        zh: '本所主持律師楊佳陵現任勞動部第五屆勞資爭議仲裁委員，並兼任靜宜大學法律學系助理教授。憑藉擔任仲裁委員之裁判者視角，楊律師能精準洞悉勞資雙方於程序中之攻防優劣；在代理案件時，此一經驗使其能跳脫單方盲點，準確評估訴訟爭點並完善舉證結構，為當事人擬定最有利的訴訟策略。',
+        zh: '本所主持律師楊佳陵現任勞動部第 5 屆勞資爭議仲裁委員，並兼任靜宜大學法律學系助理教授。憑藉擔任仲裁委員之裁判者視角，楊律師能精準洞悉勞資雙方於程序中之攻防優劣；在代理案件時，此一經驗使其能跳脫單方盲點，準確評估訴訟爭點並完善舉證結構，為當事人擬定最有利的訴訟策略。',
         en: "The firm's principal, Dr. Chia-Ling Yang, currently serves as a labor dispute arbitrator appointed by the Ministry of Labor for its fifth term, and holds a concurrent appointment as assistant professor in the Department of Law at Providence University. Sitting as an arbitrator affords her the adjudicator's vantage point: she sees precisely which arguments and which evidence carry weight as a matter proceeds, and which do not. Acting for a client, that experience allows her to step outside a single party's blind spots, assess the points genuinely in issue, complete the evidentiary structure, and set the litigation strategy that best serves the client.",
       },
       {
