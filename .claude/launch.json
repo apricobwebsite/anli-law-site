@@ -2,6 +2,20 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "site-preview",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "preview",
+        "--prefix",
+        "site",
+        "--",
+        "--port",
+        "4331"
+      ],
+      "port": 4331
+    },
+    {
       "name": "site-dev",
       "runtimeExecutable": "npm",
       "runtimeArgs": [
@@ -51,6 +65,20 @@
         "4401"
       ],
       "port": 4401
+    },
+    {
+      "name": "site-dev-alt4",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev",
+        "--prefix",
+        "site",
+        "--",
+        "--port",
+        "4403"
+      ],
+      "port": 4403
     }
   ]
 }
