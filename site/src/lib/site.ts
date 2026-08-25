@@ -460,7 +460,7 @@ export const LAW = {
   team: [
     {
       name: { zh: '楊定諺', en: '楊定諺' },
-      role: { zh: '律師', en: 'Attorney' },
+      role: { zh: '律師・訴訟部主任', en: 'Attorney · Head of Litigation' },
       expertise: null,
       education: {
         zh: '國立台灣大學法律學系畢業',
