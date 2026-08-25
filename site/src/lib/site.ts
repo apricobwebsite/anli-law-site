@@ -14,6 +14,7 @@ export const LAW = {
   nav: {
     practice: { zh: '專業領域', en: 'Practice' },
     principal: { zh: '主持律師', en: 'Principal' },
+    team: { zh: '專業團隊', en: 'Team' },
     contact: { zh: '聯絡', en: 'Contact' },
   },
 
@@ -26,7 +27,7 @@ export const LAW = {
       en: 'From Berkeley to Taipei, from the hospital ward to the Constitutional Court — ANLI pairs cross-jurisdictional scholarship with frontline practice, helping enterprises, healthcare institutions, and individuals act with foresight on their most complex matters.',
     },
     cta: { zh: '預約諮詢', en: 'Request a consultation' },
-    cta2: { zh: '認識楊佳陵博士', en: 'Meet Dr. Chia-Ling Yang' },
+    cta2: { zh: '認識楊佳陵博士與專業團隊', en: 'Meet Dr. Chia-Ling Yang & the team' },
     credsLabel: { zh: '事務所核心信念', en: 'Core values' },
   },
 
@@ -450,9 +451,10 @@ export const LAW = {
     },
   ],
 
-  // 團隊成員
+  // 專業團隊
   team_h: {
-    label: { zh: '團隊成員', en: 'Team' },
+    label: { zh: '專業團隊', en: 'Team' },
+    jumpNote: { zh: '立刻認識我們的專業團隊', en: 'Meet our professional team' },
     expertiseLabel: { zh: '專長', en: 'Expertise' },
     educationLabel: { zh: '學歷', en: 'Education' },
   },

@@ -34,12 +34,6 @@ const mapDirections = `https://www.google.com/maps/dir/?api=1&destination=${mapQ
 const experienceFoldAfter = LAW.experience.findIndex((x) => x.org.zh === '台北律師職業工會');
 const featuredExperience = LAW.experience.slice(0, experienceFoldAfter >= 0 ? experienceFoldAfter + 1 : 4);
 const earlierExperience = LAW.experience.slice(featuredExperience.length);
-const featuredPublicationTitles = new Set<string>([
-  '《生醫法律面面觀：生醫業必備的法律錦囊》（合著）',
-  '〈從美國 Juno 公司 CAR-T 免疫細胞療法之發展與事故看細胞療法臨床試驗之賠償責任與股東集體訴訟〉',
-]);
-const featuredPublications = LAW.publications.filter((p) => featuredPublicationTitles.has(p.title.zh));
-const archivedPublications = LAW.publications.filter((p) => !featuredPublicationTitles.has(p.title.zh));
 ---
 
 <Base lang={lang} title={title} description={t(lang, LAW.hero.para)} altPath={homePath(otherLang(lang))}>
@@ -132,13 +126,19 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
             <aside data-reveal class="consult-rail" aria-label={t(lang, LAW.consult.kicker)}>
               <div class="consult-rail-head" aria-hidden="true">
                 <span>Consultation</span>
-                <span class="consult-rail-index">→ 03</span>
+                <span class="consult-rail-index">→ 04</span>
               </div>
               <p class="consult-rail-note">{t(lang, LAW.consult.rail.note)}</p>
-              <a class="consult-rail-cta" href="#contact">
-                <span>{t(lang, LAW.consult.rail.cta)}</span>
-                <span class="consult-rail-arrow" aria-hidden="true">→</span>
-              </a>
+              <div class="consult-rail-actions">
+                <a class="consult-rail-cta" href="#contact">
+                  <span>{t(lang, LAW.consult.rail.cta)}</span>
+                  <span class="consult-rail-arrow" aria-hidden="true">→</span>
+                </a>
+                <a class="consult-rail-cta consult-rail-cta-ghost" href="#team">
+                  <span>{t(lang, LAW.nav.team)}</span>
+                  <span class="consult-rail-arrow" aria-hidden="true">→</span>
+                </a>
+              </div>
               <a class="consult-rail-tel" href={`tel:${LAW.contact.phoneHref}`}>
                 <span class="consult-rail-tel-label">{t(lang, LAW.consult.rail.telLabel)}</span>
                 <span class="consult-rail-tel-value">{LAW.contact.phone}</span>
@@ -158,6 +158,16 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
               class="reading-copy"
               style="color:#cfc9bf; margin:0 0 44px; max-width:64ch; font-weight:400; text-wrap:pretty;"
             >{t(lang, LAW.principal.intro)}</p>
+
+            <!-- 手機沒有側欄那張預約卡：簡介讀完給一張跳往 02 專業團隊的卡。
+                 用章節編號當視覺錨點，量體壓在下方醫法金框之下，不搶主持律師版面 -->
+            <a data-reveal class="team-jump" href="#team">
+              <span class="team-jump-icon" aria-hidden="true">→</span>
+              <span class="team-jump-copy">
+                <span class="team-jump-label">{t(lang, LAW.nav.team)}</span>
+                <span class="team-jump-note">{t(lang, LAW.team_h.jumpNote)}</span>
+              </span>
+            </a>
 
             <!-- 醫療與生醫法制亮點 -->
             <div
@@ -321,106 +331,45 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
               </div>
             </div>
 
-            <!-- 醫藥法律著作選錄 -->
-            <div data-reveal style="margin-top:clamp(36px,6vh,52px);">
-              <div style="display:flex; align-items:center; gap:10px; margin-bottom:22px;">
-                <span
-                  style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase;"
-                >{t(lang, LAW.principal.pubLabel)}</span>
-                <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
-              </div>
-              <div class="publication-records-desktop">
-                {LAW.publications.map((p) => (
-                  <div class="publication-record">
-                    <div class="publication-title">{t(lang, p.title)}</div>
-                    <div class="publication-venue">{t(lang, p.venue)}</div>
-                  </div>
-                ))}
-              </div>
+            <!-- 醫藥法律著作選錄：整段可收合，預設收起 -->
+            <details data-reveal class="cv-fold" style="margin-top:clamp(36px,6vh,52px);">
+              <summary>
+                <span class="cv-fold-label">{t(lang, LAW.principal.pubLabel)}</span>
+                <span class="cv-fold-rule" aria-hidden="true"></span>
+                <span class="cv-fold-count" aria-hidden="true">
+                  {String(LAW.publications.length).padStart(2, '0')}
+                </span>
+                <span class="cv-fold-mark" aria-hidden="true"></span>
+              </summary>
 
-              <div class="publication-records-mobile">
-                {featuredPublications.map((p) => (
-                  <div class="publication-record publication-record-featured">
-                    <div class="publication-title">{t(lang, p.title)}</div>
-                    <div class="publication-venue">{t(lang, p.venue)}</div>
-                  </div>
-                ))}
-
-                {archivedPublications.length > 0 && (
-                  <details class="mobile-archive publication-archive">
-                    <summary>
-                      <span class="archive-more-rule" aria-hidden="true"></span>
-                      <span class="archive-more-copy">
-                        <span class="archive-more-kicker">
-                          Publication archive · {String(archivedPublications.length).padStart(2, '0')}
-                        </span>
-                        <span class="archive-more-closed">
-                          {lang === 'zh'
-                            ? `展開其餘 ${archivedPublications.length} 篇著作`
-                            : `View ${archivedPublications.length} more publications`}
-                        </span>
-                        <span class="archive-more-open">
-                          {lang === 'zh' ? '收起其他著作' : 'Hide other publications'}
-                        </span>
-                      </span>
-                      <span class="archive-more-mark" aria-hidden="true"></span>
-                    </summary>
-
-                    <div class="publication-archive-panel">
-                      {archivedPublications.map((p) => (
-                        <div class="publication-record">
-                          <div class="publication-title">{t(lang, p.title)}</div>
-                          <div class="publication-venue">{t(lang, p.venue)}</div>
-                        </div>
-                      ))}
+              <div class="cv-fold-panel">
+                <div class="publication-records">
+                  {LAW.publications.map((p) => (
+                    <div class="publication-record">
+                      <div class="publication-title">{t(lang, p.title)}</div>
+                      <div class="publication-venue">{t(lang, p.venue)}</div>
                     </div>
-                  </details>
-                )}
+                  ))}
+                </div>
               </div>
-            </div>
+            </details>
 
-            <!-- 醫法論壇主持・座長 -->
-            <div data-reveal style="margin-top:clamp(36px,6vh,52px);">
-              <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
-                <span
-                  style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase;"
-                >{t(lang, LAW.forums_h.label)}</span>
-                <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
-              </div>
-              <p class="reading-detail" style="color:#a09a90; margin:0 0 18px; max-width:62ch; font-weight:400; text-wrap:pretty;">
-                {t(lang, LAW.forums_h.lead)}
-              </p>
-              <div class="forum-records-desktop">
-                {LAW.forums.map((f) => (
-                  <div class="forum-record">
-                    <div class="forum-record-meta">
-                      <span class="forum-record-year">{f.year}</span>
-                      <span class="forum-record-separator" aria-hidden="true">—</span>
-                      <span class="forum-record-name">{t(lang, f.forum)}</span>
-                    </div>
-                    <div class="forum-record-topic">{t(lang, f.topic)}</div>
-                  </div>
-                ))}
-              </div>
+            <!-- 醫法論壇主持・座長：整段可收合，預設收起 -->
+            <details data-reveal class="cv-fold" style="margin-top:clamp(28px,4vh,36px);">
+              <summary>
+                <span class="cv-fold-label">{t(lang, LAW.forums_h.label)}</span>
+                <span class="cv-fold-rule" aria-hidden="true"></span>
+                <span class="cv-fold-count" aria-hidden="true">
+                  {String(LAW.forums.length).padStart(2, '0')}
+                </span>
+                <span class="cv-fold-mark" aria-hidden="true"></span>
+              </summary>
 
-              <details class="forum-records-mobile mobile-archive">
-                <summary>
-                  <span class="archive-more-rule" aria-hidden="true"></span>
-                  <span class="archive-more-copy">
-                    <span class="archive-more-kicker">
-                      Forum archive · {String(LAW.forums.length).padStart(2, '0')}
-                    </span>
-                    <span class="archive-more-closed">
-                      {lang === 'zh' ? '展開論壇紀錄' : 'View forum history'}
-                    </span>
-                    <span class="archive-more-open">
-                      {lang === 'zh' ? '收起論壇紀錄' : 'Hide forum history'}
-                    </span>
-                  </span>
-                  <span class="archive-more-mark" aria-hidden="true"></span>
-                </summary>
-
-                <div class="forum-records-panel">
+              <div class="cv-fold-panel">
+                <p class="reading-detail" style="color:#a09a90; margin:0 0 18px; max-width:62ch; font-weight:400; text-wrap:pretty;">
+                  {t(lang, LAW.forums_h.lead)}
+                </p>
+                <div class="forum-records">
                   {LAW.forums.map((f) => (
                     <div class="forum-record">
                       <div class="forum-record-meta">
@@ -432,84 +381,88 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
                     </div>
                   ))}
                 </div>
-              </details>
-            </div>
+              </div>
+            </details>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div data-reveal style="margin-top:clamp(48px,8vh,88px);">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:26px;">
-            <span
-              style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.22em; color:#C2A368; text-transform:uppercase;"
-            >{t(lang, LAW.team_h.label)}</span>
-            <span style="flex:1; height:1px; background:rgba(194,163,104,0.25);"></span>
-          </div>
-          <div class="tile-grid" style="--tile-min:240px;">
-            {LAW.team.map((m, i) => (
-              <article data-reveal class="tile-ruled">
-                <div style="position:relative; aspect-ratio:3/4; overflow:hidden; background:#161719; border-bottom:1px solid rgba(236,231,223,0.08);">
-                  <img
-                    src={m.image}
-                    alt={t(lang, m.imageAlt)}
-                    width={m.imageWidth}
-                    height={m.imageHeight}
-                    loading="lazy"
-                    decoding="async"
-                    style="width:100%; height:100%; object-fit:cover; filter:contrast(1.02);"
-                  />
-                  <div
-                    aria-hidden="true"
-                    style="position:absolute; top:18px; left:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#c9c4ba; background:rgba(10,10,11,0.72); padding:7px 9px; backdrop-filter:blur(8px);"
-                  >
-                    {String(i + 1).padStart(2, '0')}
-                  </div>
-                </div>
-                <div class="tile" style="--tile-pt:24px; --tile-px:clamp(18px,2vw,30px); --tile-pb:30px;">
-                  <div style="font-size:clamp(20px,1.35vw,23px); font-weight:600; color:#ECE7DF; line-height:1.5; margin-bottom:7px;">
-                    {t(lang, m.name)}
-                  </div>
-                  <div style="font-size:16px; line-height:1.6; letter-spacing:0.06em; color:#C2A368; margin-bottom:20px;">{t(lang, m.role)}</div>
-                  {m.expertise && (
-                    <div style="margin-bottom:16px;">
-                      <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; color:#8f897f; text-transform:uppercase; margin-bottom:6px;">
-                        {t(lang, LAW.team_h.expertiseLabel)}
-                      </div>
-                      <div class="reading-detail" style="color:#b8b2a8;">{t(lang, m.expertise)}</div>
-                    </div>
-                  )}
-                  <div>
-                    <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; color:#8f897f; text-transform:uppercase; margin-bottom:6px;">
-                      {t(lang, LAW.team_h.educationLabel)}
-                    </div>
-                    <div class="reading-detail" style="color:#a09a90; text-wrap:pretty;">{t(lang, m.education)}</div>
-                  </div>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        <!-- 主持律師區塊收尾：把讀完履歷的訪客帶到 03 聯絡安理 -->
-        <div data-reveal class="consult-closer">
-          <div class="consult-closer-copy">
-            <div class="consult-closer-kicker">
-              <span>{t(lang, LAW.consult.closer.kicker)}</span>
-              <span class="consult-closer-rule" aria-hidden="true"></span>
-              <span class="consult-closer-index" aria-hidden="true">03</span>
+    <!-- Team -->
+    <section
+      id="team"
+      class="shell"
+      style="scroll-margin-top:88px; padding-block:clamp(56px,10vh,124px); border-top:1px solid rgba(236,231,223,0.08);"
+    >
+      <div data-reveal style="margin-bottom:40px;">
+        {/* 這區不放大標，章節名由 kicker 呈現；h2 留給螢幕閱讀器與搜尋引擎辨識章節 */}
+        <h2 class="sr-only">{t(lang, LAW.team_h.label)}</h2>
+        <div class="kicker">02 — {t(lang, LAW.team_h.label)}</div>
+      </div>
+      <div class="tile-grid" style="--tile-min:240px;">
+        {LAW.team.map((m, i) => (
+          <article data-reveal class="tile-ruled">
+            <div style="position:relative; aspect-ratio:3/4; overflow:hidden; background:#161719; border-bottom:1px solid rgba(236,231,223,0.08);">
+              <img
+                src={m.image}
+                alt={t(lang, m.imageAlt)}
+                width={m.imageWidth}
+                height={m.imageHeight}
+                loading="lazy"
+                decoding="async"
+                style="width:100%; height:100%; object-fit:cover; filter:contrast(1.02);"
+              />
+              <div
+                aria-hidden="true"
+                style="position:absolute; top:18px; left:18px; font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.2em; color:#c9c4ba; background:rgba(10,10,11,0.72); padding:7px 9px; backdrop-filter:blur(8px);"
+              >
+                {String(i + 1).padStart(2, '0')}
+              </div>
             </div>
-            <h3 class="consult-closer-title">{t(lang, LAW.consult.closer.title)}</h3>
-            <p class="consult-closer-para">{t(lang, LAW.consult.closer.para)}</p>
+            <div class="tile" style="--tile-pt:24px; --tile-px:clamp(18px,2vw,30px); --tile-pb:30px;">
+              <div style="font-size:clamp(20px,1.35vw,23px); font-weight:600; color:#ECE7DF; line-height:1.5; margin-bottom:7px;">
+                {t(lang, m.name)}
+              </div>
+              <div style="font-size:16px; line-height:1.6; letter-spacing:0.06em; color:#C2A368; margin-bottom:20px;">{t(lang, m.role)}</div>
+              {m.expertise && (
+                <div style="margin-bottom:16px;">
+                  <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; color:#8f897f; text-transform:uppercase; margin-bottom:6px;">
+                    {t(lang, LAW.team_h.expertiseLabel)}
+                  </div>
+                  <div class="reading-detail" style="color:#b8b2a8;">{t(lang, m.expertise)}</div>
+                </div>
+              )}
+              <div>
+                <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; color:#8f897f; text-transform:uppercase; margin-bottom:6px;">
+                  {t(lang, LAW.team_h.educationLabel)}
+                </div>
+                <div class="reading-detail" style="color:#a09a90; text-wrap:pretty;">{t(lang, m.education)}</div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <!-- 專業團隊收尾：把讀完 01、02 的訪客帶到 04 聯絡安理 -->
+      <div data-reveal class="consult-closer">
+        <div class="consult-closer-copy">
+          <div class="consult-closer-kicker">
+            <span>{t(lang, LAW.consult.closer.kicker)}</span>
+            <span class="consult-closer-rule" aria-hidden="true"></span>
+            <span class="consult-closer-index" aria-hidden="true">04</span>
           </div>
-          <div class="consult-closer-actions">
-            <a class="consult-closer-cta" href="#contact">
-              <span>{t(lang, LAW.consult.closer.cta)}</span>
-              <span class="consult-closer-arrow" aria-hidden="true">→</span>
-            </a>
-            <a class="consult-closer-tel" href={`tel:${LAW.contact.phoneHref}`}>
-              <span class="consult-closer-tel-label">{t(lang, LAW.consult.closer.alt)}</span>
-              <span class="consult-closer-tel-value">{LAW.contact.phone}</span>
-            </a>
-          </div>
+          <h3 class="consult-closer-title">{t(lang, LAW.consult.closer.title)}</h3>
+          <p class="consult-closer-para">{t(lang, LAW.consult.closer.para)}</p>
+        </div>
+        <div class="consult-closer-actions">
+          <a class="consult-closer-cta" href="#contact">
+            <span>{t(lang, LAW.consult.closer.cta)}</span>
+            <span class="consult-closer-arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="consult-closer-tel" href={`tel:${LAW.contact.phoneHref}`}>
+            <span class="consult-closer-tel-label">{t(lang, LAW.consult.closer.alt)}</span>
+            <span class="consult-closer-tel-value">{LAW.contact.phone}</span>
+          </a>
         </div>
       </div>
     </section>
@@ -521,7 +474,7 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
       style="scroll-margin-top:88px; padding-block:clamp(56px,10vh,124px); border-top:1px solid rgba(236,231,223,0.08);"
     >
       <div data-reveal style="margin-bottom:52px;">
-        <div class="kicker" style="margin-bottom:18px;">02 — {t(lang, LAW.practice_h.label)}</div>
+        <div class="kicker" style="margin-bottom:18px;">03 — {t(lang, LAW.practice_h.label)}</div>
         <h2 class="section-title">{t(lang, LAW.practice_h.title)}</h2>
         <p
           style="display:flex; align-items:baseline; gap:10px; margin:20px 0 0; font-size:14.5px; letter-spacing:0.05em; color:#8f897f;"
@@ -569,7 +522,7 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
       <div class="contact-shell shell">
         <header class="contact-heading">
           <div data-reveal>
-            <div class="kicker contact-kicker">03 — {t(lang, LAW.contact.label)}</div>
+            <div class="kicker contact-kicker">04 — {t(lang, LAW.contact.label)}</div>
             <h2>{t(lang, LAW.contact.title)}</h2>
           </div>
           <div data-reveal class="contact-intro">
@@ -659,7 +612,7 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
         style="display:flex; flex-wrap:wrap; gap:clamp(28px,5vw,72px); align-items:center;"
       >
         <div style="flex:1 1 320px; min-width:0;">
-          <div class="kicker" style="margin-bottom:20px;">04 — {t(lang, SITE.line.label)}</div>
+          <div class="kicker" style="margin-bottom:20px;">05 — {t(lang, SITE.line.label)}</div>
           <h2 class="section-title" style="margin-bottom:18px;">{t(lang, SITE.line.title)}</h2>
           <p class="reading-copy" style="color:#a09a90; margin:0 0 30px; max-width:52ch; font-weight:400; text-wrap:pretty;">
             {t(lang, SITE.line.para)}
@@ -699,7 +652,7 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
         style="display:flex; flex-wrap:wrap; gap:clamp(20px,4vw,64px); align-items:flex-end; justify-content:space-between; margin-bottom:48px;"
       >
         <div>
-          <div class="kicker" style="margin-bottom:18px;">05 — {t(lang, SITE.insights_h.label)}</div>
+          <div class="kicker" style="margin-bottom:18px;">06 — {t(lang, SITE.insights_h.label)}</div>
           <h2 class="section-title">{t(lang, SITE.insights_h.title)}</h2>
         </div>
         <p class="reading-detail" style="color:#9a948a; margin:0; max-width:42ch; font-weight:400;">
@@ -747,7 +700,7 @@ const archivedPublications = LAW.publications.filter((p) => !featuredPublication
     >
       <div data-reveal class="media-heading">
         <div>
-          <div class="kicker" style="margin-bottom:18px;">06 — {t(lang, SITE.media_h.label)}</div>
+          <div class="kicker" style="margin-bottom:18px;">07 — {t(lang, SITE.media_h.label)}</div>
           <h2 class="section-title">{t(lang, SITE.media_h.title)}</h2>
         </div>
         <p class="reading-detail media-intro">

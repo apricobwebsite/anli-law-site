@@ -541,6 +541,11 @@ a:hover { color: var(--gold-bright); }
   gap: clamp(14px, 2.2vw, 34px);
 }
 
+/* 導覽列多了「專業團隊」一項，窄桌機再用原間距會把所名擠成刪節號 */
+@media (max-width: 1099px) {
+  .nav-desktop { gap: clamp(12px, 1.4vw, 20px); }
+}
+
 .nav-mobile {
   display: none;
   align-items: center;
@@ -1134,6 +1139,25 @@ a:hover { color: var(--gold-bright); }
   border-color: var(--gold-bright);
 }
 
+/* 側欄兩個入口：預約走金色主按鈕，看團隊走描邊次按鈕 */
+.consult-rail-actions {
+  display: grid;
+  gap: 10px;
+}
+
+.consult-rail-cta-ghost {
+  border-color: rgba(194, 163, 104, 0.42);
+  background: transparent;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.consult-rail-cta-ghost:hover {
+  border-color: var(--gold);
+  background: rgba(194, 163, 104, 0.10);
+  color: var(--gold-bright);
+}
+
 .consult-rail-arrow {
   font-family: var(--font-mono);
   transition: transform 0.25s ease;
@@ -1309,6 +1333,97 @@ a:hover { color: var(--gold-bright); }
 .consult-strip-arrow {
   font-family: var(--font-mono);
   transition: transform 0.3s ease;
+}
+
+/* 手機沒有側欄預約卡：主持律師簡介後補一張跳往 02 專業團隊的卡。
+   桌機由側欄那顆「專業團隊」承接，這裡不重複出現 */
+.team-jump { display: none; }
+
+@media (max-width: 899px) {
+  .team-jump {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 0 0 clamp(36px, 6vh, 52px);
+    padding: 16px 18px;
+    border: 1px solid rgba(194, 163, 104, 0.42);
+    background:
+      linear-gradient(140deg, rgba(194, 163, 104, 0.10) 0%, rgba(194, 163, 104, 0.02) 62%, rgba(10, 10, 11, 0.3) 100%);
+    text-decoration: none;
+    transition: border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .team-jump:active {
+    border-color: var(--gold);
+    background: rgba(194, 163, 104, 0.14);
+  }
+
+  .team-jump:focus-visible {
+    outline: 1px solid rgba(224, 198, 140, 0.7);
+    outline-offset: 3px;
+  }
+
+  /* 圓框箭頭沿用著作/論壇折疊那顆記號的語彙，讓「可以點」一眼認得出來 */
+  .team-jump-icon {
+    display: grid;
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border: 1px solid rgba(194, 163, 104, 0.45);
+    border-radius: 50%;
+    color: var(--gold-bright);
+    font-family: var(--font-mono);
+    font-size: 15px;
+    transition: border-color 0.25s ease, background 0.25s ease, transform 0.25s ease;
+  }
+
+  .team-jump:active .team-jump-icon {
+    border-color: var(--gold-bright);
+    background: rgba(194, 163, 104, 0.16);
+    transform: translateX(3px);
+  }
+
+  .team-jump-copy {
+    display: flex;
+    min-width: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .team-jump-label {
+    color: var(--ink-bright);
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    line-height: 1.35;
+  }
+
+  .team-jump-note {
+    color: var(--muted-3);
+    font-size: 13.5px;
+    letter-spacing: 0.04em;
+    line-height: 1.6;
+    text-wrap: pretty;
+  }
+}
+
+/* 窄機（iPhone SE 一類）收一號，名字列才不會被截掉 */
+@media (max-width: 360px) {
+  .team-jump {
+    gap: 13px;
+    padding: 14px 15px;
+  }
+
+  .team-jump-icon {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .team-jump-label { font-size: 15px; }
+  .team-jump-note { font-size: 12.5px; }
 }
 
 .consult-strip:hover .consult-strip-note,
@@ -1671,15 +1786,13 @@ a:hover { color: var(--gold-bright); }
   .experience-more summary::before { transition: none; }
 }
 
-/* ---- 醫藥法律著作：桌機展開、手機精選兩篇 ---- */
+/* ---- 醫藥法律著作：整段收在 .cv-fold 裡 ---- */
 
-.publication-records-desktop {
+.publication-records {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 0 clamp(28px, 4vw, 56px);
 }
-
-.publication-records-mobile { display: none; }
 
 .publication-record {
   padding: 14px 0;
@@ -1705,15 +1818,13 @@ a:hover { color: var(--gold-bright); }
   text-wrap: pretty;
 }
 
-/* ---- 醫法論壇紀錄：桌機展開、手機收合 ---- */
+/* ---- 醫法論壇紀錄：整段收在 .cv-fold 裡 ---- */
 
-.forum-records-desktop {
+.forum-records {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 0 clamp(28px, 4vw, 56px);
 }
-
-.forum-records-mobile { display: none; }
 
 .forum-record {
   padding: 14px 0;
@@ -1743,153 +1854,26 @@ a:hover { color: var(--gold-bright); }
 }
 
 @media (max-width: 640px) {
-  .forum-records-desktop,
-  .publication-records-desktop { display: none; }
-
-  .publication-records-mobile { display: block; }
-
-  .publication-records-mobile > .publication-record:first-child {
+  .publication-records > .publication-record:first-child,
+  .forum-records > .forum-record:first-child {
     border-top: 1px solid rgba(236, 231, 223, 0.09);
   }
 
-  .publication-records-mobile .publication-record {
-    padding: 16px 0 17px;
-  }
+  .publication-records .publication-record { padding: 16px 0 17px; }
 
-  .publication-records-mobile .publication-title {
+  .publication-records .publication-title {
     font-size: 16px;
     line-height: 1.78;
   }
 
-  .publication-records-mobile .publication-venue {
+  .publication-records .publication-venue {
     font-size: 12px;
     line-height: 1.75;
   }
 
-  .publication-record-featured .publication-title { color: var(--ink-bright); }
+  .forum-records .forum-record { padding: 17px 0 18px; }
 
-  .forum-records-mobile {
-    display: block;
-    border-top: 1px solid rgba(194, 163, 104, 0.18);
-  }
-
-  .mobile-archive {
-    border-bottom: 1px solid rgba(194, 163, 104, 0.22);
-  }
-
-  .mobile-archive summary {
-    display: grid;
-    grid-template-columns: 24px minmax(0, 1fr) 32px;
-    gap: 12px;
-    align-items: center;
-    min-height: 74px;
-    padding: 13px 0;
-    color: var(--muted-2);
-    cursor: pointer;
-    list-style: none;
-    transition: color 220ms ease, background-color 220ms ease;
-  }
-
-  .mobile-archive summary::-webkit-details-marker { display: none; }
-
-  .mobile-archive summary:hover,
-  .mobile-archive summary:focus-visible {
-    color: var(--ink-bright);
-    background: linear-gradient(90deg, transparent, rgba(194, 163, 104, 0.045), transparent);
-  }
-
-  .mobile-archive summary:focus-visible {
-    outline: 1px solid rgba(224, 198, 140, 0.7);
-    outline-offset: 4px;
-  }
-
-  .archive-more-rule {
-    width: 24px;
-    height: 1px;
-    background: var(--gold);
-    opacity: 0.7;
-    transform: scaleX(0.5);
-    transform-origin: left center;
-    transition: opacity 220ms ease, transform 280ms cubic-bezier(.22, .61, .36, 1);
-  }
-
-  .mobile-archive summary:hover .archive-more-rule,
-  .mobile-archive summary:focus-visible .archive-more-rule,
-  .mobile-archive[open] .archive-more-rule {
-    opacity: 1;
-    transform: scaleX(1);
-  }
-
-  .archive-more-copy {
-    display: flex;
-    min-width: 0;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .archive-more-kicker {
-    color: var(--muted-5);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    line-height: 1.2;
-    text-transform: uppercase;
-  }
-
-  .archive-more-closed,
-  .archive-more-open {
-    font-size: 14px;
-    letter-spacing: 0.06em;
-    line-height: 1.45;
-  }
-
-  .archive-more-open { display: none; }
-  .mobile-archive[open] .archive-more-closed { display: none; }
-  .mobile-archive[open] .archive-more-open { display: inline; }
-
-  .archive-more-mark {
-    position: relative;
-    width: 32px;
-    height: 32px;
-    border: 1px solid rgba(194, 163, 104, 0.35);
-    border-radius: 50%;
-    transition: border-color 220ms ease, transform 320ms cubic-bezier(.22, .61, .36, 1);
-  }
-
-  .archive-more-mark::before,
-  .archive-more-mark::after {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 10px;
-    height: 1px;
-    background: var(--gold-bright);
-    content: '';
-    transform: translate(-50%, -50%);
-  }
-
-  .archive-more-mark::after { transform: translate(-50%, -50%) rotate(90deg); }
-
-  .mobile-archive[open] .archive-more-mark {
-    border-color: rgba(224, 198, 140, 0.65);
-    transform: rotate(45deg);
-  }
-
-  .forum-records-panel,
-  .publication-archive-panel {
-    border-top: 1px solid rgba(236, 231, 223, 0.07);
-    animation: mobile-archive-reveal 440ms cubic-bezier(.22, .61, .36, 1) both;
-  }
-
-  .publication-archive-panel .publication-record:last-child { border-bottom: 0; }
-
-  .forum-records-panel .forum-record {
-    padding: 17px 0 18px;
-  }
-
-  .forum-records-panel .forum-record:last-child { border-bottom: 0; }
-
-  .forum-records-panel .forum-record-meta {
+  .forum-records .forum-record-meta {
     display: grid;
     grid-template-columns: 48px minmax(0, 1fr);
     gap: 10px;
@@ -1898,25 +1882,113 @@ a:hover { color: var(--gold-bright); }
     line-height: 1.6;
   }
 
-  .forum-records-panel .forum-record-separator { display: none; }
+  .forum-records .forum-record-separator { display: none; }
 
-  .forum-records-panel .forum-record-topic {
+  .forum-records .forum-record-topic {
     font-size: 15.5px;
     line-height: 1.78;
   }
 }
 
-@keyframes mobile-archive-reveal {
+/* ---- 履歷段落收合：著作選錄、論壇紀錄整段可展開，預設收起 ---- */
+
+.cv-fold {
+  border-top: 1px solid rgba(194, 163, 104, 0.20);
+  border-bottom: 1px solid rgba(194, 163, 104, 0.20);
+}
+
+.cv-fold > summary {
+  display: grid;
+  grid-template-columns: auto minmax(20px, 1fr) auto 30px;
+  gap: 12px;
+  align-items: center;
+  min-height: 62px;
+  padding: 12px 0;
+  cursor: pointer;
+  list-style: none;
+  transition: background-color 220ms ease;
+}
+
+.cv-fold > summary::-webkit-details-marker { display: none; }
+
+.cv-fold > summary:hover {
+  background: linear-gradient(90deg, transparent, rgba(194, 163, 104, 0.045), transparent);
+}
+
+.cv-fold > summary:focus-visible {
+  outline: 1px solid rgba(224, 198, 140, 0.7);
+  outline-offset: 4px;
+}
+
+.cv-fold-label {
+  color: var(--gold);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.cv-fold-rule {
+  height: 1px;
+  background: rgba(194, 163, 104, 0.25);
+}
+
+.cv-fold-count {
+  color: var(--muted-5);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+
+.cv-fold-mark {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(194, 163, 104, 0.35);
+  border-radius: 50%;
+  transition: border-color 220ms ease, transform 320ms cubic-bezier(.22, .61, .36, 1);
+}
+
+.cv-fold-mark::before,
+.cv-fold-mark::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 1px;
+  background: var(--gold-bright);
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.cv-fold-mark::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+.cv-fold > summary:hover .cv-fold-mark { border-color: rgba(224, 198, 140, 0.65); }
+
+.cv-fold[open] .cv-fold-mark {
+  border-color: rgba(224, 198, 140, 0.65);
+  transform: rotate(45deg);
+}
+
+.cv-fold-panel {
+  padding-bottom: 24px;
+  animation: cv-fold-reveal 440ms cubic-bezier(.22, .61, .36, 1) both;
+}
+
+.cv-fold-panel .publication-record:last-child,
+.cv-fold-panel .forum-record:last-child { border-bottom: 0; }
+
+@keyframes cv-fold-reveal {
   from { opacity: 0; transform: translateY(-8px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .forum-records-panel,
-  .publication-archive-panel { animation: none; }
-  .archive-more-mark,
-  .archive-more-rule { transition: none; }
+  .cv-fold-panel { animation: none; }
+  .cv-fold-mark { transition: none; }
 }
+
 
 /* ---- 聯絡與地圖 ---- */
 
