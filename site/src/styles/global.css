@@ -1,20 +1,28 @@
 /* 安理國際法律事務所 — 全站樣式（自 Claude Design 原型移植） */
 
 :root {
-  --bg: #0a0a0b;
-  --bg-alt: #0c0c0e;
+  /* 業主指定：底色改用 UC Berkeley 品牌主色 Berkeley Blue (#002676)。
+     deep / alt / panel 是同一支藍的三階明度，對應原本近黑底的層次；
+     rgb 變體讓既有的 rgba() 疊層沿用同一個底色。 */
+  --bg: #002676;
+  --bg-rgb: 0, 38, 118;
+  --bg-alt: #012C84;
+  --bg-deep: #001B54;
+  --bg-deep-rgb: 0, 27, 84;
+  --bg-panel: #01308E;
+  --on-gold: #001B54; /* 金色實心底上的字色 */
   --ink: #ECE7DF;
   --ink-bright: #F4F0E8;
   --gold: #C2A368;
   --gold-bright: #E0C68C;
-  --muted-1: #cfc9bf;
-  --muted-2: #b8b2a8;
-  --muted-3: #a09a90;
-  --muted-4: #9a948a;
-  --muted-5: #8f897f; /* 深色底上 5.7:1,過 WCAG AA:資訊文字的亮度下限 */
-  --muted-6: #6f6a62; /* 3.7:1,不足 AA:僅限線條、分隔符等非文字裝飾 */
-  --muted-7: #5e5a53;
-  --muted-8: #4d4a44;
+  --muted-1: #E5DFD4;
+  --muted-2: #DDD5C9;
+  --muted-3: #C1BAAE;
+  --muted-4: #BBB3A7;
+  --muted-5: #AEA79A; /* Berkeley Blue 底上 5.7:1,過 WCAG AA:資訊文字的亮度下限 */
+  --muted-6: #8B847A; /* 3.7:1,不足 AA:僅限線條、分隔符等非文字裝飾 */
+  --muted-7: #78736A;
+  --muted-8: #65625A;
   --line-strong: rgba(236, 231, 223, 0.14);
   --line: rgba(236, 231, 223, 0.12);
   --line-soft: rgba(236, 231, 223, 0.10);
@@ -70,7 +78,7 @@ body.menu-open { overflow: hidden; }
   background:
     radial-gradient(circle at 94% 46%, rgba(184, 136, 66, 0.13), transparent 30%),
     radial-gradient(circle at 22% 38%, rgba(194, 163, 104, 0.025), transparent 35%),
-    #08090a;
+    var(--bg-deep);
 }
 
 .brand-hero::after {
@@ -80,7 +88,7 @@ body.menu-open { overflow: hidden; }
   inset: auto 0 0;
   height: 90px;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent, rgba(8, 9, 10, 0.94));
+  background: linear-gradient(to bottom, transparent, rgba(var(--bg-deep-rgb), 0.94));
 }
 
 .brand-hero-grid {
@@ -222,13 +230,13 @@ body.menu-open { overflow: hidden; }
 .brand-hero-cta {
   background: var(--gold);
   border: 1px solid var(--gold);
-  color: #0b0a08;
+  color: var(--on-gold);
 }
 
 .brand-hero-cta:hover {
   background: var(--gold-bright);
   border-color: var(--gold-bright);
-  color: #0b0a08;
+  color: var(--on-gold);
 }
 
 .brand-hero-cta-ghost {
@@ -469,9 +477,9 @@ a { color: var(--gold); }
 a:hover { color: var(--gold-bright); }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #0a0a0b; }
-::-webkit-scrollbar-thumb { background: #2a2823; }
-::-webkit-scrollbar-thumb:hover { background: #3a372f; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb { background: rgba(236, 231, 223, 0.18); }
+::-webkit-scrollbar-thumb:hover { background: rgba(236, 231, 223, 0.28); }
 
 /* ---- 導覽列 ---- */
 
@@ -484,7 +492,7 @@ a:hover { color: var(--gold-bright); }
   justify-content: space-between;
   gap: 16px;
   padding: 16px var(--gutter);
-  background: rgba(10, 10, 11, 0.80);
+  background: rgba(var(--bg-rgb), 0.80);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line-soft);
@@ -609,7 +617,7 @@ a:hover { color: var(--gold-bright); }
 }
 
 .social-link:hover {
-  color: #17130d;
+  color: var(--on-gold);
   background: var(--gold-bright);
   border-color: var(--gold-bright);
   box-shadow: 0 0 0 4px rgba(194, 163, 104, 0.10), 0 6px 18px rgba(0, 0, 0, 0.22);
@@ -651,7 +659,7 @@ a:hover { color: var(--gold-bright); }
   font-size: 13px;
 }
 .nav-mobile .lang-switch { font-size: 13.5px; }
-.lang-slash { color: #3a372f; }
+.lang-slash { color: rgba(236, 231, 223, 0.32); }
 .lang-active { color: var(--ink); font-weight: 600; text-decoration: none; }
 .lang-active:hover { color: var(--ink); }
 .lang-idle { color: var(--muted-5); font-weight: 400; text-decoration: none; }
@@ -821,7 +829,7 @@ a:hover { color: var(--gold-bright); }
 .card-hover:hover { background: var(--gold-wash); }
 
 .cell-hover { transition: background 0.25s ease; }
-.cell-hover:hover { background: #0d0d0f; }
+.cell-hover:hover { background: var(--bg-panel); }
 
 /* ---- 區塊標題 ---- */
 
@@ -1081,8 +1089,8 @@ a:hover { color: var(--gold-bright); }
   padding: 24px clamp(20px, 1.6vw, 26px) 22px;
   border: 1px solid rgba(194, 163, 104, 0.28);
   background:
-    linear-gradient(158deg, rgba(194, 163, 104, 0.085) 0%, rgba(194, 163, 104, 0.014) 48%, rgba(10, 10, 11, 0.4) 100%),
-    #0a0a0b;
+    linear-gradient(158deg, rgba(194, 163, 104, 0.085) 0%, rgba(194, 163, 104, 0.014) 48%, rgba(var(--bg-rgb), 0.4) 100%),
+    var(--bg);
 }
 
 /* 手機單欄時側欄緊接在照片下方，會比姓名還早出現；改由其餘三個入口承接 */
@@ -1126,7 +1134,7 @@ a:hover { color: var(--gold-bright); }
   padding: 14px 20px;
   border: 1px solid var(--gold);
   background: var(--gold);
-  color: #0b0a08;
+  color: var(--on-gold);
   font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -1267,7 +1275,7 @@ a:hover { color: var(--gold-bright); }
 .consult-inset:focus-visible .consult-inset-action {
   border-color: var(--gold);
   background: var(--gold);
-  color: #0b0a08;
+  color: var(--on-gold);
 }
 
 .consult-inset:hover .consult-inset-arrow,
@@ -1348,7 +1356,7 @@ a:hover { color: var(--gold-bright); }
     padding: 16px 18px;
     border: 1px solid rgba(194, 163, 104, 0.42);
     background:
-      linear-gradient(140deg, rgba(194, 163, 104, 0.10) 0%, rgba(194, 163, 104, 0.02) 62%, rgba(10, 10, 11, 0.3) 100%);
+      linear-gradient(140deg, rgba(194, 163, 104, 0.10) 0%, rgba(194, 163, 104, 0.02) 62%, rgba(var(--bg-rgb), 0.3) 100%);
     text-decoration: none;
     transition: border-color 0.25s ease, background 0.25s ease;
   }
@@ -1443,8 +1451,8 @@ a:hover { color: var(--gold-bright); }
   border: 1px solid rgba(194, 163, 104, 0.30);
   background:
     radial-gradient(circle at 92% 8%, rgba(194, 163, 104, 0.10), transparent 44%),
-    linear-gradient(120deg, rgba(194, 163, 104, 0.05) 0%, rgba(10, 10, 11, 0.25) 62%),
-    #0a0a0b;
+    linear-gradient(120deg, rgba(194, 163, 104, 0.05) 0%, rgba(var(--bg-rgb), 0.25) 62%),
+    var(--bg);
 }
 
 .consult-closer-kicker {
@@ -1507,7 +1515,7 @@ a:hover { color: var(--gold-bright); }
   padding: 16px 26px;
   border: 1px solid var(--gold);
   background: var(--gold);
-  color: #0b0a08;
+  color: var(--on-gold);
   font-size: 15.5px;
   font-weight: 600;
   letter-spacing: 0.12em;
@@ -2001,7 +2009,7 @@ a:hover { color: var(--gold-bright); }
   border-top: 1px solid var(--line-faint);
   background:
     radial-gradient(circle at 88% 18%, rgba(194, 163, 104, 0.075), transparent 29%),
-    linear-gradient(135deg, #0d0d0f 0%, #0a0a0b 64%, #0d0c0a 100%);
+    linear-gradient(135deg, var(--bg-panel) 0%, var(--bg) 64%, var(--bg-deep) 100%);
 }
 
 .contact-section::before {
@@ -2072,7 +2080,7 @@ a:hover { color: var(--gold-bright); }
   display: grid;
   grid-template-columns: minmax(0, 1.75fr) minmax(310px, 0.72fr);
   border: 1px solid rgba(194, 163, 104, 0.3);
-  background: rgba(5, 5, 6, 0.55);
+  background: rgba(var(--bg-deep-rgb), 0.55);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
 }
 
@@ -2123,10 +2131,10 @@ a:hover { color: var(--gold-bright); }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset 0 0 70px rgba(15, 13, 10, 0.22);
+  box-shadow: inset 0 0 70px rgba(var(--bg-deep-rgb), 0.30);
   background:
-    linear-gradient(90deg, rgba(10, 10, 11, 0.14), transparent 14% 85%, rgba(10, 10, 11, 0.12)),
-    linear-gradient(0deg, rgba(10, 10, 11, 0.18), transparent 22%);
+    linear-gradient(90deg, rgba(var(--bg-rgb), 0.14), transparent 14% 85%, rgba(var(--bg-rgb), 0.12)),
+    linear-gradient(0deg, rgba(var(--bg-rgb), 0.18), transparent 22%);
 }
 
 .contact-location-card {
@@ -2140,7 +2148,7 @@ a:hover { color: var(--gold-bright); }
   margin: -1px 0 0 -48px;
   padding: 24px clamp(22px, 3vw, 42px);
   border-top: 1px solid rgba(194, 163, 104, 0.28);
-  background: #0c0c0e;
+  background: var(--bg-alt);
 }
 
 .contact-location-number {
@@ -2238,7 +2246,7 @@ a:hover { color: var(--gold-bright); }
   padding: clamp(28px, 3.4vw, 50px);
   background:
     linear-gradient(rgba(236, 231, 223, 0.024) 1px, transparent 1px),
-    #0a0a0b;
+    var(--bg);
   background-size: 100% 94px;
 }
 
