@@ -323,6 +323,10 @@ export const LAW = {
       role: { zh: '連續多屆場次主持人／座長（2023–2026）', en: 'Session Chair, successive editions (2023–2026)' },
     },
     {
+      org: { zh: '國際扶輪第 3481 地區・台北扶輪社', en: 'Rotary International District 3481 — Rotary Club of Taipei' },
+      role: { zh: '理事（2025–26 年度）', en: 'Director (2025–26)' },
+    },
+    {
       org: { zh: '台北律師職業工會', en: "Taipei Lawyers' Professional Union" },
       role: { zh: '創會理事長', en: 'Founding Chairperson' },
     },
@@ -481,8 +485,8 @@ export const LAW = {
       role: { zh: '實習律師', en: 'Trainee Attorney' },
       expertise: null,
       education: {
-        zh: '國立政治大學法律學系',
-        en: 'Department of Law, National Chengchi University',
+        zh: '國立成功大學法律學系',
+        en: 'Department of Law, National Cheng Kung University',
       },
       image: '/assets/team-zhan.webp',
       imageWidth: 720,
@@ -515,12 +519,12 @@ export const LAW = {
 
   contact: {
     label: { zh: '聯絡安理', en: 'Contact' },
-    title: { zh: '讓我們從一次對話開始', en: 'Let us begin with a conversation' },
+    title: { zh: '預約專屬諮詢', en: 'Book a private consultation' },
     para: {
-      zh: '歡迎來信簡述您所面臨的法律議題，我們將安排一次審慎而保密的初步諮詢。',
-      en: 'Write to us with a brief outline of your matter, and we will arrange a considered, confidential initial consultation.',
+      zh: '歡迎來信簡述您所面臨的法律議題',
+      en: 'Write to us with a brief outline of your matter.',
     },
-    email: 'contact@anli-law.com',
+    email: 'ayanglaw880@gmail.com',
     // 顯示用電話與撥號用連結（tel: 需為連續數字）
     phone: '+886 2 2393 6003',
     phoneHref: '+886223936003',
@@ -542,10 +546,6 @@ export const LAW = {
       title: { zh: '安理國際法律事務所台北所位置', en: 'Location of Yang & Associates Law Firm, Taipei Office' },
       directions: { zh: '在 Google Maps 規劃路線', en: 'Plan your route on Google Maps' },
       contactLabel: { zh: '直接聯繫', en: 'Direct line' },
-      note: {
-        zh: '所有初步聯繫均由本所審慎處理，並以保密為原則。',
-        en: 'Every initial enquiry is handled with care and in confidence.',
-      },
     },
     cta: { zh: '預約諮詢', en: 'Request a consultation' },
   },
