@@ -1,28 +1,27 @@
 /* 安理國際法律事務所 — 全站樣式（自 Claude Design 原型移植） */
 
 :root {
-  /* 業主指定：底色改用 UC Berkeley 品牌主色 Berkeley Blue (#002676)。
-     deep / alt / panel 是同一支藍的三階明度，對應原本近黑底的層次；
-     rgb 變體讓既有的 rgba() 疊層沿用同一個底色。 */
-  --bg: #002676;
-  --bg-rgb: 0, 38, 118;
-  --bg-alt: #012C84;
-  --bg-deep: #001B54;
-  --bg-deep-rgb: 0, 27, 84;
-  --bg-panel: #01308E;
-  --on-gold: #001B54; /* 金色實心底上的字色 */
+  /* 業主指定：全站統一用主視覺那支深藍 #001B54（Berkeley Blue 壓深一階）。
+     alt / panel 是它往上一階、兩階的明度，倍率沿用原本近黑底的 1.22 / 1.33，
+     層次感與改色前一致；shade 比底色更深，只給陰影與暗角用。 */
+  --bg: #001B54;
+  --bg-rgb: 0, 27, 84;
+  --bg-alt: #001E5E;
+  --bg-panel: #002062;
+  --bg-shade-rgb: 0, 19, 59;
+  --on-gold: #00133B; /* 金色實心底上的字色 */
   --ink: #ECE7DF;
   --ink-bright: #F4F0E8;
   --gold: #C2A368;
   --gold-bright: #E0C68C;
-  --muted-1: #E5DFD4;
-  --muted-2: #DDD5C9;
-  --muted-3: #C1BAAE;
-  --muted-4: #BBB3A7;
-  --muted-5: #AEA79A; /* Berkeley Blue 底上 5.7:1,過 WCAG AA:資訊文字的亮度下限 */
-  --muted-6: #8B847A; /* 3.7:1,不足 AA:僅限線條、分隔符等非文字裝飾 */
-  --muted-7: #78736A;
-  --muted-8: #65625A;
+  --muted-1: #E3DCD2;
+  --muted-2: #CAC4B9;
+  --muted-3: #B0AA9F;
+  --muted-4: #AAA498;
+  --muted-5: #9E988D; /* 深藍底上 5.7:1,過 WCAG AA:資訊文字的亮度下限 */
+  --muted-6: #7D776E; /* 3.7:1,不足 AA:僅限線條、分隔符等非文字裝飾 */
+  --muted-7: #6B665E;
+  --muted-8: #5A564F;
   --line-strong: rgba(236, 231, 223, 0.14);
   --line: rgba(236, 231, 223, 0.12);
   --line-soft: rgba(236, 231, 223, 0.10);
@@ -78,7 +77,7 @@ body.menu-open { overflow: hidden; }
   background:
     radial-gradient(circle at 94% 46%, rgba(184, 136, 66, 0.13), transparent 30%),
     radial-gradient(circle at 22% 38%, rgba(194, 163, 104, 0.025), transparent 35%),
-    var(--bg-deep);
+    var(--bg);
 }
 
 .brand-hero::after {
@@ -88,7 +87,7 @@ body.menu-open { overflow: hidden; }
   inset: auto 0 0;
   height: 90px;
   pointer-events: none;
-  background: linear-gradient(to bottom, transparent, rgba(var(--bg-deep-rgb), 0.94));
+  background: linear-gradient(to bottom, transparent, rgba(var(--bg-rgb), 0.94));
 }
 
 .brand-hero-grid {
@@ -477,7 +476,7 @@ a { color: var(--gold); }
 a:hover { color: var(--gold-bright); }
 
 ::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-track { background: var(--bg); }
 ::-webkit-scrollbar-thumb { background: rgba(236, 231, 223, 0.18); }
 ::-webkit-scrollbar-thumb:hover { background: rgba(236, 231, 223, 0.28); }
 
@@ -2009,7 +2008,7 @@ a:hover { color: var(--gold-bright); }
   border-top: 1px solid var(--line-faint);
   background:
     radial-gradient(circle at 88% 18%, rgba(194, 163, 104, 0.075), transparent 29%),
-    linear-gradient(135deg, var(--bg-panel) 0%, var(--bg) 64%, var(--bg-deep) 100%);
+    linear-gradient(135deg, var(--bg-panel) 0%, var(--bg) 64%, var(--bg-alt) 100%);
 }
 
 .contact-section::before {
@@ -2080,7 +2079,7 @@ a:hover { color: var(--gold-bright); }
   display: grid;
   grid-template-columns: minmax(0, 1.75fr) minmax(310px, 0.72fr);
   border: 1px solid rgba(194, 163, 104, 0.3);
-  background: rgba(var(--bg-deep-rgb), 0.55);
+  background: rgba(var(--bg-shade-rgb), 0.55);
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
 }
 
@@ -2131,7 +2130,7 @@ a:hover { color: var(--gold-bright); }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  box-shadow: inset 0 0 70px rgba(var(--bg-deep-rgb), 0.30);
+  box-shadow: inset 0 0 70px rgba(var(--bg-shade-rgb), 0.30);
   background:
     linear-gradient(90deg, rgba(var(--bg-rgb), 0.14), transparent 14% 85%, rgba(var(--bg-rgb), 0.12)),
     linear-gradient(0deg, rgba(var(--bg-rgb), 0.18), transparent 22%);
