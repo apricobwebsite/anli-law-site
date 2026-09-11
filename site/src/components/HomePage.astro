@@ -438,6 +438,16 @@ const earlierExperience = LAW.experience.slice(featuredExperience.length);
                 </div>
                 <div class="reading-detail" style="color:#a09a90; text-wrap:pretty;">{t(lang, m.education)}</div>
               </div>
+              {m.experience && (
+                <div style="margin-top:16px;">
+                  <div style="font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:0.16em; color:#8f897f; text-transform:uppercase; margin-bottom:6px;">
+                    {t(lang, LAW.team_h.experienceLabel)}
+                  </div>
+                  <ul class="reading-detail" style="margin:0; padding-left:1.15em; color:#a09a90;">
+                    {tl(lang, m.experience).map((item) => <li>{item}</li>)}
+                  </ul>
+                </div>
+              )}
             </div>
           </article>
         ))}

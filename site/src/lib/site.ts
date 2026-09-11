@@ -461,6 +461,7 @@ export const LAW = {
     jumpNote: { zh: '立刻認識我們的專業團隊', en: 'Meet our professional team' },
     expertiseLabel: { zh: '專長', en: 'Expertise' },
     educationLabel: { zh: '學歷', en: 'Education' },
+    experienceLabel: { zh: '經歷', en: 'Experience' },
   },
 
   team: [
@@ -468,6 +469,14 @@ export const LAW = {
       name: { zh: '楊定諺', en: '楊定諺' },
       role: { zh: '律師・訴訟部主任', en: 'Attorney · Head of Litigation' },
       expertise: null,
+      experience: {
+        zh: ['通律法律事務所法務副理', '宏道法律事務所律師', '勞動部工作場所性騷擾調查專業人士'],
+        en: [
+          'Assistant Legal Manager, Tonglu Law Firm',
+          'Attorney, Hongdao Law Firm',
+          'Ministry of Labor Workplace Sexual Harassment Investigation Professional',
+        ],
+      },
       education: {
         zh: '國立台灣大學法律學系畢業',
         en: 'Department of Law, National Taiwan University',
@@ -484,6 +493,7 @@ export const LAW = {
       name: { zh: '詹前晟', en: '詹前晟' },
       role: { zh: '實習律師', en: 'Trainee Attorney' },
       expertise: null,
+      experience: null,
       education: {
         zh: '國立成功大學法律學系',
         en: 'Department of Law, National Cheng Kung University',
@@ -497,12 +507,36 @@ export const LAW = {
       },
     },
     {
+      name: { zh: '梁詩媛', en: '梁詩媛' },
+      role: { zh: '實習律師', en: 'Trainee Attorney' },
+      expertise: null,
+      experience: {
+        zh: ['臺灣臺北地方法院法官助理', '智慧財產及商業法院法官助理'],
+        en: [
+          'Judicial Assistant, Taiwan Taipei District Court',
+          'Judicial Assistant, Intellectual Property and Commercial Court',
+        ],
+      },
+      education: {
+        zh: '國立政治大學法律學系',
+        en: 'Department of Law, National Chengchi University',
+      },
+      image: '/assets/team-liang.webp',
+      imageWidth: 720,
+      imageHeight: 960,
+      imageAlt: {
+        zh: '梁詩媛實習律師照片',
+        en: 'Portrait of trainee attorney 梁詩媛',
+      },
+    },
+    {
       name: { zh: '黃煜翔', en: '黃煜翔' },
       role: { zh: '資訊顧問', en: 'Information Consultant' },
       expertise: {
         zh: '資訊安全、數位鑑識、加密貨幣金流追蹤、公開來源情報分析',
         en: 'Information Security, Digital Forensics, Cryptocurrency Flow Tracking & Open-Source Intelligence Analysis',
       },
+      experience: null,
       education: {
         zh: '國立台灣大學資訊工程學系與數學系雙主修畢業',
         en: 'Dual major in Computer Science and Mathematics, National Taiwan University',
